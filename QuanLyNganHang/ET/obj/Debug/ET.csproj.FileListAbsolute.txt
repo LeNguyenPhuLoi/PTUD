@@ -1,0 +1,6 @@
+D:\PTUD\QuanLyNganHang\ET\bin\Debug\ET.dll
+D:\PTUD\QuanLyNganHang\ET\bin\Debug\ET.pdb
+D:\PTUD\QuanLyNganHang\ET\obj\Debug\ET.csproj.AssemblyReference.cache
+D:\PTUD\QuanLyNganHang\ET\obj\Debug\ET.csproj.CoreCompileInputs.cache
+D:\PTUD\QuanLyNganHang\ET\obj\Debug\ET.dll
+D:\PTUD\QuanLyNganHang\ET\obj\Debug\ET.pdb
