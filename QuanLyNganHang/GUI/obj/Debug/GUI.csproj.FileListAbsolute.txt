@@ -14,5 +14,4 @@ D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.exe
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.pdb
-D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
-D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.CopyComplete
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.Up2Date
