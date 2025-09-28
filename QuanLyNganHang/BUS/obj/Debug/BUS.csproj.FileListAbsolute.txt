@@ -8,4 +8,4 @@ D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
 D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
 D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
-D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
