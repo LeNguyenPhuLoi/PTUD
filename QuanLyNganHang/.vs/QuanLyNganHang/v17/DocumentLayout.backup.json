@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\GIAO DI\u1EC6N D\u1ECACH V\u1EE4\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\ptud\\quanlynganhang\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\giao di\u1EC7n d\u1ECBch v\u1EE5\\ptud\\quanlynganhang\\gui\\frm_mainuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_mainuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\giao di\u1EC7n d\u1ECBch v\u1EE5\\ptud\\quanlynganhang\\gui\\frm_mainuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_mainuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
-              "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAqwBkAAAA1AAAAAAAAAA==",
+              "Title": "Frm_MainUser.cs",
+              "DocumentMoniker": "D:\\GIAO DI\u1EC6N D\u1ECACH V\u1EE4\\PTUD\\QuanLyNganHang\\GUI\\Frm_MainUser.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_MainUser.cs",
+              "ToolTip": "D:\\GIAO DI\u1EC6N D\u1ECACH V\u1EE4\\PTUD\\QuanLyNganHang\\GUI\\Frm_MainUser.cs*",
+              "RelativeToolTip": "GUI\\Frm_MainUser.cs*",
+              "ViewState": "AgIAANEAAAAAAAAAAADwv+UAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T05:38:45.72Z",
+              "WhenOpened": "2025-09-29T02:51:34.582Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Frm_MainUser.cs [Design]",
+              "DocumentMoniker": "D:\\GIAO DI\u1EC6N D\u1ECACH V\u1EE4\\PTUD\\QuanLyNganHang\\GUI\\Frm_MainUser.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_MainUser.cs",
+              "ToolTip": "D:\\GIAO DI\u1EC6N D\u1ECACH V\u1EE4\\PTUD\\QuanLyNganHang\\GUI\\Frm_MainUser.cs [Design]*",
+              "RelativeToolTip": "GUI\\Frm_MainUser.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T02:51:31.871Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

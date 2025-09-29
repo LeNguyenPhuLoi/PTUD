@@ -107,8 +107,8 @@ namespace GUI
 
         private void chuyểnKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmChuyenKhoan frm = new frmChuyenKhoan();
-            //OpenMain(frm);
+            frmChuyenKhoan frm = new frmChuyenKhoan();
+            OpenMain(frm);
         }
 
         private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
