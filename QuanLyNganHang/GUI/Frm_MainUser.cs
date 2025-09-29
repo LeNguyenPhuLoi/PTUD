@@ -226,7 +226,9 @@ namespace GUI
         private void btnTK_Click(object sender, EventArgs e)
         {
             HighlightButton(btnTK);
-            
+            frmChuyenKhoan frm = new frmChuyenKhoan();
+            OpenMain(frm);
+
         }
 
         private void btnGD_Click(object sender, EventArgs e)
@@ -286,5 +288,7 @@ namespace GUI
             HighlightButton(btnInGiaoDich);
            
         }
+
+
     }
 }
