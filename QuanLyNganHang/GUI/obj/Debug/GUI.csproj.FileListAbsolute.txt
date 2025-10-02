@@ -14,7 +14,6 @@ D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.exe
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.pdb
-D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmChuyenKhoan.resources
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmDangNhap.resources
@@ -33,3 +32,12 @@ D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\GUI\bin\Debug\ET.dll
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\GUI\bin\Debug\BUS.pdb
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\GUI\bin\Debug\ET.pdb
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmChuyenKhoan.resources
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmNhanVien.resources
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.CopyComplete
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmPhongBan.resources
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmViPham.resources
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmChiNhanh.resources
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmNoiQuy.resources
+D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmTKDangNhap.resources
