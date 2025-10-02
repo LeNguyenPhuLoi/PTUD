@@ -100,11 +100,47 @@
     <Compile Include="frmViPham.Designer.cs">
       <DependentUpon>frmViPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_GiaoDich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_GiaoDich.Designer.cs">
+      <DependentUpon>Frm_GiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_HopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HopDong.Designer.cs">
+      <DependentUpon>Frm_HopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_HoTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HoTro.Designer.cs">
+      <DependentUpon>Frm_HoTro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KhachHang.Designer.cs">
+      <DependentUpon>Frm_KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_LoaiTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_LoaiTaiKhoan.Designer.cs">
+      <DependentUpon>Frm_LoaiTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_MainUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_MainUser.Designer.cs">
       <DependentUpon>Frm_MainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TaiKhoan.Designer.cs">
+      <DependentUpon>Frm_TaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="MainAddmin.cs">
       <SubType>Form</SubType>
@@ -138,8 +174,26 @@
     <EmbeddedResource Include="frmViPham.resx">
       <DependentUpon>frmViPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_GiaoDich.resx">
+      <DependentUpon>Frm_GiaoDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HopDong.resx">
+      <DependentUpon>Frm_HopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HoTro.resx">
+      <DependentUpon>Frm_HoTro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KhachHang.resx">
+      <DependentUpon>Frm_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_LoaiTaiKhoan.resx">
+      <DependentUpon>Frm_LoaiTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_MainUser.resx">
       <DependentUpon>Frm_MainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TaiKhoan.resx">
+      <DependentUpon>Frm_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainAddmin.resx">
       <DependentUpon>MainAddmin.cs</DependentUpon>

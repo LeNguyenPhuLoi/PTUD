@@ -20,3 +20,14 @@ D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
 D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CopyComplete
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.dll
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.pdb
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.dll
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\bin\Debug\ET.dll
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.pdb
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\bin\Debug\ET.pdb
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
+E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
