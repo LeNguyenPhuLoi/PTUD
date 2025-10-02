@@ -65,8 +65,8 @@ namespace GUI
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Frm_NhanVien frm = new Frm_NhanVien();
-            //OpenMain(frm);
+            frmNhanVien frm = new frmNhanVien();
+            OpenMain(frm);
         }
 
         private void giaoDịchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,26 +113,26 @@ namespace GUI
 
         private void phòngBanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Frm_PhongBan frm = new Frm_PhongBan();
-            //OpenMain(frm);
+            frmPhongBan frm = new frmPhongBan();
+            OpenMain(frm);
         }
 
         private void nộiQuyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Frm_NoiQuy frm = new Frm_NoiQuy();
-            //OpenMain(frm);
+            frmNoiQuy frm = new frmNoiQuy();
+            OpenMain(frm);
         }
 
         private void viPhạmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Frm_ViPham frm = new Frm_ViPham();
-            //OpenMain(frm);
+            frmViPham frm = new frmViPham();
+            OpenMain(frm);
         }
 
         private void chiNhánhToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Frm_ChiNhanh frm = new Frm_ChiNhanh();
-            //OpenMain(frm);
+            frmChiNhanh frm = new frmChiNhanh();
+            OpenMain(frm);
         }
 
         private void khuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,7 +162,8 @@ namespace GUI
 
         private void tKĐăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            frmTKDangNhap frm = new frmTKDangNhap();
+            OpenMain(frm);
         }
 
         private void btnMM_Click(object sender, EventArgs e)

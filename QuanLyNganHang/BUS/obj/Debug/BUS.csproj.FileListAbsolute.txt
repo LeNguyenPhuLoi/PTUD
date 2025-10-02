@@ -8,7 +8,6 @@ D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
 D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
 D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
-D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.dll
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.pdb
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.dll
@@ -20,3 +19,4 @@ D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CoreComp
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
+D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CopyComplete

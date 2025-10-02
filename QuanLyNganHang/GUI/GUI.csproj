@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -64,6 +64,42 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChiNhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiNhanh.Designer.cs">
+      <DependentUpon>frmChiNhanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhanVien.Designer.cs">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNoiQuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNoiQuy.Designer.cs">
+      <DependentUpon>frmNoiQuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhongBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhongBan.Designer.cs">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTKDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTKDangNhap.Designer.cs">
+      <DependentUpon>frmTKDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViPham.Designer.cs">
+      <DependentUpon>frmViPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_MainUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +119,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChiNhanh.resx">
+      <DependentUpon>frmChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNhanVien.resx">
+      <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNoiQuy.resx">
+      <DependentUpon>frmNoiQuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhongBan.resx">
+      <DependentUpon>frmPhongBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTKDangNhap.resx">
+      <DependentUpon>frmTKDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViPham.resx">
+      <DependentUpon>frmViPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MainUser.resx">
       <DependentUpon>Frm_MainUser.cs</DependentUpon>
