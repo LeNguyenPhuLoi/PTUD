@@ -25,3 +25,12 @@ E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Cor
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.pdb
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\bin\Debug\ET.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\bin\Debug\ET.pdb
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb

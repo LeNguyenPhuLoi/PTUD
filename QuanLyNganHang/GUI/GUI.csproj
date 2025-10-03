@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApDungKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApDungKhuyenMai.Designer.cs">
+      <DependentUpon>ApDungKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BienLai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BienLai.Designer.cs">
+      <DependentUpon>BienLai.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChuyenKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,14 +154,50 @@
     <Compile Include="Frm_TaiKhoan.Designer.cs">
       <DependentUpon>Frm_TaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="KhoanVay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhoanVay.Designer.cs">
+      <DependentUpon>KhoanVay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhuyenMai.Designer.cs">
+      <DependentUpon>KhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LaiSuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LaiSuat.Designer.cs">
+      <DependentUpon>LaiSuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TraNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraNo.Designer.cs">
+      <DependentUpon>TraNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainAddmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainAddmin.Designer.cs">
       <DependentUpon>MainAddmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="NgoaiTe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NgoaiTe.Designer.cs">
+      <DependentUpon>NgoaiTe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ApDungKhuyenMai.resx">
+      <DependentUpon>ApDungKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BienLai.resx">
+      <DependentUpon>BienLai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChuyenKhoan.resx">
       <DependentUpon>ChuyenKhoan.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,8 +243,23 @@
     <EmbeddedResource Include="Frm_TaiKhoan.resx">
       <DependentUpon>Frm_TaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KhoanVay.resx">
+      <DependentUpon>KhoanVay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhuyenMai.resx">
+      <DependentUpon>KhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LaiSuat.resx">
+      <DependentUpon>LaiSuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraNo.resx">
+      <DependentUpon>TraNo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainAddmin.resx">
       <DependentUpon>MainAddmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NgoaiTe.resx">
+      <DependentUpon>NgoaiTe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

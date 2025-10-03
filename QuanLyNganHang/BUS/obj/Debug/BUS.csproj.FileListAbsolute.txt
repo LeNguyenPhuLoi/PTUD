@@ -31,3 +31,14 @@ E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Cor
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.pdb
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\ET.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.pdb
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\ET.pdb
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
