@@ -177,19 +177,22 @@ namespace GUI
         private void btnKH_Click(object sender, EventArgs e)
         {
             HighlightButton(btnKH);
-            
+            Frm_KhachHang frm = new Frm_KhachHang();
+            OpenMain(frm);
         }
 
         private void btnCK_Click(object sender, EventArgs e)
         {
             HighlightButton(btnCK);
-            
+            frmChuyenKhoan frm = new frmChuyenKhoan();
+            OpenMain(frm);
         }
 
         private void btnVay_Click(object sender, EventArgs e)
         {
             HighlightButton(btnVay);
-            
+            frmKhoanVay frm = new frmKhoanVay();
+            OpenMain(frm);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -226,7 +229,7 @@ namespace GUI
         private void btnTK_Click(object sender, EventArgs e)
         {
             HighlightButton(btnTK);
-            frmChuyenKhoan frm = new frmChuyenKhoan();
+            Frm_TaiKhoan frm = new Frm_TaiKhoan();
             OpenMain(frm);
 
         }
@@ -234,25 +237,29 @@ namespace GUI
         private void btnGD_Click(object sender, EventArgs e)
         {
             HighlightButton(btnGD);
-            
+            Frm_GiaoDich frm = new Frm_GiaoDich();
+            OpenMain(frm);
         }
 
         private void btnLS_Click(object sender, EventArgs e)
         {
             HighlightButton(btnLS);
-           
+            frmLichSuTraNo frm = new frmLichSuTraNo();
+            OpenMain(frm);
         }
 
         private void btnBL_Click(object sender, EventArgs e)
         {
             HighlightButton(btnBL);
-           
+            BienLai frm = new BienLai();
+            OpenMain(frm);
         }
 
         private void btnKM_Click(object sender, EventArgs e)
         {
             HighlightButton(btnKM);
-            
+            frmApDungKhuyenMai frm = new frmApDungKhuyenMai();
+            OpenMain(frm);
         }
 
         private void btnINBL_Click(object sender, EventArgs e)
@@ -289,6 +296,18 @@ namespace GUI
            
         }
 
+        private void btnHD_Click(object sender, EventArgs e)
+        {
+            HighlightButton(btnHD);
+            Frm_HopDong frm = new Frm_HopDong();
+            OpenMain(frm);
+        }
 
+        private void btnCSKH_Click(object sender, EventArgs e)
+        {
+            HighlightButton(btnCSKH);
+            Frm_HoTro frm = new Frm_HoTro();
+            OpenMain(frm);
+        }
     }
 }

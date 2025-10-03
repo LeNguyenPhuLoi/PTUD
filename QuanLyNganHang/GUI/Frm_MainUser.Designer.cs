@@ -57,6 +57,10 @@
             this.btnBL = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnKM = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.btnHD = new System.Windows.Forms.Button();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.btnCSKH = new System.Windows.Forms.Button();
             this.menuContainerRP = new System.Windows.Forms.FlowLayoutPanel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.btnRP = new System.Windows.Forms.Button();
@@ -74,10 +78,6 @@
             this.menuTransitionRP = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.tmrBannerLoop = new System.Windows.Forms.Timer(this.components);
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.btnHD = new System.Windows.Forms.Button();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.btnCSKH = new System.Windows.Forms.Button();
             this.picBanner = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
@@ -92,6 +92,8 @@
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.menuContainerRP.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel22.SuspendLayout();
@@ -99,8 +101,6 @@
             this.panel24.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBanner)).BeginInit();
             this.SuspendLayout();
             // 
@@ -459,6 +459,58 @@
             this.btnKM.UseVisualStyleBackColor = false;
             this.btnKM.Click += new System.EventHandler(this.btnKM_Click);
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.SystemColors.Control;
+            this.panel14.Controls.Add(this.btnHD);
+            this.panel14.Location = new System.Drawing.Point(0, 405);
+            this.panel14.Margin = new System.Windows.Forms.Padding(0);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(240, 45);
+            this.panel14.TabIndex = 13;
+            // 
+            // btnHD
+            // 
+            this.btnHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.btnHD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHD.ForeColor = System.Drawing.Color.White;
+            this.btnHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHD.Location = new System.Drawing.Point(-20, -24);
+            this.btnHD.Name = "btnHD";
+            this.btnHD.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnHD.Size = new System.Drawing.Size(268, 94);
+            this.btnHD.TabIndex = 2;
+            this.btnHD.Text = "    -           Hợp Đồng";
+            this.btnHD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHD.UseVisualStyleBackColor = false;
+            this.btnHD.Click += new System.EventHandler(this.btnHD_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.SystemColors.Control;
+            this.panel15.Controls.Add(this.btnCSKH);
+            this.panel15.Location = new System.Drawing.Point(0, 450);
+            this.panel15.Margin = new System.Windows.Forms.Padding(0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(240, 45);
+            this.panel15.TabIndex = 14;
+            // 
+            // btnCSKH
+            // 
+            this.btnCSKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
+            this.btnCSKH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCSKH.ForeColor = System.Drawing.Color.White;
+            this.btnCSKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCSKH.Location = new System.Drawing.Point(-20, -24);
+            this.btnCSKH.Name = "btnCSKH";
+            this.btnCSKH.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnCSKH.Size = new System.Drawing.Size(268, 94);
+            this.btnCSKH.TabIndex = 2;
+            this.btnCSKH.Text = "    -           CSKH";
+            this.btnCSKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCSKH.UseVisualStyleBackColor = false;
+            this.btnCSKH.Click += new System.EventHandler(this.btnCSKH_Click);
+            // 
             // menuContainerRP
             // 
             this.menuContainerRP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
@@ -644,56 +696,6 @@
             this.sidebarTransition.Interval = 5;
             this.sidebarTransition.Tick += new System.EventHandler(this.sidebarTransition_Tick);
             // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.SystemColors.Control;
-            this.panel14.Controls.Add(this.btnHD);
-            this.panel14.Location = new System.Drawing.Point(0, 405);
-            this.panel14.Margin = new System.Windows.Forms.Padding(0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(240, 45);
-            this.panel14.TabIndex = 13;
-            // 
-            // btnHD
-            // 
-            this.btnHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.btnHD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHD.ForeColor = System.Drawing.Color.White;
-            this.btnHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHD.Location = new System.Drawing.Point(-20, -24);
-            this.btnHD.Name = "btnHD";
-            this.btnHD.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnHD.Size = new System.Drawing.Size(268, 94);
-            this.btnHD.TabIndex = 2;
-            this.btnHD.Text = "    -           Hợp Đồng";
-            this.btnHD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHD.UseVisualStyleBackColor = false;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.SystemColors.Control;
-            this.panel15.Controls.Add(this.btnCSKH);
-            this.panel15.Location = new System.Drawing.Point(0, 450);
-            this.panel15.Margin = new System.Windows.Forms.Padding(0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(240, 45);
-            this.panel15.TabIndex = 14;
-            // 
-            // btnCSKH
-            // 
-            this.btnCSKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.btnCSKH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCSKH.ForeColor = System.Drawing.Color.White;
-            this.btnCSKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCSKH.Location = new System.Drawing.Point(-20, -24);
-            this.btnCSKH.Name = "btnCSKH";
-            this.btnCSKH.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnCSKH.Size = new System.Drawing.Size(268, 94);
-            this.btnCSKH.TabIndex = 2;
-            this.btnCSKH.Text = "    -           CSKH";
-            this.btnCSKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCSKH.UseVisualStyleBackColor = false;
-            // 
             // picBanner
             // 
             this.picBanner.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -737,6 +739,8 @@
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
             this.menuContainerRP.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
@@ -744,8 +748,6 @@
             this.panel24.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBanner)).EndInit();
             this.ResumeLayout(false);
 
