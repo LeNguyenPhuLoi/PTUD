@@ -77,8 +77,8 @@ namespace GUI
 
         private void biênLaiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Frm_BienLai frm = new Frm_BienLai();
-            //OpenMain(frm);
+            BienLai frm = new BienLai();
+            OpenMain(frm);
         }
 
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,8 +101,8 @@ namespace GUI
 
         private void tiềnTệToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Frm_LoaiTien frm = new Frm_LoaiTien();
-            //OpenMain(frm);
+            NgoaiTe frm = new NgoaiTe();
+            OpenMain(frm);
         }
 
         private void chuyểnKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,27 +137,32 @@ namespace GUI
 
         private void khuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //frmKhuyenMai frm = new frmKhuyenMai();
-            //OpenMain(frm);
+            frmKhuyenMai frm = new frmKhuyenMai();
+            OpenMain(frm);
         }
 
         private void ápDụngKhuyếnMãiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmApDungKhuyenMai frm = new frmApDungKhuyenMai();
+            OpenMain(frm);
         }
 
         private void lãiSuátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmLaiSuat frm = new frmLaiSuat();
+            OpenMain(frm);
         }
 
         private void lịchSửTrảNợToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmLichSuTraNo frm = new frmLichSuTraNo();
+            OpenMain(frm);
         }
 
         private void khoảnVayToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmKhoanVay frm = new frmKhoanVay();
+            OpenMain(frm);
         }
 
         private void tKĐăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
