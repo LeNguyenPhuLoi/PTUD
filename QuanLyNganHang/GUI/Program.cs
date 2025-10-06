@@ -16,7 +16,7 @@ namespace GUI
     //    {
     //        Application.EnableVisualStyles();
     //        Application.SetCompatibleTextRenderingDefault(false);
-    //        Application.Run(new frmViPham());
+    //        Application.Run(new Frm_PhieuVay());
     //    }
     //}
 

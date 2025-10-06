@@ -196,52 +196,41 @@ namespace GUI
 
         private void báoCáoNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            frm_NhanVienRP frm = new frm_NhanVienRP();
+            OpenMain(frm);
         }
 
         private void báoCáoViPhạmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frm_ViPhamRP frm = new frm_ViPhamRP();
+            OpenMain(frm);
         }
 
-        private void báoCáoKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void báoCáoTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Frm_Report_TaiKhoan frm = new Frm_Report_TaiKhoan();
+            OpenMain(frm);
         }
 
-        private void loạiTàiKhoảnToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void loạiTiềnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void biênLaiToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            Frm_BienLaiReport frm = new Frm_BienLaiReport();
+            OpenMain(frm);
         }
 
         private void giaoDịchToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+            Frm_Report_GiaoDich frm = new Frm_Report_GiaoDich();
+            OpenMain(frm);
         }
 
-        private void phiếuGhiNợToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void phiếuTranoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Frm_TraNoReport frm = new Frm_TraNoReport();
+            OpenMain(frm);
         }
 
         private void hoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -253,6 +242,30 @@ namespace GUI
         private void hợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_HopDong frm = new Frm_HopDong();
+            OpenMain(frm);
+        }
+
+        private void hóađơnchuyểnkhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ChuyenKhoanReport frm = new Frm_ChuyenKhoanReport();
+            OpenMain(frm);
+        }
+
+        private void phiếuVayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_PhieuVayReport frm = new Frm_PhieuVayReport();
+            OpenMain(frm);
+        }
+
+        private void hợpĐồngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Frm_Report_HopDong frm = new Frm_Report_HopDong();
+            OpenMain(frm);
+        }
+
+        private void phiếuLươngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_PhieuLuongRP frm = new frm_PhieuLuongRP();
             OpenMain(frm);
         }
     }

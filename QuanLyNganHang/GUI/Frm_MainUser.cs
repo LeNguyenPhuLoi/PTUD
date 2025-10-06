@@ -119,7 +119,7 @@ namespace GUI
             if (menuExpand2 == false)
             {
                 menuContainerRP.Height += 10;
-                if (menuContainerRP.Height >= 180)
+                if (menuContainerRP.Height >= 300)
                 {
                     menuTransitionRP.Stop();
                     menuExpand2 = true;
@@ -271,13 +271,15 @@ namespace GUI
         private void btnPhieuVay_Click(object sender, EventArgs e)
         {
             HighlightButton(btnPhieuVay);
-           
+            Frm_PhieuVayReport frm = new Frm_PhieuVayReport();
+            OpenMain(frm);
         }
 
         private void btnPhieuTraNo_Click(object sender, EventArgs e)
         {
             HighlightButton(btnPhieuTraNo);
-           
+            Frm_TraNoReport frm = new Frm_TraNoReport();
+            OpenMain(frm);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -293,7 +295,8 @@ namespace GUI
         private void btnInGiaoDich_Click(object sender, EventArgs e)
         {
             HighlightButton(btnInGiaoDich);
-           
+            Frm_Report_GiaoDich frm = new Frm_Report_GiaoDich();
+            OpenMain(frm);
         }
 
         private void btnHD_Click(object sender, EventArgs e)
@@ -307,6 +310,27 @@ namespace GUI
         {
             HighlightButton(btnCSKH);
             Frm_HoTro frm = new Frm_HoTro();
+            OpenMain(frm);
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            HighlightButton(btnCSKH);
+            Frm_Report_TaiKhoan frm = new Frm_Report_TaiKhoan();
+            OpenMain(frm);
+        }
+
+        private void btnChuyenKhoan_Click(object sender, EventArgs e)
+        {
+            HighlightButton(btnCSKH);
+            Frm_ChuyenKhoanReport frm = new Frm_ChuyenKhoanReport();
+            OpenMain(frm);
+        }
+
+        private void btnHopDong_Click(object sender, EventArgs e)
+        {
+            HighlightButton(btnCSKH);
+            Frm_Report_HopDong frm = new Frm_Report_HopDong();
             OpenMain(frm);
         }
     }
