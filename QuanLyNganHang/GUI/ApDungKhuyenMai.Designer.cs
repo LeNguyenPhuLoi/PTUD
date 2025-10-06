@@ -40,12 +40,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dtpNgayApDung = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtMaKM = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -209,12 +209,12 @@
             // 
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.Controls.Add(this.comboBox2);
+            this.pnlMain.Controls.Add(this.comboBox1);
             this.pnlMain.Controls.Add(this.dtpNgayApDung);
             this.pnlMain.Controls.Add(this.textBox1);
             this.pnlMain.Controls.Add(this.label4);
-            this.pnlMain.Controls.Add(this.txtMaKM);
             this.pnlMain.Controls.Add(this.label1);
-            this.pnlMain.Controls.Add(this.txtMaKH);
             this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Location = new System.Drawing.Point(3, 3);
@@ -222,20 +222,48 @@
             this.pnlMain.Size = new System.Drawing.Size(849, 275);
             this.pnlMain.TabIndex = 25;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(246, 133);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(599, 33);
+            this.comboBox2.TabIndex = 51;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(246, 76);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(599, 33);
+            this.comboBox1.TabIndex = 50;
+            // 
             // dtpNgayApDung
             // 
+            this.dtpNgayApDung.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayApDung.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayApDung.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayApDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayApDung.Location = new System.Drawing.Point(236, 209);
+            this.dtpNgayApDung.Location = new System.Drawing.Point(246, 194);
             this.dtpNgayApDung.MaxDate = new System.DateTime(2999, 6, 12, 0, 0, 0, 0);
             this.dtpNgayApDung.Name = "dtpNgayApDung";
-            this.dtpNgayApDung.Size = new System.Drawing.Size(609, 30);
+            this.dtpNgayApDung.Size = new System.Drawing.Size(599, 30);
             this.dtpNgayApDung.TabIndex = 45;
             this.dtpNgayApDung.Value = new System.DateTime(2025, 6, 12, 0, 0, 0, 0);
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(246, 28);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -247,21 +275,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 209);
+            this.label4.Location = new System.Drawing.Point(22, 191);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 33);
             this.label4.TabIndex = 38;
             this.label4.Text = "Ngày Áp Dụng:";
-            // 
-            // txtMaKM
-            // 
-            this.txtMaKM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKM.Location = new System.Drawing.Point(246, 135);
-            this.txtMaKM.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKM.Name = "txtMaKM";
-            this.txtMaKM.Size = new System.Drawing.Size(599, 30);
-            this.txtMaKM.TabIndex = 46;
             // 
             // label1
             // 
@@ -273,16 +292,6 @@
             this.label1.Size = new System.Drawing.Size(203, 33);
             this.label1.TabIndex = 40;
             this.label1.Text = "Mã Khách Hàng:";
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Location = new System.Drawing.Point(246, 75);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(599, 30);
-            this.txtMaKH.TabIndex = 42;
-            this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
             // 
             // label2
             // 
@@ -365,11 +374,11 @@
         private System.Windows.Forms.DateTimePicker dtpNgayApDung;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtMaKM;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
