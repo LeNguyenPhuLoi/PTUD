@@ -54,6 +54,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dgvlaisuat = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -61,6 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTim
@@ -110,7 +112,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 33);
+            this.label2.Location = new System.Drawing.Point(17, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 33);
@@ -121,7 +123,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 96);
+            this.label3.Location = new System.Drawing.Point(17, 82);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 33);
@@ -195,7 +197,7 @@
             this.txtMaLichSu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaLichSu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLichSu.Location = new System.Drawing.Point(215, 33);
+            this.txtMaLichSu.Location = new System.Drawing.Point(221, 19);
             this.txtMaLichSu.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaLichSu.Name = "txtMaLichSu";
             this.txtMaLichSu.Size = new System.Drawing.Size(325, 30);
@@ -205,11 +207,10 @@
             // 
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.Controls.Add(this.dgvlaisuat);
             this.pnlMain.Controls.Add(this.textBox2);
             this.pnlMain.Controls.Add(this.txtMaLichSu);
-            this.pnlMain.Controls.Add(this.label1);
             this.pnlMain.Controls.Add(this.label5);
-            this.pnlMain.Controls.Add(this.dtpNgayTra);
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Location = new System.Drawing.Point(3, 3);
@@ -221,7 +222,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 169);
+            this.label1.Location = new System.Drawing.Point(19, 154);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 33);
@@ -235,7 +236,7 @@
             this.dtpNgayTra.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayTra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayTra.Location = new System.Drawing.Point(215, 169);
+            this.dtpNgayTra.Location = new System.Drawing.Point(222, 154);
             this.dtpNgayTra.MaxDate = new System.DateTime(2999, 6, 12, 0, 0, 0, 0);
             this.dtpNgayTra.Name = "dtpNgayTra";
             this.dtpNgayTra.Size = new System.Drawing.Size(325, 30);
@@ -289,7 +290,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtTienTra);
+            this.panel1.Controls.Add(this.dtpNgayTra);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(626, 3);
             this.panel1.Name = "panel1";
@@ -363,11 +366,30 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(215, 99);
+            this.textBox2.Location = new System.Drawing.Point(221, 85);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(325, 30);
-            this.textBox2.TabIndex = 22;
+            this.textBox2.TabIndex = 21;
+            // 
+            // dgvlaisuat
+            // 
+            this.dgvlaisuat.AllowDrop = true;
+            this.dgvlaisuat.AllowUserToResizeColumns = false;
+            this.dgvlaisuat.AllowUserToResizeRows = false;
+            this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
+            this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlaisuat.Location = new System.Drawing.Point(23, 122);
+            this.dgvlaisuat.MultiSelect = false;
+            this.dgvlaisuat.Name = "dgvlaisuat";
+            this.dgvlaisuat.ReadOnly = true;
+            this.dgvlaisuat.RowHeadersVisible = false;
+            this.dgvlaisuat.RowHeadersWidth = 51;
+            this.dgvlaisuat.RowTemplate.Height = 24;
+            this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvlaisuat.Size = new System.Drawing.Size(968, 99);
+            this.dgvlaisuat.TabIndex = 35;
             // 
             // frmLichSuTraNo
             // 
@@ -393,6 +415,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,5 +446,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView dgvlaisuat;
     }
 }
