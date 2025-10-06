@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -112,6 +118,18 @@
     <Compile Include="frmViPham.Designer.cs">
       <DependentUpon>frmViPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_BienLaiReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BienLaiReport.Designer.cs">
+      <DependentUpon>Frm_BienLaiReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ChuyenKhoanReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ChuyenKhoanReport.Designer.cs">
+      <DependentUpon>Frm_ChuyenKhoanReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_GiaoDich.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,11 +166,59 @@
     <Compile Include="Frm_MainUser.Designer.cs">
       <DependentUpon>Frm_MainUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_NhanVienRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NhanVienRP.Designer.cs">
+      <DependentUpon>frm_NhanVienRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_PhieuLuongRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_PhieuLuongRP.Designer.cs">
+      <DependentUpon>frm_PhieuLuongRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_PhieuVayReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PhieuVayReport.Designer.cs">
+      <DependentUpon>Frm_PhieuVayReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Report_GiaoDich.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Report_GiaoDich.Designer.cs">
+      <DependentUpon>Frm_Report_GiaoDich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Report_HopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Report_HopDong.Designer.cs">
+      <DependentUpon>Frm_Report_HopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Report_TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Report_TaiKhoan.Designer.cs">
+      <DependentUpon>Frm_Report_TaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_TaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_TaiKhoan.Designer.cs">
       <DependentUpon>Frm_TaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TraNoReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TraNoReport.Designer.cs">
+      <DependentUpon>Frm_TraNoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ViPhamRP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ViPhamRP.Designer.cs">
+      <DependentUpon>frm_ViPhamRP.cs</DependentUpon>
     </Compile>
     <Compile Include="KhoanVay.cs">
       <SubType>Form</SubType>
@@ -171,6 +237,72 @@
     </Compile>
     <Compile Include="LaiSuat.Designer.cs">
       <DependentUpon>LaiSuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Report_ChuyenKhoan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_ChuyenKhoan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_BienLai.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_BienLai.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_DanhSachNhanVien1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_DanhSachNhanVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_GiaoDich.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_GiaoDich.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_HopDong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_HopDong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_NhanVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_NhanVien.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_PhieuLuong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_PhieuLuong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_TaiKhoan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_TaiKhoan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_TraNo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_TraNo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_PhieuVay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_PhieuVay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_ViPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_ViPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TraNo.cs">
       <SubType>Form</SubType>
@@ -222,6 +354,12 @@
     <EmbeddedResource Include="frmViPham.resx">
       <DependentUpon>frmViPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BienLaiReport.resx">
+      <DependentUpon>Frm_BienLaiReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ChuyenKhoanReport.resx">
+      <DependentUpon>Frm_ChuyenKhoanReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_GiaoDich.resx">
       <DependentUpon>Frm_GiaoDich.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,8 +378,32 @@
     <EmbeddedResource Include="Frm_MainUser.resx">
       <DependentUpon>Frm_MainUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_NhanVienRP.resx">
+      <DependentUpon>frm_NhanVienRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_PhieuLuongRP.resx">
+      <DependentUpon>frm_PhieuLuongRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PhieuVayReport.resx">
+      <DependentUpon>Frm_PhieuVayReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Report_GiaoDich.resx">
+      <DependentUpon>Frm_Report_GiaoDich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Report_HopDong.resx">
+      <DependentUpon>Frm_Report_HopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Report_TaiKhoan.resx">
+      <DependentUpon>Frm_Report_TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_TaiKhoan.resx">
       <DependentUpon>Frm_TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TraNoReport.resx">
+      <DependentUpon>Frm_TraNoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ViPhamRP.resx">
+      <DependentUpon>frm_ViPhamRP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhoanVay.resx">
       <DependentUpon>KhoanVay.cs</DependentUpon>
@@ -251,6 +413,50 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LaiSuat.resx">
       <DependentUpon>LaiSuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_DanhSachNhanVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_DanhSachNhanVien1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_ChuyenKhoan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_ChuyenKhoan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_BienLai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_BienLai.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_GiaoDich.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_GiaoDich.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_HopDong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_HopDong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_NhanVien.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_NhanVien.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_PhieuLuong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_PhieuLuong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_TaiKhoan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_TaiKhoan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_TraNo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_TraNo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_PhieuVay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_PhieuVay.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_ViPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_ViPham.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TraNo.resx">
       <DependentUpon>TraNo.cs</DependentUpon>
@@ -292,6 +498,9 @@
       <Project>{98708769-869e-4c14-9ac0-7539f745f238}</Project>
       <Name>ET</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
