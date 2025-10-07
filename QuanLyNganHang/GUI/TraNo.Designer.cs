@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLichSuTraNo));
-            this.txtTim = new System.Windows.Forms.TextBox();
-            this.lbTim = new System.Windows.Forms.Label();
             this.dgvLichSu = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,6 +39,8 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.txtMaLichSu = new System.Windows.Forms.TextBox();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.dgvlaisuat = new System.Windows.Forms.DataGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
             this.txtTienTra = new System.Windows.Forms.TextBox();
@@ -53,40 +53,15 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dgvlaisuat = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).BeginInit();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtTim
-            // 
-            this.txtTim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(346, 316);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(363, 30);
-            this.txtTim.TabIndex = 41;
-            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
-            // 
-            // lbTim
-            // 
-            this.lbTim.AutoSize = true;
-            this.lbTim.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTim.Location = new System.Drawing.Point(54, 316);
-            this.lbTim.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTim.Name = "lbTim";
-            this.lbTim.Size = new System.Drawing.Size(254, 33);
-            this.lbTim.TabIndex = 40;
-            this.lbTim.Text = "Lịch Sử Khách Hàng:";
             // 
             // dgvLichSu
             // 
@@ -218,6 +193,36 @@
             this.pnlMain.Size = new System.Drawing.Size(617, 224);
             this.pnlMain.TabIndex = 38;
             // 
+            // dgvlaisuat
+            // 
+            this.dgvlaisuat.AllowDrop = true;
+            this.dgvlaisuat.AllowUserToResizeColumns = false;
+            this.dgvlaisuat.AllowUserToResizeRows = false;
+            this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
+            this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlaisuat.Location = new System.Drawing.Point(23, 122);
+            this.dgvlaisuat.MultiSelect = false;
+            this.dgvlaisuat.Name = "dgvlaisuat";
+            this.dgvlaisuat.ReadOnly = true;
+            this.dgvlaisuat.RowHeadersVisible = false;
+            this.dgvlaisuat.RowHeadersWidth = 51;
+            this.dgvlaisuat.RowTemplate.Height = 24;
+            this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvlaisuat.Size = new System.Drawing.Size(968, 99);
+            this.dgvlaisuat.TabIndex = 35;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(221, 85);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(325, 30);
+            this.textBox2.TabIndex = 21;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -345,7 +350,7 @@
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.dgvLichSu);
-            this.panel3.Location = new System.Drawing.Point(15, 370);
+            this.panel3.Location = new System.Drawing.Point(15, 312);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1240, 206);
             this.panel3.TabIndex = 46;
@@ -361,36 +366,6 @@
             this.panel4.Size = new System.Drawing.Size(1270, 67);
             this.panel4.TabIndex = 47;
             // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(221, 85);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 30);
-            this.textBox2.TabIndex = 21;
-            // 
-            // dgvlaisuat
-            // 
-            this.dgvlaisuat.AllowDrop = true;
-            this.dgvlaisuat.AllowUserToResizeColumns = false;
-            this.dgvlaisuat.AllowUserToResizeRows = false;
-            this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
-            this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlaisuat.Location = new System.Drawing.Point(23, 122);
-            this.dgvlaisuat.MultiSelect = false;
-            this.dgvlaisuat.Name = "dgvlaisuat";
-            this.dgvlaisuat.ReadOnly = true;
-            this.dgvlaisuat.RowHeadersVisible = false;
-            this.dgvlaisuat.RowHeadersWidth = 51;
-            this.dgvlaisuat.RowTemplate.Height = 24;
-            this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlaisuat.Size = new System.Drawing.Size(968, 99);
-            this.dgvlaisuat.TabIndex = 35;
-            // 
             // frmLichSuTraNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -400,8 +375,6 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.txtTim);
-            this.Controls.Add(this.lbTim);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLichSuTraNo";
             this.Text = "Quản Lý Lịch Sử Trả Nợ:";
@@ -409,21 +382,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtTim;
-        private System.Windows.Forms.Label lbTim;
         private System.Windows.Forms.DataGridView dgvLichSu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

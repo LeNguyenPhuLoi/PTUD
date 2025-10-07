@@ -33,8 +33,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtTim = new System.Windows.Forms.TextBox();
-            this.lbTim = new System.Windows.Forms.Label();
             this.dgvApDungKhuyenMai = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -127,27 +125,6 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtTim
-            // 
-            this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(239, 375);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(426, 30);
-            this.txtTim.TabIndex = 28;
-            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
-            // 
-            // lbTim
-            // 
-            this.lbTim.AutoSize = true;
-            this.lbTim.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTim.Location = new System.Drawing.Point(31, 371);
-            this.lbTim.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTim.Name = "lbTim";
-            this.lbTim.Size = new System.Drawing.Size(200, 33);
-            this.lbTim.TabIndex = 27;
-            this.lbTim.Text = "Tìm khách hàng:";
-            // 
             // dgvApDungKhuyenMai
             // 
             this.dgvApDungKhuyenMai.AllowUserToResizeColumns = false;
@@ -188,7 +165,7 @@
             this.panel4.AutoScroll = true;
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.dgvApDungKhuyenMai);
-            this.panel4.Location = new System.Drawing.Point(32, 427);
+            this.panel4.Location = new System.Drawing.Point(28, 371);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(859, 240);
             this.panel4.TabIndex = 50;
@@ -340,8 +317,6 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.txtTim);
-            this.Controls.Add(this.lbTim);
             this.Controls.Add(this.panel5);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmApDungKhuyenMai";
@@ -354,7 +329,6 @@
             this.pnlMain.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -364,8 +338,6 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtTim;
-        private System.Windows.Forms.Label lbTim;
         private System.Windows.Forms.DataGridView dgvApDungKhuyenMai;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;

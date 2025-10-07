@@ -35,8 +35,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnHoanTac = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtTim = new System.Windows.Forms.TextBox();
-            this.lbTim = new System.Windows.Forms.Label();
             this.dgvChuyenKhoan = new System.Windows.Forms.DataGridView();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -153,27 +151,6 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // txtTim
-            // 
-            this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(291, 354);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(477, 30);
-            this.txtTim.TabIndex = 34;
-            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
-            // 
-            // lbTim
-            // 
-            this.lbTim.AutoSize = true;
-            this.lbTim.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTim.Location = new System.Drawing.Point(43, 354);
-            this.lbTim.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTim.Name = "lbTim";
-            this.lbTim.Size = new System.Drawing.Size(240, 33);
-            this.lbTim.TabIndex = 33;
-            this.lbTim.Text = "Tìm Chuyển Khoản:";
             // 
             // dgvChuyenKhoan
             // 
@@ -443,7 +420,7 @@
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.dgvChuyenKhoan);
-            this.panel3.Location = new System.Drawing.Point(12, 405);
+            this.panel3.Location = new System.Drawing.Point(12, 354);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1229, 284);
@@ -475,8 +452,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnInDS);
-            this.Controls.Add(this.txtTim);
-            this.Controls.Add(this.lbTim);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmChuyenKhoan";
@@ -492,7 +467,6 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -503,8 +477,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtTim;
-        private System.Windows.Forms.Label lbTim;
         private System.Windows.Forms.DataGridView dgvChuyenKhoan;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Panel panel2;
