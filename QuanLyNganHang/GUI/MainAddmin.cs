@@ -268,5 +268,11 @@ namespace GUI
             frm_PhieuLuongRP frm = new frm_PhieuLuongRP();
             OpenMain(frm);
         }
+
+        private void loạiGiaoDịchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_LoaiGiaoDich frm = new Frm_LoaiGiaoDich();
+            OpenMain(frm);
+        }
     }
 }

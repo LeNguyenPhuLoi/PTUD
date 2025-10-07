@@ -10,3 +10,9 @@ D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\ET\obj\Debug\ET.csproj.AssemblyReference.cac
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\ET\obj\Debug\ET.csproj.CoreCompileInputs.cache
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\ET\obj\Debug\ET.dll
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\ET\obj\Debug\ET.pdb
+E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\ET\bin\Debug\ET.dll
+E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\ET\bin\Debug\ET.pdb
+E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\ET\obj\Debug\ET.csproj.AssemblyReference.cache
+E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\ET\obj\Debug\ET.csproj.CoreCompileInputs.cache
+E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\ET\obj\Debug\ET.dll
+E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\ET\obj\Debug\ET.pdb
