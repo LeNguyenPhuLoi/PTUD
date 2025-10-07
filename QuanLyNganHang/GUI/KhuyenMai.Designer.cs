@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhuyenMai));
-            this.txtTim = new System.Windows.Forms.TextBox();
-            this.lbTim = new System.Windows.Forms.Label();
             this.dgvKhuyenMai = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaKM = new System.Windows.Forms.TextBox();
@@ -58,29 +56,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtTim
-            // 
-            this.txtTim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(269, 344);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(409, 30);
-            this.txtTim.TabIndex = 23;
-            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
-            // 
-            // lbTim
-            // 
-            this.lbTim.AutoSize = true;
-            this.lbTim.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTim.Location = new System.Drawing.Point(39, 341);
-            this.lbTim.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTim.Name = "lbTim";
-            this.lbTim.Size = new System.Drawing.Size(202, 33);
-            this.lbTim.TabIndex = 22;
-            this.lbTim.Text = "Tìm khuyến mãi:";
-            // 
             // dgvKhuyenMai
             // 
             this.dgvKhuyenMai.AllowUserToResizeColumns = false;
@@ -91,7 +66,7 @@
             this.dgvKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhuyenMai.BackgroundColor = System.Drawing.Color.White;
             this.dgvKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhuyenMai.Location = new System.Drawing.Point(26, 390);
+            this.dgvKhuyenMai.Location = new System.Drawing.Point(23, 351);
             this.dgvKhuyenMai.Name = "dgvKhuyenMai";
             this.dgvKhuyenMai.RowHeadersVisible = false;
             this.dgvKhuyenMai.RowHeadersWidth = 62;
@@ -377,8 +352,6 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.txtTim);
-            this.Controls.Add(this.lbTim);
             this.Controls.Add(this.dgvKhuyenMai);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmKhuyenMai";
@@ -391,13 +364,10 @@
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtTim;
-        private System.Windows.Forms.Label lbTim;
         private System.Windows.Forms.DataGridView dgvKhuyenMai;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaKM;
