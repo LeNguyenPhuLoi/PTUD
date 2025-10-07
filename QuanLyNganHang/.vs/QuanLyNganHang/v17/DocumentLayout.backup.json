@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-1\\7-10-2025\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\bienlai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\bienlai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-1\\7-10-2025\\ptud\\quanlynganhang\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,16 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BienLai.cs [Design]",
-              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\BienLai.cs",
-              "RelativeDocumentMoniker": "GUI\\BienLai.cs",
-              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\BienLai.cs [Design]",
-              "RelativeToolTip": "GUI\\BienLai.cs [Design]",
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-1\\7-10-2025\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-1\\7-10-2025\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
+              "RelativeToolTip": "GUI\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwBwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T11:02:18.59Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-07T14:07:53.899Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             }
           ]
         }

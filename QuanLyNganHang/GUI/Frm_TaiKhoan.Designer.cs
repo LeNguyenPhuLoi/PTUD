@@ -33,18 +33,19 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvChuyenKhoan = new System.Windows.Forms.DataGridView();
-            this.txtTim = new System.Windows.Forms.TextBox();
-            this.lbTim = new System.Windows.Forms.Label();
+            this.panel_TaiKhoan = new System.Windows.Forms.Panel();
+            this.dgv_TaiKhoan = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.dtpNgayChuyen = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMaCK = new System.Windows.Forms.TextBox();
@@ -54,20 +55,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btn_Lammoi = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel_KhachHang = new System.Windows.Forms.Panel();
+            this.dgv_KhachHang = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenKhoan)).BeginInit();
+            this.panel_TaiKhoan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel_KhachHang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel4.Controls.Add(this.btn_Lammoi);
             this.panel4.Controls.Add(this.btnThoat);
             this.panel4.Controls.Add(this.btnThem);
             this.panel4.Controls.Add(this.btnSua);
@@ -151,57 +156,37 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // panel_TaiKhoan
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel_TaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoScroll = true;
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.dgvChuyenKhoan);
-            this.panel3.Location = new System.Drawing.Point(9, 310);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(942, 231);
-            this.panel3.TabIndex = 63;
+            this.panel_TaiKhoan.AutoScroll = true;
+            this.panel_TaiKhoan.BackColor = System.Drawing.Color.White;
+            this.panel_TaiKhoan.Controls.Add(this.dgv_TaiKhoan);
+            this.panel_TaiKhoan.Location = new System.Drawing.Point(9, 280);
+            this.panel_TaiKhoan.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_TaiKhoan.Name = "panel_TaiKhoan";
+            this.panel_TaiKhoan.Size = new System.Drawing.Size(942, 257);
+            this.panel_TaiKhoan.TabIndex = 63;
             // 
-            // dgvChuyenKhoan
+            // dgv_TaiKhoan
             // 
-            this.dgvChuyenKhoan.AllowUserToResizeColumns = false;
-            this.dgvChuyenKhoan.AllowUserToResizeRows = false;
-            this.dgvChuyenKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvChuyenKhoan.BackgroundColor = System.Drawing.Color.White;
-            this.dgvChuyenKhoan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvChuyenKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChuyenKhoan.Location = new System.Drawing.Point(2, 17);
-            this.dgvChuyenKhoan.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvChuyenKhoan.MultiSelect = false;
-            this.dgvChuyenKhoan.Name = "dgvChuyenKhoan";
-            this.dgvChuyenKhoan.ReadOnly = true;
-            this.dgvChuyenKhoan.RowHeadersWidth = 62;
-            this.dgvChuyenKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChuyenKhoan.Size = new System.Drawing.Size(1481, 195);
-            this.dgvChuyenKhoan.TabIndex = 32;
-            // 
-            // txtTim
-            // 
-            this.txtTim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(197, 279);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(359, 26);
-            this.txtTim.TabIndex = 62;
-            // 
-            // lbTim
-            // 
-            this.lbTim.AutoSize = true;
-            this.lbTim.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTim.Location = new System.Drawing.Point(11, 279);
-            this.lbTim.Name = "lbTim";
-            this.lbTim.Size = new System.Drawing.Size(152, 25);
-            this.lbTim.TabIndex = 61;
-            this.lbTim.Text = "Tìm Tài Khoản:";
+            this.dgv_TaiKhoan.AllowUserToResizeColumns = false;
+            this.dgv_TaiKhoan.AllowUserToResizeRows = false;
+            this.dgv_TaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_TaiKhoan.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgv_TaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_TaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_TaiKhoan.Location = new System.Drawing.Point(-268, -25);
+            this.dgv_TaiKhoan.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_TaiKhoan.MultiSelect = false;
+            this.dgv_TaiKhoan.Name = "dgv_TaiKhoan";
+            this.dgv_TaiKhoan.ReadOnly = true;
+            this.dgv_TaiKhoan.RowHeadersWidth = 62;
+            this.dgv_TaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_TaiKhoan.Size = new System.Drawing.Size(1481, 308);
+            this.dgv_TaiKhoan.TabIndex = 32;
             // 
             // tableLayoutPanel1
             // 
@@ -226,17 +211,35 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.Controls.Add(this.comboBox4);
+            this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Controls.Add(this.dtpNgayChuyen);
+            this.panel2.Controls.Add(this.textBox5);
             this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(473, 2);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(467, 216);
             this.panel2.TabIndex = 25;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(181, 156);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(263, 27);
+            this.comboBox4.TabIndex = 29;
             // 
             // dtpNgayChuyen
             // 
@@ -245,11 +248,11 @@
             this.dtpNgayChuyen.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayChuyen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayChuyen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayChuyen.Location = new System.Drawing.Point(181, 92);
+            this.dtpNgayChuyen.Location = new System.Drawing.Point(181, 123);
             this.dtpNgayChuyen.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayChuyen.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
             this.dtpNgayChuyen.Name = "dtpNgayChuyen";
-            this.dtpNgayChuyen.Size = new System.Drawing.Size(226, 26);
+            this.dtpNgayChuyen.Size = new System.Drawing.Size(263, 26);
             this.dtpNgayChuyen.TabIndex = 13;
             this.dtpNgayChuyen.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
             // 
@@ -260,10 +263,10 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(181, 56);
+            this.comboBox1.Location = new System.Drawing.Point(180, 92);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(227, 27);
+            this.comboBox1.Size = new System.Drawing.Size(264, 27);
             this.comboBox1.TabIndex = 28;
             // 
             // label10
@@ -272,7 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(33, 130);
+            this.label10.Location = new System.Drawing.Point(24, 158);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 25);
             this.label10.TabIndex = 25;
@@ -284,7 +287,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 92);
+            this.label4.Location = new System.Drawing.Point(24, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 25);
             this.label4.TabIndex = 22;
@@ -296,7 +299,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 54);
+            this.label1.Location = new System.Drawing.Point(24, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 25);
             this.label1.TabIndex = 0;
@@ -306,39 +309,59 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.panel_KhachHang);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtMaCK);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 216);
             this.panel1.TabIndex = 24;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(180, 29);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(264, 27);
+            this.comboBox3.TabIndex = 33;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(183, 180);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(262, 26);
+            this.textBox6.TabIndex = 32;
+            // 
             // textBox5
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(220, 169);
+            this.textBox5.Location = new System.Drawing.Point(181, 61);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(225, 26);
+            this.textBox5.Size = new System.Drawing.Size(263, 26);
             this.textBox5.TabIndex = 26;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(27, 167);
+            this.label9.Location = new System.Drawing.Point(24, 62);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 25);
             this.label9.TabIndex = 22;
@@ -349,16 +372,16 @@
             this.txtMaCK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaCK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaCK.Location = new System.Drawing.Point(220, 22);
+            this.txtMaCK.Location = new System.Drawing.Point(183, 12);
             this.txtMaCK.Name = "txtMaCK";
-            this.txtMaCK.Size = new System.Drawing.Size(226, 26);
+            this.txtMaCK.Size = new System.Drawing.Size(262, 26);
             this.txtMaCK.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(27, 130);
+            this.label6.Location = new System.Drawing.Point(24, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(149, 25);
             this.label6.TabIndex = 20;
@@ -376,17 +399,17 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 93);
+            this.label7.Location = new System.Drawing.Point(13, 177);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 25);
+            this.label7.Size = new System.Drawing.Size(139, 25);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Số Tài Khoản";
+            this.label7.Text = "Số Tài Khoản:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 57);
+            this.label3.Location = new System.Drawing.Point(13, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 25);
             this.label3.TabIndex = 0;
@@ -396,7 +419,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 20);
+            this.label2.Location = new System.Drawing.Point(13, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 25);
             this.label2.TabIndex = 0;
@@ -405,64 +428,74 @@
             // label8
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(964, 41);
             this.label8.TabIndex = 59;
-            this.label8.Text = "Quản Trị Tài Khoản";
+            this.label8.Text = "Quản Lý Tài Khoản";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox2
+            // btn_Lammoi
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btn_Lammoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Lammoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Lammoi.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_Lammoi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_Lammoi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_Lammoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Lammoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Lammoi.ForeColor = System.Drawing.Color.Gold;
+            this.btn_Lammoi.Location = new System.Drawing.Point(343, 24);
+            this.btn_Lammoi.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Lammoi.Name = "btn_Lammoi";
+            this.btn_Lammoi.Size = new System.Drawing.Size(84, 40);
+            this.btn_Lammoi.TabIndex = 38;
+            this.btn_Lammoi.Text = "Làm Mới";
+            this.btn_Lammoi.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(218, 55);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(227, 27);
-            this.comboBox2.TabIndex = 31;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(183, 44);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(262, 26);
+            this.textBox1.TabIndex = 34;
             // 
-            // textBox6
+            // panel_KhachHang
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel_KhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(218, 95);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(226, 26);
-            this.textBox6.TabIndex = 32;
+            this.panel_KhachHang.AutoScroll = true;
+            this.panel_KhachHang.Controls.Add(this.dgv_KhachHang);
+            this.panel_KhachHang.Location = new System.Drawing.Point(18, 75);
+            this.panel_KhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.panel_KhachHang.Name = "panel_KhachHang";
+            this.panel_KhachHang.Size = new System.Drawing.Size(427, 94);
+            this.panel_KhachHang.TabIndex = 60;
             // 
-            // comboBox3
+            // dgv_KhachHang
             // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(217, 133);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(227, 27);
-            this.comboBox3.TabIndex = 33;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(181, 130);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(227, 27);
-            this.comboBox4.TabIndex = 29;
+            this.dgv_KhachHang.AllowDrop = true;
+            this.dgv_KhachHang.AllowUserToResizeColumns = false;
+            this.dgv_KhachHang.AllowUserToResizeRows = false;
+            this.dgv_KhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_KhachHang.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_KhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_KhachHang.Location = new System.Drawing.Point(2, 0);
+            this.dgv_KhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_KhachHang.MultiSelect = false;
+            this.dgv_KhachHang.Name = "dgv_KhachHang";
+            this.dgv_KhachHang.ReadOnly = true;
+            this.dgv_KhachHang.RowHeadersVisible = false;
+            this.dgv_KhachHang.RowHeadersWidth = 51;
+            this.dgv_KhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_KhachHang.Size = new System.Drawing.Size(730, 100);
+            this.dgv_KhachHang.TabIndex = 17;
             // 
             // Frm_TaiKhoan
             // 
@@ -470,23 +503,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 622);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.txtTim);
-            this.Controls.Add(this.lbTim);
+            this.Controls.Add(this.panel_TaiKhoan);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label8);
             this.Name = "Frm_TaiKhoan";
-            this.Text = "Frm_TaiKhoan";
+            this.Text = "Quản Lý Tài Khoản";
+            this.Load += new System.EventHandler(this.Frm_TaiKhoan_Load);
+            this.Resize += new System.EventHandler(this.Frm_TaiKhoan_Resize);
             this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenKhoan)).EndInit();
+            this.panel_TaiKhoan.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TaiKhoan)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel_KhachHang.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -497,10 +531,8 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvChuyenKhoan;
-        private System.Windows.Forms.TextBox txtTim;
-        private System.Windows.Forms.Label lbTim;
+        private System.Windows.Forms.Panel panel_TaiKhoan;
+        private System.Windows.Forms.DataGridView dgv_TaiKhoan;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DateTimePicker dtpNgayChuyen;
@@ -510,7 +542,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMaCK;
@@ -522,5 +553,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button btn_Lammoi;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel_KhachHang;
+        private System.Windows.Forms.DataGridView dgv_KhachHang;
     }
 }
