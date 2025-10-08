@@ -43,3 +43,12 @@ E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Cor
 E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
 E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
 E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.dll
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.pdb
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\ET.dll
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\ET.pdb
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
+E:\Hoc kì 5\PTỨD-1\8-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb
