@@ -268,12 +268,6 @@
       <DependentUpon>Report_BienLai.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\Report_DanhSachNhanVien1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Report_DanhSachNhanVien.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reports\Report_GiaoDich.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -440,10 +434,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LaiSuat.resx">
       <DependentUpon>LaiSuat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report_DanhSachNhanVien.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_DanhSachNhanVien1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report_ChuyenKhoan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

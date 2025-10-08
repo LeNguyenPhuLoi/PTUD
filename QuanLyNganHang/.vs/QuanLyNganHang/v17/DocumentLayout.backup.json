@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-1\\7-10-2025\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-1\\7-10-2025\\ptud\\quanlynganhang\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\mainaddmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\mainaddmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\mainaddmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\mainaddmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +23,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-1\\7-10-2025\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-1\\7-10-2025\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
-              "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwBwAAAAaAAAAAAAAAA==",
+              "Title": "MainAddmin.cs [Design]",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\MainAddmin.cs",
+              "RelativeDocumentMoniker": "GUI\\MainAddmin.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\MainAddmin.cs [Design]*",
+              "RelativeToolTip": "GUI\\MainAddmin.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T14:07:53.899Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-10-08T01:53:43.144Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainAddmin.cs",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\MainAddmin.cs",
+              "RelativeDocumentMoniker": "GUI\\MainAddmin.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\MainAddmin.cs*",
+              "RelativeToolTip": "GUI\\MainAddmin.cs*",
+              "ViewState": "AgIAABEBAAAAAAAAAIA0wB8BAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T01:49:08.519Z",
               "EditorCaption": ""
             }
           ]
