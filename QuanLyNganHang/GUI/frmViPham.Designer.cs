@@ -61,8 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvChuyenKhoan = new System.Windows.Forms.DataGridView();
-            this.txtTim = new System.Windows.Forms.TextBox();
-            this.lbTim = new System.Windows.Forms.Label();
             this.btnInDS = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -503,10 +501,10 @@
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.dgvChuyenKhoan);
-            this.panel3.Location = new System.Drawing.Point(12, 572);
+            this.panel3.Location = new System.Drawing.Point(15, 515);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1253, 238);
+            this.panel3.Size = new System.Drawing.Size(1253, 245);
             this.panel3.TabIndex = 53;
             // 
             // dgvChuyenKhoan
@@ -526,30 +524,8 @@
             this.dgvChuyenKhoan.ReadOnly = true;
             this.dgvChuyenKhoan.RowHeadersWidth = 62;
             this.dgvChuyenKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChuyenKhoan.Size = new System.Drawing.Size(2000, 190);
+            this.dgvChuyenKhoan.Size = new System.Drawing.Size(2000, 197);
             this.dgvChuyenKhoan.TabIndex = 32;
-            // 
-            // txtTim
-            // 
-            this.txtTim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(240, 522);
-            this.txtTim.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(477, 30);
-            this.txtTim.TabIndex = 49;
-            // 
-            // lbTim
-            // 
-            this.lbTim.AutoSize = true;
-            this.lbTim.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTim.Location = new System.Drawing.Point(43, 522);
-            this.lbTim.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTim.Name = "lbTim";
-            this.lbTim.Size = new System.Drawing.Size(168, 33);
-            this.lbTim.TabIndex = 48;
-            this.lbTim.Text = "Tìm Vi Phạm:";
             // 
             // btnInDS
             // 
@@ -570,8 +546,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.txtTim);
-            this.Controls.Add(this.lbTim);
             this.Controls.Add(this.btnInDS);
             this.Controls.Add(this.panel4);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -591,7 +565,6 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenKhoan)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -621,8 +594,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvChuyenKhoan;
-        private System.Windows.Forms.TextBox txtTim;
-        private System.Windows.Forms.Label lbTim;
         private System.Windows.Forms.Button btnInDS;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvLaiSuat;

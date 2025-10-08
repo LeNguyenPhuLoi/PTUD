@@ -177,6 +177,13 @@ namespace GUI
                 this.WindowState = FormWindowState.Maximized;
             else
                 this.WindowState = FormWindowState.Normal;
+
+            // Tự căn giữa màn hình
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
+                this.Top = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
+            }
         }
 
         private void btnZoom_Click(object sender, EventArgs e)
@@ -188,24 +195,6 @@ namespace GUI
         {
 
         }
-
-        private void báoCáoPhòngBanToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void báoCáoNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_NhanVienRP frm = new frm_NhanVienRP();
-            OpenMain(frm);
-        }
-
-        private void báoCáoViPhạmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frm_ViPhamRP frm = new frm_ViPhamRP();
-            OpenMain(frm);
-        }
-
 
         private void báoCáoTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -263,15 +252,40 @@ namespace GUI
             OpenMain(frm);
         }
 
-        private void phiếuLươngToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void loạiGiaoDịchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_LoaiGiaoDich frm = new Frm_LoaiGiaoDich();
+            OpenMain(frm);
+        }
+
+        private void báocáoviphạmtoolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frm_ViPhamRP frm = new frm_ViPhamRP();
+            OpenMain(frm);
+        }
+
+        private void báocáophiếulươngtoolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_PhieuLuongRP frm = new frm_PhieuLuongRP();
             OpenMain(frm);
         }
 
-        private void loạiGiaoDịchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void báocáonhânviêntoolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Frm_LoaiGiaoDich frm = new Frm_LoaiGiaoDich();
+            frm_NhanVienRP frm = new frm_NhanVienRP();
+            OpenMain(frm);
+        }
+
+        private void loạiHợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_LoaiHopDong frm = new Frm_LoaiHopDong();
+            OpenMain(frm);
+        }
+
+        private void loạiHỗTrợToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_LoaiHoTro frm = new Frm_LoaiHoTro();
             OpenMain(frm);
         }
     }

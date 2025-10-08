@@ -204,3 +204,6 @@ E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.pdb
 E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiGiaoDich.resources
 E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiHopDong.resources
 E:\Hoc kì 5\PTỨD-1\7-10-2025\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiHoTro.resources
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiGiaoDich.resources
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiHopDong.resources
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiHoTro.resources
