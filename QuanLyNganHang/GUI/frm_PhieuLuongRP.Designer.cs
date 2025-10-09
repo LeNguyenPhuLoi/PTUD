@@ -29,11 +29,15 @@
         private void InitializeComponent()
         {
             this.crvLishSuTraNo = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.Report_PhieuLuong1 = new GUI.Reports.Report_PhieuLuong();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaVay = new System.Windows.Forms.TextBox();
-            this.Report_PhieuLuong1 = new GUI.Reports.Report_PhieuLuong();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // crvLishSuTraNo
@@ -61,7 +65,7 @@
             this.btnNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(828, 35);
+            this.btnNew.Location = new System.Drawing.Point(718, 35);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(127, 40);
             this.btnNew.TabIndex = 42;
@@ -78,7 +82,7 @@
             this.btnTim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(719, 35);
+            this.btnTim.Location = new System.Drawing.Point(609, 35);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(95, 40);
             this.btnTim.TabIndex = 41;
@@ -106,14 +110,58 @@
             this.txtMaVay.Location = new System.Drawing.Point(231, 41);
             this.txtMaVay.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaVay.Name = "txtMaVay";
-            this.txtMaVay.Size = new System.Drawing.Size(465, 30);
+            this.txtMaVay.Size = new System.Drawing.Size(335, 30);
             this.txtMaVay.TabIndex = 39;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(908, 55);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 44;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(1035, 56);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 24);
+            this.comboBox2.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AllowDrop = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(925, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 33);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Tháng";
+            // 
+            // label3
+            // 
+            this.label3.AllowDrop = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1057, 19);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 33);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Năm";
             // 
             // frm_PhieuLuongRP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 588);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.crvLishSuTraNo);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnTim);
@@ -134,5 +182,9 @@
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaVay;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
