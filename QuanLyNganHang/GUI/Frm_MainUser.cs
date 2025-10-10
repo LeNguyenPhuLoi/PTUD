@@ -265,7 +265,8 @@ namespace GUI
         private void btnINBL_Click(object sender, EventArgs e)
         {
             HighlightButton(btnINBL);
-          
+            Frm_BienLaiReport frm = new Frm_BienLaiReport();
+            OpenMain(frm);
         }
 
         private void btnPhieuVay_Click(object sender, EventArgs e)
@@ -315,21 +316,21 @@ namespace GUI
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            HighlightButton(btnCSKH);
+            HighlightButton(btnTaiKhoan);
             Frm_Report_TaiKhoan frm = new Frm_Report_TaiKhoan();
             OpenMain(frm);
         }
 
         private void btnChuyenKhoan_Click(object sender, EventArgs e)
         {
-            HighlightButton(btnCSKH);
+            HighlightButton(btnChuyenKhoan);
             Frm_ChuyenKhoanReport frm = new Frm_ChuyenKhoanReport();
             OpenMain(frm);
         }
 
         private void btnHopDong_Click(object sender, EventArgs e)
         {
-            HighlightButton(btnCSKH);
+            HighlightButton(btnHopDong);
             Frm_Report_HopDong frm = new Frm_Report_HopDong();
             OpenMain(frm);
         }

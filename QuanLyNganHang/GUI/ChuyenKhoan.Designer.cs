@@ -129,7 +129,7 @@
             this.btnHoanTac.Name = "btnHoanTac";
             this.btnHoanTac.Size = new System.Drawing.Size(112, 49);
             this.btnHoanTac.TabIndex = 12;
-            this.btnHoanTac.Text = "Hoàn tác";
+            this.btnHoanTac.Text = "Làm mới";
             this.btnHoanTac.UseVisualStyleBackColor = false;
             this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
             // 
