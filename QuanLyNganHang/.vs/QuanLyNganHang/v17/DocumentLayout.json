@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\apdungkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\apdungkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|d:\\ptud\\quanlynganhang\\dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApDungKhuyenMai.cs [Design]",
-              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ApDungKhuyenMai.cs",
-              "RelativeDocumentMoniker": "GUI\\ApDungKhuyenMai.cs",
-              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ApDungKhuyenMai.cs [Design]",
-              "RelativeToolTip": "GUI\\ApDungKhuyenMai.cs [Design]",
+              "Title": "AutoConnection.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
+              "RelativeDocumentMoniker": "DAL\\AutoConnection.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
+              "RelativeToolTip": "DAL\\AutoConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-10T00:40:39.503Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-10-15T11:43:40.872Z",
+              "EditorCaption": ""
             }
           ]
         }
