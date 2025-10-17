@@ -9,53 +9,46 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class AutoConnection
+    public class AutoConnect
     {
         private readonly string connectionString;
 
-        public AutoConnection()
+        public AutoConnect()
         {
             string host = Dns.GetHostName();
 
-            // 🔹 Lấy tất cả instance SQL có sẵn trên máy
-            var table = SqlDataSourceEnumerator.Instance.GetDataSources();
-            var instanceOptions = table.Rows
-                .Cast<System.Data.DataRow>()
-                .Where(row => row["ServerName"].ToString().Equals(host, StringComparison.OrdinalIgnoreCase))
-                .Select(row =>
-                {
-                    string instanceName = row["InstanceName"].ToString();
-                    return string.IsNullOrEmpty(instanceName) ? host : $"{host}\\{instanceName}";
-                })
-                .ToList();
-
-            // 🔹 Nếu không quét được instance nào, thêm các tên phổ biến
-            if (instanceOptions.Count == 0)
+            //xử lý lấy instanceName trong sql server
+            Microsoft.Win32.RegistryView registryView = Environment.Is64BitOperatingSystem ? Microsoft.Win32.RegistryView.Registry64 : Microsoft.Win32.RegistryView.Registry32;
+            using (Microsoft.Win32.RegistryKey hklm = Microsoft.Win32.RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, registryView))
             {
-                instanceOptions.AddRange(new[]
+                Microsoft.Win32.RegistryKey instanceKey = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL", false);
+                if (instanceKey != null)
                 {
-                host,
-                host + "\\SQLEXPRESS",
-                host + "\\SQLEXPRESS01",
-                host + "\\MSSQLSERVER"
-            });
-            }
+                    foreach (var instanceName in instanceKey.GetValueNames())
+                    {
+                        //ghép thành chuỗi Data Source name
+                        string fullconnName = host + "\\" + instanceName;
 
-            connectionString = instanceOptions
-                .Select(instance => $"Data Source={instance};Initial Catalog=QLNH;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;")
-                .FirstOrDefault(TestConnection);
+                        //chuỗi kết nối database
+                        connectionString = $"Data Source={fullconnName};Initial Catalog=QLNH;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;";
 
-            if (connectionString == null)
-            {
-                throw new Exception("Không thể kết nối đến SQL Server!");
+                        if (TestConnection(connectionString))
+                        {
+                            break;
+                        }
+
+                    }
+                }
             }
         }
 
+        //hàm trả về chuỗi kết nối
         public string GetConnection()
         {
             return connectionString;
         }
 
+        //hàm kiểm tra kết nối
         private bool TestConnection(string connStr)
         {
             try
