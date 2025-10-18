@@ -15,7 +15,10 @@ namespace DAL
 
         public AutoConnect()
         {
+            //lấy tên máy
             string host = Dns.GetHostName();
+            //danh sách các DataSource Name
+            var instanceOptions = new List<string> { ".", host };
 
             //xử lý lấy instanceName trong sql server
             Microsoft.Win32.RegistryView registryView = Environment.Is64BitOperatingSystem ? Microsoft.Win32.RegistryView.Registry64 : Microsoft.Win32.RegistryView.Registry32;
@@ -26,19 +29,14 @@ namespace DAL
                 {
                     foreach (var instanceName in instanceKey.GetValueNames())
                     {
-                        //ghép thành chuỗi Data Source name
-                        string fullconnName = host + "\\" + instanceName;
-
-                        //chuỗi kết nối database
-                        connectionString = $"Data Source={fullconnName};Initial Catalog=QLNH;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;";
-
-                        if (TestConnection(connectionString))
-                        {
-                            break;
-                        }
-
+                        //thêm DataSource Name vào danh sách
+                        instanceOptions.Add(host + "\\" + instanceName);
                     }
                 }
+                //kiểm tra chuỗi kết nối cơ sở dữ liệu
+                connectionString = instanceOptions
+                    .Select(instance => $"Data Source={instance};Initial Catalog=QLNH;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;")
+                    .FirstOrDefault(TestConnection);
             }
         }
 
