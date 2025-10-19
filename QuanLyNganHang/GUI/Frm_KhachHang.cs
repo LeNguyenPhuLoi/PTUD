@@ -52,8 +52,17 @@ namespace GUI
 
         private void HienThiDS()
         {
-            var ds = BUS_KhachHang.LayDSToanBoKhachHang();
-            dgv_KhachHang .DataSource = ds;
+
+            if (this.MdiParent.Name == "frmMainAddmin")
+            {
+                var ds = BUS_KhachHang.LayDSToanBoKhachHang();
+                dgv_KhachHang.DataSource = ds;
+            }
+            else
+            {
+                var ds = BUS_KhachHang.LayDSKhachHangConHoatDong();
+                dgv_KhachHang.DataSource = ds;
+            }
         }
 
         private string LayGioiTinh()
@@ -70,7 +79,7 @@ namespace GUI
 
         private void SetGioiTinh(string GioiTinh)
         {
-            if(GioiTinh == "Nam")
+            if (GioiTinh == "Nam")
             {
                 rdb_Nam.Checked = true;
             }
@@ -82,10 +91,20 @@ namespace GUI
 
         private void Frm_KhachHang_Load(object sender, EventArgs e)
         {
+
             dtp_NgayTao.MaxDate = DateTime.Now;
             cbo_DoiTuong.SelectedIndex = 0;
             Re_size();
             HienThiDS();
+            if (this.MdiParent.Name == "frmMainAddmin")
+            {
+                btn_An.Visible = true;
+                btn_HuyAn.Visible = true;
+            }
+            else
+            {
+                dgv_KhachHang.Columns["TinhTrangXoa"].Visible = false;
+            }
         }
 
         private void Frm_KhachHang_Resize(object sender, EventArgs e)
@@ -112,7 +131,8 @@ namespace GUI
                                                     txt_DiaChi.Text,
                                                     txt_QuocTich.Text,
                                                     cbo_DoiTuong.Text,
-                                                    dtp_NgayTao.Value);
+                                                    dtp_NgayTao.Value,
+                                                    false);
                 if (BUS_KhachHang.ThemKhachHang(kh) == true)
                 {
                     MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -123,7 +143,7 @@ namespace GUI
                     MessageBox.Show("Không thể thêm khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
@@ -143,7 +163,8 @@ namespace GUI
                                                     txt_DiaChi.Text,
                                                     txt_QuocTich.Text,
                                                     cbo_DoiTuong.Text,
-                                                    dtp_NgayTao.Value);
+                                                    dtp_NgayTao.Value,
+                                                    false);
                 if (BUS_KhachHang.SuaKhachHang(kh) == true)
                 {
                     MessageBox.Show("Sửa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -187,16 +208,33 @@ namespace GUI
                                                     txt_DiaChi.Text,
                                                     txt_QuocTich.Text,
                                                     cbo_DoiTuong.Text,
-                                                    dtp_NgayTao.Value);
-                    if (BUS_KhachHang.XoaKhachHang(kh) == true)
+                                                    dtp_NgayTao.Value,
+                                                    true);
+                    if (this.MdiParent.Name == "frmMainAddmin")
                     {
-                        MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Clear();
+                        if (BUS_KhachHang.XoaKhachHang(kh) == true)
+                        {
+                            MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể Xóa khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Không thể Xóa khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (BUS_KhachHang.AnKhachHang(kh) == true)
+                        {
+                            MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể Xóa khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
+
                 }
             }
             catch (Exception ex)
@@ -210,17 +248,20 @@ namespace GUI
         {
             try
             {
-                int dong = dgv_KhachHang.CurrentCell.RowIndex;
-                txt_MaKH.Text = dgv_KhachHang.Rows[dong].Cells[0].Value.ToString();
-                txt_TenKH.Text = dgv_KhachHang.Rows[dong].Cells[1].Value.ToString();
-                SetGioiTinh(dgv_KhachHang.Rows[dong].Cells[2].Value.ToString());
-                txt_Cccd.Text = dgv_KhachHang.Rows[dong].Cells[3].Value.ToString();
-                txt_SDT.Text = dgv_KhachHang.Rows[dong].Cells[4].Value.ToString();
-                txt_Email.Text = dgv_KhachHang.Rows[dong].Cells[5].Value.ToString();
-                txt_DiaChi.Text = dgv_KhachHang.Rows[dong].Cells[6].Value.ToString();
-                txt_QuocTich.Text = dgv_KhachHang.Rows[dong].Cells[7].Value.ToString();
-                cbo_DoiTuong.Text = dgv_KhachHang.Rows[dong].Cells[8].Value.ToString();
-                dtp_NgayTao.Text = dgv_KhachHang.Rows[dong].Cells[9].Value.ToString();
+                if (dgv_KhachHang.RowCount > 0)
+                {
+                    int dong = dgv_KhachHang.CurrentCell.RowIndex;
+                    txt_MaKH.Text = dgv_KhachHang.Rows[dong].Cells[0].Value.ToString();
+                    txt_TenKH.Text = dgv_KhachHang.Rows[dong].Cells[1].Value.ToString();
+                    SetGioiTinh(dgv_KhachHang.Rows[dong].Cells[2].Value.ToString());
+                    txt_Cccd.Text = dgv_KhachHang.Rows[dong].Cells[3].Value.ToString();
+                    txt_SDT.Text = dgv_KhachHang.Rows[dong].Cells[4].Value.ToString();
+                    txt_Email.Text = dgv_KhachHang.Rows[dong].Cells[5].Value.ToString();
+                    txt_DiaChi.Text = dgv_KhachHang.Rows[dong].Cells[6].Value.ToString();
+                    txt_QuocTich.Text = dgv_KhachHang.Rows[dong].Cells[7].Value.ToString();
+                    cbo_DoiTuong.Text = dgv_KhachHang.Rows[dong].Cells[8].Value.ToString();
+                    dtp_NgayTao.Text = dgv_KhachHang.Rows[dong].Cells[9].Value.ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -233,9 +274,9 @@ namespace GUI
         {
             bool flag = false;
             string pattern = @"^KH\d{3,8}$";
-            if (string.IsNullOrWhiteSpace(maKH)) 
+            if (string.IsNullOrWhiteSpace(maKH))
                 return flag;
-            if(Regex.IsMatch(maKH, pattern))
+            if (Regex.IsMatch(maKH, pattern))
                 flag = true;
             return flag;
         }
@@ -394,6 +435,70 @@ namespace GUI
             {
                 txt_QuocTich.BackColor = SystemColors.Window;
             }
+        }
+
+        private void btn_An_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ET_KhachHang kh = new ET_KhachHang(txt_MaKH.Text.Trim().ToUpper(),
+                                                txt_TenKH.Text,
+                                                LayGioiTinh(),
+                                                txt_Cccd.Text,
+                                                txt_SDT.Text,
+                                                txt_Email.Text,
+                                                txt_DiaChi.Text,
+                                                txt_QuocTich.Text,
+                                                cbo_DoiTuong.Text,
+                                                dtp_NgayTao.Value,
+                                                true);
+                if (BUS_KhachHang.AnKhachHang(kh) == true)
+                {
+                    MessageBox.Show("Ẩn khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể Ẩn khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+            HienThiDS();
+        }
+
+        private void btn_HuyAn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ET_KhachHang kh = new ET_KhachHang(txt_MaKH.Text.Trim().ToUpper(),
+                                                txt_TenKH.Text,
+                                                LayGioiTinh(),
+                                                txt_Cccd.Text,
+                                                txt_SDT.Text,
+                                                txt_Email.Text,
+                                                txt_DiaChi.Text,
+                                                txt_QuocTich.Text,
+                                                cbo_DoiTuong.Text,
+                                                dtp_NgayTao.Value,
+                                                false);
+                if (BUS_KhachHang.AnKhachHang(kh) == true)
+                {
+                    MessageBox.Show("Hủy Ẩn khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể Hủy Ẩn khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+            HienThiDS();
         }
     }
 }

@@ -63,6 +63,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.btn_An = new System.Windows.Forms.Button();
+            this.btn_HuyAn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -448,6 +450,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel4.Controls.Add(this.btn_HuyAn);
+            this.panel4.Controls.Add(this.btn_An);
             this.panel4.Controls.Add(this.btn_Lammoi);
             this.panel4.Controls.Add(this.btnThoat);
             this.panel4.Controls.Add(this.btnThem);
@@ -555,6 +559,46 @@
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // btn_An
+            // 
+            this.btn_An.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_An.BackColor = System.Drawing.Color.Red;
+            this.btn_An.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_An.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_An.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_An.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_An.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_An.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_An.Location = new System.Drawing.Point(446, 24);
+            this.btn_An.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_An.Name = "btn_An";
+            this.btn_An.Size = new System.Drawing.Size(145, 40);
+            this.btn_An.TabIndex = 39;
+            this.btn_An.Text = "Ẩn Khách Hàng";
+            this.btn_An.UseVisualStyleBackColor = false;
+            this.btn_An.Visible = false;
+            this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
+            // 
+            // btn_HuyAn
+            // 
+            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_HuyAn.BackColor = System.Drawing.Color.Navy;
+            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.ForeColor = System.Drawing.Color.Gold;
+            this.btn_HuyAn.Location = new System.Drawing.Point(607, 24);
+            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_HuyAn.Name = "btn_HuyAn";
+            this.btn_HuyAn.Size = new System.Drawing.Size(84, 40);
+            this.btn_HuyAn.TabIndex = 40;
+            this.btn_HuyAn.Text = "Hủy Ẩn";
+            this.btn_HuyAn.UseVisualStyleBackColor = false;
+            this.btn_HuyAn.Visible = false;
+            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
+            // 
             // Frm_KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,5 +663,7 @@
         private System.Windows.Forms.RadioButton rdb_Nam;
         private System.Windows.Forms.Button btn_Lammoi;
         private System.Windows.Forms.RichTextBox txt_DiaChi;
+        private System.Windows.Forms.Button btn_An;
+        private System.Windows.Forms.Button btn_HuyAn;
     }
 }

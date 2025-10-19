@@ -19,7 +19,9 @@ namespace ET
         public string DoiTuong { get; set; }
         public DateTime NgayTao { get; set; }
 
-        public ET_KhachHang(string maKH, string tenKH, string gioiTinh, string cCCD, string sDT, string email, string diaChi, string quocTich, string doiTuong, DateTime ngayTao)
+        public bool TinhTrangXoa { get; set; }
+
+        public ET_KhachHang(string maKH, string tenKH, string gioiTinh, string cCCD, string sDT, string email, string diaChi, string quocTich, string doiTuong, DateTime ngayTao, bool tinhTrangXoa)
         {
             MaKH = maKH;
             TenKH = tenKH;
@@ -31,6 +33,7 @@ namespace ET
             QuocTich = quocTich;
             DoiTuong = doiTuong;
             NgayTao = ngayTao;
+            TinhTrangXoa = tinhTrangXoa;
         }
     }
 }
