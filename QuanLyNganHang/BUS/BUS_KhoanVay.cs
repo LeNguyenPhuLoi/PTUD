@@ -1,0 +1,39 @@
+﻿using DAL;
+using ET;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BUS
+{
+    public class BUS_KhoanVay
+    {
+        DAL_KhoanVay kv = new DAL_KhoanVay();
+
+        //gọi hàm LoadDSKhoanVay
+        public IQueryable LoadDSKhoanVay()
+        {
+            return kv.LoadDSKhoanVay();
+        }
+
+        //gọi hàm thêm khoản vay
+        public bool ThemKV(ET_KhoanVay et)
+        {
+            return kv.ThemKV(et);
+        }
+
+        //gọi hàm sửa khoản vay
+        public bool SuaKV(ET_KhoanVay et)
+        {
+            return kv.SuaKV(et);
+        }
+
+        //gọi hàm xóa khoản vay
+        public bool XoaKV(ET_KhoanVay et)
+        {
+            return kv.XoaKV(et);
+        }
+    }
+}
