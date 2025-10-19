@@ -52,7 +52,6 @@ namespace GUI
 
         private void HienThiDS()
         {
-
             if (this.MdiParent.Name == "frmMainAddmin")
             {
                 var ds = BUS_KhachHang.LayDSToanBoKhachHang();
@@ -190,6 +189,7 @@ namespace GUI
         private void btn_Lammoi_Click(object sender, EventArgs e)
         {
             Clear();
+            HienThiDS();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
