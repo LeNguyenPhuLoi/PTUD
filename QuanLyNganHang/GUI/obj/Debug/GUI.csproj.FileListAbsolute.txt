@@ -509,3 +509,4 @@ D:\upbai\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\upbai\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\upbai\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.exe
 D:\upbai\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.pdb
+E:\Hoc kì 5\PTỨD-2\19-10-2025\PTUD\QuanLyNganHang\GUI\bin\Debug\DAL.dll.config

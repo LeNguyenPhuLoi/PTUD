@@ -104,3 +104,4 @@ D:\upbai\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\upbai\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\upbai\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
 D:\upbai\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb
+E:\Hoc kì 5\PTỨD-2\19-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.dll.config
