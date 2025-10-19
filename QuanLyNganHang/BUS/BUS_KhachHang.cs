@@ -26,6 +26,12 @@ namespace BUS
             return DAL_KhachHang.LayDSToanBoKhachHang();
         }
 
+        //hàm lấy danh sách khách hàng con hoạt động
+        public List<ET_KhachHang> LayDSKhachHangConHoatDong()
+        {
+            return DAL_KhachHang.LayDSKhachHangConHoatDong();
+        }
+
         //hàm thêm khách hàng
         public bool ThemKhachHang(ET_KhachHang et)
         {
@@ -36,6 +42,12 @@ namespace BUS
         public bool SuaKhachHang(ET_KhachHang et)
         {
             return DAL_KhachHang.SuaKhachHang(et);
+        }
+
+        //hàm ẩn khách hàng
+        public bool AnKhachHang(ET_KhachHang et)
+        {
+            return DAL_KhachHang.AnKhachHang(et);
         }
 
         //hàm xóa khách hàng

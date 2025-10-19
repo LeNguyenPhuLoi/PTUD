@@ -60,14 +60,34 @@ namespace DAL
             return list;
         }
 
+        //hàm lấy danh sách khách hàng con hoạt động
+        public List<ET_KhachHang> LayDSKhachHangConHoatDong()
+        {
+            List<ET_KhachHang> list = new List<ET_KhachHang>();
+            const string query = @"SELECT * FROM KHACHHANG WHERE TINHTRANGXOA = 0";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    list = conn.Query<ET_KhachHang>(query).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return list;
+        }
+
         //hàm thêm khách hàng
         public bool ThemKhachHang(ET_KhachHang et)
         {
             bool flag = false;
 
             const string query = @"
-                INSERT INTO KHACHHANG (MAKH, TENKH, GIOITINH, CCCD, SDT, EMAIL, DIACHI, QUOCTICH, DOITUONG, NGAYTAO)
-                VALUES (@MaKH, @TenKH, @GioiTinh, @CCCD, @SDT, @Email, @DiaChi, @QuocTich, @DoiTuong, @NgayTao);
+                INSERT INTO KHACHHANG (MAKH, TENKH, GIOITINH, CCCD, SDT, EMAIL, DIACHI, QUOCTICH, DOITUONG, NGAYTAO, TINHTRANGXOA)
+                VALUES (@MaKH, @TenKH, @GioiTinh, @CCCD, @SDT, @Email, @DiaChi, @QuocTich, @DoiTuong, @NgayTao, @TinhTrangXoa);
             ";
 
             try
@@ -135,7 +155,7 @@ namespace DAL
 
             const string query = @"
                 UPDATE KHACHHANG
-                    
+                    SET TINHTRANGXOA = @TinhTrangXoa
                     WHERE MAKH = @MaKH;
             ";
 
