@@ -21,57 +21,93 @@ namespace GUI
         {
             InitializeComponent();
         }
+        
+        BUS_ChuyenKhoan bUS_ChuyenKhoan = new BUS_ChuyenKhoan();
+
         private void frmChuyenKhoan_Load(object sender, EventArgs e)
         {
-            
-        }
-        public void AddToCombo(IQueryable list, ComboBox c)
-        {
-            foreach (var a in list)
-            {
-                c.Items.Add(a);
-            }
+            dgvChuyenKhoan.DataSource = bUS_ChuyenKhoan.LoadDSChuyenKhoan();
+            dtpNgayChuyen.MaxDate = DateTime.Now;
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        public void Clear()
         {
-           
-            
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
+            txtMaCK.Clear();
+            txtSoTien.Clear();
+            rtxtND.Clear();
+            txtMaKH.Clear();
+            txtMaTK.Clear();
+            txtMaTKGui.Clear();
+            txtMaTKNhan.Clear();
+            dtpNgayChuyen.Text = null;
         }
 
         private void btnHoanTac_Click(object sender, EventArgs e)
         {
-            
+            Clear();
         }
 
-        private void dgvChuyenKhoan_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
+                ET_ChuyenKhoan ck = new ET_ChuyenKhoan(txtMaCK.Text,
+                                                       txtMaKH.Text,
+                                                       txtMaTK.Text,
+                                                       dtpNgayChuyen.Value,
+                                                       decimal.Parse(txtSoTien.Text),
+                                                       txtMaTKGui.Text,
+                                                       txtMaTKNhan.Text,
+                                                       rtxtND.Text);
+                if (bUS_ChuyenKhoan.ThemCK(ck) == true)
+                {
+                    MessageBox.Show("Thêm chuyển khoản thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm chuyển khoản thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvChuyenKhoan.DataSource = bUS_ChuyenKhoan.LoadDSChuyenKhoan();
         }
 
-        private void txtTim_TextChanged(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                ET_ChuyenKhoan ck = new ET_ChuyenKhoan(txtMaCK.Text,
+                                                       txtMaKH.Text,
+                                                       txtMaTK.Text,
+                                                       dtpNgayChuyen.Value,
+                                                       decimal.Parse(txtSoTien.Text),
+                                                       txtMaTKGui.Text,
+                                                       txtMaTKNhan.Text,
+                                                       rtxtND.Text);
+                if (bUS_ChuyenKhoan.SuaCK(ck) == true)
+                {
+                    MessageBox.Show("Sửa chuyển khoản thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa chuyển khoản thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvChuyenKhoan.DataSource = bUS_ChuyenKhoan.LoadDSChuyenKhoan();
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
-           
-        }
 
-        private void txtSoTien_TextChanged(object sender, EventArgs e)
-        {
-           
         }
     }
 }

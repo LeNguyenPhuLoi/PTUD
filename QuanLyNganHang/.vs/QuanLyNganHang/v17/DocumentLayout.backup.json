@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\upbai\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|D:\\PTUD\\QuanLyNganHang\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|d:\\upbai\\ptud\\quanlynganhang\\dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|D:\\PTUD\\QuanLyNganHang\\dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|D:\\upbai\\PTUD\\QuanLyNganHang\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
+              "DocumentMoniker": "D:\\upbai\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
               "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
+              "ToolTip": "D:\\upbai\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
               "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAqwBUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T03:26:38.157Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AutoConnection.cs",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
+              "DocumentMoniker": "D:\\upbai\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
               "RelativeDocumentMoniker": "DAL\\AutoConnection.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
+              "ToolTip": "D:\\upbai\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
               "RelativeToolTip": "DAL\\AutoConnection.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAQwEEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T02:40:29.79Z",
               "IsPinned": true,

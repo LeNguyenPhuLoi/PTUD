@@ -39,14 +39,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtMaLS = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dgvKhuyenMai = new System.Windows.Forms.DataGridView();
+            this.dgvlaisuat = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHoanTac = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhuyenMai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,8 +91,9 @@
             this.cboKL.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboKL.FormattingEnabled = true;
             this.cboKL.Items.AddRange(new object[] {
-            "Tháng",
-            "Năm"});
+            "Lãi Suất Cố Định",
+            "Lãi Suất Tiền Gửi Tiết Kiệm",
+            "Lãi Suất Cho Vay"});
             this.cboKL.Location = new System.Drawing.Point(180, 248);
             this.cboKL.Name = "cboKL";
             this.cboKL.Size = new System.Drawing.Size(515, 33);
@@ -175,23 +176,24 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Mã Lãi Suất:";
             // 
-            // dgvKhuyenMai
+            // dgvlaisuat
             // 
-            this.dgvKhuyenMai.AllowUserToResizeColumns = false;
-            this.dgvKhuyenMai.AllowUserToResizeRows = false;
-            this.dgvKhuyenMai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvlaisuat.AllowUserToResizeColumns = false;
+            this.dgvlaisuat.AllowUserToResizeRows = false;
+            this.dgvlaisuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvKhuyenMai.BackgroundColor = System.Drawing.Color.White;
-            this.dgvKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhuyenMai.Location = new System.Drawing.Point(12, 341);
-            this.dgvKhuyenMai.Name = "dgvKhuyenMai";
-            this.dgvKhuyenMai.RowHeadersVisible = false;
-            this.dgvKhuyenMai.RowHeadersWidth = 62;
-            this.dgvKhuyenMai.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhuyenMai.Size = new System.Drawing.Size(1051, 204);
-            this.dgvKhuyenMai.TabIndex = 24;
+            this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
+            this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlaisuat.Location = new System.Drawing.Point(12, 341);
+            this.dgvlaisuat.Name = "dgvlaisuat";
+            this.dgvlaisuat.RowHeadersVisible = false;
+            this.dgvlaisuat.RowHeadersWidth = 62;
+            this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvlaisuat.Size = new System.Drawing.Size(1051, 204);
+            this.dgvlaisuat.TabIndex = 24;
+            this.dgvlaisuat.Click += new System.EventHandler(this.dgvlaisuat_Click);
             // 
             // panel4
             // 
@@ -221,6 +223,7 @@
             this.btnHoanTac.TabIndex = 12;
             this.btnHoanTac.Text = "Làm mới";
             this.btnHoanTac.UseVisualStyleBackColor = false;
+            this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
             // 
             // btnXoa
             // 
@@ -257,6 +260,7 @@
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -275,6 +279,7 @@
             this.btnThem.TabIndex = 12;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // frmLaiSuat
             // 
@@ -282,7 +287,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 794);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.dgvKhuyenMai);
+            this.Controls.Add(this.dgvlaisuat);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLaiSuat";
@@ -290,7 +295,7 @@
             this.Load += new System.EventHandler(this.frmLaiSuat_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKhuyenMai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -308,7 +313,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtMaLS;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dgvKhuyenMai;
+        private System.Windows.Forms.DataGridView dgvlaisuat;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.Button btnXoa;

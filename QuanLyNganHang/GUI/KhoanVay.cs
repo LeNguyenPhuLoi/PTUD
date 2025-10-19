@@ -17,115 +17,95 @@ namespace GUI
         public frmKhoanVay()
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
-            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
-        protected override void WndProc(ref Message m)
+        BUS_KhoanVay bUS_KhoanVay = new BUS_KhoanVay();
+
+        private void frmKhoanVay_Load(object sender, EventArgs e)
         {
-            const int WM_ENTERSIZEMOVE = 0x0231;
-            const int WM_EXITSIZEMOVE = 0x0232;
-
-            if (m.Msg == WM_ENTERSIZEMOVE)
-            {
-                this.SuspendLayout(); // Bắt đầu kéo form → dừng layout
-            }
-            else if (m.Msg == WM_EXITSIZEMOVE)
-            {
-                this.ResumeLayout();  // Kết thúc kéo form → resume lại layout
-            }
-
-            base.WndProc(ref m);
+            dgvKhoanVay.DataSource = bUS_KhoanVay.LoadDSKhoanVay();
+            dtpNgayVay.MaxDate = DateTime.Now;
+            dtpThoiHan.MaxDate = DateTime.Now;
         }
 
-
-
-        private void KhoanVay_Load(object sender, EventArgs e)
+        public void Clear()
         {
-
-        }
-
-        // Thêm dữ liệu vào ComboBox
-        public void AddToCombo(IQueryable list, ComboBox c)
-        {
-
+            txtMaVay.Clear();
+            txtMaKH.Clear();
+            txtMaTK.Clear();
+            txtSoTienVay.Clear();
+            cboTrangThai.Text = null;
+            dtpNgayVay.Text = null;
+            dtpThoiHan.Text = null;
+            txtMaLS.Clear();
         }
 
         private void btnHoanTac_Click(object sender, EventArgs e)
         {
-
-
+            Clear();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                ET_KhoanVay kv = new ET_KhoanVay(txtMaVay.Text,
+                                                 txtMaKH.Text,
+                                                 txtMaTK.Text,
+                                                 decimal.Parse(txtSoTienVay.Text),
+                                                 dtpNgayVay.Value,
+                                                 dtpThoiHan.Value,
+                                                 cboTrangThai.Text,
+                                                 txtMaLS.Text);
+                if (bUS_KhoanVay.ThemKV(kv) == true)
+                {
+                    MessageBox.Show("Thêm khoản vay thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm khoản vay thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvKhoanVay.DataSource = bUS_KhoanVay.LoadDSKhoanVay();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                ET_KhoanVay kv = new ET_KhoanVay(txtMaVay.Text,
+                                                 txtMaKH.Text,
+                                                 txtMaTK.Text,
+                                                 decimal.Parse(txtSoTienVay.Text),
+                                                 dtpNgayVay.Value,
+                                                 dtpThoiHan.Value,
+                                                 cboTrangThai.Text,
+                                                 txtMaLS.Text);
+                if (bUS_KhoanVay.SuaKV(kv) == true)
+                {
+                    MessageBox.Show("Sửa khoản vay thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa khoản vay thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvKhoanVay.DataSource = bUS_KhoanVay.LoadDSKhoanVay();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void dgvKhoanVay_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dgvLaiSuat_Click(object sender, EventArgs e)
-        {
-        }
-
-
-        private void TinhSoThang()
-        {
-            
-        }
-
-        private void dtpNgayVay_ValueChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dtpThoiHan_ValueChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void TinhTienKhoanVay()
-        {
-            
-        }
-
-        
-
-        private void txtMaLaiSuat_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtTim_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
 
         }
-
-        private void txtSoTienVay_Leave(object sender, EventArgs e)
-        {
-        }
-
-        private void txtSoTienVay_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }

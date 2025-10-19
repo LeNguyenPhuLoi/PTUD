@@ -19,48 +19,89 @@ namespace GUI
             InitializeComponent();
         }
 
+        BUS_LaiSuat bUS_LaiSuat = new BUS_LaiSuat();
 
         private void frmLaiSuat_Load(object sender, EventArgs e)
         {
-            
+            dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
+        }
 
+        public void Clear()
+        {
+            txtMaLS.Clear();
+            txtTenLoai.Clear();
+            txtLaiSuat.Clear();
+            cboKL.Text = null;
+        }
+        private void btnHoanTac_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
+            try
+            {
+                ET_LaiSuat ls = new ET_LaiSuat(txtMaLS.Text,
+                                               txtTenLoai.Text,
+                                               decimal.Parse(txtLaiSuat.Text),
+                                               cboKL.Text);
+                if (bUS_LaiSuat.ThemLaiSuat(ls) == true)
+                {
+                    MessageBox.Show("Thêm lãi suất thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm lãi suất thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                ET_LaiSuat ls = new ET_LaiSuat(txtMaLS.Text,
+                                               txtTenLoai.Text,
+                                               decimal.Parse(txtLaiSuat.Text),
+                                               cboKL.Text);
+                if (bUS_LaiSuat.SuaLaiSuat(ls) == true)
+                {
+                    MessageBox.Show("Sửa lãi suất thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa lãi suất thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
         }
 
-        private void btnHoanTac_Click(object sender, EventArgs e)
+        private void dgvlaisuat_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int dong = dgvlaisuat.CurrentCell.RowIndex;
+                txtMaLS.Text = dgvlaisuat.Rows[dong].Cells[0].Value.ToString();
+                txtTenLoai.Text = dgvlaisuat.Rows[dong].Cells[1].Value.ToString();
+                txtLaiSuat.Text = dgvlaisuat.Rows[dong].Cells[2].Value.ToString();
+                cboKL.Text = dgvlaisuat.Rows[dong].Cells[3].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
         }
-
-        private void dgvLaiSuat_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }
