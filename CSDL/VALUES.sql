@@ -43,3 +43,69 @@ INSERT INTO TAIKHOAN(MATK, MAKH, SOTAIKHOAN, MALOAITK, SODU, MANGOAITE, NGAYMOTK
 VALUES('TK001', 'KH001', '8473833720', 'LTK001', 32078000, null, '17/02/2023 8:50:22', N'Hoạt Động', 0),
 		('TK002', 'KH002', '7363264324', 'LTK002', 178964032, null, '24/09/2022 15:44:56', N'Hoạt Động', 0),
 		('TK003', 'KH003', '9023827343', 'LTK003', 300000, null, '30/11/2021 21:39:12', N'Hoạt Động', 0)
+
+---THEM THONG TIN CHUYEN KHOAN
+GO
+INSERT INTO CHUYENKHOAN(MACK, MAKH, MATK, NGAYCK, SOTIEN, MATKGUI, MATKNHAN, NOIDUNG)
+VALUES
+('CK001', 'KH001', 'TK001', '17/06/2025', 5000000, 'TK001', 'TK002', N'Chuyển khoản thanh toán đơn hàng'),
+('CK002', 'KH002', 'TK002', '18/06/2025', 12000000, 'TK002', 'TK003', N'Chuyển tiền tiết kiệm'),
+('CK003', 'KH003', 'TK003', '19/06/2025', 8000000, 'TK003', 'TK001', N'Chuyển khoản hoàn tiền');
+
+---THEM THONG TIN LAI SUAT
+GO
+INSERT INTO LAISUAT(MALAISUAT, TENLOAIVAY, LAISUAT, KIEULAI)
+VALUES
+('LS01', N'Vay tiêu dùng cá nhân', 7.5, N'Lãi Suất Cố Định'),
+('LS02', N'Vay thế chấp nhà ở', 6.8, N'Lãi Suất Cố Định'),
+('LS03', N'Vay tín chấp doanh nghiệp', 8.2, N'Lãi Suất Cố Định');
+
+---THEM THONG TIN KHOAN VAY
+GO
+INSERT INTO KHOANVAY(MAVAY, MAKH, MATK, SOTIENVAY, NGAYVAY, THOIHAN, TRANGTHAI, MALAISUAT)
+VALUES
+('VAY001', 'KH001', 'TK001', 100000000, '01/01/2023', '01/01/2024', N'Đang hoạt động', 'LS01'),
+('VAY002', 'KH002', 'TK002', 50000000, '05/02/2023', '05/02/2024', N'Đã tất toán', 'LS02'),
+('VAY003', 'KH003', 'TK003', 75000000, '10/03/2023', '10/03/2024', N'Quá hạn', 'LS03');
+
+---THEM THONG TIN TRA NO
+GO
+INSERT INTO TRANO(MATRANO, MAVAY, SOTIENO, SOTIENTRA, NGAYTRA)
+VALUES
+('TN01', 'VAY001', 100000000, 20000000, '15/02/2023'),
+('TN02', 'VAY002', 50000000, 25000000, '20/03/2023'),
+('TN03', 'VAY003', 75000000, 30000000, '25/04/2023');
+
+---THEM THONG TIN KHUYEN MAI
+GO
+INSERT INTO KHUYENMAI(MAKM, TENKM, MOTA, NGAYBD, NGAYKT, DKAPDUNG)
+VALUES
+('KM001', N'Giảm lãi suất mùa hè', N'Giảm 1% cho khách hàng vay mới', '01/06/2023', '30/06/2023', N'Áp dụng cho khoản vay trên 50 triệu'),
+('KM002', N'Tặng quà gửi tiết kiệm', N'Tặng quà khi gửi tiết kiệm từ 100 triệu', '01/07/2023', '31/07/2023', N'Áp dụng cho khách hàng cá nhân'),
+('KM003', N'Ưu đãi phí chuyển khoản', N'Miễn phí 5 lần chuyển khoản đầu tiên', '01/08/2023', '31/08/2023', N'Áp dụng cho tài khoản mới');
+
+---THEM THONG TIN AP DUNG KHUYEN MAI
+GO
+INSERT INTO APDUNGKHUYENMAI(MAKM, MAKH, MATK, NGAYAPDUNG)
+VALUES
+('KM001', 'KH001', 'TK001', '02/06/2023'),
+('KM002', 'KH002', 'TK002', '05/07/2023'),
+('KM003', 'KH003', 'TK003', '03/08/2023');
+
+---THEM THONG TIN NGOAI TE
+GO
+INSERT INTO NGOAITE(MANGOAITE, TENNGOAITE, KYHIEU, QUOCGIA, TRANGTHAI)
+VALUES
+('NT01', N'Đô la Mỹ', N'$', N'Mỹ', N'Hoạt động'),
+('NT02', N'Euro', N'€', N'Liên minh Châu Âu', N'Ngừng hoạt động'),
+('NT03', N'Việt Nam Đồng', N'₫', N'Việt Nam', N'Hoạt động');
+
+---THEM THONG TIN BIEN LAI
+--GO
+-- INTO BIENLAI(MABL, MAGD, MAKH, MATK, MANV, SOTIEN, MANGOAITE, LOAIBL, MOTA, TRANGTHAI)
+--VALUES
+--('BL001', 'GD001', 'KH001', 'TK001', 'NV001', 5000000, 'USD', N'Phiếu thu', N'Khách hàng nộp tiền mặt', N'Hoạt động'),
+--('BL002', 'GD002', 'KH002', 'TK002', 'NV002', 12000000, 'EUR', N'Phiếu chi', N'Thanh toán hóa đơn', N'Hoàn tất'),
+--('BL003', 'GD003', 'KH003', 'TK003', 'NV003', 8000000, 'VND', N'Phiếu chuyển khoản', N'Thanh toán dịch vụ', N'Chờ duyệt');
+
+

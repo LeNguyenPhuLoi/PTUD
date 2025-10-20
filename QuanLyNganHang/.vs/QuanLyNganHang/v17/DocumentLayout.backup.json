@@ -1,25 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\ptud\\quanlynganhang\\gui\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|D:\\PTUD\\QuanLyNganHang\\gui\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B7F37A1-53AD-41EE-B9EE-5653860980EE}|BUS\\BUS.csproj|D:\\PTUD\\QuanLyNganHang\\bus\\bus_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B7F37A1-53AD-41EE-B9EE-5653860980EE}|BUS\\BUS.csproj|solutionrelative:bus\\bus_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|D:\\PTUD\\QuanLyNganHang\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|D:\\PTUD\\QuanLyNganHang\\dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\autoconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,69 +18,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
               "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
               "RelativeToolTip": "GUI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T03:26:38.157Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AutoConnection.cs",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
-              "RelativeDocumentMoniker": "DAL\\AutoConnection.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
-              "RelativeToolTip": "DAL\\AutoConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T02:40:29.79Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmNhanVien.cs",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmNhanVien.cs",
-              "RelativeDocumentMoniker": "GUI\\frmNhanVien.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmNhanVien.cs",
-              "RelativeToolTip": "GUI\\frmNhanVien.cs",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAAANwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T00:29:51.451Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmNhanVien.cs [Design]",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmNhanVien.cs",
-              "RelativeDocumentMoniker": "GUI\\frmNhanVien.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmNhanVien.cs [Design]",
-              "RelativeToolTip": "GUI\\frmNhanVien.cs [Design]",
+              "Title": "AutoConnection.cs",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
+              "RelativeDocumentMoniker": "DAL\\AutoConnection.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\DAL\\AutoConnection.cs",
+              "RelativeToolTip": "DAL\\AutoConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T00:29:47.22Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BUS_NhanVien.cs",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\BUS\\BUS_NhanVien.cs",
-              "RelativeDocumentMoniker": "BUS\\BUS_NhanVien.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\BUS\\BUS_NhanVien.cs",
-              "RelativeToolTip": "BUS\\BUS_NhanVien.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T00:22:10.398Z"
+              "WhenOpened": "2025-10-18T02:40:29.79Z",
+              "IsPinned": true
             }
           ]
         }

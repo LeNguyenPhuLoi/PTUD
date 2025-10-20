@@ -132,3 +132,12 @@ D:\PTUD\QuanLyNganHang\BUS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 D:\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\Dapper.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.dll.config
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\Dapper.xml
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml

@@ -564,3 +564,14 @@ D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmLaiSuat.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frmLichSuTraNo.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.NgoaiTe.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\Dapper.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\DAL.dll
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\Dapper.xml
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\DAL.pdb
+D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\bin\Debug\DAL.dll.config
