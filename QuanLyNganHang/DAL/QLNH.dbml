@@ -239,7 +239,7 @@
       <Column Name="TENNV" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
       <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="CCCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CCCD" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="CHUC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="LUONG" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />

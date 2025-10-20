@@ -5320,7 +5320,7 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _NGAYSINH;
 		
-		private System.Nullable<int> _CCCD;
+		private System.Nullable<decimal> _CCCD;
 		
 		private string _CHUC;
 		
@@ -5362,7 +5362,7 @@ namespace DAL
     partial void OnGIOITINHChanged();
     partial void OnNGAYSINHChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYSINHChanged();
-    partial void OnCCCDChanging(System.Nullable<int> value);
+    partial void OnCCCDChanging(System.Nullable<decimal> value);
     partial void OnCCCDChanged();
     partial void OnCHUCChanging(string value);
     partial void OnCHUCChanged();
@@ -5472,8 +5472,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CCCD", DbType="Int")]
-		public System.Nullable<int> CCCD
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CCCD", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> CCCD
 		{
 			get
 			{

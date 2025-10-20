@@ -15,7 +15,6 @@ D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.CoreComp
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
 D:\GIAO DIỆN DỊCH VỤ\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb
-D:\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.dll
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.pdb
 E:\Hoc kì 5\PTỨD-1\2-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\ET.dll
@@ -105,3 +104,13 @@ D:\upbai\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\upbai\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
 D:\upbai\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb
 E:\Hoc kì 5\PTỨD-2\19-10-2025\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.dll.config
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.dll.config
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\Dapper.dll
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\Dapper.xml
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
