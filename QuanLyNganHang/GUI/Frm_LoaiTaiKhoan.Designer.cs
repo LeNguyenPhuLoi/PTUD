@@ -369,6 +369,7 @@
             this.Name = "Frm_LoaiTaiKhoan";
             this.Text = "Quản Lý Loại Tài Khoản";
             this.Load += new System.EventHandler(this.Frm_LoaiTaiKhoan_Load);
+            this.ResizeEnd += new System.EventHandler(this.Frm_LoaiTaiKhoan_ResizeEnd);
             this.Resize += new System.EventHandler(this.Frm_LoaiTaiKhoan_Resize);
             this.panel_ThongTin1.ResumeLayout(false);
             this.panel_ThongTin1.PerformLayout();

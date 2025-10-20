@@ -96,7 +96,7 @@ namespace GUI
 
         private void Frm_TaiKhoan_Resize(object sender, EventArgs e)
         {
-            Re_size();
+
         }
 
         private void btn_Lammoi_Click(object sender, EventArgs e)
@@ -420,6 +420,11 @@ namespace GUI
             {
                 txt_SoDu.BackColor = SystemColors.Window;
             }
+        }
+
+        private void Frm_TaiKhoan_ResizeEnd(object sender, EventArgs e)
+        {
+            Re_size();
         }
     }
 }
