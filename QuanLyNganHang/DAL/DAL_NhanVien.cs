@@ -19,11 +19,13 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
         }
 
+        //Load danh sách nhân viên từ database
         public IQueryable LoadDSNhanVien()
         {
             IQueryable ds = from nv in db.NHANVIENs
                             join pb in db.PHONGBANs on nv.MAPB equals pb.MAPB
                             join cn in db.CHINHANHs on nv.MACN equals cn.MACN
+                            where nv.TRANGTHAI == "Hoạt Động"
                             select new
                             {
                                 nv.MANV,
@@ -41,6 +43,55 @@ namespace DAL
             return ds;
         }
 
+        public IQueryable LoadDSTenPB()
+        {
+            IQueryable ds = from pb in db.PHONGBANs
+                            select pb.TENPB;
+            return ds;
+        }
+
+        public IQueryable LoadDSTenCN()
+        {
+            IQueryable ds = from cn in db.CHINHANHs
+                            select cn.TENCN;
+            return ds;
+        }
+
+        //Lấy tên phòng ban theo mã
+        public string LayTenPhongBan(int ma)
+        {
+            var ten = (from pb in db.PHONGBANs
+                      where pb.MAPB == ma
+                      select pb.TENPB).FirstOrDefault();
+            return ten;
+        }
+
+        //Lấy tên chi nhánh theo mã
+        public string LayTenChiNhanh(string ma)
+        {
+            var ten = (from cn in db.CHINHANHs
+                      where cn.MACN == ma
+                      select cn.TENCN).FirstOrDefault();
+            return ten;
+        }
+
+        public int LayMaTheoTenPB(string ten)
+        {
+            var ma = (from pb in db.PHONGBANs
+                      where pb.TENPB == ten
+                      select pb.MAPB).FirstOrDefault();
+            return ma;
+        }
+
+        public string LayMaChiNhanh(string ten)
+        {
+            var ma = (from cn in db.CHINHANHs
+                      where cn.TENCN == ten
+                      select cn.MACN).FirstOrDefault();
+            return ma;
+        }
+
+        //Thêm 1 nhân viên vào database
         public bool ThemNhanVien(ET_NhanVien et, out string error)
         {
             error = string.Empty;
@@ -129,7 +180,7 @@ namespace DAL
                 var nv = db.NHANVIENs.Single(x => x.MANV == et.MaNV);
                 if (nv != null)
                 {
-                    nv.TRANGTHAI = "Nghỉ Việc";
+                    nv.TRANGTHAI = et.TrangThai;
                     db.SubmitChanges();
                     flag = true;
                 }
