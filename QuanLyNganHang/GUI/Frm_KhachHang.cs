@@ -108,7 +108,7 @@ namespace GUI
 
         private void Frm_KhachHang_Resize(object sender, EventArgs e)
         {
-            Re_size();
+            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -499,6 +499,11 @@ namespace GUI
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
             HienThiDS();
+        }
+
+        private void Frm_KhachHang_ResizeEnd(object sender, EventArgs e)
+        {
+            Re_size();
         }
     }
 }

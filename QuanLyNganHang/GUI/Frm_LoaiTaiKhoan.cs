@@ -36,7 +36,19 @@ namespace GUI
 
         private void Frm_LoaiTaiKhoan_Load(object sender, EventArgs e)
         {
+            dtp_NgayTao.MaxDate = DateTime.Now;
+            dtp_NgayCapNhat.MaxDate = DateTime.Now;
+            cbo_TrangThai.SelectedIndex = 0;
             Cutom_Resize();
+            HienThiDS();
+            if (this.MdiParent.Name == "frmMainAddmin")
+            {
+                panel_Admin.Visible = true;
+            }
+            else
+            {
+                dgv_LoaiTaiKhoan.Columns["TinhTrangXoa"].Visible = false;
+            }
         }
 
         public void Clear()
@@ -53,19 +65,7 @@ namespace GUI
 
         private void Frm_LoaiTaiKhoan_Resize(object sender, EventArgs e)
         {
-            dtp_NgayTao.MaxDate = DateTime.Now;
-            dtp_NgayCapNhat.MaxDate = DateTime.Now;
-            cbo_TrangThai.SelectedIndex = 0;
-            Cutom_Resize();
-            HienThiDS();
-            if (this.MdiParent.Name == "frmMainAddmin")
-            {
-                panel_Admin.Visible = true;
-            }
-            else
-            {
-                dgv_LoaiTaiKhoan.Columns["TinhTrangXoa"].Visible = false;
-            }
+            
         }
 
         private void btn_Lammoi_Click(object sender, EventArgs e)
@@ -327,6 +327,11 @@ namespace GUI
             {
                 txt_ChiTiet.BackColor = SystemColors.Window;
             }
+        }
+
+        private void Frm_LoaiTaiKhoan_ResizeEnd(object sender, EventArgs e)
+        {
+            Cutom_Resize();
         }
     }
 }

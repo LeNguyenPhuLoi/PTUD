@@ -26,9 +26,9 @@ VALUES ('NV0001',N'Nguyễn Văn An', N'NAM', '12/01/1990',012345678912, N'Lễ 
 		---THEM THONG TIN KHACH HANG
 GO
 INSERT INTO KHACHHANG(MAKH, TENKH, GIOITINH, CCCD, SDT, EMAIL, DIACHI, QUOCTICH, DOITUONG, NGAYTAO, TinhTrangXoa)
-VALUES('KH001', N'Nguyễn Hữu Lợi', N'Nam', '097825240004', '0973468462', N'huuloi9782@gmail.com', N'Số 36, Đ.Hoàng Hoa Thám', N'Việt Nam', N'Cá Nhân', '17/02/2023 8:30:57', 0),
-		('KH002', N'Hằng Tuyết Nga', N'Nữ', '873602738494', '0374946719', N'hangnga36@gmail.com', N'723, Đ.Lõa Xuân Mai', N'Việt Nam', N'Doanh Nghiệp', '24/09/2022 15:24:07', 0),
-		('KH003', N'John Wick', N'Nam', '359276401736', '0972382648', N'doglover36@gmail.com', N'24/7, Đ.Mỹ Việt', N'Mỹ', N'Cá Nhân', '30/11/2021 21:09:36', 0)
+VALUES('KH001', N'Nguyễn Hữu Lợi', N'Nam', '097825240004', '0973468462', N'huuloi9782@gmail.com', N'Số 36, Đ.Hoàng Hoa Thám TP.Hà Nội', N'Việt Nam', N'Cá Nhân', '17/02/2023 8:30:57', 0),
+		('KH002', N'Hằng Tuyết Nga', N'Nữ', '873602738494', '0374946719', N'hangnga36@gmail.com', N'723, Đ.Lõa Xuân Mai TP.Thủ Dầu 1', N'Việt Nam', N'Doanh Nghiệp', '24/09/2022 15:24:07', 0),
+		('KH003', N'John Wick', N'Nam', '359276401736', '0972382648', N'doglover36@gmail.com', N'247, Đ.Mỹ Việt TP.HCM', N'Mỹ', N'Cá Nhân', '30/11/2021 21:09:36', 0)
 
 ---THEM THONG TIN LOAI TAI KHOAN
 GO
@@ -37,12 +37,36 @@ VALUES('LTK001', N'Tài Khoản Vip Cấp 1', '17/06/2018 08:30:57','17/06/2018 
 		('LTK002', N'Tài Khoản Vip Cấp 2', '17/06/2018 08:31:23','17/06/2018 08:31:23', N'Ngưng Hoạt Động', 0),
 		('LTK003', N'Tài Khoản Tiết Kiệm', '17/06/2018 08:32:02','17/06/2018 08:32:02', N'Hoạt Động', 0)
 
+---THEM THONG TIN LAI SUAT
+GO
+INSERT INTO LAISUAT(MALAISUAT, TENLOAIVAY, LAISUAT, KIEULAI)
+VALUES
+('LS01', N'Vay tiêu dùng cá nhân', 7.5, N'Lãi Suất Cố Định'),
+('LS02', N'Vay thế chấp nhà ở', 6.8, N'Lãi Suất Cố Định'),
+('LS03', N'Vay tín chấp doanh nghiệp', 8.2, N'Lãi Suất Cố Định');
+
+---THEM THONG TIN KHUYEN MAI
+GO
+INSERT INTO KHUYENMAI(MAKM, TENKM, MOTA, NGAYBD, NGAYKT, DKAPDUNG)
+VALUES
+('KM001', N'Giảm lãi suất mùa hè', N'Giảm 1% cho khách hàng vay mới', '01/06/2023', '30/06/2023', N'Áp dụng cho khoản vay trên 50 triệu'),
+('KM002', N'Tặng quà gửi tiết kiệm', N'Tặng quà khi gửi tiết kiệm từ 100 triệu', '01/07/2023', '31/07/2023', N'Áp dụng cho khách hàng cá nhân'),
+('KM003', N'Ưu đãi phí chuyển khoản', N'Miễn phí 5 lần chuyển khoản đầu tiên', '01/08/2023', '31/08/2023', N'Áp dụng cho tài khoản mới');
+
+---THEM THONG TIN NGOAI TE
+GO
+INSERT INTO NGOAITE(MANGOAITE, TENNGOAITE, KYHIEU, QUOCGIA, TRANGTHAI)
+VALUES
+('NT01', N'Đô la Mỹ', N'$', N'Mỹ', N'Hoạt động'),
+('NT02', N'Euro', N'€', N'Liên minh Châu Âu', N'Ngừng hoạt động'),
+('NT03', N'Việt Nam Đồng', N'₫', N'Việt Nam', N'Hoạt động');
+
 ---THEM THONG TIN TAI KHOAN
 GO
 INSERT INTO TAIKHOAN(MATK, MAKH, SOTAIKHOAN, MALOAITK, SODU, MANGOAITE, NGAYMOTK, TRANGTHAI, TinhTrangXoa)
-VALUES('TK001', 'KH001', '8473833720', 'LTK001', 32078000, null, '17/02/2023 8:50:22', N'Hoạt Động', 0),
-		('TK002', 'KH002', '7363264324', 'LTK002', 178964032, null, '24/09/2022 15:44:56', N'Hoạt Động', 0),
-		('TK003', 'KH003', '9023827343', 'LTK003', 300000, null, '30/11/2021 21:39:12', N'Hoạt Động', 0)
+VALUES('TK001', 'KH001', '8473833720', 'LTK001', 32078000, 'NT03', '17/02/2023 8:50:22', N'Hoạt Động', 0),
+		('TK002', 'KH002', '7363264324', 'LTK002', 178964032, 'NT02', '24/09/2022 15:44:56', N'Hoạt Động', 0),
+		('TK003', 'KH003', '9023827343', 'LTK003', 300000, 'NT01', '30/11/2021 21:39:12', N'Hoạt Động', 0)
 
 ---THEM THONG TIN CHUYEN KHOAN
 GO
@@ -51,14 +75,6 @@ VALUES
 ('CK001', 'KH001', 'TK001', '17/06/2025', 5000000, 'TK001', 'TK002', N'Chuyển khoản thanh toán đơn hàng'),
 ('CK002', 'KH002', 'TK002', '18/06/2025', 12000000, 'TK002', 'TK003', N'Chuyển tiền tiết kiệm'),
 ('CK003', 'KH003', 'TK003', '19/06/2025', 8000000, 'TK003', 'TK001', N'Chuyển khoản hoàn tiền');
-
----THEM THONG TIN LAI SUAT
-GO
-INSERT INTO LAISUAT(MALAISUAT, TENLOAIVAY, LAISUAT, KIEULAI)
-VALUES
-('LS01', N'Vay tiêu dùng cá nhân', 7.5, N'Lãi Suất Cố Định'),
-('LS02', N'Vay thế chấp nhà ở', 6.8, N'Lãi Suất Cố Định'),
-('LS03', N'Vay tín chấp doanh nghiệp', 8.2, N'Lãi Suất Cố Định');
 
 ---THEM THONG TIN KHOAN VAY
 GO
@@ -76,14 +92,6 @@ VALUES
 ('TN02', 'VAY002', 50000000, 25000000, '20/03/2023'),
 ('TN03', 'VAY003', 75000000, 30000000, '25/04/2023');
 
----THEM THONG TIN KHUYEN MAI
-GO
-INSERT INTO KHUYENMAI(MAKM, TENKM, MOTA, NGAYBD, NGAYKT, DKAPDUNG)
-VALUES
-('KM001', N'Giảm lãi suất mùa hè', N'Giảm 1% cho khách hàng vay mới', '01/06/2023', '30/06/2023', N'Áp dụng cho khoản vay trên 50 triệu'),
-('KM002', N'Tặng quà gửi tiết kiệm', N'Tặng quà khi gửi tiết kiệm từ 100 triệu', '01/07/2023', '31/07/2023', N'Áp dụng cho khách hàng cá nhân'),
-('KM003', N'Ưu đãi phí chuyển khoản', N'Miễn phí 5 lần chuyển khoản đầu tiên', '01/08/2023', '31/08/2023', N'Áp dụng cho tài khoản mới');
-
 ---THEM THONG TIN AP DUNG KHUYEN MAI
 GO
 INSERT INTO APDUNGKHUYENMAI(MAKM, MAKH, MATK, NGAYAPDUNG)
@@ -91,14 +99,6 @@ VALUES
 ('KM001', 'KH001', 'TK001', '02/06/2023'),
 ('KM002', 'KH002', 'TK002', '05/07/2023'),
 ('KM003', 'KH003', 'TK003', '03/08/2023');
-
----THEM THONG TIN NGOAI TE
-GO
-INSERT INTO NGOAITE(MANGOAITE, TENNGOAITE, KYHIEU, QUOCGIA, TRANGTHAI)
-VALUES
-('NT01', N'Đô la Mỹ', N'$', N'Mỹ', N'Hoạt động'),
-('NT02', N'Euro', N'€', N'Liên minh Châu Âu', N'Ngừng hoạt động'),
-('NT03', N'Việt Nam Đồng', N'₫', N'Việt Nam', N'Hoạt động');
 
 ---THEM THONG TIN BIEN LAI
 --GO
@@ -108,4 +108,43 @@ VALUES
 --('BL002', 'GD002', 'KH002', 'TK002', 'NV002', 12000000, 'EUR', N'Phiếu chi', N'Thanh toán hóa đơn', N'Hoàn tất'),
 --('BL003', 'GD003', 'KH003', 'TK003', 'NV003', 8000000, 'VND', N'Phiếu chuyển khoản', N'Thanh toán dịch vụ', N'Chờ duyệt');
 
+---THEM THONG TIN LOAI GIAO DICH
+GO
+INSERT INTO LOAIGD(MALOAIGD, TENLOAIGD, NGAYLAP, NGAYCAPNHAT, TRANGTHAI, TinhTrangXoa)
+VALUES('LGD001', N'Rút Tiền', '17/06/2018 08:30:57', '17/06/2018 08:31:46', N'Hoạt Động', 0),
+		('LGD002', N'Nộp Tiền', '17/06/2018 08:33:53', '17/06/2018 08:34:17', N'Hoạt Động', 0),
+		('LGD003', N'Chuyển Khoản', '17/06/2018 08:35:37', '17/06/2018 08:36:02', N'Hoạt Động', 0)
 
+---THEM THONG TIN LOAI HOP DONG
+GO
+INSERT INTO LOAIHD(MALOAIHD, TENLOAIHD, NGAYLAP, NGAYCAPNHAT, TRANGTHAI, TinhTrangXoa)
+VALUES('LHD001', N'Hợp đồng tín dụng tiêu dùng', '17/06/2018 08:30:57', '17/06/2018 08:31:46', N'Hoạt Động', 0),
+		('LHD002', N'Hợp đồng tín dụng ngắn hạn', '17/06/2018 08:33:53', '17/06/2018 08:34:17', N'Hoạt Động', 0),
+		('LHD003', N'Hợp đồng tiền gửi', '17/06/2018 08:35:37', '17/06/2018 08:36:02', N'Hoạt Động', 0)
+
+---THEM THONG TIN LOAI HO TRO
+GO
+INSERT INTO LOAIHT(MALOAIHT, TENLOAIHT, NGAYLAP, NGAYCAPNHAT, TRANGTHAI, TinhTrangXoa)
+VALUES('LHT001', N'Tư vấn sản phẩm/dịch vụ', '17/06/2018 08:30:57', '17/06/2018 08:31:46', N'Hoạt Động', 0),
+		('LHT002', N'Hỗ trợ giao dịch', '17/06/2018 08:33:53', '17/06/2018 08:34:17', N'Hoạt Động', 0),
+		('LHT003', N'Tiếp nhận và xử lý phản hồi', '17/06/2018 08:35:37', '17/06/2018 08:36:02', N'Hoạt Động', 0)
+
+---THEM THONG TIN GIAO DICH
+GO
+INSERT INTO GIAODICH(MAGD, MAKH, MATK, MALOAIGD, SOTIEN, THOIGIANGD, MOTA, TRANGTHAI, TinhTrangXoa)
+VALUES('GD001', 'KH001', 'TK001', 'LGD003', 350000, '20/02/2023 12:45:33', N'Chuyển tiền sang tài khoản 7363264324', N'Đang Chờ Xử Lý',0),
+		('GD002', 'KH002', 'TK002', 'LGD002', 120000, '21/11/2024 07:35:21', N'Nộp tiền vào tài khoản 7363264324', N'Thành Công',0),
+		('GD003', 'KH003', 'TK003', 'LGD001', 70, '14/02/2024 15:31:12', N'Rút tiền', N'Thành Công',0)
+
+---THEM THONG TIN HO TRO
+GO
+INSERT INTO HOTRO(MAHTRO, MAKH, MANV, MALOAIHT, NOIDUNG, NGAYHTRO, TinhTrangXoa)
+VALUES('HT001', 'KH001', 'NV0001', 'LHT003', N'Yêu cầu chuyển tiền đang trong trạng thái xử lý', '20/02/2023 12:50:27', 0),
+		('HT002', 'KH002', 'NV0004', 'LHT001', N'Hỗ trợ mở tài khoản ngân hàng', '24/09/2022 15:34:51', 0),
+		('HT003', 'KH003', 'NV0004', 'LHT002', N'Rút tiền', '14/02/2024 15:31:12', 0)
+
+---THEM THONG TIN HOP DONG
+GO
+INSERT INTO HOPDONG(SOHOPDONG, MALOAIHD, NGAYKY, NGAYHETHAN, GIATRI, GHICHU, TRANGTHAI, MANV, MAKH, TinhTrangXoa)
+VALUES(N'HD-KH001-20102024-153112','LHD001', '20/10/2024 15:31:12', '20/11/2024 00:00:00', 50000000, N'Chi tiêu sinh hoạt gia đình', N'Đã Ký Kết', 'NV0001', 'KH001', 0),
+		(N'HD-KH002-19122024-073541','LHD002', '19/12/2024 07:35:41', '19/12/2025 00:00:00', 240000000, N'Vay tiền khởi nghiệp', N'Đã Ký Kết', 'NV0004', 'KH002', 0)
