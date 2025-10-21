@@ -103,5 +103,35 @@ namespace GUI
                 MessageBox.Show("Lỗi " + ex.Message);
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult = MessageBox.Show("Bạn có muốn xóa?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    ET_LaiSuat ls = new ET_LaiSuat(txtMaLS.Text,
+                                                   txtTenLoai.Text,
+                                                   decimal.Parse(txtLaiSuat.Text),
+                                                   cboKL.Text);
+                    if (bUS_LaiSuat.XoaLaiSuat(ls) == true)
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+            dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
+
+        }
     }
 }

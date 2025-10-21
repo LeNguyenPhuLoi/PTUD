@@ -19,71 +19,131 @@ namespace GUI
             InitializeComponent();
         }
 
-
+        BUS_KhuyenMai bUS_KhuyenMai = new BUS_KhuyenMai();
 
         private void frmKhuyenMai_Load(object sender, EventArgs e)
         {
-            //ko doi mau khi chon vao
-            dgvKhuyenMai.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgvKhuyenMai.DataSource = bUS_KhuyenMai.LoadDSKhuyenMai();
+            dtNgayBatDau.MaxDate = DateTime.Now;
+            dtNgayKetThuc.MaxDate = DateTime.Now;
+        }
 
-            // Màu nền khi chọn ô (dòng)
-            dgvKhuyenMai.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
+        public void Clear()
+        {
+            txtMaKM.Clear();
+            txtTenKM.Clear();
+            rtxtMota.Clear();
+            dtNgayBatDau.MaxDate = DateTime.Now;
+            dtNgayKetThuc.MaxDate= DateTime.Now;
+            rtxtDKAD.Clear();
+        }
 
-            // Cỡ chữ cho toàn bộ lưới
-            dgvKhuyenMai.Font = new Font("Segoe UI", 12);
-
-            // Cỡ chữ cho tiêu đề cột
-            dgvKhuyenMai.EnableHeadersVisualStyles = false; // Cho phép dùng style tùy chỉnh
-            dgvKhuyenMai.ColumnHeadersDefaultCellStyle.BackColor = Color.DodgerBlue;
-            dgvKhuyenMai.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgvKhuyenMai.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 13, FontStyle.Bold);
-
-            // Xem kẽ màu dòng
-            dgvKhuyenMai.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvKhuyenMai.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
-
-            // Cỡ chữ cho ô dữ liệu
-            dgvKhuyenMai.DefaultCellStyle.Font = new Font("Segoe UI", 12);
-
-            // Canh giữa dữ liệu nếu cần
-            dgvKhuyenMai.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-
-
+        private void btnHoanTac_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
+            try
+            {
+                ET_KhuyenMai km = new ET_KhuyenMai(txtMaKM.Text,
+                                                   txtTenKM.Text,
+                                                   rtxtMota.Text,
+                                                   dtNgayBatDau.Value,
+                                                   dtNgayKetThuc.Value,
+                                                   rtxtDKAD.Text);
+                if (bUS_KhuyenMai.ThemKM(km) == true)
+                {
+                    MessageBox.Show("Thêm khuyến mãi thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm khuyến mãi thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvKhuyenMai.DataSource = bUS_KhuyenMai.LoadDSKhuyenMai();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-           
+            try
+            {
+                ET_KhuyenMai km = new ET_KhuyenMai(txtMaKM.Text,
+                                                   txtTenKM.Text,
+                                                   rtxtMota.Text,
+                                                   dtNgayBatDau.Value,
+                                                   dtNgayKetThuc.Value,
+                                                   rtxtDKAD.Text);
+                if (bUS_KhuyenMai.SuaKM(km) == true)
+                {
+                    MessageBox.Show("Sửa khuyến mãi thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa khuyến mãi thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvKhuyenMai.DataSource = bUS_KhuyenMai.LoadDSKhuyenMai();
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                DialogResult = MessageBox.Show("Bạn có muốn xóa?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    ET_KhuyenMai km = new ET_KhuyenMai(txtMaKM.Text,
+                                                       txtTenKM.Text,
+                                                       rtxtMota.Text,
+                                                       dtNgayBatDau.Value,
+                                                       dtNgayKetThuc.Value,
+                                                       rtxtDKAD.Text);
+                    if (bUS_KhuyenMai.XoaKM(km) == true)
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+            dgvKhuyenMai.DataSource = bUS_KhuyenMai.LoadDSKhuyenMai();
         }
 
         private void dgvKhuyenMai_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void txtTim_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            
+            try
+            {
+                int dong = dgvKhuyenMai.CurrentCell.RowIndex;
+                txtMaKM.Text = dgvKhuyenMai.Rows[dong].Cells[0].Value.ToString();
+                txtTenKM.Text = dgvKhuyenMai.Rows[dong].Cells[1].Value.ToString();
+                rtxtMota.Text = dgvKhuyenMai.Rows[dong].Cells[2].Value.ToString();
+                dtNgayBatDau.Value = DateTime.Parse(dgvKhuyenMai.Rows[dong].Cells[3].Value.ToString());
+                dtNgayKetThuc.Value = DateTime.Parse(dgvKhuyenMai.Rows[dong].Cells[4].Value.ToString());
+                rtxtDKAD.Text = dgvKhuyenMai.Rows[dong].Cells[5].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
         }
     }
 }

@@ -37,13 +37,17 @@
             this.dgvKhoanVay = new System.Windows.Forms.DataGridView();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
+            this.dgvtaikhoan = new System.Windows.Forms.DataGridView();
+            this.txtMaTK = new System.Windows.Forms.TextBox();
+            this.dgvmakh = new System.Windows.Forms.DataGridView();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSoTienVay = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtMaVay = new System.Windows.Forms.TextBox();
+            this.txtSoTienVay = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvlaisuat = new System.Windows.Forms.DataGridView();
@@ -57,20 +61,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.txtMaTK = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoanVay)).BeginInit();
             this.pnlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvtaikhoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmakh)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSua
@@ -152,8 +152,6 @@
             // 
             this.dgvKhoanVay.AllowUserToResizeColumns = false;
             this.dgvKhoanVay.AllowUserToResizeRows = false;
-            this.dgvKhoanVay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvKhoanVay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhoanVay.BackgroundColor = System.Drawing.Color.White;
             this.dgvKhoanVay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -166,15 +164,16 @@
             this.dgvKhoanVay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKhoanVay.Size = new System.Drawing.Size(2000, 245);
             this.dgvKhoanVay.TabIndex = 31;
+            this.dgvKhoanVay.Click += new System.EventHandler(this.dgvKhoanVay_Click);
             // 
             // pnlMain
             // 
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMain.Controls.Add(this.cboTrangThai);
-            this.pnlMain.Controls.Add(this.dataGridView2);
+            this.pnlMain.Controls.Add(this.dgvtaikhoan);
             this.pnlMain.Controls.Add(this.txtMaTK);
-            this.pnlMain.Controls.Add(this.dataGridView1);
+            this.pnlMain.Controls.Add(this.dgvmakh);
             this.pnlMain.Controls.Add(this.txtMaKH);
             this.pnlMain.Controls.Add(this.label9);
             this.pnlMain.Controls.Add(this.label6);
@@ -183,7 +182,7 @@
             this.pnlMain.Controls.Add(this.txtMaVay);
             this.pnlMain.Location = new System.Drawing.Point(3, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(601, 416);
+            this.pnlMain.Size = new System.Drawing.Size(601, 457);
             this.pnlMain.TabIndex = 30;
             // 
             // cboTrangThai
@@ -193,17 +192,85 @@
             this.cboTrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTrangThai.FormattingEnabled = true;
-            this.cboTrangThai.Location = new System.Drawing.Point(218, 358);
+            this.cboTrangThai.Items.AddRange(new object[] {
+            "Đang hoạt động",
+            "Đã tất toán",
+            "Quá hạn"});
+            this.cboTrangThai.Location = new System.Drawing.Point(218, 381);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(328, 33);
             this.cboTrangThai.TabIndex = 42;
+            // 
+            // dgvtaikhoan
+            // 
+            this.dgvtaikhoan.AllowDrop = true;
+            this.dgvtaikhoan.AllowUserToResizeColumns = false;
+            this.dgvtaikhoan.AllowUserToResizeRows = false;
+            this.dgvtaikhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvtaikhoan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvtaikhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvtaikhoan.Location = new System.Drawing.Point(51, 265);
+            this.dgvtaikhoan.MultiSelect = false;
+            this.dgvtaikhoan.Name = "dgvtaikhoan";
+            this.dgvtaikhoan.ReadOnly = true;
+            this.dgvtaikhoan.RowHeadersVisible = false;
+            this.dgvtaikhoan.RowHeadersWidth = 51;
+            this.dgvtaikhoan.RowTemplate.Height = 24;
+            this.dgvtaikhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvtaikhoan.Size = new System.Drawing.Size(968, 105);
+            this.dgvtaikhoan.TabIndex = 47;
+            this.dgvtaikhoan.Click += new System.EventHandler(this.dgvtaikhoan_Click);
+            // 
+            // txtMaTK
+            // 
+            this.txtMaTK.AllowDrop = true;
+            this.txtMaTK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaTK.Location = new System.Drawing.Point(218, 226);
+            this.txtMaTK.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaTK.Name = "txtMaTK";
+            this.txtMaTK.Size = new System.Drawing.Size(328, 30);
+            this.txtMaTK.TabIndex = 46;
+            // 
+            // dgvmakh
+            // 
+            this.dgvmakh.AllowDrop = true;
+            this.dgvmakh.AllowUserToResizeColumns = false;
+            this.dgvmakh.AllowUserToResizeRows = false;
+            this.dgvmakh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvmakh.BackgroundColor = System.Drawing.Color.White;
+            this.dgvmakh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvmakh.Location = new System.Drawing.Point(51, 107);
+            this.dgvmakh.MultiSelect = false;
+            this.dgvmakh.Name = "dgvmakh";
+            this.dgvmakh.ReadOnly = true;
+            this.dgvmakh.RowHeadersVisible = false;
+            this.dgvmakh.RowHeadersWidth = 51;
+            this.dgvmakh.RowTemplate.Height = 24;
+            this.dgvmakh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvmakh.Size = new System.Drawing.Size(968, 105);
+            this.dgvmakh.TabIndex = 45;
+            this.dgvmakh.Click += new System.EventHandler(this.dgvmakh_Click);
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.AllowDrop = true;
+            this.txtMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.Location = new System.Drawing.Point(218, 68);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(328, 30);
+            this.txtMaKH.TabIndex = 44;
             // 
             // label9
             // 
             this.label9.AllowDrop = true;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 212);
+            this.label9.Location = new System.Drawing.Point(14, 226);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(182, 33);
@@ -222,18 +289,6 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "Mã Khách Hàng:";
             // 
-            // txtSoTienVay
-            // 
-            this.txtSoTienVay.AllowDrop = true;
-            this.txtSoTienVay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSoTienVay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoTienVay.Location = new System.Drawing.Point(203, 120);
-            this.txtSoTienVay.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSoTienVay.Name = "txtSoTienVay";
-            this.txtSoTienVay.Size = new System.Drawing.Size(328, 30);
-            this.txtSoTienVay.TabIndex = 31;
-            // 
             // label2
             // 
             this.label2.AllowDrop = true;
@@ -251,24 +306,12 @@
             this.label7.AllowDrop = true;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 357);
+            this.label7.Location = new System.Drawing.Point(27, 380);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 33);
             this.label7.TabIndex = 27;
             this.label7.Text = "Trạng Thái:";
-            // 
-            // label3
-            // 
-            this.label3.AllowDrop = true;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 120);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 33);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Số tiền:";
             // 
             // txtMaVay
             // 
@@ -281,6 +324,30 @@
             this.txtMaVay.Name = "txtMaVay";
             this.txtMaVay.Size = new System.Drawing.Size(328, 30);
             this.txtMaVay.TabIndex = 20;
+            // 
+            // txtSoTienVay
+            // 
+            this.txtSoTienVay.AllowDrop = true;
+            this.txtSoTienVay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoTienVay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoTienVay.Location = new System.Drawing.Point(203, 120);
+            this.txtSoTienVay.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoTienVay.Name = "txtSoTienVay";
+            this.txtSoTienVay.Size = new System.Drawing.Size(328, 30);
+            this.txtSoTienVay.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AllowDrop = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 120);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 33);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Số tiền:";
             // 
             // tableLayoutPanel1
             // 
@@ -297,7 +364,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1214, 422);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1214, 463);
             this.tableLayoutPanel1.TabIndex = 34;
             // 
             // panel1
@@ -315,7 +382,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(610, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 416);
+            this.panel1.Size = new System.Drawing.Size(601, 457);
             this.panel1.TabIndex = 31;
             // 
             // dgvlaisuat
@@ -334,8 +401,9 @@
             this.dgvlaisuat.RowHeadersWidth = 51;
             this.dgvlaisuat.RowTemplate.Height = 24;
             this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlaisuat.Size = new System.Drawing.Size(968, 86);
+            this.dgvlaisuat.Size = new System.Drawing.Size(968, 105);
             this.dgvlaisuat.TabIndex = 34;
+            this.dgvlaisuat.Click += new System.EventHandler(this.dgvlaisuat_Click);
             // 
             // txtMaLS
             // 
@@ -429,8 +497,7 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.dgvKhoanVay);
@@ -445,7 +512,6 @@
             this.panel4.Controls.Add(this.btnXoa);
             this.panel4.Controls.Add(this.btnSua);
             this.panel4.Controls.Add(this.btnThem);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 857);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1244, 86);
@@ -454,68 +520,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowDrop = true;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(51, 107);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(968, 86);
-            this.dataGridView1.TabIndex = 45;
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.AllowDrop = true;
-            this.txtMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Location = new System.Drawing.Point(218, 68);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(328, 30);
-            this.txtMaKH.TabIndex = 44;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowDrop = true;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(51, 251);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(968, 86);
-            this.dataGridView2.TabIndex = 47;
-            // 
-            // txtMaTK
-            // 
-            this.txtMaTK.AllowDrop = true;
-            this.txtMaTK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTK.Location = new System.Drawing.Point(218, 212);
-            this.txtMaTK.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaTK.Name = "txtMaTK";
-            this.txtMaTK.Size = new System.Drawing.Size(328, 30);
-            this.txtMaTK.TabIndex = 46;
             // 
             // frmKhoanVay
             // 
@@ -533,6 +537,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoanVay)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvtaikhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmakh)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -540,8 +546,6 @@
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -574,9 +578,9 @@
         private System.Windows.Forms.DateTimePicker dtpNgayVay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvtaikhoan;
         private System.Windows.Forms.TextBox txtMaTK;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvmakh;
         private System.Windows.Forms.TextBox txtMaKH;
     }
 }

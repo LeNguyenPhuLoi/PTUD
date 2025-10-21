@@ -18,6 +18,19 @@ namespace BUS
             return ck.LoadDSChuyenKhoan();
         }
 
+        //gọi hàm LoadDSKhachHang
+        public IQueryable LoadDSKhachHang()
+        {
+            return ck.LoadDSKhachHang();
+        }
+
+        //gọi hàm LoadDSTaiKhoan
+        public IQueryable LoadDSTaiKhoan()
+        {
+            return ck.LoadDSTaiKhoan();
+        }
+
+
         //gọi hàm thêm chuyển khoản
         public bool ThemCK(ET_ChuyenKhoan et)
         {

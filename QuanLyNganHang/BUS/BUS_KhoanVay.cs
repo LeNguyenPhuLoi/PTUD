@@ -18,6 +18,24 @@ namespace BUS
             return kv.LoadDSKhoanVay();
         }
 
+        //gọi hàm LoadDSKhachHang
+        public IQueryable LoadDSKhachHang()
+        {
+            return kv.LoadDSKhachHang();
+        }
+
+        //gọi hàm LoadDSTaiKhoan
+        public IQueryable LoadDSTaiKhoan()
+        {
+            return kv.LoadDSTaiKhoan();
+        }
+
+        //gọi hàm LoadDSLaiSuat
+        public IQueryable LoadDSLaiSuat()
+        {
+            return kv.LoadDSLaiSuat();
+        }
+
         //gọi hàm thêm khoản vay
         public bool ThemKV(ET_KhoanVay et)
         {

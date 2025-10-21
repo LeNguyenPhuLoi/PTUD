@@ -46,6 +46,7 @@
     <Compile Include="ET_ChuyenKhoan.cs" />
     <Compile Include="ET_KhachHang.cs" />
     <Compile Include="ET_KhoanVay.cs" />
+    <Compile Include="ET_KhuyenMai.cs" />
     <Compile Include="ET_LaiSuat.cs" />
     <Compile Include="ET_LoaiTaiKhoan.cs" />
     <Compile Include="ET_NhanVien.cs" />

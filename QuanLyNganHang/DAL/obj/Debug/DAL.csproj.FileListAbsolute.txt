@@ -141,3 +141,21 @@ E:\Hoc kì 5\PTỨD-2\20-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Co
 E:\Hoc kì 5\PTỨD-2\20-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
 E:\Hoc kì 5\PTỨD-2\20-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
 E:\Hoc kì 5\PTỨD-2\20-10-2025\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.dll.config
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.dll
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\DAL.pdb
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\Dapper.dll
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\ET.dll
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\ET.pdb
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\Dapper.xml
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\upbaii\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\upbaii\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\upbaii\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\upbaii\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\upbaii\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
+D:\upbaii\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb

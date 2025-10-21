@@ -22,10 +22,33 @@ namespace DAL
         public IQueryable LoadDSKhoanVay()
         {
             IQueryable KV = from kv in db.KHOANVAYs
-                            select kv;
+                            select new { kv.MAVAY, kv.MAKH, kv.MATK, kv.TRANGTHAI, kv.NGAYVAY, kv.THOIHAN, kv.SOTIENVAY, kv.MALAISUAT };
             return KV;
         }
 
+        //Load danh sách khách hàng
+        public IQueryable LoadDSKhachHang()
+        {
+            IQueryable KH = from kh in db.KHACHHANGs
+                            select kh;
+            return KH;
+        }
+
+        //Load danh sách tài khoản
+        public IQueryable LoadDSTaiKhoan()
+        {
+            IQueryable TK = from tk in db.TAIKHOANs
+                            select tk;
+            return TK;
+        }
+
+        //Load danh sách lãi suất
+        public IQueryable LoadDSLaiSuat()
+        {
+            IQueryable LS = from ls in db.LAISUATs
+                            select ls;
+            return LS;
+        }
         //Thêm khoản vay
         public bool ThemKV(ET_KhoanVay et)
         {

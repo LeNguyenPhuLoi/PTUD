@@ -22,9 +22,25 @@ namespace DAL
         public IQueryable LoadDSChuyenKhoan()
         {
             IQueryable CK = from ck in db.CHUYENKHOANs
-                            select ck;
+                            select new { ck.MACK, ck.MAKH, ck.MATK, ck.MATKGUI, ck.MATKNHAN, ck.NGAYCK, ck.SOTIEN, ck.NOIDUNG };
             return CK;
         }
+        //Load danh sách khách hàng
+        public IQueryable LoadDSKhachHang()
+        {
+            IQueryable KH = from kh in db.KHACHHANGs
+                            select kh;
+            return KH;
+        }
+
+        //load danh sách tài khoản, tài khoản gửi, tài khoản nhận
+        public IQueryable LoadDSTaiKhoan()
+        {
+            IQueryable TK = from tk in db.TAIKHOANs
+                            select tk;
+            return TK;
+        }
+
 
         //Thêm chuyển khoản
         public bool ThemCK(ET_ChuyenKhoan et)
