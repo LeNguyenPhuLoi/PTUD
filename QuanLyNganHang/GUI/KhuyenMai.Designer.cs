@@ -41,9 +41,9 @@
             this.dtNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.dtNgayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxtMota = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.rtxtDKAD = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
@@ -192,7 +192,7 @@
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlMain.Controls.Add(this.richTextBox1);
+            this.pnlMain.Controls.Add(this.rtxtMota);
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Controls.Add(this.txtTenKM);
             this.pnlMain.Controls.Add(this.label1);
@@ -203,22 +203,22 @@
             this.pnlMain.Size = new System.Drawing.Size(618, 259);
             this.pnlMain.TabIndex = 20;
             // 
-            // richTextBox1
+            // rtxtMota
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rtxtMota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(149, 145);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(387, 96);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.rtxtMota.Location = new System.Drawing.Point(149, 145);
+            this.rtxtMota.Name = "rtxtMota";
+            this.rtxtMota.Size = new System.Drawing.Size(387, 96);
+            this.rtxtMota.TabIndex = 2;
+            this.rtxtMota.Text = "";
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.richTextBox2);
+            this.panel1.Controls.Add(this.rtxtDKAD);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.dtNgayKetThuc);
             this.panel1.Controls.Add(this.label4);
@@ -229,15 +229,15 @@
             this.panel1.Size = new System.Drawing.Size(619, 259);
             this.panel1.TabIndex = 24;
             // 
-            // richTextBox2
+            // rtxtDKAD
             // 
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.rtxtDKAD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox2.Location = new System.Drawing.Point(259, 153);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(298, 96);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
+            this.rtxtDKAD.Location = new System.Drawing.Point(259, 153);
+            this.rtxtDKAD.Name = "rtxtDKAD";
+            this.rtxtDKAD.Size = new System.Drawing.Size(298, 96);
+            this.rtxtDKAD.TabIndex = 3;
+            this.rtxtDKAD.Text = "";
             // 
             // tableLayoutPanel1
             // 
@@ -287,6 +287,7 @@
             this.btnThem.TabIndex = 47;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -305,6 +306,7 @@
             this.btnSua.TabIndex = 48;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -323,6 +325,7 @@
             this.btnXoa.TabIndex = 49;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnHoanTac
             // 
@@ -340,6 +343,7 @@
             this.btnHoanTac.TabIndex = 50;
             this.btnHoanTac.Text = "Làm mới";
             this.btnHoanTac.UseVisualStyleBackColor = false;
+            this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
             // 
             // frmKhuyenMai
             // 
@@ -387,7 +391,7 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnHoanTac;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox rtxtMota;
+        private System.Windows.Forms.RichTextBox rtxtDKAD;
     }
 }
