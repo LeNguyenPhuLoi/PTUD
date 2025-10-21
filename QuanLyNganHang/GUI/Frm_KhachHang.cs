@@ -23,11 +23,6 @@ namespace GUI
 
         BUS_KhachHang BUS_KhachHang = new BUS_KhachHang();
 
-        private void Re_size()
-        {
-            dgv_KhachHang.Size = new Size(panel_KhachHang.Width + 300, panel_KhachHang.Height + 300);
-        }
-
         private void Clear()
         {
             txt_MaKH.Clear();
@@ -93,7 +88,6 @@ namespace GUI
 
             dtp_NgayTao.MaxDate = DateTime.Now;
             cbo_DoiTuong.SelectedIndex = 0;
-            Re_size();
             HienThiDS();
             if (this.MdiParent.Name == "frmMainAddmin")
             {
@@ -107,16 +101,28 @@ namespace GUI
         }
 
         private void Frm_KhachHang_Resize(object sender, EventArgs e)
-        {
-            
+        {            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (BUS_KhachHang.KiemTraTonTaiMaKH(txt_MaKH.Text.Trim().ToUpper()))
-            {
-                MessageBox.Show("Mã khách hàng này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (!KiemTraTatCaTruongNhap())
                 return;
+
+            var checks = new (string field, bool exists)[]
+            {
+                ("Mã khách hàng", BUS_KhachHang.KiemTraTonTaiMaKH(txt_MaKH.Text.Trim().ToUpper())),
+                ("CCCD/CMND", BUS_KhachHang.KiemTraTonTaiCCCD(txt_Cccd.Text)),
+                ("Số điện thoại", BUS_KhachHang.KiemTraTonTaiSDT(txt_SDT.Text))
+            };
+
+            foreach (var (field, exists) in checks)
+            {
+                if (exists)
+                {
+                    MessageBox.Show($"{field} này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             }
 
             try
@@ -151,6 +157,24 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (!KiemTraTatCaTruongNhap())
+                return;
+
+            var checks = new (string field, bool exists)[]
+            {
+                ("CCCD/CMND", BUS_KhachHang.KiemTraTonTaiCCCD(txt_Cccd.Text)),
+                ("Số điện thoại", BUS_KhachHang.KiemTraTonTaiSDT(txt_SDT.Text))
+            };
+
+            foreach (var (field, exists) in checks)
+            {
+                if (exists)
+                {
+                    MessageBox.Show($"{field} này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
             try
             {
                 ET_KhachHang kh = new ET_KhachHang(txt_MaKH.Text.Trim().ToUpper(),
@@ -503,7 +527,34 @@ namespace GUI
 
         private void Frm_KhachHang_ResizeEnd(object sender, EventArgs e)
         {
-            Re_size();
+        }
+
+        private bool KiemTraTatCaTruongNhap()
+        {
+            var dsham = new Dictionary<string, Func<bool>>
+            {
+                { "Mã Khách Hàng", () => KiemTraDinhDangMaKH(txt_MaKH.Text.Trim().ToUpper()) },
+                { "Tên Khách Hàng", () => KiemTraDinhDangTenKH(txt_TenKH.Text) },
+                { "CCCD/CMND",  () => KiemTraDinhDangCCCD(txt_Cccd.Text) },
+                { "Số Điện Thoại", () => KiemTraDinhDangSDT(txt_SDT.Text) },
+                { "Email", () => KiemTraDinhDangEmail(txt_Email.Text) },
+                { "Địa Chỉ", () => KiemTraDinhDangDiaChi(txt_DiaChi.Text) },
+                { "Quốc Tịch", () => KiemTraDinhDangQuocTich(txt_QuocTich.Text) },
+            };
+
+            foreach (var saidinhdang in dsham)
+            {
+                string truong = saidinhdang.Key;
+                Func<bool> check = saidinhdang.Value;
+
+                if (!check())
+                {
+                    MessageBox.Show($"Trường {truong} không phù hợp định dạng!", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

@@ -14,6 +14,12 @@ namespace BUS
     {
         DAL_LoaiTaiKhoan DAL_LoaiTaiKhoan = new DAL_LoaiTaiKhoan();
 
+        //hàm kiểm tra chi tiết đã tồn tại
+        public bool KiemTraTonTaiChiTiet(string chitiet)
+        {
+            return DAL_LoaiTaiKhoan.KiemTraTonTaiChiTiet(chitiet);
+        }
+
         //hàm kiểm tra mã loại tài khoản đã tồn tại
         public bool KiemTraTonTaiMaLoaiTK(string maloaitk)
         {

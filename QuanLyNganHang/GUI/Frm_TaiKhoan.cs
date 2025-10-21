@@ -22,15 +22,8 @@ namespace GUI
 
         BUS_TaiKhoan BUS_TaiKhoan = new BUS_TaiKhoan();
 
-        private void Re_size()
-        {
-            dgv_TaiKhoan.Size = new Size(panel_TaiKhoan.Width + 300, panel_TaiKhoan.Height + 300);
-            dgv_KhachHang.Size = new Size(panel_KhachHang.Width + 300, panel_KhachHang.Height + 300);
-        }
-
         private void Frm_TaiKhoan_Load(object sender, EventArgs e)
         {
-            Re_size();
             AddToCBO(cbo_LoaiTK, BUS_TaiKhoan.LayChiTietLoaiTK());
             AddToCBO(cbo_TenNgoaiTe, BUS_TaiKhoan.LayTenNgoaiTe());
             cbo_LoaiTK.SelectedIndex = 0;
@@ -111,9 +104,18 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (!KiemTraTatCaTruongNhap())
+                return;
+
             if (BUS_TaiKhoan.KiemTraTonTaiMaTK(txt_MaTk.Text.Trim().ToUpper()))
             {
                 MessageBox.Show("Mã tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (BUS_TaiKhoan.KiemTraTonTaiSoTK(txt_SoTaiKhoan.Text))
+            {
+                MessageBox.Show("Số tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -177,6 +179,15 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (!KiemTraTatCaTruongNhap())
+                return;
+
+            if (BUS_TaiKhoan.KiemTraTonTaiSoTK(txt_SoTaiKhoan.Text))
+            {
+                MessageBox.Show("Số tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 ET_TaiKhoan tk = new ET_TaiKhoan(txt_MaTk.Text.Trim().ToUpper(),
@@ -424,7 +435,31 @@ namespace GUI
 
         private void Frm_TaiKhoan_ResizeEnd(object sender, EventArgs e)
         {
-            Re_size();
+        }
+
+        private bool KiemTraTatCaTruongNhap()
+        {
+            var dsham = new Dictionary<string, Func<bool>>
+            {
+                { "Mã Khách Hàng", () => KiemTraDinhDangMaTK(txt_MaTk.Text.Trim().ToUpper()) },
+                { "CCCD/CMND",  () => KiemTraDinhDangCCCD(txt_CCCD.Text) },
+                { "Số Tài Khoản", () => KiemTraDinhDangSTK(txt_SoTaiKhoan.Text) },
+                { "Số Dư", () => KiemTraDinhDangSoDu(txt_SoDu.Text) },
+            };
+
+            foreach (var saidinhdang in dsham)
+            {
+                string truong = saidinhdang.Key;
+                Func<bool> check = saidinhdang.Value;
+
+                if (!check())
+                {
+                    MessageBox.Show($"Trường {truong} không phù hợp định dạng!", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

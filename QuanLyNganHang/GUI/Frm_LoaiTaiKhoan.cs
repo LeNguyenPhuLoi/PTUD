@@ -56,6 +56,7 @@ namespace GUI
             txt_MaLoaiTK.Clear();
             txt_ChiTiet.Clear();
             dtp_NgayTao.Text = dtp_NgayTao.MaxDate.ToString();
+            dtp_NgayCapNhat.MinDate = dtp_NgayTao.MinDate;
             dtp_NgayCapNhat.Text = dtp_NgayCapNhat.MaxDate.ToString();
             cbo_TrangThai.SelectedIndex = 0;
 
@@ -90,9 +91,18 @@ namespace GUI
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (!KiemTraTatCaTruongNhap())
+                return;
+
             if (BUS_LoaiTaiKhoan.KiemTraTonTaiMaLoaiTK(txt_MaLoaiTK.Text.Trim().ToUpper()))
             {
                 MessageBox.Show("Mã loại tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (BUS_LoaiTaiKhoan.KiemTraTonTaiChiTiet(txt_ChiTiet.Text.Trim()))
+            {
+                MessageBox.Show("Chi tiết này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -123,6 +133,15 @@ namespace GUI
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (!KiemTraTatCaTruongNhap())
+                return;
+
+            if (BUS_LoaiTaiKhoan.KiemTraTonTaiChiTiet(txt_ChiTiet.Text.Trim()))
+            {
+                MessageBox.Show("Chi tiết này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 ET_LoaiTaiKhoan ltk = new ET_LoaiTaiKhoan(txt_MaLoaiTK.Text.Trim().ToUpper(),
@@ -253,7 +272,7 @@ namespace GUI
         {
             try
             {
-                dtp_NgayCapNhat.MinDate = dtp_NgayTao.MinDate;
+                dtp_NgayCapNhat.MinDate = dtp_NgayTao.Value;
             }
             catch (Exception ex)
             {
@@ -332,6 +351,29 @@ namespace GUI
         private void Frm_LoaiTaiKhoan_ResizeEnd(object sender, EventArgs e)
         {
             Cutom_Resize();
+        }
+
+        private bool KiemTraTatCaTruongNhap()
+        {
+            var dsham = new Dictionary<string, Func<bool>>
+            {
+                { "Mã Loại Tài Khoản", () => KiemTraDinhDangMaLTK(txt_MaLoaiTK.Text.Trim().ToUpper()) },
+                { "Tên Khách Hàng", () => KiemTraDinhDangChiTiet(txt_ChiTiet.Text) },
+            };
+
+            foreach (var saidinhdang in dsham)
+            {
+                string truong = saidinhdang.Key;
+                Func<bool> check = saidinhdang.Value;
+
+                if (!check())
+                {
+                    MessageBox.Show($"Trường {truong} không phù hợp định dạng!", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

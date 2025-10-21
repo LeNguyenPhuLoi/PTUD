@@ -6,38 +6,74 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace DAL
 {
     public class AutoConnect
     {
-        private readonly string connectionString;
+        private string connectionString;
+        private readonly string cachePath = "last_instance.txt";
 
         public AutoConnect()
         {
-            //lấy tên máy
-            string host = Dns.GetHostName();
-            //danh sách các DataSource Name
+            //Thử instance được lưu lần trước
+            if (TryLoadCachedInstance())
+                return;
+
+            //Dò tự động các instance khả dụng
+            var host = Dns.GetHostName();
             var instanceOptions = new List<string> { ".", host };
 
-            //xử lý lấy instanceName trong sql server
-            Microsoft.Win32.RegistryView registryView = Environment.Is64BitOperatingSystem ? Microsoft.Win32.RegistryView.Registry64 : Microsoft.Win32.RegistryView.Registry32;
-            using (Microsoft.Win32.RegistryKey hklm = Microsoft.Win32.RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, registryView))
+            var registryView = Environment.Is64BitOperatingSystem
+                ? Microsoft.Win32.RegistryView.Registry64
+                : Microsoft.Win32.RegistryView.Registry32;
+
+            using (var hklm = Microsoft.Win32.RegistryKey.OpenBaseKey(Microsoft.Win32.RegistryHive.LocalMachine, registryView))
             {
-                Microsoft.Win32.RegistryKey instanceKey = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL", false);
+                var instanceKey = hklm.OpenSubKey(@"SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL", false);
                 if (instanceKey != null)
                 {
                     foreach (var instanceName in instanceKey.GetValueNames())
                     {
-                        //thêm DataSource Name vào danh sách
                         instanceOptions.Add(host + "\\" + instanceName);
                     }
                 }
-                //kiểm tra chuỗi kết nối cơ sở dữ liệu
-                connectionString = instanceOptions
-                    .Select(instance => $"Data Source={instance};Initial Catalog=QLNH;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;")
-                    .FirstOrDefault(TestConnection);
             }
+
+            //Thử song song các instance
+            connectionString = instanceOptions
+                .AsParallel()
+                .Select(instance => new
+                {
+                    Instance = instance,
+                    Connection = $"Data Source={instance};Initial Catalog=QLNH;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;"
+                })
+                .FirstOrDefault(x => TestConnection(x.Connection))?.Connection;
+
+            //Nếu kết nối thành công, lưu cache
+            if (connectionString != null)
+            {
+                var instanceName = instanceOptions.FirstOrDefault(i => connectionString.Contains(i));
+                if (instanceName != null)
+                    File.WriteAllText(cachePath, instanceName);
+            }
+        }
+
+        //Hàm thử instance được lưu
+        private bool TryLoadCachedInstance()
+        {
+            if (!File.Exists(cachePath))
+                return false;
+
+            var cachedInstance = File.ReadAllText(cachePath);
+            var testConn = $"Data Source={cachedInstance};Initial Catalog=QLNH;Integrated Security=True;TrustServerCertificate=True;Connect Timeout=2;";
+            if (TestConnection(testConn))
+            {
+                connectionString = testConn;
+                return true;
+            }
+            return false;
         }
 
         //hàm trả về chuỗi kết nối

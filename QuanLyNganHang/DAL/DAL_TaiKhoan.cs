@@ -18,6 +18,30 @@ namespace DAL
         private readonly AutoConnect connect = new AutoConnect();
 
         //hàm kiểm tra mã tài khoản đã tồn tại
+        public bool KiemTraTonTaiSoTK(string sotk)
+        {
+            bool flag = false;
+            const string query = @"SELECT COUNT(1) FROM TAIKHOAN WHERE SOTAIKHOAN = @Sotk";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    int count = conn.ExecuteScalar<int>(query, new { Sotk = sotk });
+                    if (count > 0)
+                    {
+                        flag = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return flag;
+        }
+
+        //hàm kiểm tra mã tài khoản đã tồn tại
         public bool KiemTraTonTaiMaTK(string matk)
         {
             bool flag = false;
