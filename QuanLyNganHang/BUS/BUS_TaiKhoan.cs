@@ -14,6 +14,12 @@ namespace BUS
         DAL_TaiKhoan DAL_TaiKhoan = new DAL_TaiKhoan();
 
         //hàm kiểm tra mã tài khoản đã tồn tại
+        public bool KiemTraTonTaiSoTK(string sotk)
+        {
+            return DAL_TaiKhoan.KiemTraTonTaiSoTK(sotk);
+        }
+
+        //hàm kiểm tra mã tài khoản đã tồn tại
         public bool KiemTraTonTaiMaTK(string matk)
         {
             return DAL_TaiKhoan.KiemTraTonTaiMaTK(matk);

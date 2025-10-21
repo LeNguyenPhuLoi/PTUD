@@ -290,7 +290,7 @@
             this.dgv_LoaiTaiKhoan.RowHeadersVisible = false;
             this.dgv_LoaiTaiKhoan.RowHeadersWidth = 51;
             this.dgv_LoaiTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_LoaiTaiKhoan.Size = new System.Drawing.Size(730, 100);
+            this.dgv_LoaiTaiKhoan.Size = new System.Drawing.Size(1920, 1080);
             this.dgv_LoaiTaiKhoan.TabIndex = 17;
             this.dgv_LoaiTaiKhoan.Click += new System.EventHandler(this.dgv_LoaiTaiKhoan_Click);
             // 

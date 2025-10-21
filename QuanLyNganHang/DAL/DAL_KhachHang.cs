@@ -16,6 +16,54 @@ namespace DAL
         //kết nối với cơ sở dữ liệu 
         private readonly AutoConnect connect = new AutoConnect();
 
+        //hàm kiểm tra SĐT khách hàng đã tồn tại
+        public bool KiemTraTonTaiSDT(string sdt)
+        {
+            bool flag = false;
+            const string query = @"SELECT COUNT(1) FROM KHACHHANG WHERE SDT = @Sdt";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    int count = conn.ExecuteScalar<int>(query, new { Sdt = sdt });
+                    if (count > 0)
+                    {
+                        flag = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return flag;
+        }
+
+        //hàm kiểm tra cccd/cmnd khách hàng đã tồn tại
+        public bool KiemTraTonTaiCCCD(string cccd)
+        {
+            bool flag = false;
+            const string query = @"SELECT COUNT(1) FROM KHACHHANG WHERE CCCD = @Cccd";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    int count = conn.ExecuteScalar<int>(query, new { Cccd = cccd });
+                    if (count > 0)
+                    {
+                        flag = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return flag;
+        }
+
         //hàm kiểm tra mã khách hàng đã tồn tại
         public bool KiemTraTonTaiMaKH(string makh)
         {

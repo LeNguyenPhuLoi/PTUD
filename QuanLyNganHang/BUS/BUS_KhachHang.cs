@@ -14,6 +14,18 @@ namespace BUS
     {
         DAL_KhachHang DAL_KhachHang = new DAL_KhachHang();
 
+        //hàm kiểm tra SĐT khách hàng đã tồn tại
+        public bool KiemTraTonTaiSDT(string sdt)
+        {
+            return DAL_KhachHang.KiemTraTonTaiSDT(sdt);
+        }
+
+        //hàm kiểm tra cccd/cmnd khách hàng đã tồn tại
+        public bool KiemTraTonTaiCCCD(string cccd)
+        {
+            return DAL_KhachHang.KiemTraTonTaiCCCD(cccd);
+        }
+
         //hàm kiểm tra mã khách hàng đã tồn tại
         public bool KiemTraTonTaiMaKH(string makh)
         {
