@@ -252,6 +252,7 @@
             this.rtxDiaChi.Size = new System.Drawing.Size(299, 69);
             this.rtxDiaChi.TabIndex = 31;
             this.rtxDiaChi.Text = "";
+            this.rtxDiaChi.Leave += new System.EventHandler(this.rtxDiaChi_Leave);
             // 
             // txtSDT
             // 
@@ -263,6 +264,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(298, 30);
             this.txtSDT.TabIndex = 30;
+            this.txtSDT.Leave += new System.EventHandler(this.txtSDT_Leave);
             // 
             // cboMaCN
             // 
@@ -339,6 +341,7 @@
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.Size = new System.Drawing.Size(298, 30);
             this.txtLuong.TabIndex = 23;
+            this.txtLuong.Leave += new System.EventHandler(this.txtLuong_Leave);
             // 
             // label4
             // 
@@ -411,6 +414,8 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(296, 30);
             this.txtCCCD.TabIndex = 50;
+            this.txtCCCD.TextChanged += new System.EventHandler(this.txtCCCD_TextChanged);
+            this.txtCCCD.Leave += new System.EventHandler(this.txtCCCD_Leave);
             // 
             // panel5
             // 
@@ -501,6 +506,7 @@
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(296, 30);
             this.txtTenNV.TabIndex = 19;
+            this.txtTenNV.Leave += new System.EventHandler(this.txtTenNV_Leave);
             // 
             // txtMaNV
             // 
@@ -512,6 +518,8 @@
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(297, 30);
             this.txtMaNV.TabIndex = 1;
+            this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
+            this.txtMaNV.Leave += new System.EventHandler(this.txtMaNV_Leave);
             // 
             // cboChuc
             // 
