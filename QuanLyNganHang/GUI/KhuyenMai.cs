@@ -47,12 +47,14 @@ namespace GUI
         {
             try
             {
+                string TrangThai = "Hoạt Động";
                 ET_KhuyenMai km = new ET_KhuyenMai(txtMaKM.Text,
                                                    txtTenKM.Text,
                                                    rtxtMota.Text,
                                                    dtNgayBatDau.Value,
                                                    dtNgayKetThuc.Value,
-                                                   rtxtDKAD.Text);
+                                                   rtxtDKAD.Text,
+                                                   TrangThai);
                 if (bUS_KhuyenMai.ThemKM(km) == true)
                 {
                     MessageBox.Show("Thêm khuyến mãi thành công!");
@@ -74,12 +76,14 @@ namespace GUI
         {
             try
             {
+                string TrangThai = "Hoạt Động";
                 ET_KhuyenMai km = new ET_KhuyenMai(txtMaKM.Text,
                                                    txtTenKM.Text,
                                                    rtxtMota.Text,
                                                    dtNgayBatDau.Value,
                                                    dtNgayKetThuc.Value,
-                                                   rtxtDKAD.Text);
+                                                   rtxtDKAD.Text,
+                                                   TrangThai);
                 if (bUS_KhuyenMai.SuaKM(km) == true)
                 {
                     MessageBox.Show("Sửa khuyến mãi thành công!");
@@ -101,15 +105,17 @@ namespace GUI
         {
             try
             {
+                string TrangThai = "Ngừng Hoạt Động";
                 DialogResult = MessageBox.Show("Bạn có muốn xóa?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult == DialogResult.Yes)
                 {
                     ET_KhuyenMai km = new ET_KhuyenMai(txtMaKM.Text,
-                                                       txtTenKM.Text,
-                                                       rtxtMota.Text,
-                                                       dtNgayBatDau.Value,
-                                                       dtNgayKetThuc.Value,
-                                                       rtxtDKAD.Text);
+                                                   txtTenKM.Text,
+                                                   rtxtMota.Text,
+                                                   dtNgayBatDau.Value,
+                                                   dtNgayKetThuc.Value,
+                                                   rtxtDKAD.Text,
+                                                   TrangThai);
                     if (bUS_KhuyenMai.XoaKM(km) == true)
                     {
                         MessageBox.Show("Xóa thành công!");
@@ -144,6 +150,64 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
+        }
+
+        private void btn_An_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string TrangThai = "Ngừng Hoạt Động";
+                ET_KhuyenMai ck = new ET_KhuyenMai(txtMaKM.Text,
+                                                   txtTenKM.Text,
+                                                   rtxtMota.Text,
+                                                   dtNgayBatDau.Value,
+                                                   dtNgayKetThuc.Value,
+                                                   rtxtDKAD.Text,
+                                                   TrangThai);
+                if (bUS_KhuyenMai.TrangThaiAn(ck) == true)
+                {
+                    MessageBox.Show("Ẩn khuyến mãi thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Ẩn khuyến mãi thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvKhuyenMai.DataSource = bUS_KhuyenMai.LoadDSKhuyenMai();
+        }
+
+        private void btn_HuyAn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string TrangThai = "Hoạt Động";
+                ET_KhuyenMai ck = new ET_KhuyenMai(txtMaKM.Text,
+                                                   txtTenKM.Text,
+                                                   rtxtMota.Text,
+                                                   dtNgayBatDau.Value,
+                                                   dtNgayKetThuc.Value,
+                                                   rtxtDKAD.Text,
+                                                   TrangThai);
+                if (bUS_KhuyenMai.TrangThaiAn(ck) == true)
+                {
+                    MessageBox.Show("Hủy ẩn chuyển khoản thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Hủy ẩn chuyển khoản thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            dgvKhuyenMai.DataSource = bUS_KhuyenMai.LoadDSKhuyenMai();
         }
     }
 }

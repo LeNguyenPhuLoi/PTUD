@@ -35,5 +35,12 @@ namespace BUS
         {
             return km.XoaKM(et);
         }
+
+        //
+        public bool TrangThaiAn(ET_KhuyenMai et)
+        {
+            return km.TrangThaiAn(et);
+        }
+
     }
 }

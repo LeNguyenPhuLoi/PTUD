@@ -18,6 +18,13 @@ namespace BUS
             return ls.LoadDSLaiSuat();
         }
 
+        //
+        public IQueryable LoadDSLaiSuatUser()
+        {
+            return ls.LoadDSLaiSuatUser();
+        }
+
+
         //Gọi hàm thêm lãi suất
         public bool ThemLaiSuat(ET_LaiSuat et)
         {
@@ -35,5 +42,12 @@ namespace BUS
         {
             return ls.XoaLaiSuat(et);
         }
+
+        //
+        public bool TrangThaiAn(ET_LaiSuat et)
+        {
+            return ls.TrangThaiAn(et);
+        }
+
     }
 }

@@ -46,7 +46,8 @@ namespace DAL
                         MOTA = et.MoTa,
                         NGAYBD = et.NgayBD,
                         NGAYKT = et.NgayKT,
-                        DKAPDUNG = et.DKApDung
+                        DKAPDUNG = et.DKApDung,
+                        TinhTrangXoa = et.TinhTrangXoa
                     };
                     db.KHUYENMAIs.InsertOnSubmit(km);
                     db.SubmitChanges();
@@ -105,6 +106,29 @@ namespace DAL
                 if (delete != null)
                 {
                     db.KHUYENMAIs.DeleteOnSubmit(delete);
+                    db.SubmitChanges();
+                    ss = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ss = false;
+                Console.WriteLine("Lỗi" + ex.ToString());
+            }
+            return ss;
+        }
+
+        //Trạng thái ẩn
+        public bool TrangThaiAn(ET_KhuyenMai et)
+        {
+            bool ss = false;
+            db = new QLNHDataContext(conn.GetConnection());
+            try
+            {
+                var change = db.KHUYENMAIs.Single(km => km.MAKM == et.MaKM);
+                if (change != null)
+                {
+                    change.TinhTrangXoa = et.TinhTrangXoa;
                     db.SubmitChanges();
                     ss = true;
                 }

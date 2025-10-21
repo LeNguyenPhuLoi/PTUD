@@ -16,9 +16,9 @@ namespace ET
         public string MaTKGui { get; set; }
         public string MaTKNhan { get; set; }
         public string NoiDung { get; set; }
+        public string TinhTrangXoa { get; set; }
 
-
-        public ET_ChuyenKhoan(string maCK, string maKH, string maTK, DateTime ngayCK, decimal soTien, string maTKGui, string maTKNhan, string noiDung)
+        public ET_ChuyenKhoan(string maCK, string maKH, string maTK, DateTime ngayCK, decimal soTien, string maTKGui, string maTKNhan, string noiDung, string tinhTrangXoa)
         {
             MaCK = maCK;
             MaKH = maKH;
@@ -28,6 +28,7 @@ namespace ET
             MaTKGui = maTKGui;
             MaTKNhan = maTKNhan;
             NoiDung = noiDung;
+            TinhTrangXoa = tinhTrangXoa;
         }
     }
 }

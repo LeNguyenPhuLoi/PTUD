@@ -50,6 +50,8 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnHoanTac = new System.Windows.Forms.Button();
+            this.btn_HuyAn = new System.Windows.Forms.Button();
+            this.btn_An = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhuyenMai)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -319,7 +321,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(317, 597);
+            this.btnXoa.Location = new System.Drawing.Point(317, 596);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(112, 49);
             this.btnXoa.TabIndex = 49;
@@ -345,11 +347,51 @@
             this.btnHoanTac.UseVisualStyleBackColor = false;
             this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
             // 
+            // btn_HuyAn
+            // 
+            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_HuyAn.BackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
+            this.btn_HuyAn.Location = new System.Drawing.Point(796, 596);
+            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_HuyAn.Name = "btn_HuyAn";
+            this.btn_HuyAn.Size = new System.Drawing.Size(112, 49);
+            this.btn_HuyAn.TabIndex = 52;
+            this.btn_HuyAn.Text = "Hủy Ẩn";
+            this.btn_HuyAn.UseVisualStyleBackColor = false;
+            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
+            // 
+            // btn_An
+            // 
+            this.btn_An.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_An.BackColor = System.Drawing.Color.Red;
+            this.btn_An.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_An.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_An.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_An.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_An.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_An.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_An.Location = new System.Drawing.Point(582, 596);
+            this.btn_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_An.Name = "btn_An";
+            this.btn_An.Size = new System.Drawing.Size(193, 49);
+            this.btn_An.TabIndex = 51;
+            this.btn_An.Text = "Ẩn Khách Hàng";
+            this.btn_An.UseVisualStyleBackColor = false;
+            this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
+            // 
             // frmKhuyenMai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1317, 675);
+            this.Controls.Add(this.btn_HuyAn);
+            this.Controls.Add(this.btn_An);
             this.Controls.Add(this.btnHoanTac);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
@@ -393,5 +435,7 @@
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.RichTextBox rtxtMota;
         private System.Windows.Forms.RichTextBox rtxtDKAD;
+        private System.Windows.Forms.Button btn_HuyAn;
+        private System.Windows.Forms.Button btn_An;
     }
 }

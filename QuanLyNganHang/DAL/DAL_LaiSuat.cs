@@ -21,9 +21,18 @@ namespace DAL
         //Load danh sách lãi suất
         public IQueryable LoadDSLaiSuat()
         {
-            IQueryable ls = from l in db.LAISUATs
-                            select l;
-            return ls;
+            IQueryable LS = from ls in db.LAISUATs
+                            select ls;
+            return LS;
+        }
+
+        //Load danh sách lãi suất cho user
+        public IQueryable LoadDSLaiSuatUser()
+        {
+            IQueryable LS = from ls in db.LAISUATs
+                            where ls.TinhTrangXoa == "Hoạt Động"
+                            select ls;
+            return LS;
         }
 
         //Thêm lãi suất
@@ -45,7 +54,8 @@ namespace DAL
                         MALAISUAT = et.MaLaiSuat,
                         TENLOAIVAY = et.TenLoaiVay,
                         LAISUAT1 = et.LaiSuatValue,
-                        KIEULAI = et.KieuLai
+                        KIEULAI = et.KieuLai,
+                        TinhTrangXoa = et.TinhTrangXoa
                     };
                     db.LAISUATs.InsertOnSubmit(l);
                     db.SubmitChanges();
@@ -102,6 +112,29 @@ namespace DAL
                 if (delete != null)
                 {
                     db.LAISUATs.DeleteOnSubmit(delete);
+                    db.SubmitChanges();
+                    ss = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ss = false;
+                Console.WriteLine("Lỗi" + ex.ToString());
+            }
+            return ss;
+        }
+
+        //Trạng thái ẩn
+        public bool TrangThaiAn(ET_LaiSuat et)
+        {
+            bool ss = false;
+            db = new QLNHDataContext(conn.GetConnection());
+            try
+            {
+                var change = db.LAISUATs.Single(ls => ls.MALAISUAT == et.MaLaiSuat);
+                if (change != null)
+                {
+                    change.TinhTrangXoa = et.TinhTrangXoa;
                     db.SubmitChanges();
                     ss = true;
                 }

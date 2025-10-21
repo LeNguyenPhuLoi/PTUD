@@ -18,6 +18,13 @@ namespace BUS
             return kv.LoadDSKhoanVay();
         }
 
+        //
+        public IQueryable LoadDSKhoanVayUser()
+        {
+            return kv.LoadDSKhoanVayUser();
+        }
+
+
         //gọi hàm LoadDSKhachHang
         public IQueryable LoadDSKhachHang()
         {
@@ -53,5 +60,12 @@ namespace BUS
         {
             return kv.XoaKV(et);
         }
+
+        //
+        public bool TrangThaiAn(ET_KhoanVay et)
+        {
+            return kv.TrangThaiAn(et);
+        }
+
     }
 }
