@@ -22,14 +22,25 @@ namespace DAL
         public IQueryable LoadDSChuyenKhoan()
         {
             IQueryable CK = from ck in db.CHUYENKHOANs
-                            select new { ck.MACK, ck.MAKH, ck.MATK, ck.MATKGUI, ck.MATKNHAN, ck.NGAYCK, ck.SOTIEN, ck.NOIDUNG };
+                            select ck;
             return CK;
         }
+
+        //Load danh sách chuyển khoản cho user
+        public IQueryable LoadDSChuyenKhoanUser()
+        {
+            IQueryable CK = from ck in db.CHUYENKHOANs
+                            where ck.TinhTrangXoa == "Hoạt Động"
+                            select ck;
+            return CK;
+        }
+
+
         //Load danh sách khách hàng
         public IQueryable LoadDSKhachHang()
         {
             IQueryable KH = from kh in db.KHACHHANGs
-                            select kh;
+                            select new { kh.MAKH, kh.TENKH, kh.CCCD, kh.SDT };
             return KH;
         }
 
@@ -37,7 +48,7 @@ namespace DAL
         public IQueryable LoadDSTaiKhoan()
         {
             IQueryable TK = from tk in db.TAIKHOANs
-                            select tk;
+                            select new {tk.MATK, tk.MAKH, tk.SOTAIKHOAN};
             return TK;
         }
 
@@ -65,7 +76,8 @@ namespace DAL
                         SOTIEN = et.SoTien,
                         MATKGUI = et.MaTKGui,
                         MATKNHAN = et.MaTKNhan,
-                        NOIDUNG = et.NoiDung
+                        NOIDUNG = et.NoiDung,
+                        TinhTrangXoa = et.TinhTrangXoa
                     };
                     db.CHUYENKHOANs.InsertOnSubmit(ck);
                     db.SubmitChanges();
@@ -126,6 +138,29 @@ namespace DAL
                 if (delete != null)
                 {
                     db.CHUYENKHOANs.DeleteOnSubmit(delete);
+                    db.SubmitChanges();
+                    ss = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ss = false;
+                Console.WriteLine("Lỗi" + ex.ToString());
+            }
+            return ss;
+        }
+
+        //Trạng thái ẩn
+        public bool TrangThaiAn(ET_ChuyenKhoan et)
+        {
+            bool ss = false;
+            db = new QLNHDataContext(conn.GetConnection());
+            try
+            {
+                var change = db.CHUYENKHOANs.Single(ck => ck.MACK == et.MaCK);
+                if (change != null)
+                {
+                    change.TinhTrangXoa = et.TinhTrangXoa;
                     db.SubmitChanges();
                     ss = true;
                 }

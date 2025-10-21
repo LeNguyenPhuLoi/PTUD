@@ -18,6 +18,12 @@ namespace BUS
             return ck.LoadDSChuyenKhoan();
         }
 
+        //
+        public IQueryable LoadDSChuyenKhoanUser()
+        {
+            return ck.LoadDSChuyenKhoanUser();
+        }
+
         //gọi hàm LoadDSKhachHang
         public IQueryable LoadDSKhachHang()
         {
@@ -47,6 +53,12 @@ namespace BUS
         public bool XoaCK(ET_ChuyenKhoan et)
         {
             return ck.XoaCK(et);
+        }
+
+        //
+        public bool TrangThaiAn(ET_ChuyenKhoan et)
+        {
+            return ck.TrangThaiAn(et);
         }
     }
 }

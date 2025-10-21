@@ -22,7 +22,16 @@ namespace DAL
         public IQueryable LoadDSKhoanVay()
         {
             IQueryable KV = from kv in db.KHOANVAYs
-                            select new { kv.MAVAY, kv.MAKH, kv.MATK, kv.TRANGTHAI, kv.NGAYVAY, kv.THOIHAN, kv.SOTIENVAY, kv.MALAISUAT };
+                            select kv;
+            return KV;
+        }
+
+        //Load  danh sách khoản vay cho user
+        public IQueryable LoadDSKhoanVayUser()
+        {
+            IQueryable KV = from kv in db.KHOANVAYs
+                            where kv.TinhTrangXoa == "Hoạt Động"
+                            select kv;
             return KV;
         }
 
@@ -72,7 +81,8 @@ namespace DAL
                         NGAYVAY = et.NgayVay,
                         THOIHAN = et.ThoiHan,
                         TRANGTHAI = et.TrangThai,
-                        MALAISUAT = et.MaLaiSuat
+                        MALAISUAT = et.MaLaiSuat,
+                        TinhTrangXoa = et.TinhTrangXoa                        
                     };
                     db.KHOANVAYs.InsertOnSubmit(kv);
                     db.SubmitChanges();
@@ -133,6 +143,29 @@ namespace DAL
                 if (delete != null)
                 {
                     db.KHOANVAYs.DeleteOnSubmit(delete);
+                    db.SubmitChanges();
+                    ss = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ss = false;
+                Console.WriteLine("Lỗi" + ex.ToString());
+            }
+            return ss;
+        }
+
+        //Trạng thái ẩn
+        public bool TrangThaiAn(ET_KhoanVay et)
+        {
+            bool ss = false;
+            db = new QLNHDataContext(conn.GetConnection());
+            try
+            {
+                var change = db.KHOANVAYs.Single(kv => kv.MAVAY == et.MaVay);
+                if (change != null)
+                {
+                    change.TinhTrangXoa = et.TinhTrangXoa;
                     db.SubmitChanges();
                     ss = true;
                 }
