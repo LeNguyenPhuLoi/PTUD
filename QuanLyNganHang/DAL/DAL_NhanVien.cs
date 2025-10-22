@@ -99,6 +99,31 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                if (et.CCCD == "")
+                {
+                    error = "CCCD/CMND không được để trống!";
+                    return false;
+                }
+                else if (et.SDT == "")
+                {
+                    error = "Số điện thoại không được để trống!";
+                    return false;
+                }
+
+                // Kiểm tra trùng CCCD
+                if (db.NHANVIENs.Any(x => x.CCCD == et.CCCD))
+                {
+                    error = "CCCD/CMND đã tồn tại!";
+                    return false;
+                }
+
+                // Kiểm tra trùng số điện thoại
+                if (db.NHANVIENs.Any(x => x.SDT == et.SDT))
+                {
+                    error = "Số điện thoại đã tồn tại!";
+                    return false;
+                }
+
                 var exists = db.NHANVIENs.Any(nv => nv.MANV == et.MaNV);
                 if(!exists)
                 {
@@ -142,6 +167,30 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                if(et.CCCD == "")
+                {
+                    error = "CCCD/CMND không được để trống!";
+                    return false;
+                }else if(et.SDT == "")
+                {
+                    error = "Số điện thoại không được để trống!";
+                    return false;
+                }
+
+                // Kiểm tra trùng CCCD (bỏ qua chính nhân viên đang cập nhật)
+                if (db.NHANVIENs.Any(x => x.CCCD == et.CCCD && x.MANV != et.MaNV))
+                {
+                    error = "CCCD/CMND đã tồn tại!";
+                    return false;
+                }
+
+                // Kiểm tra trùng số điện thoại (bỏ qua chính nhân viên đang cập nhật)
+                if (db.NHANVIENs.Any(x => x.SDT == et.SDT && x.MANV != et.MaNV))
+                {
+                    error = "Số điện thoại đã tồn tại!";
+                    return false;
+                }
+
                 var nv = db.NHANVIENs.Single(x => x.MANV == et.MaNV);
                 if (nv != null)
                 {

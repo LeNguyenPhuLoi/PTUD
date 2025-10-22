@@ -34,6 +34,28 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                if (et.TenCN == "")
+                {
+                    error = "Tên Chi Nhánh không được để trống!";
+                    return false;
+                }else if(et.SDTCN == ""){
+                    error = "Số điện thoại không được để trống!";
+                    return false;
+                }
+                //Kiểm tra trùng tên chi nhánh (không phân biệt hoa/thường)
+                if (db.CHINHANHs.Any(cn => cn.TENCN.ToLower().Trim() == et.TenCN.ToLower().Trim()))
+                {
+                    error = "Tên chi nhánh đã tồn tại!";
+                    return false;
+                }
+
+                //Kiểm tra trùng số điện thoại chi nhánh
+                if (db.CHINHANHs.Any(cn => cn.SDTCN.Trim() == et.SDTCN.Trim()))
+                {
+                    error = "Số điện thoại chi nhánh đã tồn tại!";
+                    return false;
+                }
+
                 var exists = db.CHINHANHs.Any(cn => cn.MACN == et.MaCN);
                 if (!exists)
                 {
@@ -69,6 +91,32 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                if (et.TenCN == "")
+                {
+                    error = "Tên Chi Nhánh không được để trống!";
+                    return false;
+                }
+                else if (et.SDTCN == "")
+                {
+                    error = "Số điện thoại không được để trống!";
+                    return false;
+                }
+                //Kiểm tra trùng tên chi nhánh (không phân biệt hoa/thường, bỏ qua chi nhánh hiện tại
+                if (db.CHINHANHs.Any(x => x.TENCN.ToLower().Trim() == et.TenCN.ToLower().Trim()
+                                          && x.MACN != et.MaCN))
+                {
+                    error = "Tên chi nhánh đã tồn tại!";
+                    return false;
+                }
+
+                //Kiểm tra trùng số điện thoại chi nhánh, bỏ qua chi nhánh hiện tại
+                if (db.CHINHANHs.Any(x => x.SDTCN.Trim() == et.SDTCN.Trim()
+                                          && x.MACN != et.MaCN))
+                {
+                    error = "Số điện thoại chi nhánh đã tồn tại!";
+                    return false;
+                }
+
                 var cn = db.CHINHANHs.Single(x => x.MACN == et.MaCN);
                 if (cn != null)
                 {
@@ -107,7 +155,7 @@ namespace DAL
                     return false;
                 }
 
-                // Kiểm tra xem có nhân viên nào thuộc phòng ban này không
+                //Kiểm tra xem có nhân viên nào thuộc phòng ban này không
                 bool coNhanVien = db.NHANVIENs.Any(nv => nv.MACN == et.MaCN);
                 if (coNhanVien)
                 {
