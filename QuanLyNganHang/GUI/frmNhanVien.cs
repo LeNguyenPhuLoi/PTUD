@@ -55,6 +55,7 @@ namespace GUI
             AddToCombo(bUS.LoadDSPB(), cboMaPB);
             AddToCombo(bUS.LoadDSCN(), cboMaCN);
             btnHoanTac.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
+            dtpNgaySinh.MaxDate = DateTime.Now;
         }
 
         public void AddToCombo(IQueryable list, ComboBox c)
@@ -425,7 +426,16 @@ namespace GUI
             errorProvider1.SetError(txtTenNV, "");
             txtTenNV.BackColor = Color.White;
         }
-
+        private bool KiemTraDinhDangLuong(string luong)
+        {
+            bool flag = false;
+            string pattern = @"^\d+$";
+            if (string.IsNullOrWhiteSpace(luong))
+                return flag;
+            if (Regex.IsMatch(luong.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
         private void txtLuong_Leave(object sender, EventArgs e)
         {
             // Nếu để trống thì không làm gì cả
@@ -437,7 +447,7 @@ namespace GUI
             }
 
             //Ktra nhập có đúng định dạng số không
-            if (!float.TryParse(txtLuong.Text, out _))
+            if (!KiemTraDinhDangLuong(txtLuong.Text))
             {
                 txtLuong.BackColor = Color.LightPink; // Highlight đỏ hồng khi sai
                 errorProvider1.SetError(txtLuong, "Vui lòng nhập số hợp lệ."); // hiện icon lỗi

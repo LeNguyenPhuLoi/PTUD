@@ -67,5 +67,11 @@ namespace BUS
             return kv.TrangThaiAn(et);
         }
 
+        //
+        public bool KiemTraTaiKhoanThuocKhachHang(string maTK, string maKH)
+        {
+            return kv.KiemTraTaiKhoanThuocKhachHang(maTK, maKH);
+        }
+
     }
 }

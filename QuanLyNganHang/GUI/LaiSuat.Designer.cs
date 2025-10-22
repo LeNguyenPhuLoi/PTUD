@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLaiSuat));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -47,9 +48,11 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -111,6 +114,7 @@
             this.txtLaiSuat.Name = "txtLaiSuat";
             this.txtLaiSuat.Size = new System.Drawing.Size(514, 31);
             this.txtLaiSuat.TabIndex = 5;
+            this.txtLaiSuat.TextChanged += new System.EventHandler(this.txtLaiSuat_TextChanged);
             // 
             // label1
             // 
@@ -144,6 +148,7 @@
             this.txtTenLoai.Name = "txtTenLoai";
             this.txtTenLoai.Size = new System.Drawing.Size(512, 31);
             this.txtTenLoai.TabIndex = 6;
+            this.txtTenLoai.TextChanged += new System.EventHandler(this.txtTenLoai_TextChanged);
             // 
             // label11
             // 
@@ -166,6 +171,7 @@
             this.txtMaLS.Name = "txtMaLS";
             this.txtMaLS.Size = new System.Drawing.Size(514, 31);
             this.txtMaLS.TabIndex = 7;
+            this.txtMaLS.TextChanged += new System.EventHandler(this.txtMaLS_TextChanged);
             // 
             // label10
             // 
@@ -324,6 +330,10 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmLaiSuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -340,6 +350,7 @@
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,5 +375,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btn_HuyAn;
         private System.Windows.Forms.Button btn_An;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

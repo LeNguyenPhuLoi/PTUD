@@ -8,18 +8,18 @@ namespace ET
 {
     public class ET_LaiSuat
     {
-        public ET_LaiSuat(string maLaiSuat, string tenLoaiVay, decimal laiSuatValue, string kieuLai, string tinhTrangXoa)
+        public ET_LaiSuat(string maLaiSuat, string tenLoaiVay, decimal laiSuat, string kieuLai, string tinhTrangXoa)
         {
             MaLaiSuat = maLaiSuat;
             TenLoaiVay = tenLoaiVay;
-            LaiSuatValue = laiSuatValue;
+            LaiSuat = laiSuat;
             KieuLai = kieuLai;
             TinhTrangXoa = tinhTrangXoa;
         }
 
         public string MaLaiSuat { get; set; }
         public string TenLoaiVay { get; set; }
-        public decimal LaiSuatValue { get; set; }
+        public decimal LaiSuat { get; set; }
         public string KieuLai { get; set; }
         public string TinhTrangXoa { get; set; }
 

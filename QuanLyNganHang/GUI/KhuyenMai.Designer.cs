@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhuyenMai));
             this.dgvKhuyenMai = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,10 +53,12 @@
             this.btnHoanTac = new System.Windows.Forms.Button();
             this.btn_HuyAn = new System.Windows.Forms.Button();
             this.btn_An = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhuyenMai)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvKhuyenMai
@@ -98,6 +101,7 @@
             this.txtMaKM.Name = "txtMaKM";
             this.txtMaKM.Size = new System.Drawing.Size(296, 30);
             this.txtMaKM.TabIndex = 1;
+            this.txtMaKM.TextChanged += new System.EventHandler(this.txtMaKM_TextChanged);
             // 
             // label1
             // 
@@ -120,6 +124,7 @@
             this.txtTenKM.Name = "txtTenKM";
             this.txtTenKM.Size = new System.Drawing.Size(296, 30);
             this.txtTenKM.TabIndex = 1;
+            this.txtTenKM.TextChanged += new System.EventHandler(this.txtTenKM_TextChanged);
             // 
             // label3
             // 
@@ -214,6 +219,7 @@
             this.rtxtMota.Size = new System.Drawing.Size(387, 96);
             this.rtxtMota.TabIndex = 2;
             this.rtxtMota.Text = "";
+            this.rtxtMota.TextChanged += new System.EventHandler(this.rtxtMota_TextChanged);
             // 
             // panel1
             // 
@@ -240,6 +246,7 @@
             this.rtxtDKAD.Size = new System.Drawing.Size(298, 96);
             this.rtxtDKAD.TabIndex = 3;
             this.rtxtDKAD.Text = "";
+            this.rtxtDKAD.TextChanged += new System.EventHandler(this.rtxtDKAD_TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -385,6 +392,10 @@
             this.btn_An.UseVisualStyleBackColor = false;
             this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmKhuyenMai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -409,6 +420,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -437,5 +449,6 @@
         private System.Windows.Forms.RichTextBox rtxtDKAD;
         private System.Windows.Forms.Button btn_HuyAn;
         private System.Windows.Forms.Button btn_An;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

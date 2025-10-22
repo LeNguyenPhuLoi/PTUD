@@ -261,6 +261,7 @@
             this.txtMaTKNhan.Name = "txtMaTKNhan";
             this.txtMaTKNhan.Size = new System.Drawing.Size(290, 30);
             this.txtMaTKNhan.TabIndex = 37;
+            this.txtMaTKNhan.TextChanged += new System.EventHandler(this.txtMaTKNhan_TextChanged);
             // 
             // rtxtND
             // 
@@ -271,6 +272,7 @@
             this.rtxtND.Size = new System.Drawing.Size(406, 106);
             this.rtxtND.TabIndex = 23;
             this.rtxtND.Text = "";
+            this.rtxtND.TextChanged += new System.EventHandler(this.rtxtND_TextChanged);
             // 
             // txtSoTien
             // 
@@ -282,6 +284,7 @@
             this.txtSoTien.Name = "txtSoTien";
             this.txtSoTien.Size = new System.Drawing.Size(299, 30);
             this.txtSoTien.TabIndex = 19;
+            this.txtSoTien.TextChanged += new System.EventHandler(this.txtSoTien_TextChanged);
             // 
             // label3
             // 
@@ -368,6 +371,7 @@
             this.txtMaTKGui.Name = "txtMaTKGui";
             this.txtMaTKGui.Size = new System.Drawing.Size(290, 30);
             this.txtMaTKGui.TabIndex = 39;
+            this.txtMaTKGui.TextChanged += new System.EventHandler(this.txtMaTKGui_TextChanged);
             // 
             // dgvmatk
             // 
@@ -400,6 +404,7 @@
             this.txtMaTK.Name = "txtMaTK";
             this.txtMaTK.Size = new System.Drawing.Size(290, 30);
             this.txtMaTK.TabIndex = 37;
+            this.txtMaTK.TextChanged += new System.EventHandler(this.txtMaTK_TextChanged);
             // 
             // dgvmakh
             // 
@@ -432,6 +437,7 @@
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(290, 30);
             this.txtMaKH.TabIndex = 35;
+            this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
             // 
             // label10
             // 
@@ -465,6 +471,7 @@
             this.txtMaCK.Name = "txtMaCK";
             this.txtMaCK.Size = new System.Drawing.Size(288, 30);
             this.txtMaCK.TabIndex = 1;
+            this.txtMaCK.TextChanged += new System.EventHandler(this.txtMaCK_TextChanged);
             // 
             // label7
             // 
@@ -611,6 +618,7 @@
             // 
             // dgvChuyenKhoan
             // 
+            this.dgvChuyenKhoan.AllowDrop = true;
             this.dgvChuyenKhoan.AllowUserToResizeColumns = false;
             this.dgvChuyenKhoan.AllowUserToResizeRows = false;
             this.dgvChuyenKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;

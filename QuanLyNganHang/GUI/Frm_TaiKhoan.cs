@@ -29,6 +29,7 @@ namespace GUI
             cbo_LoaiTK.SelectedIndex = 0;
             cbo_TenNgoaiTe.SelectedIndex = 0;
             cbo_TrangThai.SelectedIndex = 0;
+            dtp_NgayMo.MaxDate = DateTime.Now;
             HienThiDS();
             dgv_KhachHang.Columns["TinhTrangXoa"].Visible = false;
             if (this.MdiParent.Name == "frmMainAddmin")

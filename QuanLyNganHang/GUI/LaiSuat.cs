@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -194,6 +195,109 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
+        }
+
+        //hàm kiểm tra định dạng mã khoản vay (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaLS(string maLS)
+        {
+            bool flag = false;
+            string pattern = @"^LS\d{2,8}$";
+            if (string.IsNullOrWhiteSpace(maLS))
+                return flag;
+            if (Regex.IsMatch(maLS, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng tên lãi suất (chuỗi 250 ký tự, không ký tự đặc biệt)
+        public bool KiemTraDinhDangTenLS(string tenls)
+        {
+            bool flag = false;
+            string pattern = @"^[a-zA-Z0-9À-ỹ\s,.-]{1,250}$";
+            if (string.IsNullOrWhiteSpace(tenls))
+                return flag;
+            if (Regex.IsMatch(tenls.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng lãi suất (chuỗi 2 chữ số, không chữ, không ký tự đặc biệt)
+        public bool KiemTraDinhDangLS(string ls)
+        {
+            bool flag = false;
+            string pattern = @"^\d{1,2}$";
+            if (string.IsNullOrWhiteSpace(ls))
+                return flag;
+            if (Regex.IsMatch(ls.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        private void txtMaLS_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaLS.Text))
+            {
+                errorProvider1.SetError(txtMaLS, "");
+                txtMaLS.BackColor = Color.White;
+                return;
+            }
+            string maKV = txtMaLS.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaLS(maKV))
+            {
+                txtMaLS.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaLS, "Mã lãi suất không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaLS.Focus();
+                return;
+            }
+            else
+            {
+                txtMaLS.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaLS, "");
+        }
+
+        private void txtTenLoai_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTenLoai.Text))
+            {
+                errorProvider1.SetError(txtTenLoai, "");
+                txtTenLoai.BackColor = Color.White;
+                return;
+            }
+            if (!KiemTraDinhDangTenLS(txtTenLoai.Text))
+            {
+                txtTenLoai.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtTenLoai, "Tên lãi suất không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtTenLoai.Focus();
+                return;
+            }
+            else
+            {
+                txtTenLoai.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtTenLoai, "");
+        }
+
+        private void txtLaiSuat_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtLaiSuat.Text))
+            {
+                errorProvider1.SetError(txtLaiSuat, "");
+                txtLaiSuat.BackColor = Color.White;
+                return;
+            }
+            if (!KiemTraDinhDangLS(txtLaiSuat.Text))
+            {
+                txtLaiSuat.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtLaiSuat, "Lãi suất không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtLaiSuat.Focus();
+                return;
+            }
+            else
+            {
+                txtLaiSuat.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtLaiSuat, "");
         }
     }
 }

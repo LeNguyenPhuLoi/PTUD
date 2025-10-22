@@ -53,7 +53,7 @@ namespace DAL
                     {
                         MALAISUAT = et.MaLaiSuat,
                         TENLOAIVAY = et.TenLoaiVay,
-                        LAISUAT1 = et.LaiSuatValue,
+                        LAISUAT1 = et.LaiSuat,
                         KIEULAI = et.KieuLai,
                         TinhTrangXoa = et.TinhTrangXoa
                     };
@@ -86,7 +86,7 @@ namespace DAL
                 {
                     change.MALAISUAT = et.MaLaiSuat;
                     change.TENLOAIVAY = et.TenLoaiVay;
-                    change.LAISUAT1 = et.LaiSuatValue;
+                    change.LAISUAT1 = et.LaiSuat;
                     change.KIEULAI = et.KieuLai;
 
                     db.SubmitChanges();

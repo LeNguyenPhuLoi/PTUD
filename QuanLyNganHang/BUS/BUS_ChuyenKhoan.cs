@@ -60,5 +60,11 @@ namespace BUS
         {
             return ck.TrangThaiAn(et);
         }
+
+        //
+        public bool KiemTraTaiKhoanThuocKhachHang(string maTK, string maKH)
+        {
+            return ck.KiemTraTaiKhoanThuocKhachHang(maTK, maKH);
+        }
     }
 }

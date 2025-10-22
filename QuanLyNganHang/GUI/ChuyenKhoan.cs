@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
@@ -77,7 +78,7 @@ namespace GUI
                 ET_ChuyenKhoan ck = new ET_ChuyenKhoan(txtMaCK.Text,
                                                        txtMaKH.Text,
                                                        txtMaTK.Text,
-                                                       dtpNgayChuyen.Value,
+                                                       Convert.ToDateTime(dtpNgayChuyen.Text),
                                                        decimal.Parse(txtSoTien.Text),
                                                        txtMaTKGui.Text,
                                                        txtMaTKNhan.Text,
@@ -174,7 +175,7 @@ namespace GUI
                 txtMaCK.Text = dgvChuyenKhoan.Rows[dong].Cells[0].Value.ToString();
                 txtMaKH.Text = dgvChuyenKhoan.Rows[dong].Cells[1].Value.ToString();
                 txtMaTK.Text = dgvChuyenKhoan.Rows[dong].Cells[2].Value.ToString();                
-                dtpNgayChuyen.Value = DateTime.Parse(dgvChuyenKhoan.Rows[dong].Cells[3].Value.ToString());
+                dtpNgayChuyen.Text = dgvChuyenKhoan.Rows[dong].Cells[3].Value.ToString();
                 txtSoTien.Text = dgvChuyenKhoan.Rows[dong].Cells[4].Value.ToString();
                 txtMaTKGui.Text = dgvChuyenKhoan.Rows[dong].Cells[5].Value.ToString();
                 txtMaTKNhan.Text = dgvChuyenKhoan.Rows[dong].Cells[6].Value.ToString();
@@ -333,6 +334,276 @@ namespace GUI
                 MessageBox.Show("Lỗi " + ex.Message);
             }
             dgvChuyenKhoan.DataSource = bUS_ChuyenKhoan.LoadDSChuyenKhoan();
+        }
+
+        //hàm kiểm tra định dạng mã chuyển khoản (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaCK(string maCK)
+        {
+            bool flag = false;
+            string pattern = @"^CK\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maCK))
+                return flag;
+            if (Regex.IsMatch(maCK, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã khách hàng (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaKH(string maKH)
+        {
+            bool flag = false;
+            string pattern = @"^KH\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maKH))
+                return flag;
+            if (Regex.IsMatch(maKH, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã tài khoản (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaTK(string maTK)
+        {
+            bool flag = false;
+            string pattern = @"^TK\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maTK))
+                return flag;
+            if (Regex.IsMatch(maTK, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã tài khoản gửi (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaTKGui(string maTKgui)
+        {
+            bool flag = false;
+            string pattern = @"^TK\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maTKgui))
+                return flag;
+            if (Regex.IsMatch(maTKgui, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã tài khoản nhận (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaTKNhan(string maTKnhan)
+        {
+            bool flag = false;
+            string pattern = @"^TK\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maTKnhan))
+                return flag;
+            if (Regex.IsMatch(maTKnhan, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng số tiền (không chữ, không ký tự đặc biệt)
+        private bool KiemTraDinhDangTien(string tien)
+        {
+            bool flag = false;
+            string pattern = @"^\d{1,9}$";
+            if (string.IsNullOrWhiteSpace(tien))
+                return flag;
+            if (Regex.IsMatch(tien.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng nội dung (chuỗi 100 ký tự, không ký tự đặc biệt)
+        private bool KiemTraDinhDangND(string noidung)
+        {
+            bool flag = false;
+            string pattern = @"^[a-zA-Z0-9À-ỹ\s,.-]{1,500}$";
+            if (string.IsNullOrWhiteSpace(noidung))
+                return flag;
+            if (Regex.IsMatch(noidung.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        private void txtMaCK_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaCK.Text))
+            {
+                errorProvider1.SetError(txtMaCK, "");
+                txtMaCK.BackColor = Color.White;
+                return;
+            }
+            string maCK = txtMaCK.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaCK(maCK))
+            {
+                txtMaCK.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaCK, "Mã khách hàng không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaCK.Focus();
+                return;
+            }
+            else
+            {
+                txtMaCK.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaCK, "");
+        }
+
+        private void txtMaKH_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaKH.Text))
+            {
+                errorProvider1.SetError(txtMaKH, "");
+                txtMaKH.BackColor = Color.White;
+                return;
+            }
+            string maKH = txtMaKH.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaKH(maKH))
+            {
+                txtMaKH.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaKH, "Mã khách hàng không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaKH.Focus();
+                return;
+            }
+            else
+            {
+                txtMaKH.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaKH, "");
+        }
+
+        private void txtMaTK_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaTK.Text))
+            {
+                errorProvider1.SetError(txtMaTK, "");
+                txtMaTK.BackColor = Color.White;
+                return;
+            }
+
+            if (!bUS_ChuyenKhoan.KiemTraTaiKhoanThuocKhachHang(txtMaTK.Text, txtMaKH.Text))
+            {
+                txtMaTK.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTK, "Mã tài khoản phải đúng với mã khách hàng");
+                txtMaTK.Focus();
+                return;
+            }
+
+            string maTK = txtMaTK.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaTK(maTK))
+            {
+                txtMaTK.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTK, "Mã tài khoản không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaTK.Focus();
+                return;
+            }
+            else
+            {
+                txtMaTK.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaTK, "");
+        }
+
+        private void txtMaTKGui_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaTKGui.Text))
+            {
+                errorProvider1.SetError(txtMaTKGui, "");
+                txtMaTKGui.BackColor = Color.White;
+                return;
+            }
+
+            if (!bUS_ChuyenKhoan.KiemTraTaiKhoanThuocKhachHang(txtMaTKGui.Text, txtMaKH.Text))
+            {
+                txtMaTKGui.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTKGui, "Mã tài khoản phải đúng với mã khách hàng");
+                txtMaTKGui.Focus();
+                return;
+            }
+
+            string maTKGui = txtMaTKGui.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaTKGui(maTKGui))
+            {
+                txtMaTKGui.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTKGui, "Mã tài khoản gửi không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaTKGui.Focus();
+                return;
+            }
+            else
+            {
+                txtMaTKGui.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaTKGui, "");
+        }
+
+        private void txtMaTKNhan_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaTKNhan.Text))
+            {
+                errorProvider1.SetError(txtMaTKNhan, "");
+                txtMaTKNhan.BackColor = Color.White;
+                return;
+            }
+
+            if (txtMaTKGui.Text.Trim() == txtMaTKNhan.Text.Trim())
+            {
+                txtMaTKNhan.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTKNhan, "Mã tài khoản nhận không được trùng với mã tài khoản gửi");
+                txtMaTKNhan.Focus();
+                return;
+            }
+
+            string maTKNhan = txtMaTKNhan.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaTKNhan(maTKNhan))
+            {
+                txtMaTKNhan.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTKNhan, "Mã tài khoản nhận không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaTKNhan.Focus();
+                return;
+            }
+            else
+            {
+                txtMaTKNhan.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaTKNhan, "");
+        }
+
+        private void txtSoTien_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSoTien.Text))
+            {
+                errorProvider1.SetError(txtSoTien, "");
+                txtSoTien.BackColor = Color.White;
+                return;
+            }
+            if (!KiemTraDinhDangTien(txtSoTien.Text))
+            {
+                txtSoTien.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtSoTien, "Số tiền không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtSoTien.Focus();
+                return;
+            }
+            else
+            {
+                txtSoTien.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtSoTien, "");
+        }
+
+        private void rtxtND_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(rtxtND.Text))
+            {
+                errorProvider1.SetError(rtxtND, "");
+                rtxtND.BackColor = Color.White;
+                return;
+            }
+            if (!KiemTraDinhDangND(rtxtND.Text))
+            {
+                rtxtND.BackColor = Color.LightCoral;
+                errorProvider1.SetError(rtxtND, "Mã nội dung không được bỏ trống hoặc ghi ký tự đặc biệt");
+                rtxtND.Focus();
+                return;
+            }
+            else
+            {
+                rtxtND.BackColor = Color.White;
+            }
+            errorProvider1.SetError(rtxtND, "");
         }
     }
 }
