@@ -10,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace GUI
 {
@@ -55,7 +56,8 @@ namespace GUI
             AddToCombo(bUS.LoadDSPB(), cboMaPB);
             AddToCombo(bUS.LoadDSCN(), cboMaCN);
             btnHoanTac.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
-            dtpNgaySinh.MaxDate = DateTime.Now;
+            dtpNgaySinh.MaxDate = DateTime.Now.AddYears(-18);
+            btnHoanTac_Click(sender, e);
         }
 
         public void AddToCombo(IQueryable list, ComboBox c)
@@ -85,10 +87,11 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_NhanVien et = new ET_NhanVien(txtMaNV.Text, txtTenNV.Text,
                                                     LayGioiTinh(), dtpNgaySinh.Value,
-                                                    decimal.Parse(txtCCCD.Text),
-                                                    cboChuc.Text, float.Parse(txtLuong.Text),
-                                                    rtxDiaChi.Text, int.Parse(txtSDT.Text),
-                                                    bUS.LayMaPB(cboMaPB.Text), bUS.LayMaCN(cboMaCN.Text),
+                                                    txtCCCD.Text, cboChuc.Text, 
+                                                    decimal.Parse(txtLuong.Text),
+                                                    rtxDiaChi.Text, txtSDT.Text,
+                                                    bUS.LayMaPB(cboMaPB.Text), 
+                                                    bUS.LayMaCN(cboMaCN.Text),
                                                     TrangThai);
                 string error = "";
                 if (bUS.ThemNhanVien(et, out error) == true)
@@ -105,6 +108,7 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Vui lòng không để trống dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
             }
         }
 
@@ -115,10 +119,11 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_NhanVien et = new ET_NhanVien(txtMaNV.Text, txtTenNV.Text,
                                                     LayGioiTinh(), dtpNgaySinh.Value,
-                                                    decimal.Parse(txtCCCD.Text),
-                                                    cboChuc.Text, float.Parse(txtLuong.Text),
-                                                    rtxDiaChi.Text, int.Parse(txtSDT.Text),
-                                                    bUS.LayMaPB(cboMaPB.Text), bUS.LayMaCN(cboMaCN.Text),
+                                                    txtCCCD.Text, cboChuc.Text,
+                                                    decimal.Parse(txtLuong.Text),
+                                                    rtxDiaChi.Text, txtSDT.Text,
+                                                    bUS.LayMaPB(cboMaPB.Text),
+                                                    bUS.LayMaCN(cboMaCN.Text),
                                                     TrangThai);
                 string error = "";
                 if (bUS.CapNhatNhanVien(et, out error) == true)
@@ -134,6 +139,7 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Vui lòng không để trống dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
             }
         }
 
@@ -146,12 +152,13 @@ namespace GUI
                 {
                     string TrangThai = "Nghỉ Việc";
                     ET_NhanVien et = new ET_NhanVien(txtMaNV.Text, txtTenNV.Text,
-                                                        LayGioiTinh(), dtpNgaySinh.Value,
-                                                        decimal.Parse(txtCCCD.Text),
-                                                        cboChuc.Text, float.Parse(txtLuong.Text),
-                                                        rtxDiaChi.Text, int.Parse(txtSDT.Text),
-                                                        bUS.LayMaPB(cboMaPB.Text), bUS.LayMaCN(cboMaCN.Text),
-                                                        TrangThai);
+                                                    LayGioiTinh(), dtpNgaySinh.Value,
+                                                    txtCCCD.Text, cboChuc.Text,
+                                                    decimal.Parse(txtLuong.Text),
+                                                    rtxDiaChi.Text, txtSDT.Text,
+                                                    bUS.LayMaPB(cboMaPB.Text),
+                                                    bUS.LayMaCN(cboMaCN.Text),
+                                                    TrangThai);
                     string error = "";
                     if (bUS.XoaNhanVien(et, out error) == true)
                     {
@@ -168,6 +175,7 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Vui lòng không để trống dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
             }
         }
 
@@ -178,7 +186,6 @@ namespace GUI
             txtSDT.Clear();
             txtTenNV.Clear();
             rdoNam.Checked = true;
-            dtpNgaySinh.Value = DateTime.Now;
             cboChuc.SelectedIndex = -1;
             txtCCCD.Clear();
             rtxDiaChi.Clear();
@@ -187,6 +194,7 @@ namespace GUI
             cboMaCN.SelectedIndex = -1;
             txtMaNV.Focus();
             txtMaNV.Enabled = true;
+            dtpNgaySinh.Value = dtpNgaySinh.MaxDate.AddDays(-1);
             dgvNhanVien.DataSource = bUS.LoadDSNV();
         }
 
@@ -388,7 +396,7 @@ namespace GUI
             {
                 rtxDiaChi.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
                 errorProvider1.SetError(rtxDiaChi, "tối đa 100 ký tự, không ký tự đặc biệt");
-                MessageBox.Show("Địa chỉ không hợp lệ! Vui lòng nhập không quá 100 ký tự, không chứa ký tự đặc biệt.",
+                MessageBox.Show("Địa chỉ không hợp lệ! Vui lòng nhập không quá 100 ký tự.",
                                 "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 rtxDiaChi.Clear();
                 rtxDiaChi.Focus();
@@ -426,7 +434,28 @@ namespace GUI
             errorProvider1.SetError(txtTenNV, "");
             txtTenNV.BackColor = Color.White;
         }
-        private bool KiemTraDinhDangLuong(string luong)
+
+        private bool KiemTraTuoiHopLe(DateTimePicker dtp, out string error)
+        {
+            error = string.Empty;
+            DateTime ngaySinh = dtp.Value;
+            int tuoi = DateTime.Now.Year - ngaySinh.Year;
+
+            // Nếu chưa đến sinh nhật năm nay thì trừ 1
+            if (DateTime.Now.Date < ngaySinh.AddYears(tuoi))
+                tuoi--;
+
+            if (tuoi < 18)
+            {
+                error = "Nhân viên phải đủ 18 tuổi trở lên!";
+                dtp.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool KiemTraDinhDangSo(string luong)
         {
             bool flag = false;
             string pattern = @"^\d+$";
@@ -447,7 +476,7 @@ namespace GUI
             }
 
             //Ktra nhập có đúng định dạng số không
-            if (!KiemTraDinhDangLuong(txtLuong.Text))
+            if (!KiemTraDinhDangSo(txtLuong.Text))
             {
                 txtLuong.BackColor = Color.LightPink; // Highlight đỏ hồng khi sai
                 errorProvider1.SetError(txtLuong, "Vui lòng nhập số hợp lệ."); // hiện icon lỗi
@@ -459,6 +488,21 @@ namespace GUI
             {
                 errorProvider1.SetError(txtLuong, ""); // Xóa icon lỗi
                 txtLuong.BackColor = Color.White; // Đúng thì trả về màu bình thường
+            }
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            string error;
+            if (!KiemTraTuoiHopLe(dtpNgaySinh, out error))
+            {
+                errorProvider1.SetError(dtpNgaySinh, error);
+                dtpNgaySinh.CalendarForeColor = Color.Red;
+            }
+            else
+            {
+                errorProvider1.SetError(dtpNgaySinh, "");
+                dtpNgaySinh.CalendarForeColor = Color.Black;
             }
         }
     }

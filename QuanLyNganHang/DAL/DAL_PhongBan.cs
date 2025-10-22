@@ -34,6 +34,19 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                if(et.TenPB == "")
+                {
+                    error = "Tên Phòng Ban không được để trống!";
+                    return false;
+                }
+
+                // Kiểm tra trùng tên phòng ban (không phân biệt hoa/thường)
+                if (db.PHONGBANs.Any(pb => pb.TENPB.ToLower().Trim() == et.TenPB.ToLower().Trim()))
+                {
+                    error = "Tên phòng ban đã tồn tại!";
+                    return false;
+                }
+
                 var amp = db.PHONGBANs.Any(pb => pb.MAPB == et.MaPB);
                 if (!amp)
                 {
@@ -67,10 +80,24 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                if (et.TenPB == "")
+                {
+                    error = "Tên Phòng Ban không được để trống!";
+                    return false;
+                }
+
+                // Kiểm tra trùng tên phòng ban (không phân biệt hoa/thường)
+                if (db.PHONGBANs.Any(x => x.TENPB.ToLower().Trim() == et.TenPB.ToLower().Trim()
+                                          && x.MAPB != et.MaPB))
+                {
+                    error = "Tên phòng ban đã tồn tại!";
+                    return false;
+                }
+
                 var pb = db.PHONGBANs.Single(x => x.MAPB == et.MaPB);
                 if (pb != null)
                 {
-                    pb.MAPB = et.MaPB;
+                    pb.TENPB = et.TenPB;
                     db.SubmitChanges();
                     flag = true;
                 }
@@ -95,14 +122,6 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
-                //Kiểm tra trùng mã
-                var pb = db.PHONGBANs.SingleOrDefault(p => p.MAPB == et.MaPB);
-                if (pb == null)
-                {
-                    error = "Mã phòng ban không tồn tại!";
-                    return false;
-                }
-
                 // Kiểm tra xem có nhân viên nào thuộc phòng ban này không
                 bool coNhanVien = db.NHANVIENs.Any(nv => nv.MAPB == et.MaPB);
                 if (coNhanVien)
@@ -111,9 +130,19 @@ namespace DAL
                     return false;
                 }
 
-                db.PHONGBANs.DeleteOnSubmit(pb);
-                db.SubmitChanges();
-                flag = true;
+                //Kiểm tra trùng mã
+                var pb = db.PHONGBANs.SingleOrDefault(p => p.MAPB == et.MaPB);
+                if (pb != null)
+                {
+                    db.PHONGBANs.DeleteOnSubmit(pb);
+                    db.SubmitChanges();
+                    flag = true;
+                }
+                else
+                {
+                    error = "Mã phòng ban không tồn tại!";
+                    return false;
+                }    
             }
             catch (Exception ex)
             {

@@ -56,7 +56,7 @@ namespace GUI
             try
             {
                 ET_ChiNhanh et = new ET_ChiNhanh(txtMaCN.Text, txtTenCN.Text,
-                                                    txtDiaChi.Text,int.Parse(txtSDTCN.Text));
+                                                    txtDiaChi.Text,txtSDTCN.Text);
                 string error = "";
                 if (bus.ThemChiNhanh(et, out error) == true)
                 {
@@ -80,7 +80,7 @@ namespace GUI
             try
             {
                 ET_ChiNhanh et = new ET_ChiNhanh(txtMaCN.Text, txtTenCN.Text,
-                                                    txtDiaChi.Text, int.Parse(txtSDTCN.Text));
+                                                    txtDiaChi.Text, txtSDTCN.Text);
                 string error = "";
                 if (bus.CapNhatChiNhanh(et, out error) == true)
                 {
@@ -102,19 +102,23 @@ namespace GUI
         {
             try
             {
-                ET_ChiNhanh et = new ET_ChiNhanh(txtMaCN.Text, txtTenCN.Text,
-                                                    txtDiaChi.Text, int.Parse(txtSDTCN.Text));
-                string error = "";
-                if (bus.XoaChiNhanh(et, out error) == true)
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Xóa thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnHoanTac.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
+                    ET_ChiNhanh et = new ET_ChiNhanh(txtMaCN.Text, txtTenCN.Text,
+                                                    txtDiaChi.Text, txtSDTCN.Text);
+                    string error = "";
+                    if (bus.XoaChiNhanh(et, out error) == true)
+                    {
+                        MessageBox.Show("Xóa thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnHoanTac.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
+                    }
+                    else
+                    {
+                        MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    dgvChiNhanh.DataSource = bus.LoadDSChiNhanh();
                 }
-                else
-                {
-                    MessageBox.Show(error, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                dgvChiNhanh.DataSource = bus.LoadDSChiNhanh();
             }
             catch (Exception ex)
             {
@@ -138,22 +142,6 @@ namespace GUI
             dgvChiNhanh.DataSource = bus.LoadDSChiNhanh();
         }
 
-        private void dgvChiNhanh_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int dong = dgvChiNhanh.CurrentCell.RowIndex;
-                txtMaCN.Text = dgvChiNhanh.Rows[dong].Cells[0].Value.ToString();
-                txtTenCN.Text = dgvChiNhanh.Rows[dong].Cells[1].Value.ToString();
-                txtDiaChi.Text = dgvChiNhanh.Rows[dong].Cells[2].Value.ToString();
-                txtSDTCN.Text = dgvChiNhanh.Rows[dong].Cells[3].Value.ToString();
-                txtMaCN.Enabled = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi " + ex.Message);
-            }
-        }
 
         //hàm kiểm tra định dạng mã Chi Nhánh (10 ký tự, không ký tự đặc biệt, không khoảng trống)
         private bool KiemTraDinhDangMaCN(string maCN)
@@ -238,7 +226,7 @@ namespace GUI
             {
                 txtDiaChi.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
                 errorProvider1.SetError(txtDiaChi, "tối đa 100 ký tự, không ký tự đặc biệt");
-                MessageBox.Show("Địa chỉ không hợp lệ! Vui lòng nhập không quá 100 ký tự, không chứa ký tự đặc biệt.",
+                MessageBox.Show("Địa chỉ không hợp lệ! Vui lòng nhập không quá 100 ký tự.",
                                 "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDiaChi.Clear();
                 txtDiaChi.Focus();
@@ -275,6 +263,23 @@ namespace GUI
             // Nếu hợp lệ
             errorProvider1.SetError(txtSDTCN, "");
             txtSDTCN.BackColor = Color.White;
+        }
+
+        private void dgvChiNhanh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int dong = dgvChiNhanh.CurrentCell.RowIndex;
+                txtMaCN.Text = dgvChiNhanh.Rows[dong].Cells[0].Value.ToString();
+                txtTenCN.Text = dgvChiNhanh.Rows[dong].Cells[1].Value.ToString();
+                txtDiaChi.Text = dgvChiNhanh.Rows[dong].Cells[2].Value.ToString();
+                txtSDTCN.Text = dgvChiNhanh.Rows[dong].Cells[3].Value.ToString();
+                txtMaCN.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
         }
     }
 }

@@ -12,17 +12,17 @@ VALUES (1,N'CSKH'),
 ---THEM THONG TIN CHI NHANH---
 GO
 INSERT INTO CHINHANH(MACN, TENCN, DIACHICN, SDTCN)
-VALUES ('CN01', N'MindLess-HCM', N'Hồ Chí Minh', 0911234567),
-		('CN02', N'MindLess-HN', N'Hà Nội', 0988765432),
-		('CN03', N'MindLess-QN', N'Quảng Ninh', 0902345678)
+VALUES ('CN01', N'MindLess-HCM', N'Hồ Chí Minh', '0911234567'),
+		('CN02', N'MindLess-HN', N'Hà Nội', '0988765432'),
+		('CN03', N'MindLess-QN', N'Quảng Ninh', '0902345678')
 ---THEM THONG TIN NHAN VIEN---
 GO
 INSERT INTO NHANVIEN(MANV, TENNV, GIOITINH, NGAYSINH,CCCD, CHUC, LUONG, DIACHI, SDT, MAPB, MACN,TRANGTHAI)
-VALUES ('NV0001',N'Nguyễn Văn An', N'NAM', '12/01/1990',012345678912, N'Lễ Tân', 15000000, N'25 Lý Thường Kiệt', 0987654321, 1,'CN01',N'Hoạt Động'),
-		('NV0002',N'Trần Thị Mai', N'NỮ', '25/06/1985',021346587091, N'Thông Dịch Viên', 18000000, N'72 Phan Đình Phùng', 0912345678, 2,'CN02',N'Hoạt Động'),
-		('NV0003',N'Lê Minh Tuấn', N'NAM', '08/03/2000',011223456789, N'IT', 25000000, N'10 Trần Hưng Đạo', 0968112233, 3,'CN03',N'Hoạt Động'),
-		('NV0004',N'Phạm Hồng Nhung', N'NỮ', '19/07/1995',012345678321, N'Lễ Tân', 15000000, N'5 Nguyễn Du', 0909876543, 2,'CN03',N'Hoạt Động'),
-		('NV0005',N'Đặng Quang Huy', N'NAM', '30/10/1978',0123456567, N'Nhà Đầu Tư', 20000000, N'45 Hoàng Hoa Thám', 0977223344, 1,'CN02',N'Hoạt Động')
+VALUES ('NV0001',N'Nguyễn Văn An', N'NAM', '12/01/1990','012345678912', N'Lễ Tân', 15000000, N'25 Lý Thường Kiệt', '0987654321', 1,'CN01',N'Hoạt Động'),
+		('NV0002',N'Trần Thị Mai', N'NỮ', '25/06/1985','021346587091', N'Thông Dịch Viên', 18000000, N'72 Phan Đình Phùng', '0912345678', 2,'CN02',N'Hoạt Động'),
+		('NV0003',N'Lê Minh Tuấn', N'NAM', '08/03/2000','011223456789', N'IT', 25000000, N'10 Trần Hưng Đạo', '0968112233', 3,'CN03',N'Hoạt Động'),
+		('NV0004',N'Phạm Hồng Nhung', N'NỮ', '19/07/1995','012345678321', N'Lễ Tân', 15000000, N'5 Nguyễn Du', '0909876543', 2,'CN03',N'Hoạt Động'),
+		('NV0005',N'Đặng Quang Huy', N'NAM', '30/10/1978','0123456567', N'Nhà Đầu Tư', 20000000, N'45 Hoàng Hoa Thám', '0977223344', 1,'CN02',N'Hoạt Động')
 		---THEM THONG TIN KHACH HANG
 GO
 INSERT INTO KHACHHANG(MAKH, TENKH, GIOITINH, CCCD, SDT, EMAIL, DIACHI, QUOCTICH, DOITUONG, NGAYTAO, TinhTrangXoa)

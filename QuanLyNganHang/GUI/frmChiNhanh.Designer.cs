@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvChiNhanh = new System.Windows.Forms.DataGridView();
             this.txtDiaChi = new System.Windows.Forms.RichTextBox();
             this.txtSDTCN = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,32 +45,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvChiNhanh = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvChiNhanh
-            // 
-            this.dgvChiNhanh.AllowUserToResizeColumns = false;
-            this.dgvChiNhanh.AllowUserToResizeRows = false;
-            this.dgvChiNhanh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvChiNhanh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvChiNhanh.BackgroundColor = System.Drawing.Color.White;
-            this.dgvChiNhanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChiNhanh.Location = new System.Drawing.Point(536, 2);
-            this.dgvChiNhanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvChiNhanh.Name = "dgvChiNhanh";
-            this.dgvChiNhanh.RowHeadersVisible = false;
-            this.dgvChiNhanh.RowHeadersWidth = 51;
-            this.dgvChiNhanh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChiNhanh.Size = new System.Drawing.Size(528, 550);
-            this.dgvChiNhanh.TabIndex = 23;
-            this.dgvChiNhanh.Click += new System.EventHandler(this.dgvChiNhanh_Click);
             // 
             // txtDiaChi
             // 
@@ -303,8 +283,8 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.pnlMain, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgvChiNhanh, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlMain, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -314,6 +294,28 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 554);
             this.tableLayoutPanel1.TabIndex = 26;
+            // 
+            // dgvChiNhanh
+            // 
+            this.dgvChiNhanh.AllowUserToResizeColumns = false;
+            this.dgvChiNhanh.AllowUserToResizeRows = false;
+            this.dgvChiNhanh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvChiNhanh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiNhanh.BackgroundColor = System.Drawing.Color.White;
+            this.dgvChiNhanh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvChiNhanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiNhanh.Location = new System.Drawing.Point(536, 2);
+            this.dgvChiNhanh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvChiNhanh.MultiSelect = false;
+            this.dgvChiNhanh.Name = "dgvChiNhanh";
+            this.dgvChiNhanh.ReadOnly = true;
+            this.dgvChiNhanh.RowHeadersWidth = 62;
+            this.dgvChiNhanh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvChiNhanh.Size = new System.Drawing.Size(528, 550);
+            this.dgvChiNhanh.TabIndex = 33;
+            this.dgvChiNhanh.Click += new System.EventHandler(this.dgvChiNhanh_Click);
             // 
             // errorProvider1
             // 
@@ -329,18 +331,16 @@
             this.Name = "frmChiNhanh";
             this.Text = "frmChiNhanh";
             this.Load += new System.EventHandler(this.frmChiNhanh_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvChiNhanh;
         private System.Windows.Forms.RichTextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtSDTCN;
         private System.Windows.Forms.Label label2;
@@ -358,5 +358,6 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridView dgvChiNhanh;
     }
 }

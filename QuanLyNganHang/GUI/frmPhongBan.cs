@@ -85,7 +85,7 @@ namespace GUI
                 string error = "";
                 if (bus.CapNhatPhongBan(et, out error) == true)
                 {
-                    MessageBox.Show("Thêm thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -110,7 +110,7 @@ namespace GUI
                     string error = "";
                     if (bus.XoaPhongBan(et, out error) == true)
                     {
-                        MessageBox.Show("Thêm thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Xóa thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnHoanTac.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
                     }
                     else
@@ -195,7 +195,7 @@ namespace GUI
             }
 
             //Ktra nhập có đúng định dạng số không
-            if (!int.TryParse(txtMaPB.Text, out _))
+            if (!test.KiemTraDinhDangSo(txtMaPB.Text))
             {
                 txtMaPB.BackColor = Color.LightPink; // Highlight đỏ hồng khi sai
                 errorProvider1.SetError(txtMaPB, "Vui lòng nhập số hợp lệ."); // hiện icon lỗi

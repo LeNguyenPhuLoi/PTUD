@@ -8,7 +8,7 @@ namespace ET
 {
     public class ET_NhanVien
     {
-        public ET_NhanVien(string maNV, string tenNV, string gioiTinh, DateTime ngaySinh, decimal cCCD, string chuc, float luong, string diaChi, int sDT, int maPB, string maCN, string trangThai)
+        public ET_NhanVien(string maNV, string tenNV, string gioiTinh, DateTime ngaySinh, string cCCD, string chuc, decimal luong, string diaChi, string sDT, int maPB, string maCN, string trangThai)
         {
             MaNV = maNV;
             TenNV = tenNV;
@@ -28,11 +28,11 @@ namespace ET
         public string TenNV { get; set; }
         public string GioiTinh { get; set; }
         public DateTime NgaySinh { get; set; }
-        public decimal CCCD { get; set; }
+        public string CCCD { get; set; }
         public string Chuc { get; set; }
-        public float Luong { get; set; }
+        public decimal Luong { get; set; }
         public string DiaChi { get; set; }
-        public int SDT { get; set; }
+        public string SDT { get; set; }
         public int MaPB { get; set; }
         public string MaCN { get; set; }
         public string TrangThai { get; set; }

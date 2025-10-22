@@ -50,6 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.txtCCCD = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -68,7 +69,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.btnInDS = new System.Windows.Forms.Button();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -393,6 +393,22 @@
             this.panel1.Size = new System.Drawing.Size(620, 307);
             this.panel1.TabIndex = 24;
             // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(292, 161);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpNgaySinh.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(299, 30);
+            this.dtpNgaySinh.TabIndex = 51;
+            this.dtpNgaySinh.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
+            this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -624,21 +640,6 @@
             this.btnInDS.TabIndex = 50;
             this.btnInDS.Text = "In DS kho";
             this.btnInDS.UseVisualStyleBackColor = true;
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgaySinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(292, 161);
-            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpNgaySinh.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(299, 30);
-            this.dtpNgaySinh.TabIndex = 51;
-            this.dtpNgaySinh.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
             // 
             // frmNhanVien
             // 
