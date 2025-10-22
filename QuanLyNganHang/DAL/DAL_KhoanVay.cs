@@ -39,7 +39,7 @@ namespace DAL
         public IQueryable LoadDSKhachHang()
         {
             IQueryable KH = from kh in db.KHACHHANGs
-                            select kh;
+                            select new { kh.MAKH, kh.TENKH, kh.CCCD, kh.SDT };
             return KH;
         }
 
@@ -47,7 +47,7 @@ namespace DAL
         public IQueryable LoadDSTaiKhoan()
         {
             IQueryable TK = from tk in db.TAIKHOANs
-                            select tk;
+                            select new { tk.MATK, tk.MAKH, tk.SOTAIKHOAN };
             return TK;
         }
 
@@ -55,7 +55,7 @@ namespace DAL
         public IQueryable LoadDSLaiSuat()
         {
             IQueryable LS = from ls in db.LAISUATs
-                            select ls;
+                            select new { ls.MALAISUAT, ls.TENLOAIVAY, ls.LAISUAT1, ls.KIEULAI };
             return LS;
         }
         //Thêm khoản vay
@@ -176,6 +176,21 @@ namespace DAL
                 Console.WriteLine("Lỗi" + ex.ToString());
             }
             return ss;
+        }
+
+        //
+        public bool KiemTraTaiKhoanThuocKhachHang(string maTK, string maKH)
+        {
+            try
+            {
+                bool tonTai = db.TAIKHOANs.Any(tk => tk.MATK == maTK && tk.MAKH == maKH);
+                return tonTai;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi" + ex.Message);
+                return false;
+            }
         }
     }
 }

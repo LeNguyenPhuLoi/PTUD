@@ -109,7 +109,7 @@ namespace DAL
         public IQueryable<string> LayChiTietLoaiTK()
         {
             List<string> list = new List<string>();
-            const string query = @"SELECT CHITIET FROM LOAITK";
+            const string query = @"SELECT CHITIET FROM LOAITK WHERE TRANGTHAI = N'Hoạt Động' AND TinhTrangXoa = 0";
 
             try
             {

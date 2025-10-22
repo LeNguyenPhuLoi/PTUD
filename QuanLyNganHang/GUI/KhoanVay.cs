@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -77,8 +78,8 @@ namespace GUI
                                                  txtMaKH.Text,
                                                  txtMaTK.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
-                                                 dtpNgayVay.Value,
-                                                 dtpThoiHan.Value,
+                                                 Convert.ToDateTime(dtpNgayVay.Text),
+                                                 Convert.ToDateTime(dtpThoiHan.Text),
                                                  cboTrangThai.Text,
                                                  txtMaLS.Text,
                                                  TrangThai);
@@ -174,8 +175,8 @@ namespace GUI
                 txtMaKH.Text = dgvKhoanVay.Rows[dong].Cells[1].Value.ToString();
                 txtMaTK.Text = dgvKhoanVay.Rows[dong].Cells[2].Value.ToString();
                 txtSoTienVay.Text = dgvKhoanVay.Rows[dong].Cells[3].Value.ToString();            
-                dtpNgayVay.Value = DateTime.Parse(dgvKhoanVay.Rows[dong].Cells[4].Value.ToString());
-                dtpThoiHan.Value = DateTime.Parse(dgvKhoanVay.Rows[dong].Cells[5].Value.ToString());
+                dtpNgayVay.Text = dgvKhoanVay.Rows[dong].Cells[4].Value.ToString();
+                dtpThoiHan.Text = dgvKhoanVay.Rows[dong].Cells[5].Value.ToString();
                 cboTrangThai.Text = dgvKhoanVay.Rows[dong].Cells[6].Value.ToString();
                 txtMaLS.Text = dgvKhoanVay.Rows[dong].Cells[7].Value.ToString();
             }
@@ -319,6 +320,189 @@ namespace GUI
                 MessageBox.Show("Lỗi " + ex.Message);
             }
             dgvKhoanVay.DataSource = bUS_KhoanVay.LoadDSKhoanVay();
+        }
+
+        //hàm kiểm tra định dạng mã khoản vay (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaKV(string maKV)
+        {
+            bool flag = false;
+            string pattern = @"^VAY\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maKV))
+                return flag;
+            if (Regex.IsMatch(maKV, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã khách hàng (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaKH(string maKH)
+        {
+            bool flag = false;
+            string pattern = @"^KH\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maKH))
+                return flag;
+            if (Regex.IsMatch(maKH, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã tài khoản (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaTK(string maTK)
+        {
+            bool flag = false;
+            string pattern = @"^TK\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maTK))
+                return flag;
+            if (Regex.IsMatch(maTK, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã lãi suất (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaLS(string maLS)
+        {
+            bool flag = false;
+            string pattern = @"^LS\d{2,8}$";
+            if (string.IsNullOrWhiteSpace(maLS))
+                return flag;
+            if (Regex.IsMatch(maLS, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng số tiền (không chữ, không ký tự đặc biệt)
+        private bool KiemTraDinhDangTien(string tien)
+        {
+            bool flag = false;
+            string pattern = @"^\d{1,9}$";
+            if (string.IsNullOrWhiteSpace(tien))
+                return flag;
+            if (Regex.IsMatch(tien.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        private void txtMaVay_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaVay.Text))
+            {
+                errorProvider1.SetError(txtMaVay, "");
+                txtMaVay.BackColor = Color.White;
+                return;
+            }
+            string maKV = txtMaVay.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaKV(maKV))
+            {
+                txtMaVay.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaVay, "Mã khoản vay không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaVay.Focus();
+                return;
+            }
+            else
+            {
+                txtMaVay.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaVay, "");
+        }
+
+        private void txtMaKH_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaKH.Text))
+            {
+                errorProvider1.SetError(txtMaKH, "");
+                txtMaKH.BackColor = Color.White;
+                return;
+            }
+            string maKH = txtMaKH.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaKH(maKH))
+            {
+                txtMaKH.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaKH, "Mã khách hàng không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaKH.Focus();
+                return;
+            }
+            else
+            {
+                txtMaKH.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaKH, "");
+        }
+
+        private void txtMaTK_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaTK.Text))
+            {
+                errorProvider1.SetError(txtMaTK, "");
+                txtMaTK.BackColor = Color.White;
+                return;
+            }
+
+            if (!bUS_KhoanVay.KiemTraTaiKhoanThuocKhachHang(txtMaTK.Text, txtMaKH.Text))
+            {
+                txtMaTK.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTK, "Mã tài khoản phải đúng với mã khách hàng");
+                txtMaTK.Focus();
+                return;
+            }
+
+            string maTK = txtMaTK.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaTK(maTK))
+            {
+                txtMaTK.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTK, "Mã tài khoản không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaTK.Focus();
+                return;
+            }
+            else
+            {
+                txtMaTK.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaTK, "");
+        }
+
+        private void txtMaLS_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMaLS.Text))
+            {
+                errorProvider1.SetError(txtMaLS, "");
+                txtMaLS.BackColor = Color.White;
+                return;
+            }
+            string maLS = txtMaLS.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaLS(maLS))
+            {
+                txtMaLS.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaLS, "Mã lãi suất không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaLS.Focus();
+                return;
+            }
+            else
+            {
+                txtMaLS.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtMaLS, "");
+        }
+
+        private void txtSoTienVay_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSoTienVay.Text))
+            {
+                errorProvider1.SetError(txtSoTienVay, "");
+                txtSoTienVay.BackColor = Color.White;
+                return;
+            }
+            if (!KiemTraDinhDangTien(txtSoTienVay.Text))
+            {
+                txtSoTienVay.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtSoTienVay, "Số tiền không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtSoTienVay.Focus();
+                return;
+            }
+            else
+            {
+                txtSoTienVay.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtSoTienVay, "");
         }
     }
 }

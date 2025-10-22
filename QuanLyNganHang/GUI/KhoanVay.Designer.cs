@@ -60,10 +60,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnxoauser = new System.Windows.Forms.Button();
             this.btn_HuyAn = new System.Windows.Forms.Button();
             this.btn_An = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnxoauser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoanVay)).BeginInit();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvtaikhoan)).BeginInit();
@@ -235,6 +235,7 @@
             this.txtMaTK.Name = "txtMaTK";
             this.txtMaTK.Size = new System.Drawing.Size(328, 30);
             this.txtMaTK.TabIndex = 46;
+            this.txtMaTK.TextChanged += new System.EventHandler(this.txtMaTK_TextChanged);
             // 
             // dgvmakh
             // 
@@ -267,6 +268,7 @@
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(328, 30);
             this.txtMaKH.TabIndex = 44;
+            this.txtMaKH.TextChanged += new System.EventHandler(this.txtMaKH_TextChanged);
             // 
             // label9
             // 
@@ -327,6 +329,7 @@
             this.txtMaVay.Name = "txtMaVay";
             this.txtMaVay.Size = new System.Drawing.Size(328, 30);
             this.txtMaVay.TabIndex = 20;
+            this.txtMaVay.TextChanged += new System.EventHandler(this.txtMaVay_TextChanged);
             // 
             // txtSoTienVay
             // 
@@ -339,6 +342,7 @@
             this.txtSoTienVay.Name = "txtSoTienVay";
             this.txtSoTienVay.Size = new System.Drawing.Size(328, 30);
             this.txtSoTienVay.TabIndex = 31;
+            this.txtSoTienVay.TextChanged += new System.EventHandler(this.txtSoTienVay_TextChanged);
             // 
             // label3
             // 
@@ -419,6 +423,7 @@
             this.txtMaLS.Name = "txtMaLS";
             this.txtMaLS.Size = new System.Drawing.Size(328, 30);
             this.txtMaLS.TabIndex = 33;
+            this.txtMaLS.TextChanged += new System.EventHandler(this.txtMaLS_TextChanged);
             // 
             // label11
             // 
@@ -523,6 +528,25 @@
             this.panel4.Size = new System.Drawing.Size(1244, 86);
             this.panel4.TabIndex = 47;
             // 
+            // btnxoauser
+            // 
+            this.btnxoauser.AllowDrop = true;
+            this.btnxoauser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnxoauser.BackColor = System.Drawing.Color.Red;
+            this.btnxoauser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnxoauser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnxoauser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnxoauser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnxoauser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnxoauser.ForeColor = System.Drawing.Color.White;
+            this.btnxoauser.Location = new System.Drawing.Point(357, 22);
+            this.btnxoauser.Name = "btnxoauser";
+            this.btnxoauser.Size = new System.Drawing.Size(112, 49);
+            this.btnxoauser.TabIndex = 50;
+            this.btnxoauser.Text = "Xóa";
+            this.btnxoauser.UseVisualStyleBackColor = false;
+            this.btnxoauser.Click += new System.EventHandler(this.btnxoauser_Click);
+            // 
             // btn_HuyAn
             // 
             this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -566,25 +590,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnxoauser
-            // 
-            this.btnxoauser.AllowDrop = true;
-            this.btnxoauser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnxoauser.BackColor = System.Drawing.Color.Red;
-            this.btnxoauser.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnxoauser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnxoauser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btnxoauser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnxoauser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnxoauser.ForeColor = System.Drawing.Color.White;
-            this.btnxoauser.Location = new System.Drawing.Point(357, 22);
-            this.btnxoauser.Name = "btnxoauser";
-            this.btnxoauser.Size = new System.Drawing.Size(112, 49);
-            this.btnxoauser.TabIndex = 50;
-            this.btnxoauser.Text = "Xóa";
-            this.btnxoauser.UseVisualStyleBackColor = false;
-            this.btnxoauser.Click += new System.EventHandler(this.btnxoauser_Click);
             // 
             // frmKhoanVay
             // 

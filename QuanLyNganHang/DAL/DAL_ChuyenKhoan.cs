@@ -172,5 +172,20 @@ namespace DAL
             }
             return ss;
         }
+
+        //
+        public bool KiemTraTaiKhoanThuocKhachHang(string maTK, string maKH)
+        {
+            try
+            {
+                bool tonTai = db.TAIKHOANs.Any(tk => tk.MATK == maTK && tk.MAKH == maKH);
+                return tonTai;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi" + ex.Message);
+                return false;
+            }
+        }
     }
 }
