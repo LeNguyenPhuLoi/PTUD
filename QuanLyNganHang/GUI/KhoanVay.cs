@@ -24,6 +24,30 @@ namespace GUI
 
         private void frmKhoanVay_Load(object sender, EventArgs e)
         {
+            // Màu nền khi chọn ô (dòng)
+            dgvKhoanVay.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvKhoanVay.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvKhoanVay.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
+            // Màu nền khi chọn ô (dòng)
+            dgvmakh.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvmakh.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvmakh.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
+            // Màu nền khi chọn ô (dòng)
+            dgvtaikhoan.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvtaikhoan.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvtaikhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
+            // Màu nền khi chọn ô (dòng)
+            dgvlaisuat.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvlaisuat.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvlaisuat.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
             dgvmakh.DataSource = bUS_KhoanVay.LoadDSKhachHang();
             dgvtaikhoan.DataSource = bUS_KhoanVay.LoadDSTaiKhoan();
             dgvlaisuat.DataSource = bUS_KhoanVay.LoadDSLaiSuat();

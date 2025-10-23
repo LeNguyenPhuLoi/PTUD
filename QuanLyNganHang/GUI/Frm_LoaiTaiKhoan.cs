@@ -36,6 +36,12 @@ namespace GUI
 
         private void Frm_LoaiTaiKhoan_Load(object sender, EventArgs e)
         {
+            // Màu nền khi chọn ô (dòng)
+            dgv_LoaiTaiKhoan.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgv_LoaiTaiKhoan.RowsDefaultCellStyle.BackColor = Color.White;
+            dgv_LoaiTaiKhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
+            
             dtp_NgayTao.MaxDate = DateTime.Now;
             dtp_NgayCapNhat.MaxDate = DateTime.Now;
             cbo_TrangThai.SelectedIndex = 0;

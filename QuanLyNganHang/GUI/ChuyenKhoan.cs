@@ -26,10 +26,41 @@ namespace GUI
         BUS_ChuyenKhoan bUS_ChuyenKhoan = new BUS_ChuyenKhoan();
         private void frmChuyenKhoan_Load(object sender, EventArgs e)
         {
+            // Màu nền khi chọn ô (dòng)
+            dgvChuyenKhoan.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvChuyenKhoan.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvChuyenKhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
+            // Màu nền khi chọn ô (dòng)
+            dgvmakh.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvmakh.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvmakh.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
+            // Màu nền khi chọn ô (dòng)
+            dgvmatk.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvmatk.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvmatk.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
+            // Màu nền khi chọn ô (dòng)
+            dgvmatkgui.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvmatkgui.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvmatkgui.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
+            // Màu nền khi chọn ô (dòng)
+            dgvmatknhan.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvmatknhan.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvmatknhan.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
             dgvmakh.DataSource = bUS_ChuyenKhoan.LoadDSKhachHang();
             dgvmatk.DataSource = bUS_ChuyenKhoan.LoadDSTaiKhoan();
             dgvmatkgui.DataSource = bUS_ChuyenKhoan.LoadDSTaiKhoan();
             dgvmatknhan.DataSource = bUS_ChuyenKhoan.LoadDSTaiKhoan();
+
             dtpNgayChuyen.MaxDate = DateTime.Now;
             HienThiDS();
         }

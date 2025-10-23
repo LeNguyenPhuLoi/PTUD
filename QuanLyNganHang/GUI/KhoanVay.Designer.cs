@@ -87,7 +87,7 @@
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(217, 21);
+            this.btnSua.Location = new System.Drawing.Point(217, 14);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(112, 49);
             this.btnSua.TabIndex = 10;
@@ -106,7 +106,7 @@
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(357, 22);
+            this.btnXoa.Location = new System.Drawing.Point(357, 15);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(112, 49);
             this.btnXoa.TabIndex = 11;
@@ -124,7 +124,7 @@
             this.btnHoanTac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnHoanTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoanTac.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoanTac.Location = new System.Drawing.Point(492, 22);
+            this.btnHoanTac.Location = new System.Drawing.Point(492, 15);
             this.btnHoanTac.Name = "btnHoanTac";
             this.btnHoanTac.Size = new System.Drawing.Size(112, 49);
             this.btnHoanTac.TabIndex = 12;
@@ -143,7 +143,7 @@
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(86, 21);
+            this.btnThem.Location = new System.Drawing.Point(86, 14);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(112, 49);
             this.btnThem.TabIndex = 12;
@@ -155,6 +155,8 @@
             // 
             this.dgvKhoanVay.AllowUserToResizeColumns = false;
             this.dgvKhoanVay.AllowUserToResizeRows = false;
+            this.dgvKhoanVay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvKhoanVay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhoanVay.BackgroundColor = System.Drawing.Color.White;
             this.dgvKhoanVay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -165,7 +167,7 @@
             this.dgvKhoanVay.RowHeadersVisible = false;
             this.dgvKhoanVay.RowHeadersWidth = 62;
             this.dgvKhoanVay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhoanVay.Size = new System.Drawing.Size(2000, 245);
+            this.dgvKhoanVay.Size = new System.Drawing.Size(2000, 408);
             this.dgvKhoanVay.TabIndex = 31;
             this.dgvKhoanVay.Click += new System.EventHandler(this.dgvKhoanVay_Click);
             // 
@@ -209,6 +211,8 @@
             this.dgvtaikhoan.AllowDrop = true;
             this.dgvtaikhoan.AllowUserToResizeColumns = false;
             this.dgvtaikhoan.AllowUserToResizeRows = false;
+            this.dgvtaikhoan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvtaikhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvtaikhoan.BackgroundColor = System.Drawing.Color.White;
             this.dgvtaikhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -220,7 +224,7 @@
             this.dgvtaikhoan.RowHeadersWidth = 51;
             this.dgvtaikhoan.RowTemplate.Height = 24;
             this.dgvtaikhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvtaikhoan.Size = new System.Drawing.Size(968, 105);
+            this.dgvtaikhoan.Size = new System.Drawing.Size(550, 105);
             this.dgvtaikhoan.TabIndex = 47;
             this.dgvtaikhoan.Click += new System.EventHandler(this.dgvtaikhoan_Click);
             // 
@@ -242,6 +246,8 @@
             this.dgvmakh.AllowDrop = true;
             this.dgvmakh.AllowUserToResizeColumns = false;
             this.dgvmakh.AllowUserToResizeRows = false;
+            this.dgvmakh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvmakh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvmakh.BackgroundColor = System.Drawing.Color.White;
             this.dgvmakh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -253,7 +259,7 @@
             this.dgvmakh.RowHeadersWidth = 51;
             this.dgvmakh.RowTemplate.Height = 24;
             this.dgvmakh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvmakh.Size = new System.Drawing.Size(968, 105);
+            this.dgvmakh.Size = new System.Drawing.Size(550, 105);
             this.dgvmakh.TabIndex = 45;
             this.dgvmakh.Click += new System.EventHandler(this.dgvmakh_Click);
             // 
@@ -397,10 +403,12 @@
             this.dgvlaisuat.AllowDrop = true;
             this.dgvlaisuat.AllowUserToResizeColumns = false;
             this.dgvlaisuat.AllowUserToResizeRows = false;
+            this.dgvlaisuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
             this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlaisuat.Location = new System.Drawing.Point(36, 214);
+            this.dgvlaisuat.Location = new System.Drawing.Point(36, 212);
             this.dgvlaisuat.MultiSelect = false;
             this.dgvlaisuat.Name = "dgvlaisuat";
             this.dgvlaisuat.ReadOnly = true;
@@ -408,7 +416,7 @@
             this.dgvlaisuat.RowHeadersWidth = 51;
             this.dgvlaisuat.RowTemplate.Height = 24;
             this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlaisuat.Size = new System.Drawing.Size(968, 105);
+            this.dgvlaisuat.Size = new System.Drawing.Size(562, 105);
             this.dgvlaisuat.TabIndex = 34;
             this.dgvlaisuat.Click += new System.EventHandler(this.dgvlaisuat_Click);
             // 
@@ -505,13 +513,14 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.dgvKhoanVay);
             this.panel3.Location = new System.Drawing.Point(9, 538);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1211, 272);
+            this.panel3.Size = new System.Drawing.Size(1211, 211);
             this.panel3.TabIndex = 46;
             // 
             // panel4
@@ -523,9 +532,10 @@
             this.panel4.Controls.Add(this.btnXoa);
             this.panel4.Controls.Add(this.btnSua);
             this.panel4.Controls.Add(this.btnThem);
-            this.panel4.Location = new System.Drawing.Point(0, 857);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 758);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1244, 86);
+            this.panel4.Size = new System.Drawing.Size(1244, 79);
             this.panel4.TabIndex = 47;
             // 
             // btnxoauser
@@ -539,7 +549,7 @@
             this.btnxoauser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnxoauser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnxoauser.ForeColor = System.Drawing.Color.White;
-            this.btnxoauser.Location = new System.Drawing.Point(357, 22);
+            this.btnxoauser.Location = new System.Drawing.Point(357, 15);
             this.btnxoauser.Name = "btnxoauser";
             this.btnxoauser.Size = new System.Drawing.Size(112, 49);
             this.btnxoauser.TabIndex = 50;
@@ -557,7 +567,7 @@
             this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
-            this.btn_HuyAn.Location = new System.Drawing.Point(846, 21);
+            this.btn_HuyAn.Location = new System.Drawing.Point(846, 14);
             this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_HuyAn.Name = "btn_HuyAn";
             this.btn_HuyAn.Size = new System.Drawing.Size(112, 49);
@@ -577,7 +587,7 @@
             this.btn_An.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_An.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_An.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_An.Location = new System.Drawing.Point(632, 21);
+            this.btn_An.Location = new System.Drawing.Point(632, 14);
             this.btn_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_An.Name = "btn_An";
             this.btn_An.Size = new System.Drawing.Size(193, 49);
@@ -595,7 +605,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1244, 943);
+            this.ClientSize = new System.Drawing.Size(1244, 837);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label5);

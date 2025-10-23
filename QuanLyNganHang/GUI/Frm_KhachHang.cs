@@ -85,6 +85,11 @@ namespace GUI
 
         private void Frm_KhachHang_Load(object sender, EventArgs e)
         {
+            // Màu nền khi chọn ô (dòng)
+            dgv_KhachHang.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgv_KhachHang.RowsDefaultCellStyle.BackColor = Color.White;
+            dgv_KhachHang.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
 
             dtp_NgayTao.MaxDate = DateTime.Now;
             cbo_DoiTuong.SelectedIndex = 0;

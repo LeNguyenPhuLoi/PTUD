@@ -24,6 +24,12 @@ namespace GUI
 
         private void frmKhuyenMai_Load(object sender, EventArgs e)
         {
+            // Màu nền khi chọn ô (dòng)
+            dgvKhuyenMai.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvKhuyenMai.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvKhuyenMai.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
             dgvKhuyenMai.DataSource = bUS_KhuyenMai.LoadDSKhuyenMai();
             dtNgayBatDau.MaxDate = DateTime.Now;
             dtNgayKetThuc.MaxDate = DateTime.Now;
