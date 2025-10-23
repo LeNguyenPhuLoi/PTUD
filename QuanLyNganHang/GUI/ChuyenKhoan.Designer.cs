@@ -31,10 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuyenKhoan));
             this.btnInDS = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnHoanTac = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpNgayChuyen = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,12 +57,16 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnxoauser = new System.Windows.Forms.Button();
-            this.btn_HuyAn = new System.Windows.Forms.Button();
-            this.btn_An = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvChuyenKhoan = new System.Windows.Forms.DataGridView();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnHoanTac = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btn_An = new System.Windows.Forms.Button();
+            this.btn_HuyAn = new System.Windows.Forms.Button();
+            this.btnxoauser = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmatknhan)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,100 +75,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvmakh)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenKhoan)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnInDS
             // 
             this.btnInDS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInDS.Location = new System.Drawing.Point(1153, 1236);
+            this.btnInDS.Location = new System.Drawing.Point(1153, 1199);
             this.btnInDS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInDS.Name = "btnInDS";
             this.btnInDS.Size = new System.Drawing.Size(91, 34);
             this.btnInDS.TabIndex = 35;
             this.btnInDS.Text = "In DS kho";
             this.btnInDS.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSua.BackColor = System.Drawing.Color.Blue;
-            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(180, 25);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(112, 49);
-            this.btnSua.TabIndex = 10;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnXoa.BackColor = System.Drawing.Color.Red;
-            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(320, 25);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(112, 49);
-            this.btnXoa.TabIndex = 11;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnHoanTac
-            // 
-            this.btnHoanTac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHoanTac.BackColor = System.Drawing.Color.White;
-            this.btnHoanTac.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHoanTac.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnHoanTac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnHoanTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoanTac.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoanTac.Location = new System.Drawing.Point(457, 25);
-            this.btnHoanTac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnHoanTac.Name = "btnHoanTac";
-            this.btnHoanTac.Size = new System.Drawing.Size(112, 49);
-            this.btnHoanTac.TabIndex = 12;
-            this.btnHoanTac.Text = "Làm mới";
-            this.btnHoanTac.UseVisualStyleBackColor = false;
-            this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnThem.BackColor = System.Drawing.Color.Lime;
-            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(41, 25);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(112, 49);
-            this.btnThem.TabIndex = 12;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label1
             // 
@@ -530,20 +451,153 @@
             this.label8.Text = "QUẢN TRỊ CHUYỂN KHOẢN";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // panel3
             // 
-            this.panel4.Controls.Add(this.btnxoauser);
-            this.panel4.Controls.Add(this.btn_HuyAn);
-            this.panel4.Controls.Add(this.btn_An);
-            this.panel4.Controls.Add(this.btnThem);
-            this.panel4.Controls.Add(this.btnSua);
-            this.panel4.Controls.Add(this.btnHoanTac);
-            this.panel4.Controls.Add(this.btnXoa);
-            this.panel4.Location = new System.Drawing.Point(0, 849);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1285, 95);
-            this.panel4.TabIndex = 47;
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.AutoScroll = true;
+            this.panel3.Controls.Add(this.dgvChuyenKhoan);
+            this.panel3.Location = new System.Drawing.Point(12, 651);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1211, 193);
+            this.panel3.TabIndex = 48;
+            // 
+            // dgvChuyenKhoan
+            // 
+            this.dgvChuyenKhoan.AllowUserToResizeColumns = false;
+            this.dgvChuyenKhoan.AllowUserToResizeRows = false;
+            this.dgvChuyenKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChuyenKhoan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvChuyenKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChuyenKhoan.Location = new System.Drawing.Point(3, 3);
+            this.dgvChuyenKhoan.MultiSelect = false;
+            this.dgvChuyenKhoan.Name = "dgvChuyenKhoan";
+            this.dgvChuyenKhoan.ReadOnly = true;
+            this.dgvChuyenKhoan.RowHeadersVisible = false;
+            this.dgvChuyenKhoan.RowHeadersWidth = 62;
+            this.dgvChuyenKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvChuyenKhoan.Size = new System.Drawing.Size(2000, 245);
+            this.dgvChuyenKhoan.TabIndex = 31;
+            this.dgvChuyenKhoan.Click += new System.EventHandler(this.dgvChuyenKhoan_Click_1);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnXoa.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(312, 19);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(112, 49);
+            this.btnXoa.TabIndex = 11;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnHoanTac
+            // 
+            this.btnHoanTac.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHoanTac.BackColor = System.Drawing.Color.White;
+            this.btnHoanTac.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnHoanTac.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnHoanTac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnHoanTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoanTac.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoanTac.Location = new System.Drawing.Point(449, 19);
+            this.btnHoanTac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHoanTac.Name = "btnHoanTac";
+            this.btnHoanTac.Size = new System.Drawing.Size(112, 49);
+            this.btnHoanTac.TabIndex = 12;
+            this.btnHoanTac.Text = "Làm mới";
+            this.btnHoanTac.UseVisualStyleBackColor = false;
+            this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSua.BackColor = System.Drawing.Color.Blue;
+            this.btnSua.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Location = new System.Drawing.Point(172, 19);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(112, 49);
+            this.btnSua.TabIndex = 10;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnThem.BackColor = System.Drawing.Color.Lime;
+            this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(33, 19);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(112, 49);
+            this.btnThem.TabIndex = 12;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btn_An
+            // 
+            this.btn_An.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_An.BackColor = System.Drawing.Color.Red;
+            this.btn_An.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_An.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.btn_An.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btn_An.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_An.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_An.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_An.Location = new System.Drawing.Point(574, 19);
+            this.btn_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_An.Name = "btn_An";
+            this.btn_An.Size = new System.Drawing.Size(193, 49);
+            this.btn_An.TabIndex = 41;
+            this.btn_An.Text = "Ẩn Khách Hàng";
+            this.btn_An.UseVisualStyleBackColor = false;
+            this.btn_An.Visible = false;
+            this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
+            // 
+            // btn_HuyAn
+            // 
+            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_HuyAn.BackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
+            this.btn_HuyAn.Location = new System.Drawing.Point(788, 19);
+            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_HuyAn.Name = "btn_HuyAn";
+            this.btn_HuyAn.Size = new System.Drawing.Size(112, 49);
+            this.btn_HuyAn.TabIndex = 42;
+            this.btn_HuyAn.Text = "Hủy Ẩn";
+            this.btn_HuyAn.UseVisualStyleBackColor = false;
+            this.btn_HuyAn.Visible = false;
+            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
             // 
             // btnxoauser
             // 
@@ -556,7 +610,7 @@
             this.btnxoauser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnxoauser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnxoauser.ForeColor = System.Drawing.Color.White;
-            this.btnxoauser.Location = new System.Drawing.Point(320, 25);
+            this.btnxoauser.Location = new System.Drawing.Point(312, 19);
             this.btnxoauser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnxoauser.Name = "btnxoauser";
             this.btnxoauser.Size = new System.Drawing.Size(112, 49);
@@ -565,75 +619,19 @@
             this.btnxoauser.UseVisualStyleBackColor = false;
             this.btnxoauser.Click += new System.EventHandler(this.btnxoauser_Click);
             // 
-            // btn_HuyAn
+            // panel4
             // 
-            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_HuyAn.BackColor = System.Drawing.Color.Blue;
-            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
-            this.btn_HuyAn.Location = new System.Drawing.Point(796, 25);
-            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_HuyAn.Name = "btn_HuyAn";
-            this.btn_HuyAn.Size = new System.Drawing.Size(112, 49);
-            this.btn_HuyAn.TabIndex = 42;
-            this.btn_HuyAn.Text = "Hủy Ẩn";
-            this.btn_HuyAn.UseVisualStyleBackColor = false;
-            this.btn_HuyAn.Visible = false;
-            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
-            // 
-            // btn_An
-            // 
-            this.btn_An.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_An.BackColor = System.Drawing.Color.Red;
-            this.btn_An.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_An.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btn_An.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btn_An.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_An.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_An.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_An.Location = new System.Drawing.Point(582, 25);
-            this.btn_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_An.Name = "btn_An";
-            this.btn_An.Size = new System.Drawing.Size(193, 49);
-            this.btn_An.TabIndex = 41;
-            this.btn_An.Text = "Ẩn Khách Hàng";
-            this.btn_An.UseVisualStyleBackColor = false;
-            this.btn_An.Visible = false;
-            this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.dgvChuyenKhoan);
-            this.panel3.Location = new System.Drawing.Point(12, 640);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1211, 204);
-            this.panel3.TabIndex = 48;
-            // 
-            // dgvChuyenKhoan
-            // 
-            this.dgvChuyenKhoan.AllowDrop = true;
-            this.dgvChuyenKhoan.AllowUserToResizeColumns = false;
-            this.dgvChuyenKhoan.AllowUserToResizeRows = false;
-            this.dgvChuyenKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvChuyenKhoan.BackgroundColor = System.Drawing.Color.White;
-            this.dgvChuyenKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChuyenKhoan.Location = new System.Drawing.Point(0, 3);
-            this.dgvChuyenKhoan.MultiSelect = false;
-            this.dgvChuyenKhoan.Name = "dgvChuyenKhoan";
-            this.dgvChuyenKhoan.ReadOnly = true;
-            this.dgvChuyenKhoan.RowHeadersVisible = false;
-            this.dgvChuyenKhoan.RowHeadersWidth = 62;
-            this.dgvChuyenKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChuyenKhoan.Size = new System.Drawing.Size(2003, 179);
-            this.dgvChuyenKhoan.TabIndex = 31;
-            this.dgvChuyenKhoan.Click += new System.EventHandler(this.dgvChuyenKhoan_Click_1);
+            this.panel4.Controls.Add(this.btnThem);
+            this.panel4.Controls.Add(this.btnxoauser);
+            this.panel4.Controls.Add(this.btnXoa);
+            this.panel4.Controls.Add(this.btnHoanTac);
+            this.panel4.Controls.Add(this.btn_HuyAn);
+            this.panel4.Controls.Add(this.btnSua);
+            this.panel4.Controls.Add(this.btn_An);
+            this.panel4.Location = new System.Drawing.Point(12, 863);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1244, 86);
+            this.panel4.TabIndex = 49;
             // 
             // frmChuyenKhoan
             // 
@@ -641,9 +639,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1285, 985);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1285, 948);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnInDS);
@@ -662,9 +660,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvmakh)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenKhoan)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -672,10 +670,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnInDS;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnHoanTac;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpNgayChuyen;
@@ -691,7 +685,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.RichTextBox rtxtND;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -705,8 +698,13 @@
         private System.Windows.Forms.TextBox txtMaTK;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvChuyenKhoan;
+        private System.Windows.Forms.Button btnxoauser;
         private System.Windows.Forms.Button btn_HuyAn;
         private System.Windows.Forms.Button btn_An;
-        private System.Windows.Forms.Button btnxoauser;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnHoanTac;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -60,6 +60,18 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                var taiKhoanGui = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == et.MaTKGui);
+
+                // Kiểm tra số dư tài khoản gửi
+                if ((taiKhoanGui.SODU ?? 0) < et.SoTien)
+                {
+                    return false;
+                }
+
+                if (et.SoTien < 0)
+                {
+                    return false;
+                }
                 if (et.MaCK == "")
                 {
                     return false;
@@ -80,6 +92,17 @@ namespace DAL
                         TinhTrangXoa = et.TinhTrangXoa
                     };
                     db.CHUYENKHOANs.InsertOnSubmit(ck);
+                    
+
+                    // Trừ tiền tài khoản gửi
+                    taiKhoanGui.SODU = (taiKhoanGui.SODU ?? 0) - et.SoTien;
+
+                    var taiKhoanNhan = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == et.MaTKNhan);
+
+                    if (taiKhoanNhan != null)
+                    {
+                        taiKhoanNhan.SODU = (taiKhoanNhan.SODU ?? 0) + (decimal)et.SoTien;
+                    }
                     db.SubmitChanges();
                     ss = true;
                 }
@@ -99,21 +122,53 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                var ck = db.CHUYENKHOANs.FirstOrDefault(n => n.MACK == et.MaCK);
+
+                // Tài khoản cũ trước khi cập nhật
+                var taiKhoanGuiCu = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == ck.MATKGUI);
+                var taiKhoanNhanCu = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == ck.MATKNHAN);
+
+                // Hoàn lại số tiền
+                if (taiKhoanGuiCu != null)
+                    taiKhoanGuiCu.SODU = (taiKhoanGuiCu.SODU ?? 0) + (ck.SOTIEN ?? 0);
+                if (taiKhoanNhanCu != null)
+                    taiKhoanNhanCu.SODU = (taiKhoanNhanCu.SODU ?? 0) - (ck.SOTIEN ?? 0);
+
+                // Tài khoản mới
+                var taiKhoanGuiMoi = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == et.MaTKGui);
+                var taiKhoanNhanMoi = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == et.MaTKNhan);
+
+                // Kiểm tra nếu không đủ tiền thì hoàn lại tiền
+                if (taiKhoanGuiMoi == null || (taiKhoanGuiMoi.SODU ?? 0) < et.SoTien)
+                {
+                    // ↩ Hoàn lại giao dịch cũ vì cập nhật thất bại
+                    if (taiKhoanGuiCu != null)
+                        taiKhoanGuiCu.SODU = (taiKhoanGuiCu.SODU ?? 0) - (ck.SOTIEN ?? 0);
+                    if (taiKhoanNhanCu != null)
+                        taiKhoanNhanCu.SODU = (taiKhoanNhanCu.SODU ?? 0) + (ck.SOTIEN ?? 0);
+
+                    return false;
+                }
+
+                //Thực hiện cập nhật số dư
+                taiKhoanGuiMoi.SODU -= et.SoTien;
+                taiKhoanNhanMoi.SODU += et.SoTien;
+
                 if (et.MaCK == "")
                 {
                     return false;
                 }
-                var change = db.CHUYENKHOANs.SingleOrDefault(ck => ck.MACK == et.MaCK);
-                if (change != null)
+
+                if (ck != null)
                 {
-                    change.MACK = et.MaCK;
-                    change.MAKH = et.MaKH;
-                    change.MATK = et.MaTK;
-                    change.NGAYCK = et.NgayCK;
-                    change.SOTIEN = et.SoTien;
-                    change.MATKGUI = et.MaTKGui;
-                    change.MATKNHAN = et.MaTKNhan;
-                    change.NOIDUNG = et.NoiDung;
+                    ck.MACK = et.MaCK;
+                    ck.MAKH = et.MaKH;
+                    ck.MATK = et.MaTK;
+                    ck.NGAYCK = et.NgayCK;
+                    ck.SOTIEN = et.SoTien;
+                    ck.MATKGUI = et.MaTKGui;
+                    ck.MATKNHAN = et.MaTKNhan;
+                    ck.NOIDUNG = et.NoiDung;
 
                     db.SubmitChanges();
                     ss = true;
@@ -134,10 +189,22 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
-                var delete = db.CHUYENKHOANs.SingleOrDefault(ck => ck.MACK == et.MaCK);
-                if (delete != null)
+                var ck = db.CHUYENKHOANs.SingleOrDefault(xoa => xoa.MACK == et.MaCK);
+
+                // Lấy tài khoản
+                var taiKhoanGui = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == ck.MATKGUI);
+                var taiKhoanNhan = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == ck.MATKNHAN);
+
+                // Hoàn lại tiền
+                if (taiKhoanGui != null)
+                    taiKhoanGui.SODU = (taiKhoanGui.SODU ?? 0) + (decimal)(ck.SOTIEN ?? 0);
+
+                if (taiKhoanNhan != null)
+                    taiKhoanNhan.SODU = (taiKhoanNhan.SODU ?? 0) - (decimal)(ck.SOTIEN ?? 0);
+                
+                if (ck != null)
                 {
-                    db.CHUYENKHOANs.DeleteOnSubmit(delete);
+                    db.CHUYENKHOANs.DeleteOnSubmit(ck);
                     db.SubmitChanges();
                     ss = true;
                 }

@@ -96,9 +96,8 @@
             this.cboKL.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboKL.FormattingEnabled = true;
             this.cboKL.Items.AddRange(new object[] {
-            "Lãi Suất Cố Định",
-            "Lãi Suất Tiền Gửi Tiết Kiệm",
-            "Lãi Suất Cho Vay"});
+            "Tháng",
+            "Năm"});
             this.cboKL.Location = new System.Drawing.Point(180, 248);
             this.cboKL.Name = "cboKL";
             this.cboKL.Size = new System.Drawing.Size(515, 33);

@@ -84,11 +84,23 @@ namespace GUI
                                                        txtMaTKNhan.Text,
                                                        rtxtND.Text,
                                                        TrangThai);
+                if (string.IsNullOrWhiteSpace(txtMaTKGui.Text))
+                {
+                    MessageBox.Show("Mã tài khoản gửi không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTKGui.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtMaTKNhan.Text))
+                {
+                    MessageBox.Show("Mã tài khoản nhận không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTKNhan.Focus();
+                    return;
+                }
                 if (bUS_ChuyenKhoan.ThemCK(ck) == true)
                 {
                     MessageBox.Show("Thêm chuyển khoản thành công!");
                     Clear();
-                }
+                }               
                 else
                 {
                     MessageBox.Show("Thêm chuyển khoản thất bại!");
@@ -165,26 +177,6 @@ namespace GUI
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
             dgvChuyenKhoan.DataSource = bUS_ChuyenKhoan.LoadDSChuyenKhoan();
-        }
-
-        private void dgvChuyenKhoan_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                int dong = dgvChuyenKhoan.CurrentCell.RowIndex;
-                txtMaCK.Text = dgvChuyenKhoan.Rows[dong].Cells[0].Value.ToString();
-                txtMaKH.Text = dgvChuyenKhoan.Rows[dong].Cells[1].Value.ToString();
-                txtMaTK.Text = dgvChuyenKhoan.Rows[dong].Cells[2].Value.ToString();                
-                dtpNgayChuyen.Text = dgvChuyenKhoan.Rows[dong].Cells[3].Value.ToString();
-                txtSoTien.Text = dgvChuyenKhoan.Rows[dong].Cells[4].Value.ToString();
-                txtMaTKGui.Text = dgvChuyenKhoan.Rows[dong].Cells[5].Value.ToString();
-                txtMaTKNhan.Text = dgvChuyenKhoan.Rows[dong].Cells[6].Value.ToString();
-                rtxtND.Text = dgvChuyenKhoan.Rows[dong].Cells[7].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi " + ex.Message);
-            }
         }
 
         private void dgvmakh_Click(object sender, EventArgs e)
@@ -432,7 +424,7 @@ namespace GUI
             if (!KiemTraDinhDangMaCK(maCK))
             {
                 txtMaCK.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaCK, "Mã khách hàng không được bỏ trống hoặc ghi ký tự đặc biệt");
+                errorProvider1.SetError(txtMaCK, "Mã chuyển khoản không được bỏ trống hoặc ghi ký tự đặc biệt");
                 txtMaCK.Focus();
                 return;
             }
@@ -474,20 +466,18 @@ namespace GUI
                 txtMaTK.BackColor = Color.White;
                 return;
             }
-
-            if (!bUS_ChuyenKhoan.KiemTraTaiKhoanThuocKhachHang(txtMaTK.Text, txtMaKH.Text))
-            {
-                txtMaTK.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTK, "Mã tài khoản phải đúng với mã khách hàng");
-                txtMaTK.Focus();
-                return;
-            }
-
             string maTK = txtMaTK.Text.Trim().ToUpper();
             if (!KiemTraDinhDangMaTK(maTK))
             {
                 txtMaTK.BackColor = Color.LightCoral;
                 errorProvider1.SetError(txtMaTK, "Mã tài khoản không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaTK.Focus();
+                return;
+            }
+            if (!bUS_ChuyenKhoan.KiemTraTaiKhoanThuocKhachHang(txtMaTK.Text, txtMaKH.Text))
+            {
+                txtMaTK.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTK, "Mã tài khoản phải đúng với mã khách hàng");
                 txtMaTK.Focus();
                 return;
             }
@@ -506,20 +496,18 @@ namespace GUI
                 txtMaTKGui.BackColor = Color.White;
                 return;
             }
-
-            if (!bUS_ChuyenKhoan.KiemTraTaiKhoanThuocKhachHang(txtMaTKGui.Text, txtMaKH.Text))
-            {
-                txtMaTKGui.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTKGui, "Mã tài khoản phải đúng với mã khách hàng");
-                txtMaTKGui.Focus();
-                return;
-            }
-
             string maTKGui = txtMaTKGui.Text.Trim().ToUpper();
             if (!KiemTraDinhDangMaTKGui(maTKGui))
             {
                 txtMaTKGui.BackColor = Color.LightCoral;
                 errorProvider1.SetError(txtMaTKGui, "Mã tài khoản gửi không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaTKGui.Focus();
+                return;
+            }
+            if (!bUS_ChuyenKhoan.KiemTraTaiKhoanThuocKhachHang(txtMaTKGui.Text, txtMaKH.Text))
+            {
+                txtMaTKGui.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTKGui, "Mã tài khoản phải đúng với mã khách hàng");
                 txtMaTKGui.Focus();
                 return;
             }
@@ -573,7 +561,7 @@ namespace GUI
             if (!KiemTraDinhDangTien(txtSoTien.Text))
             {
                 txtSoTien.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtSoTien, "Số tiền không được bỏ trống hoặc ghi ký tự đặc biệt");
+                errorProvider1.SetError(txtSoTien, "Số tiền không được bỏ trống, ghi ký tự đặc biệt hoặc ghi chữ");
                 txtSoTien.Focus();
                 return;
             }
@@ -595,7 +583,7 @@ namespace GUI
             if (!KiemTraDinhDangND(rtxtND.Text))
             {
                 rtxtND.BackColor = Color.LightCoral;
-                errorProvider1.SetError(rtxtND, "Mã nội dung không được bỏ trống hoặc ghi ký tự đặc biệt");
+                errorProvider1.SetError(rtxtND, "Mã nội dung không được ghi ký tự đặc biệt");
                 rtxtND.Focus();
                 return;
             }
@@ -604,6 +592,26 @@ namespace GUI
                 rtxtND.BackColor = Color.White;
             }
             errorProvider1.SetError(rtxtND, "");
+        }
+
+        private void dgvChuyenKhoan_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int dong = dgvChuyenKhoan.CurrentCell.RowIndex;
+                txtMaCK.Text = dgvChuyenKhoan.Rows[dong].Cells[0].Value.ToString();
+                txtMaKH.Text = dgvChuyenKhoan.Rows[dong].Cells[1].Value.ToString();
+                txtMaTK.Text = dgvChuyenKhoan.Rows[dong].Cells[2].Value.ToString();
+                dtpNgayChuyen.Text = dgvChuyenKhoan.Rows[dong].Cells[3].Value.ToString();
+                txtSoTien.Text = dgvChuyenKhoan.Rows[dong].Cells[4].Value.ToString();
+                txtMaTKGui.Text = dgvChuyenKhoan.Rows[dong].Cells[5].Value.ToString();
+                txtMaTKNhan.Text = dgvChuyenKhoan.Rows[dong].Cells[6].Value.ToString();
+                rtxtND.Text = dgvChuyenKhoan.Rows[dong].Cells[7].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
         }
     }
 }

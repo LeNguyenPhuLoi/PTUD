@@ -41,9 +41,9 @@ VALUES('LTK001', N'Tài Khoản Vip Cấp 1', '17/06/2018 08:30:57','17/06/2018 
 GO
 INSERT INTO LAISUAT(MALAISUAT, TENLOAIVAY, LAISUAT, KIEULAI, TinhTrangXoa)
 VALUES
-('LS01', N'Vay tiêu dùng cá nhân', 7.5, N'Lãi Suất Cố Định', N'Hoạt Động'),
-('LS02', N'Vay thế chấp nhà ở', 6.8, N'Lãi Suất Cố Định', N'Hoạt Động'),
-('LS03', N'Vay tín chấp doanh nghiệp', 8.2, N'Lãi Suất Cố Định', N'Hoạt Động');
+('LS01', N'Vay tiêu dùng cá nhân', 6, N'Tháng', N'Hoạt Động'),
+('LS02', N'Vay thế chấp nhà ở', 8, N'Năm', N'Hoạt Động'),
+('LS03', N'Vay tín chấp doanh nghiệp', 8, N'Năm', N'Hoạt Động');
 
 ---THEM THONG TIN KHUYEN MAI
 GO
