@@ -201,3 +201,23 @@ E:\Hoc kì 5\PTỨD-2\21-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Co
 E:\Hoc kì 5\PTỨD-2\21-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
 E:\Hoc kì 5\PTỨD-2\21-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
 E:\Hoc kì 5\PTỨD-2\21-10-2025\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.dll
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.pdb
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.dll
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\ET.dll
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\Dapper.dll
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.pdb
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.dll.config
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\ET.pdb
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\Dapper.xml
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\test\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\test\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\test\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\test\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
+D:\test\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
+D:\test\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
