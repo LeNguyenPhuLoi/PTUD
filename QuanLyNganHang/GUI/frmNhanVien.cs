@@ -182,16 +182,16 @@ namespace GUI
         private void btnHoanTac_Click(object sender, EventArgs e)
         {
             txtMaNV.Clear();
-            txtLuong.Clear();
+            txtLuong.Text = "0";
             txtSDT.Clear();
             txtTenNV.Clear();
             rdoNam.Checked = true;
-            cboChuc.SelectedIndex = -1;
+            cboChuc.SelectedIndex = 0;
             txtCCCD.Clear();
             rtxDiaChi.Clear();
             txtSDT.Clear();
-            cboMaPB.SelectedIndex = -1;
-            cboMaCN.SelectedIndex = -1;
+            cboMaPB.SelectedIndex = 0;
+            cboMaCN.SelectedIndex = 0;
             txtMaNV.Focus();
             txtMaNV.Enabled = true;
             dtpNgaySinh.Value = dtpNgaySinh.MaxDate.AddDays(-1);

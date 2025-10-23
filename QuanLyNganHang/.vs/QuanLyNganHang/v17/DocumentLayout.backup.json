@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\23-10-2025\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\23-10-2025\\ptud\\quanlynganhang\\gui\\frm_taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|d:\\ptud\\quanlynganhang\\dal\\dal_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\dal_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\23-10-2025\\ptud\\quanlynganhang\\gui\\frm_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\ptud\\quanlynganhang\\gui\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\ptud\\quanlynganhang\\gui\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98708769-869E-4C14-9AC0-7539F745F238}|ET\\ET.csproj|d:\\ptud\\quanlynganhang\\et\\et_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98708769-869E-4C14-9AC0-7539F745F238}|ET\\ET.csproj|solutionrelative:et\\et_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Frm_TaiKhoan.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\23-10-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_TaiKhoan.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_TaiKhoan.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\23-10-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_TaiKhoan.cs*",
-              "RelativeToolTip": "GUI\\Frm_TaiKhoan.cs*",
-              "ViewState": "AgIAABMAAAAAAAAAAAAIwBoAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "frmNhanVien.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmNhanVien.cs",
+              "RelativeDocumentMoniker": "GUI\\frmNhanVien.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmNhanVien.cs",
+              "RelativeToolTip": "GUI\\frmNhanVien.cs",
+              "ViewState": "AgIAALIAAAAAAAAAAAAAALgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T14:05:31.967Z",
+              "WhenOpened": "2025-10-23T14:31:41.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Frm_KhachHang.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\23-10-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_KhachHang.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_KhachHang.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\23-10-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_KhachHang.cs",
-              "RelativeToolTip": "GUI\\Frm_KhachHang.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAmwHEAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "frmNhanVien.cs [Design]",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmNhanVien.cs",
+              "RelativeDocumentMoniker": "GUI\\frmNhanVien.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmNhanVien.cs [Design]",
+              "RelativeToolTip": "GUI\\frmNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T13:40:50.311Z",
+              "WhenOpened": "2025-10-23T14:31:39.226Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ET_NhanVien.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\ET\\ET_NhanVien.cs",
+              "RelativeDocumentMoniker": "ET\\ET_NhanVien.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\ET\\ET_NhanVien.cs",
+              "RelativeToolTip": "ET\\ET_NhanVien.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAzwCAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T14:30:12.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DAL_NhanVien.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_NhanVien.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_NhanVien.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_NhanVien.cs",
+              "RelativeToolTip": "DAL\\DAL_NhanVien.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAHoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T14:28:34.366Z",
               "EditorCaption": ""
             }
           ]
