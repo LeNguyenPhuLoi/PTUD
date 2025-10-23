@@ -475,6 +475,8 @@
             // 
             this.dgvChuyenKhoan.AllowUserToResizeColumns = false;
             this.dgvChuyenKhoan.AllowUserToResizeRows = false;
+            this.dgvChuyenKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvChuyenKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChuyenKhoan.BackgroundColor = System.Drawing.Color.White;
             this.dgvChuyenKhoan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -486,7 +488,7 @@
             this.dgvChuyenKhoan.RowHeadersVisible = false;
             this.dgvChuyenKhoan.RowHeadersWidth = 62;
             this.dgvChuyenKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChuyenKhoan.Size = new System.Drawing.Size(2000, 546);
+            this.dgvChuyenKhoan.Size = new System.Drawing.Size(1237, 546);
             this.dgvChuyenKhoan.TabIndex = 31;
             this.dgvChuyenKhoan.Click += new System.EventHandler(this.dgvChuyenKhoan_Click_1);
             // 
