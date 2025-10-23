@@ -83,14 +83,35 @@ namespace GUI
             }
         }
 
+        public void ChinhMauDGV()
+        {
+            //màu cho dòng chẵn
+            dgv_KhachHang.RowsDefaultCellStyle.BackColor = Color.LightGray;
+            dgv_KhachHang.RowsDefaultCellStyle.ForeColor = Color.Black;
+            dgv_KhachHang.RowsDefaultCellStyle.SelectionBackColor = Color.ForestGreen;
+            dgv_KhachHang.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            //màu cho dòng lẻ
+            dgv_KhachHang.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgv_KhachHang.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+            dgv_KhachHang.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.ForestGreen;
+            dgv_KhachHang.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            //màu header
+            dgv_KhachHang.EnableHeadersVisualStyles = false; // Quan trọng: tắt style mặc định của Windows
+            dgv_KhachHang.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood; // Màu nền tiêu đề
+            dgv_KhachHang.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;     // Màu chữ tiêu đề
+            dgv_KhachHang.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.BurlyWood; 
+            dgv_KhachHang.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            //căn giữa tiêu đề và ẩn cột mũi tên bên trái
+            dgv_KhachHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_KhachHang.RowHeadersVisible = false;
+        }
+
         private void Frm_KhachHang_Load(object sender, EventArgs e)
         {
-            // Màu nền khi chọn ô (dòng)
-            dgv_KhachHang.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
-            // Xem kẽ màu dòng
-            dgv_KhachHang.RowsDefaultCellStyle.BackColor = Color.White;
-            dgv_KhachHang.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
-
+            ChinhMauDGV();
             dtp_NgayTao.MaxDate = DateTime.Now;
             cbo_DoiTuong.SelectedIndex = 0;
             HienThiDS();
