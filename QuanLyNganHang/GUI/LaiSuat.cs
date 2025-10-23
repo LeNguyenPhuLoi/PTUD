@@ -24,6 +24,12 @@ namespace GUI
 
         private void frmLaiSuat_Load(object sender, EventArgs e)
         {
+            // Màu nền khi chọn ô (dòng)
+            dgvlaisuat.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgvlaisuat.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvlaisuat.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
+
             dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
             cboKL.SelectedIndex = 0;
         } 

@@ -24,6 +24,18 @@ namespace GUI
 
         private void Frm_TaiKhoan_Load(object sender, EventArgs e)
         {
+            // Màu nền khi chọn ô (dòng)
+            dgv_TaiKhoan.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgv_TaiKhoan.RowsDefaultCellStyle.BackColor = Color.White;
+            dgv_TaiKhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
+
+            // Màu nền khi chọn ô (dòng)
+            dgv_KhachHang.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
+            // Xem kẽ màu dòng
+            dgv_KhachHang.RowsDefaultCellStyle.BackColor = Color.White;
+            dgv_KhachHang.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
+
             AddToCBO(cbo_LoaiTK, BUS_TaiKhoan.LayChiTietLoaiTK());
             AddToCBO(cbo_TenNgoaiTe, BUS_TaiKhoan.LayTenNgoaiTe());
             cbo_LoaiTK.SelectedIndex = 0;
