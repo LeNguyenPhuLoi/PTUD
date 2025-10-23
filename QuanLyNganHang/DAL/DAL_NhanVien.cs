@@ -99,7 +99,17 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
-                if (et.CCCD == "")
+                if(et.MaNV == "")
+                {
+                    error = "Mã nhân viên không được để trống!";
+                    return false;
+                }
+                else if (et.TenNV == "")
+                {
+                    error = "Tên nhân viên không được để trống!";
+                    return false;
+                }
+                else if (et.CCCD == "")
                 {
                     error = "CCCD/CMND không được để trống!";
                     return false;
@@ -109,7 +119,8 @@ namespace DAL
                     error = "Số điện thoại không được để trống!";
                     return false;
                 }
-
+               
+               
                 // Kiểm tra trùng CCCD
                 if (db.NHANVIENs.Any(x => x.CCCD == et.CCCD))
                 {
@@ -167,15 +178,22 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
-                if(et.CCCD == "")
+                if (et.TenNV == "")
+                {
+                    error = "Tên nhân viên không được để trống!";
+                    return false;
+                }
+                else if (et.CCCD == "")
                 {
                     error = "CCCD/CMND không được để trống!";
                     return false;
-                }else if(et.SDT == "")
+                }
+                else if (et.SDT == "")
                 {
                     error = "Số điện thoại không được để trống!";
                     return false;
                 }
+
 
                 // Kiểm tra trùng CCCD (bỏ qua chính nhân viên đang cập nhật)
                 if (db.NHANVIENs.Any(x => x.CCCD == et.CCCD && x.MANV != et.MaNV))

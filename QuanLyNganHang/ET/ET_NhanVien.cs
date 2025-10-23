@@ -30,7 +30,7 @@ namespace ET
         public DateTime NgaySinh { get; set; }
         public string CCCD { get; set; }
         public string Chuc { get; set; }
-        public decimal Luong { get; set; }
+        public decimal? Luong { get; set; } = 0;
         public string DiaChi { get; set; }
         public string SDT { get; set; }
         public int MaPB { get; set; }

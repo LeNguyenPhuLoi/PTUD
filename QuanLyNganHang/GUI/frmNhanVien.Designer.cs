@@ -341,6 +341,7 @@
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.Size = new System.Drawing.Size(298, 30);
             this.txtLuong.TabIndex = 23;
+            this.txtLuong.Text = "0";
             this.txtLuong.Leave += new System.EventHandler(this.txtLuong_Leave);
             // 
             // label4
