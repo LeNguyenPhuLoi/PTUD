@@ -29,6 +29,7 @@ namespace GUI
             dgvlaisuat.DataSource = bUS_KhoanVay.LoadDSLaiSuat();
             dtpNgayVay.MaxDate = DateTime.Now;
             dtpThoiHan.MaxDate = DateTime.Now;
+            cboTrangThai.SelectedIndex = 0;
             HienThiDS();
         }
 
@@ -58,7 +59,7 @@ namespace GUI
             txtMaKH.Clear();
             txtMaTK.Clear();
             txtSoTienVay.Clear();
-            cboTrangThai.Text = null;
+            cboTrangThai.SelectedIndex = 0;
             dtpNgayVay.Text = null;
             dtpThoiHan.Text = null;
             txtMaLS.Clear();
@@ -436,20 +437,18 @@ namespace GUI
                 txtMaTK.BackColor = Color.White;
                 return;
             }
-
-            if (!bUS_KhoanVay.KiemTraTaiKhoanThuocKhachHang(txtMaTK.Text, txtMaKH.Text))
-            {
-                txtMaTK.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTK, "Mã tài khoản phải đúng với mã khách hàng");
-                txtMaTK.Focus();
-                return;
-            }
-
             string maTK = txtMaTK.Text.Trim().ToUpper();
             if (!KiemTraDinhDangMaTK(maTK))
             {
                 txtMaTK.BackColor = Color.LightCoral;
                 errorProvider1.SetError(txtMaTK, "Mã tài khoản không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtMaTK.Focus();
+                return;
+            }
+            if (!bUS_KhoanVay.KiemTraTaiKhoanThuocKhachHang(txtMaTK.Text, txtMaKH.Text))
+            {
+                txtMaTK.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtMaTK, "Mã tài khoản phải đúng với mã khách hàng");
                 txtMaTK.Focus();
                 return;
             }

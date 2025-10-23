@@ -85,6 +85,14 @@ namespace DAL
                         TinhTrangXoa = et.TinhTrangXoa                        
                     };
                     db.KHOANVAYs.InsertOnSubmit(kv);
+
+                    var taiKhoanNhan = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == et.MaTK);
+
+                    if (taiKhoanNhan != null)
+                    {
+                        taiKhoanNhan.SODU = (taiKhoanNhan.SODU ?? 0) + (decimal)et.SoTienVay;
+                    }
+
                     db.SubmitChanges();
                     ss = true;
                 }
@@ -104,11 +112,24 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                var change = db.KHOANVAYs.SingleOrDefault(kv => kv.MAVAY == et.MaVay);
+                var taiKhoanNhanCu = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == change.MATK);
+
+                //Hoàn lại số tiền
+                if (taiKhoanNhanCu != null)
+                    taiKhoanNhanCu.SODU = (taiKhoanNhanCu.SODU ?? 0) - (change.SOTIENVAY ?? 0);
+
+                //Tài khoản mới
+                var taiKhoanNhanMoi = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == et.MaTK);
+
+                //Cập nhật số dư
+                taiKhoanNhanMoi.SODU += et.SoTienVay;
+
                 if (et.MaVay == "")
                 {
                     return false;
                 }
-                var change = db.KHOANVAYs.SingleOrDefault(kv => kv.MAVAY == et.MaVay);
+                
                 if (change != null)
                 {
                     change.MAVAY = et.MaVay;
@@ -140,6 +161,12 @@ namespace DAL
             try
             {
                 var delete = db.KHOANVAYs.SingleOrDefault(kv => kv.MAVAY == et.MaVay);
+                var taiKhoanNhan = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == delete.MATK);
+
+                //Hủy vay, lấy lại số tiền tài khoản đã vay
+                if (taiKhoanNhan != null)
+                    taiKhoanNhan.SODU = (taiKhoanNhan.SODU ?? 0) - (decimal)(delete.SOTIENVAY ?? 0);
+
                 if (delete != null)
                 {
                     db.KHOANVAYs.DeleteOnSubmit(delete);

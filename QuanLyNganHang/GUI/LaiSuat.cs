@@ -25,6 +25,7 @@ namespace GUI
         private void frmLaiSuat_Load(object sender, EventArgs e)
         {
             dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
+            cboKL.SelectedIndex = 0;
         } 
 
         public void Clear()
@@ -32,7 +33,7 @@ namespace GUI
             txtMaLS.Clear();
             txtTenLoai.Clear();
             txtLaiSuat.Clear();
-            cboKL.Text = null;
+            cboKL.SelectedIndex = 0;
         }
         private void btnHoanTac_Click(object sender, EventArgs e)
         {
@@ -225,7 +226,7 @@ namespace GUI
         public bool KiemTraDinhDangLS(string ls)
         {
             bool flag = false;
-            string pattern = @"^\d{1,2}$";
+            string pattern = @"^[0-9%]{1,3}$";
             if (string.IsNullOrWhiteSpace(ls))
                 return flag;
             if (Regex.IsMatch(ls.Trim(), pattern))
@@ -289,7 +290,7 @@ namespace GUI
             if (!KiemTraDinhDangLS(txtLaiSuat.Text))
             {
                 txtLaiSuat.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtLaiSuat, "Lãi suất không được bỏ trống hoặc ghi ký tự đặc biệt");
+                errorProvider1.SetError(txtLaiSuat, "Lãi suất không được bỏ trống hoặc ghi chữ");
                 txtLaiSuat.Focus();
                 return;
             }
