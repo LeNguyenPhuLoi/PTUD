@@ -36,6 +36,14 @@ namespace DAL
                 {
                     return false;
                 }
+                if(et.TenKM == "")
+                {
+                    return false;
+                }
+                if (et.DKApDung == "")
+                {
+                    return false;
+                }
                 var amp = db.KHUYENMAIs.Any(km => km.MAKM == et.MaKM);
                 if (!amp)
                 {

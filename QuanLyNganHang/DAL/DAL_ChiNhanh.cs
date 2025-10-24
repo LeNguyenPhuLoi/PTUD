@@ -34,7 +34,12 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
-                if (et.TenCN == "")
+                if(et.MaCN == "")
+                {
+                    error = "Mã Chi Nhánh không được để trống!";
+                    return false;
+                }
+                else if (et.TenCN == "")
                 {
                     error = "Tên Chi Nhánh không được để trống!";
                     return false;
