@@ -36,12 +36,7 @@ namespace GUI
 
         private void Frm_LoaiTaiKhoan_Load(object sender, EventArgs e)
         {
-            // Màu nền khi chọn ô (dòng)
-            dgv_LoaiTaiKhoan.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
-            // Xem kẽ màu dòng
-            dgv_LoaiTaiKhoan.RowsDefaultCellStyle.BackColor = Color.White;
-            dgv_LoaiTaiKhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
-            
+            ChinhMauDGV();           
             dtp_NgayTao.MaxDate = DateTime.Now;
             dtp_NgayCapNhat.MaxDate = DateTime.Now;
             cbo_TrangThai.SelectedIndex = 0;
@@ -55,6 +50,32 @@ namespace GUI
             {
                 dgv_LoaiTaiKhoan.Columns["TinhTrangXoa"].Visible = false;
             }
+        }
+
+        public void ChinhMauDGV()
+        {
+            //màu cho dòng chẵn
+            dgv_LoaiTaiKhoan.RowsDefaultCellStyle.BackColor = Color.LightGray;
+            dgv_LoaiTaiKhoan.RowsDefaultCellStyle.ForeColor = Color.Black;
+            dgv_LoaiTaiKhoan.RowsDefaultCellStyle.SelectionBackColor = Color.ForestGreen;
+            dgv_LoaiTaiKhoan.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            //màu cho dòng lẻ
+            dgv_LoaiTaiKhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            dgv_LoaiTaiKhoan.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
+            dgv_LoaiTaiKhoan.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.ForestGreen;
+            dgv_LoaiTaiKhoan.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            //màu header
+            dgv_LoaiTaiKhoan.EnableHeadersVisualStyles = false; // Quan trọng: tắt style mặc định của Windows
+            dgv_LoaiTaiKhoan.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood; // Màu nền tiêu đề
+            dgv_LoaiTaiKhoan.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;     // Màu chữ tiêu đề
+            dgv_LoaiTaiKhoan.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.BurlyWood;
+            dgv_LoaiTaiKhoan.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            //căn giữa tiêu đề và ẩn cột mũi tên bên trái
+            dgv_LoaiTaiKhoan.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_LoaiTaiKhoan.RowHeadersVisible = false;
         }
 
         public void Clear()

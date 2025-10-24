@@ -494,7 +494,7 @@ namespace GUI
         {
             var dsham = new Dictionary<string, Func<bool>>
             {
-                { "Mã Khách Hàng", () => KiemTraDinhDangMaTK(txt_MaTk.Text.Trim().ToUpper()) },
+                { "Mã Tài Khoản", () => KiemTraDinhDangMaTK(txt_MaTk.Text.Trim().ToUpper()) },
                 { "CCCD/CMND",  () => KiemTraDinhDangCCCD(txt_CCCD.Text) },
                 { "Số Tài Khoản", () => KiemTraDinhDangSTK(txt_SoTaiKhoan.Text) },
                 { "Số Dư", () => KiemTraDinhDangSoDu(txt_SoDu.Text) },
