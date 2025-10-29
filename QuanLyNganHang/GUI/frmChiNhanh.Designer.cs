@@ -41,12 +41,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtTenCN = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtMaCN = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvChiNhanh = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtMaCN = new System.Windows.Forms.TextBox();
             this.pnlMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).BeginInit();
@@ -229,18 +229,6 @@
             this.label11.TabIndex = 3;
             this.label11.Text = "Tên Chi Nhánh:";
             // 
-            // txtMaCN
-            // 
-            this.txtMaCN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaCN.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaCN.Location = new System.Drawing.Point(208, 97);
-            this.txtMaCN.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaCN.Name = "txtMaCN";
-            this.txtMaCN.Size = new System.Drawing.Size(288, 31);
-            this.txtMaCN.TabIndex = 7;
-            this.txtMaCN.Leave += new System.EventHandler(this.txtMaCN_Leave);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -321,6 +309,18 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtMaCN
+            // 
+            this.txtMaCN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaCN.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaCN.Location = new System.Drawing.Point(208, 97);
+            this.txtMaCN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaCN.Name = "txtMaCN";
+            this.txtMaCN.Size = new System.Drawing.Size(288, 31);
+            this.txtMaCN.TabIndex = 7;
+            this.txtMaCN.Leave += new System.EventHandler(this.txtMaCN_Leave);
+            // 
             // frmChiNhanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,11 +353,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtTenCN;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtMaCN;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridView dgvChiNhanh;
+        private System.Windows.Forms.TextBox txtMaCN;
     }
 }

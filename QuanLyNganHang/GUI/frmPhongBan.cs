@@ -20,7 +20,7 @@ namespace GUI
             
         }
         BUS_PhongBan bus= new BUS_PhongBan();
-        frmNhanVien test = new frmNhanVien();
+        BUS_NhanVien test = new BUS_NhanVien();
         private void frmPhongBan_Load(object sender, EventArgs e)
         {
             //ko doi mau khi chon vao
