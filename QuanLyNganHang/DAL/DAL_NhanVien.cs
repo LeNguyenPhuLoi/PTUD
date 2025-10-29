@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DAL
@@ -264,5 +265,78 @@ namespace DAL
             }
             return flag;
         }
+
+        //Kiểm tra định dạng số
+        public bool KiemTraDinhDangSo(string luong)
+        {
+            bool flag = false;
+            string pattern = @"^\d+$";
+            if (string.IsNullOrWhiteSpace(luong))
+                return flag;
+            if (Regex.IsMatch(luong.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã Nhân viên (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        public bool KiemTraDinhDangMaNV(string manv)
+        {
+            bool flag = false;
+            string pattern = @"^NV\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(manv))// kiểm tra trống hoặc toàn khoảng trắng
+                return flag;
+            if (Regex.IsMatch(manv, pattern))//kiểm tra chuỗi theo mẫu
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng tên khách hàng (70 ký tự, không ký tự đặc biệt)
+        public bool KiemTraDinhDangTen(string tenkh)
+        {
+            bool flag = false;
+            string pattern = @"^(?!.*\s{2})[a-zA-ZÀ-ỹ]{2,}(?:\s[a-zA-ZÀ-ỹ]+){0,9}$";
+            if (string.IsNullOrWhiteSpace(tenkh))
+                return flag;
+            if (Regex.IsMatch(tenkh.Trim(), pattern) && tenkh.Trim().Length <= 70)
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng số CCCD/CMND (chuỗi 12 chữ số, không chữ, không ký tự đặc biệt)
+        public bool KiemTraDinhDangCCCD(string cccd)
+        {
+            bool flag = false;
+            string pattern = @"^\d{12}$";
+            if (string.IsNullOrWhiteSpace(cccd))
+                return flag;
+            if (Regex.IsMatch(cccd.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng số điện thoại (chuỗi 10 chữ số, không chữ, không ký tự đặc biệt)
+        public bool KiemTraDinhDangSDT(string sdt)
+        {
+            bool flag = false;
+            string pattern = @"^\d{10}$";
+            if (string.IsNullOrWhiteSpace(sdt))
+                return flag;
+            if (Regex.IsMatch(sdt.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+        //hàm kiểm tra định dạng địa chỉ (chuỗi 100 ký tự, không ký tự đặc biệt)
+        public bool KiemTraDinhDangDiaChi(string diachi)
+        {
+            bool flag = false;
+            string pattern = @"^[a-zA-Z0-9À-ỹ\s,.-]{1,100}$";
+            if (string.IsNullOrWhiteSpace(diachi))
+                return flag;
+            if (Regex.IsMatch(diachi.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        
     }
 }

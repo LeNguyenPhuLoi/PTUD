@@ -60,5 +60,35 @@ namespace BUS
         {
             return nv.XoaNhanVien(et, out error);
         }
+
+        public bool KiemTraDinhDangSo(string so)
+        {
+            return nv.KiemTraDinhDangSo(so);
+        }
+
+        public bool KiemTraDinhDangTen(string ten)
+        {
+            return nv.KiemTraDinhDangTen(ten);
+        }
+
+        public bool KiemTraDinhDangCCCD(string cccd)
+        {
+            return nv.KiemTraDinhDangCCCD(cccd);
+        }
+
+        public bool KiemTraDinhDangDiaChi(string diachi)
+        {
+            return nv.KiemTraDinhDangDiaChi(diachi);
+        }
+
+        public bool KiemTraDinhDangMaNV(string ma)
+        {
+            return nv.KiemTraDinhDangMaNV(ma);
+        }
+
+        public bool KiemTraDinhDangSDT(string sdt)
+        {
+            return nv.KiemTraDinhDangSDT(sdt);
+        }
     }
 }

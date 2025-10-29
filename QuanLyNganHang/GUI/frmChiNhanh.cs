@@ -20,7 +20,7 @@ namespace GUI
             InitializeComponent();
         }
         BUS_ChiNhanh bus = new BUS_ChiNhanh();
-        frmNhanVien test = new frmNhanVien();
+        BUS_NhanVien test = new BUS_NhanVien();
         private void frmChiNhanh_Load(object sender, EventArgs e)
         {
             //ko doi mau khi chon vao

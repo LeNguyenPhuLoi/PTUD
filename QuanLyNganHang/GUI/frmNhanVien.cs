@@ -87,10 +87,10 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_NhanVien et = new ET_NhanVien(txtMaNV.Text, txtTenNV.Text,
                                                     LayGioiTinh(), dtpNgaySinh.Value,
-                                                    txtCCCD.Text, cboChuc.Text, 
+                                                    txtCCCD.Text, cboChuc.Text,
                                                     decimal.Parse(txtLuong.Text),
                                                     rtxDiaChi.Text, txtSDT.Text,
-                                                    bUS.LayMaPB(cboMaPB.Text), 
+                                                    bUS.LayMaPB(cboMaPB.Text),
                                                     bUS.LayMaCN(cboMaCN.Text),
                                                     TrangThai);
                 string error = "";
@@ -225,64 +225,6 @@ namespace GUI
             }
         }
 
-        //hàm kiểm tra định dạng mã Nhân viên (10 ký tự, không ký tự đặc biệt, không khoảng trống)
-        private bool KiemTraDinhDangMaNV(string manv)
-        {
-            bool flag = false;
-            string pattern = @"^NV\d{3,8}$";
-            if (string.IsNullOrWhiteSpace(manv))// kiểm tra trống hoặc toàn khoảng trắng
-                return flag;
-            if (Regex.IsMatch(manv, pattern))//kiểm tra chuỗi theo mẫu
-                flag = true;
-            return flag;
-        }
-
-        //hàm kiểm tra định dạng tên khách hàng (70 ký tự, không ký tự đặc biệt)
-        public bool KiemTraDinhDangTen(string tenkh)
-        {
-            bool flag = false;
-            string pattern = @"^(?!.*\s{2})[a-zA-ZÀ-ỹ]{2,}(?:\s[a-zA-ZÀ-ỹ]+){0,9}$";
-            if (string.IsNullOrWhiteSpace(tenkh))
-                return flag;
-            if (Regex.IsMatch(tenkh.Trim(), pattern) && tenkh.Trim().Length <= 70)
-                flag = true;
-            return flag;
-        }
-
-        //hàm kiểm tra định dạng số CCCD/CMND (chuỗi 12 chữ số, không chữ, không ký tự đặc biệt)
-        public bool KiemTraDinhDangCCCD(string cccd)
-        {
-            bool flag = false;
-            string pattern = @"^\d{12}$";
-            if (string.IsNullOrWhiteSpace(cccd))
-                return flag;
-            if (Regex.IsMatch(cccd.Trim(), pattern))
-                flag = true;
-            return flag;
-        }
-
-        //hàm kiểm tra định dạng số điện thoại (chuỗi 10 chữ số, không chữ, không ký tự đặc biệt)
-        public bool KiemTraDinhDangSDT(string sdt)
-        {
-            bool flag = false;
-            string pattern = @"^\d{10}$";
-            if (string.IsNullOrWhiteSpace(sdt))
-                return flag;
-            if (Regex.IsMatch(sdt.Trim(), pattern))
-                flag = true;
-            return flag;
-        }
-        //hàm kiểm tra định dạng địa chỉ (chuỗi 100 ký tự, không ký tự đặc biệt)
-        public bool KiemTraDinhDangDiaChi(string diachi)
-        {
-            bool flag = false;
-            string pattern = @"^[a-zA-Z0-9À-ỹ\s,.-]{1,100}$";
-            if (string.IsNullOrWhiteSpace(diachi))
-                return flag;
-            if (Regex.IsMatch(diachi.Trim(), pattern))
-                flag = true;
-            return flag;
-        }
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -290,7 +232,7 @@ namespace GUI
 
         private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtMaNV_Leave(object sender, EventArgs e)
@@ -306,7 +248,7 @@ namespace GUI
             }
 
             // Kiểm tra định dạng mã nhân viên
-            if (!KiemTraDinhDangMaNV(maNV))
+            if (!bUS.KiemTraDinhDangMaNV(maNV))
             {
                 txtMaNV.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
                 errorProvider1.SetError(txtMaNV, "Mã nhân viên không hợp lệ! (VD: NV001, NV12345)");
@@ -324,7 +266,7 @@ namespace GUI
 
         private void txtCCCD_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtCCCD_Leave(object sender, EventArgs e)
@@ -338,7 +280,7 @@ namespace GUI
             }
 
             // Kiểm tra định dạng CCCD
-            if (!KiemTraDinhDangCCCD(txtCCCD.Text))
+            if (!bUS.KiemTraDinhDangCCCD(txtCCCD.Text))
             {
                 txtCCCD.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
                 errorProvider1.SetError(txtCCCD, "CCCD phải gồm 12 chữ số hợp lệ.");
@@ -365,7 +307,7 @@ namespace GUI
             }
 
             // Kiểm tra định dạng SDT
-            if (!KiemTraDinhDangSDT(txtSDT.Text))
+            if (!bUS.KiemTraDinhDangSDT(txtSDT.Text))
             {
                 txtSDT.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
                 errorProvider1.SetError(txtSDT, "SDT phải gồm 10 chữ số hợp lệ.");
@@ -392,7 +334,7 @@ namespace GUI
             }
 
             // Kiểm tra định dạng địa chỉ
-            if (!KiemTraDinhDangDiaChi(rtxDiaChi.Text))
+            if (!bUS.KiemTraDinhDangDiaChi(rtxDiaChi.Text))
             {
                 rtxDiaChi.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
                 errorProvider1.SetError(rtxDiaChi, "tối đa 100 ký tự, không ký tự đặc biệt");
@@ -419,7 +361,7 @@ namespace GUI
             }
 
             // Kiểm tra định dạng tên nhân viên
-            if (!KiemTraDinhDangTen(txtTenNV.Text))
+            if (!bUS.KiemTraDinhDangTen(txtTenNV.Text))
             {
                 txtTenNV.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
                 errorProvider1.SetError(txtTenNV, "tối đa 70 ký tự, không ký tự đặc biệt");
@@ -455,16 +397,7 @@ namespace GUI
             return true;
         }
 
-        public bool KiemTraDinhDangSo(string luong)
-        {
-            bool flag = false;
-            string pattern = @"^\d+$";
-            if (string.IsNullOrWhiteSpace(luong))
-                return flag;
-            if (Regex.IsMatch(luong.Trim(), pattern))
-                flag = true;
-            return flag;
-        }
+
         private void txtLuong_Leave(object sender, EventArgs e)
         {
             // Nếu để trống thì không làm gì cả
@@ -476,7 +409,7 @@ namespace GUI
             }
 
             //Ktra nhập có đúng định dạng số không
-            if (!KiemTraDinhDangSo(txtLuong.Text))
+            if (!bUS.KiemTraDinhDangSo(txtLuong.Text))
             {
                 txtLuong.BackColor = Color.LightPink; // Highlight đỏ hồng khi sai
                 errorProvider1.SetError(txtLuong, "Vui lòng nhập số hợp lệ."); // hiện icon lỗi
