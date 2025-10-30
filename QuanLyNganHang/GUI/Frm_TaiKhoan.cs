@@ -35,12 +35,13 @@ namespace GUI
             dgv_KhachHang.Columns["TinhTrangXoa"].Visible = false;
             if (this.MdiParent.Name == "frmMainAddmin")
             {
-                btn_An.Visible = true;
                 btn_HuyAn.Visible = true;
             }
             else
             {
                 dgv_TaiKhoan.Columns["TinhTrangXoa"].Visible = false;
+                dgv_TaiKhoan.Columns["MaTK"].Visible = false;
+                dgv_KhachHang.Columns["MaKH"].Visible = false;
             }
         }
 
@@ -160,21 +161,20 @@ namespace GUI
             if (!KiemTraTatCaTruongNhap())
                 return;
 
-            if (BUS_TaiKhoan.KiemTraTonTaiMaTK(txt_MaTk.Text.Trim().ToUpper()))
-            {
-                MessageBox.Show("Mã tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             if (BUS_TaiKhoan.KiemTraTonTaiSoTK(txt_SoTaiKhoan.Text))
             {
                 MessageBox.Show("Số tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_SoTaiKhoan.Focus();
                 return;
             }
 
+            int soluong = BUS_TaiKhoan.DemSoLuongTaiKhoan();
+            int soluongmoi = soluong + 1;
+            string matk = "TK" + soluongmoi.ToString("D3");
+
             try
             {
-                ET_TaiKhoan tk = new ET_TaiKhoan(txt_MaTk.Text.Trim().ToUpper(),
+                ET_TaiKhoan tk = new ET_TaiKhoan(matk,
                                                     BUS_TaiKhoan.LayMaKHTheoCccd(txt_CCCD.Text),
                                                     txt_SoTaiKhoan.Text,
                                                     BUS_TaiKhoan.LayMaLoaiTKTheoChiTiet(cbo_LoaiTK.Text),
@@ -235,11 +235,16 @@ namespace GUI
             if (!KiemTraTatCaTruongNhap())
                 return;
 
-            if (BUS_TaiKhoan.KiemTraTonTaiSoTK(txt_SoTaiKhoan.Text))
+            if (BUS_TaiKhoan.LaySTKTheoMaTK(txt_MaTk.Text) != txt_SoTaiKhoan.Text)
             {
-                MessageBox.Show("Số tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                if (BUS_TaiKhoan.KiemTraTonTaiSoTK(txt_SoTaiKhoan.Text.Trim()))
+                {
+                    MessageBox.Show("Số tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_SoTaiKhoan.Focus();
+                    return;
+                }
+                
+            }         
 
             try
             {
@@ -285,31 +290,15 @@ namespace GUI
                                                     dtp_NgayMo.Value,
                                                     cbo_TrangThai.Text,
                                                     true);
-                    if (this.MdiParent.Name == "frmMainAddmin")
+                    if (BUS_TaiKhoan.AnTaiKhoan(tk) == true)
                     {
-                        if (BUS_TaiKhoan.XoaTaiKhoan(tk) == true)
-                        {
-                            MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể Xóa tài khoản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
                     }
                     else
                     {
-                        if (BUS_TaiKhoan.AnTaiKhoan(tk) == true)
-                        {
-                            MessageBox.Show("Xóa tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể Xóa tài khoản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Không thể Xóa tài khoản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -492,22 +481,24 @@ namespace GUI
 
         private bool KiemTraTatCaTruongNhap()
         {
-            var dsham = new Dictionary<string, Func<bool>>
-            {
-                { "Mã Tài Khoản", () => KiemTraDinhDangMaTK(txt_MaTk.Text.Trim().ToUpper()) },
-                { "CCCD/CMND",  () => KiemTraDinhDangCCCD(txt_CCCD.Text) },
-                { "Số Tài Khoản", () => KiemTraDinhDangSTK(txt_SoTaiKhoan.Text) },
-                { "Số Dư", () => KiemTraDinhDangSoDu(txt_SoDu.Text) },
-            };
+            var dsham = new Dictionary<string, Tuple<Func<bool>, Control>>();
+            dsham.Add("CCCD/CMND", Tuple.Create((Func<bool>)(() => KiemTraDinhDangCCCD(txt_CCCD.Text)), (Control)txt_CCCD));
+            dsham.Add("Số Tài Khoản", Tuple.Create((Func<bool>)(() => KiemTraDinhDangSTK(txt_SoTaiKhoan.Text)), (Control)txt_SoTaiKhoan));
+            dsham.Add("Số Dư", Tuple.Create((Func<bool>)(() => KiemTraDinhDangSoDu(txt_SoDu.Text)), (Control)txt_SoDu));
 
             foreach (var saidinhdang in dsham)
             {
                 string truong = saidinhdang.Key;
-                Func<bool> check = saidinhdang.Value;
+                Func<bool> check = saidinhdang.Value.Item1;
+                Control control = saidinhdang.Value.Item2;  // Lấy Control tương ứng với trường
 
                 if (!check())
                 {
+                    // Hiển thị thông báo lỗi
                     MessageBox.Show($"Trường {truong} không phù hợp định dạng!", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    // Focus vào trường có lỗi
+                    control.Focus();
                     return false;
                 }
             }

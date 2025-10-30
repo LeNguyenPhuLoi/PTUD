@@ -101,7 +101,7 @@ namespace GUI
             dgv_KhachHang.EnableHeadersVisualStyles = false; // Quan trọng: tắt style mặc định của Windows
             dgv_KhachHang.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood; // Màu nền tiêu đề
             dgv_KhachHang.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;     // Màu chữ tiêu đề
-            dgv_KhachHang.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.BurlyWood; 
+            dgv_KhachHang.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.BurlyWood;
             dgv_KhachHang.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
 
             //căn giữa tiêu đề và ẩn cột mũi tên bên trái
@@ -117,17 +117,17 @@ namespace GUI
             HienThiDS();
             if (this.MdiParent.Name == "frmMainAddmin")
             {
-                btn_An.Visible = true;
                 btn_HuyAn.Visible = true;
             }
             else
             {
                 dgv_KhachHang.Columns["TinhTrangXoa"].Visible = false;
+                dgv_KhachHang.Columns["MaKH"].Visible = false;
             }
         }
 
         private void Frm_KhachHang_Resize(object sender, EventArgs e)
-        {            
+        {
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -135,25 +135,30 @@ namespace GUI
             if (!KiemTraTatCaTruongNhap())
                 return;
 
-            var checks = new (string field, bool exists)[]
+            var checks = new (string field, bool exists, Control control)[]
             {
-                ("Mã khách hàng", BUS_KhachHang.KiemTraTonTaiMaKH(txt_MaKH.Text.Trim().ToUpper())),
-                ("CCCD/CMND", BUS_KhachHang.KiemTraTonTaiCCCD(txt_Cccd.Text)),
-                ("Số điện thoại", BUS_KhachHang.KiemTraTonTaiSDT(txt_SDT.Text))
+                ("CCCD/CMND", BUS_KhachHang.KiemTraTonTaiCCCD(txt_Cccd.Text), txt_Cccd),
+                ("Số điện thoại", BUS_KhachHang.KiemTraTonTaiSDT(txt_SDT.Text), txt_SDT),
+                ("Email", BUS_KhachHang.KiemTraTonTaiEmail(txt_Email.Text), txt_Email)
             };
 
-            foreach (var (field, exists) in checks)
+            foreach (var (field, exists, control) in checks)
             {
                 if (exists)
                 {
                     MessageBox.Show($"{field} này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    control.Focus();
                     return;
                 }
             }
 
+            int soluong = BUS_KhachHang.DemSoLuongKhachHang();
+            int soluongmoi = soluong + 1;
+            string makh = "KH" + soluongmoi.ToString("D3");
+
             try
             {
-                ET_KhachHang kh = new ET_KhachHang(txt_MaKH.Text.Trim().ToUpper(),
+                ET_KhachHang kh = new ET_KhachHang(makh,
                                                     txt_TenKH.Text,
                                                     LayGioiTinh(),
                                                     txt_Cccd.Text,
@@ -181,22 +186,38 @@ namespace GUI
             HienThiDS();
         }
 
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (!KiemTraTatCaTruongNhap())
                 return;
 
-            var checks = new (string field, bool exists)[]
+            if(BUS_KhachHang.LayCCCDTheoMaKH(txt_MaKH.Text) != txt_Cccd.Text)
             {
-                ("CCCD/CMND", BUS_KhachHang.KiemTraTonTaiCCCD(txt_Cccd.Text)),
-                ("Số điện thoại", BUS_KhachHang.KiemTraTonTaiSDT(txt_SDT.Text))
-            };
-
-            foreach (var (field, exists) in checks)
-            {
-                if (exists)
+                if (BUS_KhachHang.KiemTraTonTaiCCCD(txt_Cccd.Text))
                 {
-                    MessageBox.Show($"{field} này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"CCCD/CMND này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_Cccd.Focus();
+                    return;
+                }
+            }
+
+            if (BUS_KhachHang.LaySDTTheoMaKH(txt_MaKH.Text) != txt_SDT.Text)
+            {
+                if (BUS_KhachHang.KiemTraTonTaiSDT(txt_SDT.Text))
+                {
+                    MessageBox.Show($"Số điện thoại này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_SDT.Focus();
+                    return;
+                }
+            }
+
+            if (BUS_KhachHang.LayEmailTheoMaKH(txt_MaKH.Text) != txt_Email.Text)
+            {
+                if (BUS_KhachHang.KiemTraTonTaiEmail(txt_Email.Text))
+                {
+                    MessageBox.Show($"Email này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_Email.Focus();
                     return;
                 }
             }
@@ -260,31 +281,15 @@ namespace GUI
                                                     cbo_DoiTuong.Text,
                                                     dtp_NgayTao.Value,
                                                     true);
-                    if (this.MdiParent.Name == "frmMainAddmin")
+                    if (BUS_KhachHang.AnKhachHang(kh) == true)
                     {
-                        if (BUS_KhachHang.XoaKhachHang(kh) == true)
-                        {
-                            MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể Xóa khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
                     }
                     else
                     {
-                        if (BUS_KhachHang.AnKhachHang(kh) == true)
-                        {
-                            MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể Xóa khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Không thể Xóa khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -293,6 +298,7 @@ namespace GUI
             }
             HienThiDS();
         }
+
 
         private void dgv_KhachHang_Click(object sender, EventArgs e)
         {
@@ -557,25 +563,27 @@ namespace GUI
 
         private bool KiemTraTatCaTruongNhap()
         {
-            var dsham = new Dictionary<string, Func<bool>>
-            {
-                { "Mã Khách Hàng", () => KiemTraDinhDangMaKH(txt_MaKH.Text.Trim().ToUpper()) },
-                { "Tên Khách Hàng", () => KiemTraDinhDangTenKH(txt_TenKH.Text) },
-                { "CCCD/CMND",  () => KiemTraDinhDangCCCD(txt_Cccd.Text) },
-                { "Số Điện Thoại", () => KiemTraDinhDangSDT(txt_SDT.Text) },
-                { "Email", () => KiemTraDinhDangEmail(txt_Email.Text) },
-                { "Địa Chỉ", () => KiemTraDinhDangDiaChi(txt_DiaChi.Text) },
-                { "Quốc Tịch", () => KiemTraDinhDangQuocTich(txt_QuocTich.Text) },
-            };
+            var dsham = new Dictionary<string, Tuple<Func<bool>, Control>>();
+            dsham.Add("Tên Khách Hàng", Tuple.Create((Func<bool>)(() => KiemTraDinhDangTenKH(txt_TenKH.Text)), (Control)txt_TenKH));
+            dsham.Add("CCCD/CMND", Tuple.Create((Func<bool>)(() => KiemTraDinhDangCCCD(txt_Cccd.Text)), (Control)txt_Cccd));
+            dsham.Add("Số Điện Thoại", Tuple.Create((Func<bool>)(() => KiemTraDinhDangSDT(txt_SDT.Text)), (Control)txt_SDT));
+            dsham.Add("Email", Tuple.Create((Func<bool>)(() => KiemTraDinhDangEmail(txt_Email.Text)), (Control)txt_Email));
+            dsham.Add("Địa Chỉ", Tuple.Create((Func<bool>)(() => KiemTraDinhDangDiaChi(txt_DiaChi.Text)), (Control)txt_DiaChi));
+            dsham.Add("Quốc Tịch", Tuple.Create((Func<bool>)(() => KiemTraDinhDangQuocTich(txt_QuocTich.Text)), (Control)txt_QuocTich));
 
             foreach (var saidinhdang in dsham)
             {
                 string truong = saidinhdang.Key;
-                Func<bool> check = saidinhdang.Value;
+                Func<bool> check = saidinhdang.Value.Item1;
+                Control control = saidinhdang.Value.Item2;  // Lấy Control tương ứng với trường
 
                 if (!check())
                 {
+                    // Hiển thị thông báo lỗi
                     MessageBox.Show($"Trường {truong} không phù hợp định dạng!", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    // Focus vào trường có lỗi
+                    control.Focus();
                     return false;
                 }
             }

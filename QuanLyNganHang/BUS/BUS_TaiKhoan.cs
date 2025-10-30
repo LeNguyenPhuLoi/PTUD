@@ -13,6 +13,18 @@ namespace BUS
     {
         DAL_TaiKhoan DAL_TaiKhoan = new DAL_TaiKhoan();
 
+        //hàm lấy số tài khoản theo mã tài khoản
+        public string LaySTKTheoMaTK(string matk)
+        {
+            return DAL_TaiKhoan.LaySTKTheoMaTK(matk);
+        }
+
+        //hàm đếm số lượng tài khoản
+        public int DemSoLuongTaiKhoan()
+        {
+            return DAL_TaiKhoan.DemSoLuongTaiKhoan();
+        }
+
         //hàm kiểm tra mã tài khoản đã tồn tại
         public bool KiemTraTonTaiSoTK(string sotk)
         {
