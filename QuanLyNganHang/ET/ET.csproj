@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ET_ApDungKhuyenMai.cs" />
+    <Compile Include="ET_BienLai.cs" />
     <Compile Include="ET_ChiNhanh.cs" />
     <Compile Include="ET_ChuyenKhoan.cs" />
     <Compile Include="ET_KhachHang.cs" />
@@ -49,9 +51,11 @@
     <Compile Include="ET_KhuyenMai.cs" />
     <Compile Include="ET_LaiSuat.cs" />
     <Compile Include="ET_LoaiTaiKhoan.cs" />
+    <Compile Include="ET_NgoaiTe.cs" />
     <Compile Include="ET_NhanVien.cs" />
     <Compile Include="ET_PhongBan.cs" />
     <Compile Include="ET_TaiKhoan.cs" />
+    <Compile Include="ET_TraNo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
