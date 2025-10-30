@@ -17,6 +17,46 @@ namespace DAL
         //kết nối với cơ sở dữ liệu 
         private readonly AutoConnect connect = new AutoConnect();
 
+        //hàm lấy số tài khoản theo mã tài khoản
+        public string LaySTKTheoMaTK(string matk)
+        {
+            string stk = "";
+            const string query = @"SELECT SOTAIKHOAN FROM TAIKHOAN WHERE MATK = @Matk";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    stk = conn.ExecuteScalar<string>(query, new { Matk = matk }) ?? "";
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return stk;
+        }
+
+        //hàm đếm số lượng tài khoản
+        public int DemSoLuongTaiKhoan()
+        {
+            int soluong = 0;
+            const string query = @"SELECT COUNT(MATK) FROM TAIKHOAN";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    soluong = conn.ExecuteScalar<int>(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return soluong;
+        }
+
         //hàm kiểm tra mã tài khoản đã tồn tại
         public bool KiemTraTonTaiSoTK(string sotk)
         {
@@ -109,7 +149,7 @@ namespace DAL
         public IQueryable<string> LayChiTietLoaiTK()
         {
             List<string> list = new List<string>();
-            const string query = @"SELECT CHITIET FROM LOAITK WHERE TRANGTHAI = N'Hoạt Động' AND TinhTrangXoa = 0";
+            const string query = @"SELECT CHITIET FROM LOAITK WHERE TRANGTHAI = N'Còn Hoạt Động' AND TinhTrangXoa = 0";
 
             try
             {

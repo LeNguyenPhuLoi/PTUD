@@ -1,5 +1,4 @@
-﻿using ET;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,11 @@ namespace BUS
     public class BUS_LoaiTaiKhoan
     {
         DAL_LoaiTaiKhoan DAL_LoaiTaiKhoan = new DAL_LoaiTaiKhoan();
+
+        public int DemSoLuongLoaiTaiKhoan()
+        {
+            return DAL_LoaiTaiKhoan.DemSoLuongLoaiTaiKhoan();
+        }
 
         //hàm kiểm tra chi tiết đã tồn tại
         public bool KiemTraTonTaiChiTiet(string chitiet)

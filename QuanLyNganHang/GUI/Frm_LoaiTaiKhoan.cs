@@ -36,7 +36,7 @@ namespace GUI
 
         private void Frm_LoaiTaiKhoan_Load(object sender, EventArgs e)
         {
-            ChinhMauDGV();           
+            ChinhMauDGV();
             dtp_NgayTao.MaxDate = DateTime.Now;
             dtp_NgayCapNhat.MaxDate = DateTime.Now;
             cbo_TrangThai.SelectedIndex = 0;
@@ -44,11 +44,12 @@ namespace GUI
             HienThiDS();
             if (this.MdiParent.Name == "frmMainAddmin")
             {
-                panel_Admin.Visible = true;
+                btn_HuyAn.Visible = true;
             }
             else
             {
                 dgv_LoaiTaiKhoan.Columns["TinhTrangXoa"].Visible = false;
+                dgv_LoaiTaiKhoan.Columns["MaLoaiTK"].Visible = false;
             }
         }
 
@@ -93,7 +94,7 @@ namespace GUI
 
         private void Frm_LoaiTaiKhoan_Resize(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_Lammoi_Click(object sender, EventArgs e)
@@ -121,21 +122,20 @@ namespace GUI
             if (!KiemTraTatCaTruongNhap())
                 return;
 
-            if (BUS_LoaiTaiKhoan.KiemTraTonTaiMaLoaiTK(txt_MaLoaiTK.Text.Trim().ToUpper()))
-            {
-                MessageBox.Show("Mã loại tài khoản này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             if (BUS_LoaiTaiKhoan.KiemTraTonTaiChiTiet(txt_ChiTiet.Text.Trim()))
             {
                 MessageBox.Show("Chi tiết này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_ChiTiet.Focus();
                 return;
             }
 
+            int soluong = BUS_LoaiTaiKhoan.DemSoLuongLoaiTaiKhoan();
+            int soluongmoi = soluong + 1;
+            string maloaitk = "LTK" + soluongmoi.ToString("D3");
+
             try
             {
-                ET_LoaiTaiKhoan ltk = new ET_LoaiTaiKhoan(txt_MaLoaiTK.Text.Trim().ToUpper(),
+                ET_LoaiTaiKhoan ltk = new ET_LoaiTaiKhoan(maloaitk,
                                                             txt_ChiTiet.Text,
                                                             dtp_NgayTao.Value,
                                                             dtp_NgayCapNhat.Value,
@@ -166,6 +166,7 @@ namespace GUI
             if (BUS_LoaiTaiKhoan.KiemTraTonTaiChiTiet(txt_ChiTiet.Text.Trim()))
             {
                 MessageBox.Show("Chi tiết này đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txt_ChiTiet.Focus();
                 return;
             }
 
@@ -207,31 +208,15 @@ namespace GUI
                                                             dtp_NgayCapNhat.Value,
                                                             cbo_TrangThai.Text,
                                                             true);
-                    if (this.MdiParent.Name == "frmMainAddmin")
+                    if (BUS_LoaiTaiKhoan.AnLoaiTaiKhoan(ltk) == true)
                     {
-                        if (BUS_LoaiTaiKhoan.XoaLoaiTaiKhoan(ltk) == true)
-                        {
-                            MessageBox.Show("Xóa loại tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể Xóa loại tài khoản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Xóa loại tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
                     }
                     else
                     {
-                        if (BUS_LoaiTaiKhoan.AnLoaiTaiKhoan(ltk) == true)
-                        {
-                            MessageBox.Show("Xóa loại tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Clear();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Không thể Xóa loại tài khoản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Không thể Xóa loại tài khoản!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -382,20 +367,24 @@ namespace GUI
 
         private bool KiemTraTatCaTruongNhap()
         {
-            var dsham = new Dictionary<string, Func<bool>>
+            var dsham = new Dictionary<string, Tuple<Func<bool>, Control>>();
             {
-                { "Mã Loại Tài Khoản", () => KiemTraDinhDangMaLTK(txt_MaLoaiTK.Text.Trim().ToUpper()) },
-                { "Tên Khách Hàng", () => KiemTraDinhDangChiTiet(txt_ChiTiet.Text) },
+                dsham.Add("Chi tiết", Tuple.Create((Func<bool>)(() => KiemTraDinhDangChiTiet(txt_ChiTiet.Text)), (Control)txt_ChiTiet));
             };
 
             foreach (var saidinhdang in dsham)
             {
                 string truong = saidinhdang.Key;
-                Func<bool> check = saidinhdang.Value;
+                Func<bool> check = saidinhdang.Value.Item1;
+                Control control = saidinhdang.Value.Item2;  // Lấy Control tương ứng với trường
 
                 if (!check())
                 {
+                    // Hiển thị thông báo lỗi
                     MessageBox.Show($"Trường {truong} không phù hợp định dạng!", "Lỗi định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    // Focus vào trường có lỗi
+                    control.Focus();
                     return false;
                 }
             }

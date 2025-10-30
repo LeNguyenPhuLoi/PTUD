@@ -1,5 +1,4 @@
-﻿using ET;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +12,36 @@ namespace BUS
     public class BUS_KhachHang
     {
         DAL_KhachHang DAL_KhachHang = new DAL_KhachHang();
+
+        //hàm lấy email theo mã khách hàng
+        public string LayEmailTheoMaKH(string makh)
+        {
+            return DAL_KhachHang.LayEmailTheoMaKH(makh);
+        }
+
+        //hàm lấy sdt theo mã khách hàng
+        public string LaySDTTheoMaKH(string makh)
+        {
+            return DAL_KhachHang.LaySDTTheoMaKH(makh);
+        }
+
+        //hàm lấy cccd theo mã khách hàng
+        public string LayCCCDTheoMaKH(string makh)
+        {
+            return DAL_KhachHang.LayCCCDTheoMaKH(makh);
+        }
+
+        //hàm đếm số lượng khách hàng
+        public int DemSoLuongKhachHang()
+        {
+            return DAL_KhachHang.DemSoLuongKhachHang();
+        }
+
+        //hàm kiểm tra Emial khách hàng đã tồn tại
+        public bool KiemTraTonTaiEmail(string email)
+        {
+            return DAL_KhachHang.KiemTraTonTaiEmail(email);
+        }
 
         //hàm kiểm tra SĐT khách hàng đã tồn tại
         public bool KiemTraTonTaiSDT(string sdt)

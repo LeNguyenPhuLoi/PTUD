@@ -16,6 +16,26 @@ namespace DAL
         //kết nối với cơ sở dữ liệu 
         private readonly AutoConnect connect = new AutoConnect();
 
+        //hàm đếm số lượng loại tài khoản
+        public int DemSoLuongLoaiTaiKhoan()
+        {
+            int soluong = 0;
+            const string query = @"SELECT COUNT(MALOAITK) FROM LOAITK";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    soluong = conn.ExecuteScalar<int>(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return soluong;
+        }
+
         //hàm kiểm tra chi tiết đã tồn tại
         public bool KiemTraTonTaiChiTiet(string chitiet)
         {

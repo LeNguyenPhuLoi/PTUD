@@ -16,6 +16,110 @@ namespace DAL
         //kết nối với cơ sở dữ liệu 
         private readonly AutoConnect connect = new AutoConnect();
 
+        //hàm lấy email theo mã khách hàng
+        public string LayEmailTheoMaKH(string makh)
+        {
+            string email = "";
+            const string query = @"SELECT EMAIL FROM KHACHHANG WHERE MAKH = @Makh";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    email = conn.ExecuteScalar<string>(query, new { Makh = makh }) ?? "";
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return email;
+        }
+
+        //hàm lấy sdt theo mã khách hàng
+        public string LaySDTTheoMaKH(string makh)
+        {
+            string sdt = "";
+            const string query = @"SELECT SDT FROM KHACHHANG WHERE MAKH = @Makh";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    sdt = conn.ExecuteScalar<string>(query, new { Makh = makh }) ?? "";
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return sdt;
+        }
+
+        //hàm lấy cccd theo mã khách hàng
+        public string LayCCCDTheoMaKH(string makh)
+        {
+            string cccd = "";
+            const string query = @"SELECT CCCD FROM KHACHHANG WHERE MAKH = @Makh";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    cccd = conn.ExecuteScalar<string>(query, new { Makh = makh }) ?? "";
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return cccd;
+        }
+
+        //hàm đếm số lượng khách hàng
+        public int DemSoLuongKhachHang()
+        {
+            int soluong = 0;
+            const string query = @"SELECT COUNT(MAKH) FROM KHACHHANG";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    soluong = conn.ExecuteScalar<int>(query);
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return soluong;
+        }
+
+        //hàm kiểm tra Emial khách hàng đã tồn tại
+        public bool KiemTraTonTaiEmail(string email)
+        {
+            bool flag = false;
+            const string query = @"SELECT COUNT(1) FROM KHACHHANG WHERE EMAIL = @Email";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    int count = conn.ExecuteScalar<int>(query, new { Email = email });
+                    if (count > 0)
+                    {
+                        flag = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return flag;
+        }
+
         //hàm kiểm tra SĐT khách hàng đã tồn tại
         public bool KiemTraTonTaiSDT(string sdt)
         {
