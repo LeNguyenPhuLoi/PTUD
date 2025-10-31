@@ -9,17 +9,19 @@ namespace ET
 {
     public class ET_ChiNhanh
     {
-        public ET_ChiNhanh(string maCN, string tenCN, string diaChiCN, string sDTCN)
+        public ET_ChiNhanh(string maCN, string tenCN, string diaChiCN, string sDTCN, bool trangThai)
         {
             MaCN = maCN;
             TenCN = tenCN;
             DiaChiCN = diaChiCN;
             SDTCN = sDTCN;
+            TrangThai = trangThai;
         }
 
         public string MaCN { get; set; }
         public string TenCN { get; set; }
         public string DiaChiCN { get; set; }
         public string SDTCN { get; set; }
+        public bool TrangThai { get; set; }
     }
 }

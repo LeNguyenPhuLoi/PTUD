@@ -31,5 +31,10 @@ namespace BUS
         {
             return dal.XoaPB(et, out error);
         }
+
+        public int MaPB()
+        {
+            return dal.MaTuDong();
+        }
     }
 }

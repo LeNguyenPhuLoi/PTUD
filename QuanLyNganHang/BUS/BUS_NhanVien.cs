@@ -61,6 +61,10 @@ namespace BUS
             return nv.XoaNhanVien(et, out error);
         }
 
+        public string LayMaNVTuDong()
+        {
+            return nv.MaTuDong();
+        }
         public bool KiemTraDinhDangSo(string so)
         {
             return nv.KiemTraDinhDangSo(so);

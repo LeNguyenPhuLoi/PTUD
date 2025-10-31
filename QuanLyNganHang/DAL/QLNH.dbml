@@ -21,6 +21,7 @@
       <Column Name="MOTAVP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="HINHTHUCXL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="TRANGTHAIXL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NHANVIEN_VIPHAM" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="NOIQUY_VIPHAM" Member="NOIQUY" ThisKey="MANQ" OtherKey="MANQ" Type="NOIQUY" IsForeignKey="true" />
     </Type>
@@ -48,6 +49,7 @@
       <Column Name="TENCN" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
       <Column Name="DIACHICN" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="SDTCN" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="CHINHANH_NHANVIEN" Member="NHANVIENs" ThisKey="MACN" OtherKey="MACN" Type="NHANVIEN" />
     </Type>
   </Table>
@@ -72,6 +74,7 @@
       <Column Name="PASS" Type="System.String" DbType="Char(50)" CanBeNull="true" />
       <Column Name="QUYEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MANV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NHANVIEN_DANGNHAP" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
@@ -270,6 +273,7 @@
       <Column Name="MOTA" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="NGAYBH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="LOAIAPDUNG" Type="System.String" DbType="NVarChar(225)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="NOIQUY_VIPHAM" Member="VIPHAMs" ThisKey="MANQ" OtherKey="MANQ" Type="VIPHAM" />
     </Type>
   </Table>
@@ -277,6 +281,7 @@
     <Type Name="PHONGBAN">
       <Column Name="MAPB" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENPB" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="PHONGBAN_NHANVIEN" Member="NHANVIENs" ThisKey="MAPB" OtherKey="MAPB" Type="NHANVIEN" />
     </Type>
   </Table>

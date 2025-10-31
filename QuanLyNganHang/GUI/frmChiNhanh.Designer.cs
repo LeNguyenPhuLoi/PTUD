@@ -41,12 +41,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtTenCN = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.txtMaCN = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvChiNhanh = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtMaCN = new System.Windows.Forms.TextBox();
             this.pnlMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiNhanh)).BeginInit();
@@ -58,7 +57,7 @@
             this.txtDiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDiaChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(208, 198);
+            this.txtDiaChi.Location = new System.Drawing.Point(208, 171);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(289, 106);
@@ -71,7 +70,7 @@
             this.txtSDTCN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSDTCN.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDTCN.Location = new System.Drawing.Point(208, 322);
+            this.txtSDTCN.Location = new System.Drawing.Point(208, 295);
             this.txtSDTCN.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDTCN.Name = "txtSDTCN";
             this.txtSDTCN.Size = new System.Drawing.Size(288, 31);
@@ -82,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 322);
+            this.label2.Location = new System.Drawing.Point(19, 295);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(172, 31);
@@ -199,7 +198,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(27, 196);
+            this.label12.Location = new System.Drawing.Point(27, 169);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(92, 31);
@@ -211,7 +210,7 @@
             this.txtTenCN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenCN.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenCN.Location = new System.Drawing.Point(208, 146);
+            this.txtTenCN.Location = new System.Drawing.Point(208, 119);
             this.txtTenCN.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenCN.Name = "txtTenCN";
             this.txtTenCN.Size = new System.Drawing.Size(289, 31);
@@ -222,23 +221,12 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(27, 146);
+            this.label11.Location = new System.Drawing.Point(27, 119);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(167, 31);
             this.label11.TabIndex = 3;
             this.label11.Text = "Tên Chi Nhánh:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(27, 101);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(165, 31);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Mã Chi Nhánh:";
             // 
             // pnlMain
             // 
@@ -259,12 +247,24 @@
             this.pnlMain.Controls.Add(this.txtTenCN);
             this.pnlMain.Controls.Add(this.label11);
             this.pnlMain.Controls.Add(this.txtMaCN);
-            this.pnlMain.Controls.Add(this.label10);
             this.pnlMain.Location = new System.Drawing.Point(4, 4);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(525, 546);
             this.pnlMain.TabIndex = 22;
+            // 
+            // txtMaCN
+            // 
+            this.txtMaCN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaCN.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaCN.Location = new System.Drawing.Point(120, 33);
+            this.txtMaCN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaCN.Name = "txtMaCN";
+            this.txtMaCN.Size = new System.Drawing.Size(288, 31);
+            this.txtMaCN.TabIndex = 7;
+            this.txtMaCN.TextChanged += new System.EventHandler(this.txtMaCN_TextChanged);
+            this.txtMaCN.Leave += new System.EventHandler(this.txtMaCN_Leave);
             // 
             // tableLayoutPanel1
             // 
@@ -309,18 +309,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtMaCN
-            // 
-            this.txtMaCN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaCN.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaCN.Location = new System.Drawing.Point(208, 97);
-            this.txtMaCN.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaCN.Name = "txtMaCN";
-            this.txtMaCN.Size = new System.Drawing.Size(288, 31);
-            this.txtMaCN.TabIndex = 7;
-            this.txtMaCN.Leave += new System.EventHandler(this.txtMaCN_Leave);
-            // 
             // frmChiNhanh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,7 +341,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtTenCN;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ErrorProvider errorProvider1;

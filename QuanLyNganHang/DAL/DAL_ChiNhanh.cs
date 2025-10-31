@@ -22,7 +22,14 @@ namespace DAL
         public IQueryable LoadDSChiNhanh()
         {
             IQueryable ds = from cn in db.CHINHANHs
-                            select cn;
+                            where cn.TrangThai == true
+                            select new
+                            {
+                                cn.MACN,
+                                cn.TENCN,
+                                cn.DIACHICN,
+                                cn.SDTCN
+                            };
             return ds;
         }
 
@@ -69,7 +76,8 @@ namespace DAL
                         MACN = et.MaCN,
                         TENCN = et.TenCN,
                         DIACHICN= et.DiaChiCN,
-                        SDTCN = et.SDTCN
+                        SDTCN = et.SDTCN,
+                        TrangThai = et.TrangThai
                     };
                     db.CHINHANHs.InsertOnSubmit(cn);
                     db.SubmitChanges();
@@ -168,7 +176,7 @@ namespace DAL
                     return false;
                 }
 
-                db.CHINHANHs.DeleteOnSubmit(cn);
+                cn.TrangThai = false;
                 db.SubmitChanges();
                 flag = true;
             }
@@ -178,6 +186,15 @@ namespace DAL
                 error = "Lỗi: " + ex.ToString();
             }
             return flag;
+        }
+
+        public string MaTuDongCN()
+        {
+            int query = (from cn in db.CHINHANHs
+                         select cn).Count();
+            int dem = query + 1;
+            string  ma = "CN" + dem.ToString("D2");
+            return ma;
         }
     }
 }

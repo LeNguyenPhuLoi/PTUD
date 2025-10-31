@@ -85,7 +85,7 @@ namespace GUI
             try
             {
                 string TrangThai = "Hoạt Động";
-                ET_NhanVien et = new ET_NhanVien(txtMaNV.Text, txtTenNV.Text,
+                ET_NhanVien et = new ET_NhanVien(bUS.LayMaNVTuDong(), txtTenNV.Text,
                                                     LayGioiTinh(), dtpNgaySinh.Value,
                                                     txtCCCD.Text, cboChuc.Text,
                                                     decimal.Parse(txtLuong.Text),

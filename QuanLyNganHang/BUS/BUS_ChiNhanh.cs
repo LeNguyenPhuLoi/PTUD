@@ -2,6 +2,7 @@
 using ET;
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,11 @@ namespace BUS
         public bool XoaChiNhanh(ET_ChiNhanh et, out string error)
         {
             return dal.XoaChiNhanh(et, out error);
+        }
+
+        public string MaCN()
+        {
+            return dal.MaTuDongCN();
         }
     }
 }
