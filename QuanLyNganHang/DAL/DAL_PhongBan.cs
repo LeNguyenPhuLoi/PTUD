@@ -22,7 +22,12 @@ namespace DAL
         public IQueryable LoadDSPhongBan()
         {
             IQueryable ds = from pb in db.PHONGBANs 
-                            select pb;
+                            where pb.TrangThai == true
+                            select new
+                            {
+                                pb.MAPB,
+                                pb.TENPB
+                            };
             return ds;
         }
 
@@ -53,7 +58,8 @@ namespace DAL
                     PHONGBAN pb = new PHONGBAN
                     {
                         MAPB = et.MaPB,
-                        TENPB = et.TenPB
+                        TENPB = et.TenPB,
+                        TrangThai = et.TrangThai
                     };
                     db.PHONGBANs.InsertOnSubmit(pb);
                     db.SubmitChanges();
@@ -134,7 +140,8 @@ namespace DAL
                 var pb = db.PHONGBANs.SingleOrDefault(p => p.MAPB == et.MaPB);
                 if (pb != null)
                 {
-                    db.PHONGBANs.DeleteOnSubmit(pb);
+                    // Thay vì xóa, ta đánh dấu đã xóa
+                    pb.TrangThai = false;
                     db.SubmitChanges();
                     flag = true;
                 }
@@ -150,6 +157,16 @@ namespace DAL
                 error = "Lỗi: " + ex.ToString();
             }
             return flag;
+        }
+
+        //Thiết kế mã tự động cho nhân viên
+        public int MaTuDong()
+        {
+            int query = (from pb in db.PHONGBANs
+                         select pb).Count(); // Đếm số lượng nhân viên
+
+            int ma = query + 1;
+            return ma;
         }
     }
 }

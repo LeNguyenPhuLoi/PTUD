@@ -57,7 +57,8 @@ namespace GUI
         {
             try
             {
-                ET_PhongBan et = new ET_PhongBan(int.Parse(txtMaPB.Text), txtTenPB.Text);
+                bool trangthai = true;
+                ET_PhongBan et = new ET_PhongBan(bus.MaPB(), txtTenPB.Text, trangthai);
                 string error = "";
                 if (bus.ThemPhongBan(et, out error) == true)
                 {
@@ -81,7 +82,8 @@ namespace GUI
         {
             try
             {
-                ET_PhongBan et = new ET_PhongBan(int.Parse(txtMaPB.Text), txtTenPB.Text);
+                bool trangthai = true;
+                ET_PhongBan et = new ET_PhongBan(int.Parse(txtMaPB.Text), txtTenPB.Text, trangthai);
                 string error = "";
                 if (bus.CapNhatPhongBan(et, out error) == true)
                 {
@@ -106,7 +108,8 @@ namespace GUI
                 DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    ET_PhongBan et = new ET_PhongBan(int.Parse(txtMaPB.Text), txtTenPB.Text);
+                    bool trangthai = true;
+                    ET_PhongBan et = new ET_PhongBan(int.Parse(txtMaPB.Text), txtTenPB.Text, trangthai);
                     string error = "";
                     if (bus.XoaPhongBan(et, out error) == true)
                     {
@@ -131,7 +134,7 @@ namespace GUI
             txtTenPB.Clear();
             txtMaPB.Clear();
             txtMaPB.Focus();
-            txtMaPB.Enabled= true;
+            txtMaPB.Enabled = false;
             dgvPhongBan.DataSource = bus.LoadDSPhongBan();
             dgvPhongBan.Sort(dgvPhongBan.Columns["MAPB"], ListSortDirection.Ascending);
         }

@@ -266,6 +266,17 @@ namespace DAL
             return flag;
         }
 
+        //Thiết kế mã tự động cho nhân viên
+        public string MaTuDong()
+        {
+            int query = (from nv in db.NHANVIENs
+                         select nv).Count(); // Đếm số lượng nhân viên
+
+            int dem = query + 1;
+            string ma = "NV" + dem.ToString("D3");
+            return ma;
+        }
+
         //Kiểm tra định dạng số
         public bool KiemTraDinhDangSo(string luong)
         {

@@ -8,13 +8,15 @@ namespace ET
 {
     public class ET_PhongBan
     {
-        public ET_PhongBan(int maPB, string tenPB)
+        public ET_PhongBan(int maPB, string tenPB, bool trangThai)
         {
             MaPB = maPB;
             TenPB = tenPB;
+            TrangThai = trangThai;
         }
 
         public int MaPB { get; set; }
         public string TenPB { get; set; }
+        public bool TrangThai { get; set; }
     }
 }

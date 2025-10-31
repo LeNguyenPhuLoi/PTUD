@@ -55,8 +55,9 @@ namespace GUI
         {
             try
             {
+                bool trangthai = true;
                 ET_ChiNhanh et = new ET_ChiNhanh(txtMaCN.Text, txtTenCN.Text,
-                                                    txtDiaChi.Text,txtSDTCN.Text);
+                                                    txtDiaChi.Text,txtSDTCN.Text,trangthai);
                 string error = "";
                 if (bus.ThemChiNhanh(et, out error) == true)
                 {
@@ -79,8 +80,9 @@ namespace GUI
         {
             try
             {
+                bool trangthai = true;
                 ET_ChiNhanh et = new ET_ChiNhanh(txtMaCN.Text, txtTenCN.Text,
-                                                    txtDiaChi.Text, txtSDTCN.Text);
+                                                    txtDiaChi.Text, txtSDTCN.Text, trangthai);
                 string error = "";
                 if (bus.CapNhatChiNhanh(et, out error) == true)
                 {
@@ -105,8 +107,9 @@ namespace GUI
                 DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    bool trangthai = true;
                     ET_ChiNhanh et = new ET_ChiNhanh(txtMaCN.Text, txtTenCN.Text,
-                                                    txtDiaChi.Text, txtSDTCN.Text);
+                                                        txtDiaChi.Text, txtSDTCN.Text, trangthai);
                     string error = "";
                     if (bus.XoaChiNhanh(et, out error) == true)
                     {
@@ -280,6 +283,11 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
+        }
+
+        private void txtMaCN_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

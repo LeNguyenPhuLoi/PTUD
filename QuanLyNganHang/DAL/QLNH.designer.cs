@@ -617,6 +617,8 @@ namespace DAL
 		
 		private string _TRANGTHAIXL;
 		
+		private System.Nullable<bool> _TrangThai;
+		
 		private EntityRef<NHANVIEN> _NHANVIEN;
 		
 		private EntityRef<NOIQUY> _NOIQUY;
@@ -639,6 +641,8 @@ namespace DAL
     partial void OnHINHTHUCXLChanged();
     partial void OnTRANGTHAIXLChanging(string value);
     partial void OnTRANGTHAIXLChanged();
+    partial void OnTrangThaiChanging(System.Nullable<bool> value);
+    partial void OnTrangThaiChanged();
     #endregion
 		
 		public VIPHAM()
@@ -792,6 +796,26 @@ namespace DAL
 					this._TRANGTHAIXL = value;
 					this.SendPropertyChanged("TRANGTHAIXL");
 					this.OnTRANGTHAIXLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="Bit")]
+		public System.Nullable<bool> TrangThai
+		{
+			get
+			{
+				return this._TrangThai;
+			}
+			set
+			{
+				if ((this._TrangThai != value))
+				{
+					this.OnTrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._TrangThai = value;
+					this.SendPropertyChanged("TrangThai");
+					this.OnTrangThaiChanged();
 				}
 			}
 		}
@@ -1283,6 +1307,8 @@ namespace DAL
 		
 		private string _SDTCN;
 		
+		private System.Nullable<bool> _TrangThai;
+		
 		private EntitySet<NHANVIEN> _NHANVIENs;
 		
     #region Extensibility Method Definitions
@@ -1297,6 +1323,8 @@ namespace DAL
     partial void OnDIACHICNChanged();
     partial void OnSDTCNChanging(string value);
     partial void OnSDTCNChanged();
+    partial void OnTrangThaiChanging(System.Nullable<bool> value);
+    partial void OnTrangThaiChanged();
     #endregion
 		
 		public CHINHANH()
@@ -1381,6 +1409,26 @@ namespace DAL
 					this._SDTCN = value;
 					this.SendPropertyChanged("SDTCN");
 					this.OnSDTCNChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="Bit")]
+		public System.Nullable<bool> TrangThai
+		{
+			get
+			{
+				return this._TrangThai;
+			}
+			set
+			{
+				if ((this._TrangThai != value))
+				{
+					this.OnTrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._TrangThai = value;
+					this.SendPropertyChanged("TrangThai");
+					this.OnTrangThaiChanged();
 				}
 			}
 		}
@@ -1781,6 +1829,8 @@ namespace DAL
 		
 		private string _MANV;
 		
+		private System.Nullable<bool> _TrangThai;
+		
 		private EntityRef<NHANVIEN> _NHANVIEN;
 		
     #region Extensibility Method Definitions
@@ -1795,6 +1845,8 @@ namespace DAL
     partial void OnQUYENChanged();
     partial void OnMANVChanging(string value);
     partial void OnMANVChanged();
+    partial void OnTrangThaiChanging(System.Nullable<bool> value);
+    partial void OnTrangThaiChanged();
     #endregion
 		
 		public DANGNHAP()
@@ -1883,6 +1935,26 @@ namespace DAL
 					this._MANV = value;
 					this.SendPropertyChanged("MANV");
 					this.OnMANVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="Bit")]
+		public System.Nullable<bool> TrangThai
+		{
+			get
+			{
+				return this._TrangThai;
+			}
+			set
+			{
+				if ((this._TrangThai != value))
+				{
+					this.OnTrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._TrangThai = value;
+					this.SendPropertyChanged("TrangThai");
+					this.OnTrangThaiChanged();
 				}
 			}
 		}
@@ -6038,6 +6110,8 @@ namespace DAL
 		
 		private string _LOAIAPDUNG;
 		
+		private System.Nullable<bool> _TrangThai;
+		
 		private EntitySet<VIPHAM> _VIPHAMs;
 		
     #region Extensibility Method Definitions
@@ -6054,6 +6128,8 @@ namespace DAL
     partial void OnNGAYBHChanged();
     partial void OnLOAIAPDUNGChanging(string value);
     partial void OnLOAIAPDUNGChanged();
+    partial void OnTrangThaiChanging(System.Nullable<bool> value);
+    partial void OnTrangThaiChanged();
     #endregion
 		
 		public NOIQUY()
@@ -6162,6 +6238,26 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="Bit")]
+		public System.Nullable<bool> TrangThai
+		{
+			get
+			{
+				return this._TrangThai;
+			}
+			set
+			{
+				if ((this._TrangThai != value))
+				{
+					this.OnTrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._TrangThai = value;
+					this.SendPropertyChanged("TrangThai");
+					this.OnTrangThaiChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NOIQUY_VIPHAM", Storage="_VIPHAMs", ThisKey="MANQ", OtherKey="MANQ")]
 		public EntitySet<VIPHAM> VIPHAMs
 		{
@@ -6218,6 +6314,8 @@ namespace DAL
 		
 		private string _TENPB;
 		
+		private System.Nullable<bool> _TrangThai;
+		
 		private EntitySet<NHANVIEN> _NHANVIENs;
 		
     #region Extensibility Method Definitions
@@ -6228,6 +6326,8 @@ namespace DAL
     partial void OnMAPBChanged();
     partial void OnTENPBChanging(string value);
     partial void OnTENPBChanged();
+    partial void OnTrangThaiChanging(System.Nullable<bool> value);
+    partial void OnTrangThaiChanged();
     #endregion
 		
 		public PHONGBAN()
@@ -6272,6 +6372,26 @@ namespace DAL
 					this._TENPB = value;
 					this.SendPropertyChanged("TENPB");
 					this.OnTENPBChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrangThai", DbType="Bit")]
+		public System.Nullable<bool> TrangThai
+		{
+			get
+			{
+				return this._TrangThai;
+			}
+			set
+			{
+				if ((this._TrangThai != value))
+				{
+					this.OnTrangThaiChanging(value);
+					this.SendPropertyChanging();
+					this._TrangThai = value;
+					this.SendPropertyChanged("TrangThai");
+					this.OnTrangThaiChanged();
 				}
 			}
 		}
