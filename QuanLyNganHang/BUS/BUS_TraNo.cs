@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DAL;
+using ET;
+
+namespace BUS
+{
+    public class BUS_TraNo
+    {
+        DAL_TraNo tn = new DAL_TraNo();
+
+        //Gọi hàm load danh sách trả nợ
+        public IQueryable LoadDSTraNo()
+        {
+            return tn.LoadDSTraNo();
+        }
+
+        //Gọi hàm thêm trả nợ
+        public bool ThemTraNo(ET_TraNo et)
+        {
+            return tn.ThemTraNo(et);
+        }
+
+        //Gọi hàm sửa trả nợ
+        public bool SuaTraNo(ET_TraNo et)
+        {
+            return tn.SuaTraNo(et);
+        }
+
+        //Gọi hàm xóa(ẩn) trả nợ
+        public bool TrangThaiAn(ET_TraNo et)
+        {
+            return tn.TrangThaiAn(et);
+        }
+    }
+}
