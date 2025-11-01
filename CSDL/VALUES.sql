@@ -125,7 +125,7 @@ VALUES('LHD001', N'Hợp đồng tín dụng tiêu dùng', '17/06/2018 08:30:57'
 ---THEM THONG TIN LOAI HO TRO
 GO
 INSERT INTO LOAIHT(MALOAIHT, TENLOAIHT, NGAYLAP, NGAYCAPNHAT, TRANGTHAI, TinhTrangXoa)
-VALUES('LHT001', N'Tư vấn sản phẩm/dịch vụ', '17/06/2018 08:30:57', '17/06/2018 08:31:46', N'Hoạt Động', 0),
+VALUES('LHT001', N'Tư vấn sản phẩm và dịch vụ', '17/06/2018 08:30:57', '17/06/2018 08:31:46', N'Hoạt Động', 0),
 		('LHT002', N'Hỗ trợ giao dịch', '17/06/2018 08:33:53', '17/06/2018 08:34:17', N'Hoạt Động', 0),
 		('LHT003', N'Tiếp nhận và xử lý phản hồi', '17/06/2018 08:35:37', '17/06/2018 08:36:02', N'Hoạt Động', 0)
 
