@@ -50,6 +50,9 @@
     <Compile Include="ET_KhoanVay.cs" />
     <Compile Include="ET_KhuyenMai.cs" />
     <Compile Include="ET_LaiSuat.cs" />
+    <Compile Include="ET_LoaiGiaoDich.cs" />
+    <Compile Include="ET_LoaiHopDong.cs" />
+    <Compile Include="ET_LoaiHoTro.cs" />
     <Compile Include="ET_LoaiTaiKhoan.cs" />
     <Compile Include="ET_NgoaiTe.cs" />
     <Compile Include="ET_NhanVien.cs" />

@@ -1,12 +1,71 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
-  "Documents": [],
+  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\ptud\\quanlynganhang\\gui\\frm_loaihopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_loaihopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\ptud\\quanlynganhang\\gui\\frm_loaigiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_loaigiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\ptud\\quanlynganhang\\gui\\frm_loaihopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_loaihopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Frm_LoaiGiaoDich.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiGiaoDich.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_LoaiGiaoDich.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiGiaoDich.cs",
+              "RelativeToolTip": "GUI\\Frm_LoaiGiaoDich.cs",
+              "ViewState": "AgIAAD8BAAAAAAAAAAAQwFUBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T06:52:14.926Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Frm_LoaiHopDong.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiHopDong.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_LoaiHopDong.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiHopDong.cs*",
+              "RelativeToolTip": "GUI\\Frm_LoaiHopDong.cs*",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T06:52:12.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Frm_LoaiHopDong.cs [Design]",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiHopDong.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_LoaiHopDong.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiHopDong.cs [Design]*",
+              "RelativeToolTip": "GUI\\Frm_LoaiHopDong.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T06:49:50.21Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
