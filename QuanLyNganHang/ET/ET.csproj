@@ -46,6 +46,9 @@
     <Compile Include="ET_BienLai.cs" />
     <Compile Include="ET_ChiNhanh.cs" />
     <Compile Include="ET_ChuyenKhoan.cs" />
+    <Compile Include="ET_GiaoDich.cs" />
+    <Compile Include="ET_HopDong.cs" />
+    <Compile Include="ET_HoTro.cs" />
     <Compile Include="ET_KhachHang.cs" />
     <Compile Include="ET_KhoanVay.cs" />
     <Compile Include="ET_KhuyenMai.cs" />

@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ET
+{
+    public class ET_GiaoDich
+    {
+        public string MaGD { get; set; }
+
+        public string MaKH { get; set; }
+
+        public string MaTk { get; set; }
+
+        public string MaLoaiGD { get; set; }
+
+        public decimal SoTien { get; set; }
+
+        public DateTime ThoiGianGD { get; set; }
+
+        public string MoTa {  get; set; }
+
+        public string TrangThai {  get; set; }
+
+        public bool TinhTrangXoa { get; set; }
+
+        public ET_GiaoDich(string maGD, string maKH, string maTk, string maLoaiGD, decimal soTien, DateTime thoiGianGD, string moTa, string trangThai, bool tinhTrangXoa)
+        {
+            MaGD = maGD;
+            MaKH = maKH;
+            MaTk = maTk;
+            MaLoaiGD = maLoaiGD;
+            SoTien = soTien;
+            ThoiGianGD = thoiGianGD;
+            MoTa = moTa;
+            TrangThai = trangThai;
+            TinhTrangXoa = tinhTrangXoa;
+        }
+    }
+}

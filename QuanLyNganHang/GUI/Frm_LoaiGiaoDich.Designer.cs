@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_ThongTin1 = new System.Windows.Forms.Panel();
+            this.btn_HuyAn = new System.Windows.Forms.Button();
             this.dtp_NgayCapNhat = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,13 +40,12 @@
             this.txt_TenLoaiGD = new System.Windows.Forms.RichTextBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_MaLoaiGD = new System.Windows.Forms.TextBox();
             this.dtp_NgayLap = new System.Windows.Forms.DateTimePicker();
             this.cbo_TrangThai = new System.Windows.Forms.ComboBox();
+            this.txt_MaLoaiGD = new System.Windows.Forms.TextBox();
             this.panel_LoaiGiaoDich = new System.Windows.Forms.Panel();
             this.dgv_LoaiGiaoDich = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_HuyAn = new System.Windows.Forms.Button();
             this.panel_ThongTin1.SuspendLayout();
             this.panel_LoaiGiaoDich.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiGiaoDich)).BeginInit();
@@ -71,6 +71,26 @@
             this.panel_ThongTin1.Name = "panel_ThongTin1";
             this.panel_ThongTin1.Size = new System.Drawing.Size(527, 267);
             this.panel_ThongTin1.TabIndex = 24;
+            // 
+            // btn_HuyAn
+            // 
+            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_HuyAn.BackColor = System.Drawing.Color.Navy;
+            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.ForeColor = System.Drawing.Color.Gold;
+            this.btn_HuyAn.Location = new System.Drawing.Point(437, 219);
+            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_HuyAn.Name = "btn_HuyAn";
+            this.btn_HuyAn.Size = new System.Drawing.Size(84, 40);
+            this.btn_HuyAn.TabIndex = 61;
+            this.btn_HuyAn.Text = "Hủy Xóa";
+            this.btn_HuyAn.UseVisualStyleBackColor = false;
+            this.btn_HuyAn.Visible = false;
+            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
             // 
             // dtp_NgayCapNhat
             // 
@@ -209,14 +229,6 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Trạng Thái:";
             // 
-            // txt_MaLoaiGD
-            // 
-            this.txt_MaLoaiGD.Location = new System.Drawing.Point(103, 323);
-            this.txt_MaLoaiGD.Name = "txt_MaLoaiGD";
-            this.txt_MaLoaiGD.Size = new System.Drawing.Size(347, 29);
-            this.txt_MaLoaiGD.TabIndex = 10;
-            this.txt_MaLoaiGD.Visible = false;
-            // 
             // dtp_NgayLap
             // 
             this.dtp_NgayLap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -228,6 +240,7 @@
             this.dtp_NgayLap.Location = new System.Drawing.Point(174, 112);
             this.dtp_NgayLap.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_NgayLap.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
+            this.dtp_NgayLap.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayLap.Name = "dtp_NgayLap";
             this.dtp_NgayLap.Size = new System.Drawing.Size(347, 29);
             this.dtp_NgayLap.TabIndex = 14;
@@ -245,6 +258,14 @@
             this.cbo_TrangThai.Name = "cbo_TrangThai";
             this.cbo_TrangThai.Size = new System.Drawing.Size(347, 29);
             this.cbo_TrangThai.TabIndex = 11;
+            // 
+            // txt_MaLoaiGD
+            // 
+            this.txt_MaLoaiGD.Location = new System.Drawing.Point(103, 323);
+            this.txt_MaLoaiGD.Name = "txt_MaLoaiGD";
+            this.txt_MaLoaiGD.Size = new System.Drawing.Size(347, 29);
+            this.txt_MaLoaiGD.TabIndex = 10;
+            this.txt_MaLoaiGD.Visible = false;
             // 
             // panel_LoaiGiaoDich
             // 
@@ -288,26 +309,6 @@
             this.label6.TabIndex = 60;
             this.label6.Text = "Quản Lý Loại Giao Dịch";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_HuyAn
-            // 
-            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_HuyAn.BackColor = System.Drawing.Color.Navy;
-            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
-            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HuyAn.ForeColor = System.Drawing.Color.Gold;
-            this.btn_HuyAn.Location = new System.Drawing.Point(437, 219);
-            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_HuyAn.Name = "btn_HuyAn";
-            this.btn_HuyAn.Size = new System.Drawing.Size(84, 40);
-            this.btn_HuyAn.TabIndex = 61;
-            this.btn_HuyAn.Text = "Hủy Xóa";
-            this.btn_HuyAn.UseVisualStyleBackColor = false;
-            this.btn_HuyAn.Visible = false;
-            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
             // 
             // Frm_LoaiGiaoDich
             // 

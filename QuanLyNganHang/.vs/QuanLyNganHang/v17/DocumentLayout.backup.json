@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\ptud\\quanlynganhang\\gui\\frm_loaihopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_loaihopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\3h24 pm\\ptud\\quanlynganhang\\dal\\dal_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\dal_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\ptud\\quanlynganhang\\gui\\frm_loaigiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_loaigiaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\3h24 pm\\ptud\\quanlynganhang\\gui\\frm_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\ptud\\quanlynganhang\\gui\\frm_loaihopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_loaihopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7B7F37A1-53AD-41EE-B9EE-5653860980EE}|BUS\\BUS.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\3h24 pm\\ptud\\quanlynganhang\\bus\\bus_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B7F37A1-53AD-41EE-B9EE-5653860980EE}|BUS\\BUS.csproj|solutionrelative:bus\\bus_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\3h24 pm\\ptud\\quanlynganhang\\gui\\frm_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\3h24 pm\\ptud\\quanlynganhang\\gui\\frm_taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-1-2025\\3h24 pm\\ptud\\quanlynganhang\\dal\\dal_taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\dal_taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,41 +38,83 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Frm_LoaiGiaoDich.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiGiaoDich.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_LoaiGiaoDich.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiGiaoDich.cs",
-              "RelativeToolTip": "GUI\\Frm_LoaiGiaoDich.cs",
-              "ViewState": "AgIAAD8BAAAAAAAAAAAQwFUBAAANAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DAL_TaiKhoan.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\DAL\\DAL_TaiKhoan.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_TaiKhoan.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\DAL\\DAL_TaiKhoan.cs",
+              "RelativeToolTip": "DAL\\DAL_TaiKhoan.cs",
+              "ViewState": "AgIAAIgBAAAAAAAAAAAAAPAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T06:52:14.926Z",
+              "WhenOpened": "2025-11-01T08:53:10.773Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Frm_LoaiHopDong.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiHopDong.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_LoaiHopDong.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiHopDong.cs*",
-              "RelativeToolTip": "GUI\\Frm_LoaiHopDong.cs*",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAAAIcAAAAhAAAAAAAAAA==",
+              "Title": "DAL_GiaoDich.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\DAL\\DAL_GiaoDich.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_GiaoDich.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\DAL\\DAL_GiaoDich.cs",
+              "RelativeToolTip": "DAL\\DAL_GiaoDich.cs",
+              "ViewState": "AgIAAMUBAAAAAAAAAADwv/oBAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T06:52:12.621Z",
+              "WhenOpened": "2025-11-01T08:52:41.409Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Frm_LoaiHopDong.cs [Design]",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiHopDong.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_LoaiHopDong.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_LoaiHopDong.cs [Design]*",
-              "RelativeToolTip": "GUI\\Frm_LoaiHopDong.cs [Design]*",
+              "Title": "BUS_GiaoDich.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\BUS\\BUS_GiaoDich.cs",
+              "RelativeDocumentMoniker": "BUS\\BUS_GiaoDich.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\BUS\\BUS_GiaoDich.cs",
+              "RelativeToolTip": "BUS\\BUS_GiaoDich.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAYwIQAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-01T06:49:50.21Z",
+              "WhenOpened": "2025-11-01T09:04:26.447Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Frm_TaiKhoan.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\GUI\\Frm_TaiKhoan.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_TaiKhoan.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\GUI\\Frm_TaiKhoan.cs",
+              "RelativeToolTip": "GUI\\Frm_TaiKhoan.cs",
+              "ViewState": "AgIAAK4BAAAAAAAAAAAzwMIBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T09:15:02.506Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Frm_GiaoDich.cs",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\GUI\\Frm_GiaoDich.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_GiaoDich.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\GUI\\Frm_GiaoDich.cs",
+              "RelativeToolTip": "GUI\\Frm_GiaoDich.cs",
+              "ViewState": "AgIAAIoBAAAAAAAAAAAswJgBAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T09:12:24.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Frm_GiaoDich.cs [Design]",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\GUI\\Frm_GiaoDich.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_GiaoDich.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-1-2025\\3h24 pm\\PTUD\\QuanLyNganHang\\GUI\\Frm_GiaoDich.cs [Design]",
+              "RelativeToolTip": "GUI\\Frm_GiaoDich.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-01T09:06:15.69Z",
               "EditorCaption": " [Design]"
             }
           ]
