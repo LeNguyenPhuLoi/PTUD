@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhuyenMai));
             this.dgvKhuyenMai = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtMaKM = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTenKM = new System.Windows.Forms.TextBox();
@@ -49,7 +48,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnHoanTac = new System.Windows.Forms.Button();
             this.btn_HuyAn = new System.Windows.Forms.Button();
             this.btn_An = new System.Windows.Forms.Button();
@@ -80,17 +78,6 @@
             this.dgvKhuyenMai.TabIndex = 21;
             this.dgvKhuyenMai.Click += new System.EventHandler(this.dgvKhuyenMai_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 32);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 33);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã khuyến mãi:";
-            // 
             // txtMaKM
             // 
             this.txtMaKM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -101,13 +88,14 @@
             this.txtMaKM.Name = "txtMaKM";
             this.txtMaKM.Size = new System.Drawing.Size(296, 30);
             this.txtMaKM.TabIndex = 1;
+            this.txtMaKM.Visible = false;
             this.txtMaKM.TextChanged += new System.EventHandler(this.txtMaKM_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 84);
+            this.label1.Location = new System.Drawing.Point(32, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 33);
@@ -119,7 +107,7 @@
             this.txtTenKM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenKM.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKM.Location = new System.Drawing.Point(240, 87);
+            this.txtTenKM.Location = new System.Drawing.Point(240, 33);
             this.txtTenKM.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenKM.Name = "txtTenKM";
             this.txtTenKM.Size = new System.Drawing.Size(296, 30);
@@ -130,7 +118,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 137);
+            this.label3.Location = new System.Drawing.Point(32, 79);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 33);
@@ -204,7 +192,6 @@
             this.pnlMain.Controls.Add(this.txtTenKM);
             this.pnlMain.Controls.Add(this.label1);
             this.pnlMain.Controls.Add(this.txtMaKM);
-            this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Location = new System.Drawing.Point(3, 3);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(618, 259);
@@ -214,7 +201,7 @@
             // 
             this.rtxtMota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtxtMota.Location = new System.Drawing.Point(149, 145);
+            this.rtxtMota.Location = new System.Drawing.Point(149, 87);
             this.rtxtMota.Name = "rtxtMota";
             this.rtxtMota.Size = new System.Drawing.Size(387, 96);
             this.rtxtMota.TabIndex = 2;
@@ -317,25 +304,6 @@
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.AllowDrop = true;
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnXoa.BackColor = System.Drawing.Color.Red;
-            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(317, 596);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(112, 49);
-            this.btnXoa.TabIndex = 49;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnHoanTac
             // 
             this.btnHoanTac.AllowDrop = true;
@@ -364,10 +332,10 @@
             this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
-            this.btn_HuyAn.Location = new System.Drawing.Point(796, 596);
+            this.btn_HuyAn.Location = new System.Drawing.Point(588, 596);
             this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_HuyAn.Name = "btn_HuyAn";
-            this.btn_HuyAn.Size = new System.Drawing.Size(112, 49);
+            this.btn_HuyAn.Size = new System.Drawing.Size(112, 54);
             this.btn_HuyAn.TabIndex = 52;
             this.btn_HuyAn.Text = "Hủy Ẩn";
             this.btn_HuyAn.UseVisualStyleBackColor = false;
@@ -383,12 +351,12 @@
             this.btn_An.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_An.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_An.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_An.Location = new System.Drawing.Point(582, 596);
+            this.btn_An.Location = new System.Drawing.Point(317, 596);
             this.btn_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_An.Name = "btn_An";
-            this.btn_An.Size = new System.Drawing.Size(193, 49);
+            this.btn_An.Size = new System.Drawing.Size(112, 54);
             this.btn_An.TabIndex = 51;
-            this.btn_An.Text = "Ẩn Khách Hàng";
+            this.btn_An.Text = "Xóa";
             this.btn_An.UseVisualStyleBackColor = false;
             this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
             // 
@@ -404,7 +372,6 @@
             this.Controls.Add(this.btn_HuyAn);
             this.Controls.Add(this.btn_An);
             this.Controls.Add(this.btnHoanTac);
-            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label5);
@@ -427,7 +394,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvKhuyenMai;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaKM;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTenKM;
@@ -443,7 +409,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.RichTextBox rtxtMota;
         private System.Windows.Forms.RichTextBox rtxtDKAD;

@@ -180,42 +180,7 @@ namespace DAL
                 Console.WriteLine("Lỗi" + ex.ToString());
             }
             return ss;
-        }
-
-        //Xóa chuyển khoản
-        public bool XoaCK(ET_ChuyenKhoan et)
-        {
-            bool ss = false;
-            db = new QLNHDataContext(conn.GetConnection());
-            try
-            {
-                var ck = db.CHUYENKHOANs.SingleOrDefault(xoa => xoa.MACK == et.MaCK);
-
-                // Lấy tài khoản
-                var taiKhoanGui = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == ck.MATKGUI);
-                var taiKhoanNhan = db.TAIKHOANs.FirstOrDefault(tk => tk.MATK == ck.MATKNHAN);
-
-                // Hoàn lại tiền
-                if (taiKhoanGui != null)
-                    taiKhoanGui.SODU = (taiKhoanGui.SODU ?? 0) + (decimal)(ck.SOTIEN ?? 0);
-
-                if (taiKhoanNhan != null)
-                    taiKhoanNhan.SODU = (taiKhoanNhan.SODU ?? 0) - (decimal)(ck.SOTIEN ?? 0);
-                
-                if (ck != null)
-                {
-                    db.CHUYENKHOANs.DeleteOnSubmit(ck);
-                    db.SubmitChanges();
-                    ss = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                ss = false;
-                Console.WriteLine("Lỗi" + ex.ToString());
-            }
-            return ss;
-        }
+        }    
 
         //Trạng thái ẩn
         public bool TrangThaiAn(ET_ChuyenKhoan et)
@@ -253,6 +218,17 @@ namespace DAL
                 Console.WriteLine("Lỗi" + ex.Message);
                 return false;
             }
+        }
+
+        //Hàm tự đếm mã
+        public string DemMa()
+        {
+            int sl = (from ck in db.CHUYENKHOANs
+                         select ck).Count(); // Đếm số lượng nhân viên
+
+            int dem = sl + 1;
+            string ma = "CK" + dem.ToString("D3");
+            return ma;
         }
     }
 }

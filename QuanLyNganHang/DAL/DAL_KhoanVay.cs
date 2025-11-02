@@ -219,5 +219,16 @@ namespace DAL
                 return false;
             }
         }
+
+        //Hàm tự đếm mã
+        public string DemMa()
+        {
+            int sl = (from kv in db.KHOANVAYs
+                      select kv).Count(); // Đếm số lượng nhân viên
+
+            int dem = sl + 1;
+            string ma = "VAY" + dem.ToString("D3");
+            return ma;
+        }
     }
 }

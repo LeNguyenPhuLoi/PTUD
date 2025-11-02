@@ -148,5 +148,16 @@ namespace DAL
             }
             return ss;
         }
+
+        //Hàm tự đếm mã
+        public string DemMa()
+        {
+            int sl = (from km in db.KHUYENMAIs
+                      select km).Count(); // Đếm số lượng nhân viên
+
+            int dem = sl + 1;
+            string ma = "KM" + dem.ToString("D3");
+            return ma;
+        }
     }
 }

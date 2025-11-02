@@ -69,7 +69,6 @@
             this.btnHoanTac.TabIndex = 13;
             this.btnHoanTac.Text = "Làm mới";
             this.btnHoanTac.UseVisualStyleBackColor = false;
-            this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
             // 
             // btnSua
             // 
@@ -87,7 +86,6 @@
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -105,7 +103,6 @@
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -123,7 +120,6 @@
             this.btnThem.TabIndex = 16;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvApDungKhuyenMai
             // 
@@ -143,7 +139,6 @@
             this.dgvApDungKhuyenMai.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvApDungKhuyenMai.Size = new System.Drawing.Size(856, 255);
             this.dgvApDungKhuyenMai.TabIndex = 26;
-            this.dgvApDungKhuyenMai.Click += new System.EventHandler(this.dgvApDungKhuyenMai_Click);
             // 
             // label6
             // 

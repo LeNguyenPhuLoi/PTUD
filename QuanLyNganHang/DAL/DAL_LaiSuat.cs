@@ -146,5 +146,16 @@ namespace DAL
             }
             return ss;
         }
+
+        //Hàm tự đếm mã
+        public string DemMa()
+        {
+            int sl = (from ls in db.LAISUATs
+                      select ls).Count(); // Đếm số lượng nhân viên
+
+            int dem = sl + 1;
+            string ma = "LS" + dem.ToString("D2");
+            return ma;
+        }
     }
 }

@@ -50,10 +50,6 @@ namespace BUS
         }
 
         //gọi hàm xóa chuyển khoản
-        public bool XoaCK(ET_ChuyenKhoan et)
-        {
-            return ck.XoaCK(et);
-        }
 
         //
         public bool TrangThaiAn(ET_ChuyenKhoan et)
@@ -65,6 +61,12 @@ namespace BUS
         public bool KiemTraTaiKhoanThuocKhachHang(string maTK, string maKH)
         {
             return ck.KiemTraTaiKhoanThuocKhachHang(maTK, maKH);
+        }
+
+        //Gọi hàm đếm mã
+        public string DemMa()
+        {
+            return ck.DemMa();
         }
     }
 }

@@ -51,7 +51,7 @@ namespace GUI
             try
             {
                 string TrangThai = "Hoạt Động";
-                ET_LaiSuat ls = new ET_LaiSuat(txtMaLS.Text,
+                ET_LaiSuat ls = new ET_LaiSuat(bUS_LaiSuat.DemMa(),
                                                txtTenLoai.Text,
                                                decimal.Parse(txtLaiSuat.Text),
                                                cboKL.Text,
@@ -98,11 +98,9 @@ namespace GUI
                 MessageBox.Show("Lỗi " + ex.Message);
             }
             dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
-        }
+        }  
 
-        
-
-        private void btnXoa_Click(object sender, EventArgs e)
+        private void btn_An_Click(object sender, EventArgs e)
         {
             try
             {
@@ -110,49 +108,21 @@ namespace GUI
                 DialogResult = MessageBox.Show("Bạn có muốn xóa?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult == DialogResult.Yes)
                 {
-                    ET_LaiSuat ls = new ET_LaiSuat(txtMaLS.Text,
+                    ET_LaiSuat ck = new ET_LaiSuat(txtMaLS.Text,
                                                txtTenLoai.Text,
                                                decimal.Parse(txtLaiSuat.Text),
                                                cboKL.Text,
                                                TrangThai);
-                    if (bUS_LaiSuat.XoaLaiSuat(ls) == true)
+                    if (bUS_LaiSuat.TrangThaiAn(ck) == true)
                     {
-                        MessageBox.Show("Xóa thành công!");
+                        MessageBox.Show("Xóa lãi suất thành công!");
                         Clear();
                     }
                     else
                     {
-                        MessageBox.Show("Xóa không thành công!");
+                        MessageBox.Show("Xóa lãi suất thất bại!");
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
-            dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
-
-        }
-
-        private void btn_An_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string TrangThai = "Ngừng Hoạt Động";
-                ET_LaiSuat ck = new ET_LaiSuat(txtMaLS.Text,
-                                               txtTenLoai.Text,
-                                               decimal.Parse(txtLaiSuat.Text),
-                                               cboKL.Text,
-                                               TrangThai);
-                if (bUS_LaiSuat.TrangThaiAn(ck) == true)
-                {
-                    MessageBox.Show("Ẩn lãi suất thành công!");
-                    Clear();
-                }
-                else
-                {
-                    MessageBox.Show("Ẩn lãi suất thất bại!");
-                }
+                }                   
             }
             catch (Exception ex)
             {
@@ -173,12 +143,12 @@ namespace GUI
                                                TrangThai);
                 if (bUS_LaiSuat.TrangThaiAn(ck) == true)
                 {
-                    MessageBox.Show("Hủy ẩn chuyển khoản thành công!");
+                    MessageBox.Show("Hủy ẩn lãi suất thành công!");
                     Clear();
                 }
                 else
                 {
-                    MessageBox.Show("Hủy ẩn chuyển khoản thất bại!");
+                    MessageBox.Show("Hủy ẩn lãi suất thất bại!");
                 }
             }
             catch (Exception ex)
