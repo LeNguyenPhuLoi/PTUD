@@ -33,25 +33,32 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dgvApDungKhuyenMai = new System.Windows.Forms.DataGridView();
+            this.dgv_ADKM = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dtpNgayApDung = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApDungKhuyenMai)).BeginInit();
+            this.txt_adkm = new System.Windows.Forms.TextBox();
+            this.txt_matk = new System.Windows.Forms.TextBox();
+            this.txt_makh = new System.Windows.Forms.TextBox();
+            this.dgv_makm = new System.Windows.Forms.DataGridView();
+            this.dgv_matk = new System.Windows.Forms.DataGridView();
+            this.dgv_makh = new System.Windows.Forms.DataGridView();
+            this.btn_HuyAn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ADKM)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnlMain.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_makm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_matk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_makh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHoanTac
@@ -121,24 +128,24 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             // 
-            // dgvApDungKhuyenMai
+            // dgv_ADKM
             // 
-            this.dgvApDungKhuyenMai.AllowUserToResizeColumns = false;
-            this.dgvApDungKhuyenMai.AllowUserToResizeRows = false;
-            this.dgvApDungKhuyenMai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgv_ADKM.AllowUserToResizeColumns = false;
+            this.dgv_ADKM.AllowUserToResizeRows = false;
+            this.dgv_ADKM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvApDungKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvApDungKhuyenMai.BackgroundColor = System.Drawing.Color.White;
-            this.dgvApDungKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvApDungKhuyenMai.Location = new System.Drawing.Point(0, 0);
-            this.dgvApDungKhuyenMai.MultiSelect = false;
-            this.dgvApDungKhuyenMai.Name = "dgvApDungKhuyenMai";
-            this.dgvApDungKhuyenMai.ReadOnly = true;
-            this.dgvApDungKhuyenMai.RowHeadersWidth = 62;
-            this.dgvApDungKhuyenMai.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvApDungKhuyenMai.Size = new System.Drawing.Size(856, 255);
-            this.dgvApDungKhuyenMai.TabIndex = 26;
+            this.dgv_ADKM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_ADKM.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ADKM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ADKM.Location = new System.Drawing.Point(0, 3);
+            this.dgv_ADKM.MultiSelect = false;
+            this.dgv_ADKM.Name = "dgv_ADKM";
+            this.dgv_ADKM.ReadOnly = true;
+            this.dgv_ADKM.RowHeadersWidth = 62;
+            this.dgv_ADKM.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ADKM.Size = new System.Drawing.Size(856, 268);
+            this.dgv_ADKM.TabIndex = 26;
             // 
             // label6
             // 
@@ -159,14 +166,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.AutoScroll = true;
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.dgvApDungKhuyenMai);
-            this.panel4.Location = new System.Drawing.Point(28, 371);
+            this.panel4.Controls.Add(this.dgv_ADKM);
+            this.panel4.Location = new System.Drawing.Point(25, 512);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(859, 240);
+            this.panel4.Size = new System.Drawing.Size(859, 185);
             this.panel4.TabIndex = 50;
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.btn_HuyAn);
             this.panel5.Controls.Add(this.btnThem);
             this.panel5.Controls.Add(this.btnSua);
             this.panel5.Controls.Add(this.btnXoa);
@@ -181,42 +189,21 @@
             // 
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlMain.Controls.Add(this.comboBox2);
-            this.pnlMain.Controls.Add(this.comboBox1);
+            this.pnlMain.Controls.Add(this.dgv_makh);
+            this.pnlMain.Controls.Add(this.dgv_matk);
+            this.pnlMain.Controls.Add(this.dgv_makm);
+            this.pnlMain.Controls.Add(this.txt_makh);
+            this.pnlMain.Controls.Add(this.txt_matk);
+            this.pnlMain.Controls.Add(this.txt_adkm);
             this.pnlMain.Controls.Add(this.dtpNgayApDung);
-            this.pnlMain.Controls.Add(this.textBox1);
             this.pnlMain.Controls.Add(this.label4);
             this.pnlMain.Controls.Add(this.label1);
             this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.label3);
             this.pnlMain.Location = new System.Drawing.Point(3, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(849, 275);
+            this.pnlMain.Size = new System.Drawing.Size(849, 416);
             this.pnlMain.TabIndex = 25;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(246, 133);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(599, 33);
-            this.comboBox2.TabIndex = 51;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(246, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(599, 33);
-            this.comboBox1.TabIndex = 50;
             // 
             // dtpNgayApDung
             // 
@@ -225,29 +212,18 @@
             this.dtpNgayApDung.CustomFormat = "dd/MM/yyyy";
             this.dtpNgayApDung.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayApDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayApDung.Location = new System.Drawing.Point(246, 194);
+            this.dtpNgayApDung.Location = new System.Drawing.Point(259, 376);
             this.dtpNgayApDung.MaxDate = new System.DateTime(2999, 6, 12, 0, 0, 0, 0);
             this.dtpNgayApDung.Name = "dtpNgayApDung";
-            this.dtpNgayApDung.Size = new System.Drawing.Size(599, 30);
+            this.dtpNgayApDung.Size = new System.Drawing.Size(571, 30);
             this.dtpNgayApDung.TabIndex = 45;
             this.dtpNgayApDung.Value = new System.DateTime(2025, 6, 12, 0, 0, 0, 0);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(246, 28);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(599, 30);
-            this.textBox1.TabIndex = 49;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(22, 191);
+            this.label4.Location = new System.Drawing.Point(21, 373);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 33);
@@ -258,7 +234,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 132);
+            this.label1.Location = new System.Drawing.Point(22, 259);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 33);
@@ -280,7 +256,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 75);
+            this.label3.Location = new System.Drawing.Point(22, 142);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(182, 33);
@@ -301,8 +277,114 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(862, 283);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(862, 422);
             this.tableLayoutPanel1.TabIndex = 48;
+            // 
+            // txt_adkm
+            // 
+            this.txt_adkm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_adkm.Location = new System.Drawing.Point(259, 30);
+            this.txt_adkm.Name = "txt_adkm";
+            this.txt_adkm.Size = new System.Drawing.Size(571, 30);
+            this.txt_adkm.TabIndex = 46;
+            // 
+            // txt_matk
+            // 
+            this.txt_matk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_matk.Location = new System.Drawing.Point(259, 145);
+            this.txt_matk.Name = "txt_matk";
+            this.txt_matk.Size = new System.Drawing.Size(571, 30);
+            this.txt_matk.TabIndex = 47;
+            // 
+            // txt_makh
+            // 
+            this.txt_makh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_makh.Location = new System.Drawing.Point(259, 260);
+            this.txt_makh.Name = "txt_makh";
+            this.txt_makh.Size = new System.Drawing.Size(571, 30);
+            this.txt_makh.TabIndex = 48;
+            // 
+            // dgv_makm
+            // 
+            this.dgv_makm.AllowDrop = true;
+            this.dgv_makm.AllowUserToResizeColumns = false;
+            this.dgv_makm.AllowUserToResizeRows = false;
+            this.dgv_makm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_makm.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_makm.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_makm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_makm.Location = new System.Drawing.Point(259, 66);
+            this.dgv_makm.MultiSelect = false;
+            this.dgv_makm.Name = "dgv_makm";
+            this.dgv_makm.ReadOnly = true;
+            this.dgv_makm.RowHeadersVisible = false;
+            this.dgv_makm.RowHeadersWidth = 51;
+            this.dgv_makm.RowTemplate.Height = 24;
+            this.dgv_makm.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_makm.Size = new System.Drawing.Size(573, 73);
+            this.dgv_makm.TabIndex = 49;
+            // 
+            // dgv_matk
+            // 
+            this.dgv_matk.AllowDrop = true;
+            this.dgv_matk.AllowUserToResizeColumns = false;
+            this.dgv_matk.AllowUserToResizeRows = false;
+            this.dgv_matk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_matk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_matk.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_matk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_matk.Location = new System.Drawing.Point(259, 181);
+            this.dgv_matk.MultiSelect = false;
+            this.dgv_matk.Name = "dgv_matk";
+            this.dgv_matk.ReadOnly = true;
+            this.dgv_matk.RowHeadersVisible = false;
+            this.dgv_matk.RowHeadersWidth = 51;
+            this.dgv_matk.RowTemplate.Height = 24;
+            this.dgv_matk.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_matk.Size = new System.Drawing.Size(573, 73);
+            this.dgv_matk.TabIndex = 50;
+            // 
+            // dgv_makh
+            // 
+            this.dgv_makh.AllowDrop = true;
+            this.dgv_makh.AllowUserToResizeColumns = false;
+            this.dgv_makh.AllowUserToResizeRows = false;
+            this.dgv_makh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_makh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_makh.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_makh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_makh.Location = new System.Drawing.Point(259, 296);
+            this.dgv_makh.MultiSelect = false;
+            this.dgv_makh.Name = "dgv_makh";
+            this.dgv_makh.ReadOnly = true;
+            this.dgv_makh.RowHeadersVisible = false;
+            this.dgv_makh.RowHeadersWidth = 51;
+            this.dgv_makh.RowTemplate.Height = 24;
+            this.dgv_makh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_makh.Size = new System.Drawing.Size(573, 73);
+            this.dgv_makh.TabIndex = 51;
+            // 
+            // btn_HuyAn
+            // 
+            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_HuyAn.BackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
+            this.btn_HuyAn.Location = new System.Drawing.Point(579, 13);
+            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_HuyAn.Name = "btn_HuyAn";
+            this.btn_HuyAn.Size = new System.Drawing.Size(112, 54);
+            this.btn_HuyAn.TabIndex = 43;
+            this.btn_HuyAn.Text = "Hủy Ẩn";
+            this.btn_HuyAn.UseVisualStyleBackColor = false;
+            this.btn_HuyAn.Visible = false;
             // 
             // frmApDungKhuyenMai
             // 
@@ -317,12 +399,15 @@
             this.Name = "frmApDungKhuyenMai";
             this.Text = "Áp Dụng Khuyến Mãi";
             this.Load += new System.EventHandler(this.frmApDungKhuyenMai_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvApDungKhuyenMai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ADKM)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_makm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_matk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_makh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,19 +418,23 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dgvApDungKhuyenMai;
+        private System.Windows.Forms.DataGridView dgv_ADKM;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.DateTimePicker dtpNgayApDung;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_makh;
+        private System.Windows.Forms.TextBox txt_matk;
+        private System.Windows.Forms.TextBox txt_adkm;
+        private System.Windows.Forms.DataGridView dgv_makh;
+        private System.Windows.Forms.DataGridView dgv_matk;
+        private System.Windows.Forms.DataGridView dgv_makm;
+        private System.Windows.Forms.Button btn_HuyAn;
     }
 }

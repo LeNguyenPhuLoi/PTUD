@@ -19,59 +19,13 @@ namespace GUI
             InitializeComponent();
         }
 
-        
+        BUS_TraNo bUS_TraNo = new BUS_TraNo();
 
         private void frmLichSuTraNo_Load(object sender, EventArgs e)
         {
-            
+            dgvTraNo.DataSource = bUS_TraNo.LoadDSTraNo();
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnHoanTac_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void dgvLichSu_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void dgvMaVay_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtTim_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void txtTienTra_Leave(object sender, EventArgs e)
-        {
-            
-        }
-
-
+        
     }
 }

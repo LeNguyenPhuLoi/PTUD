@@ -111,5 +111,16 @@ namespace DAL
             }
             return ss;
         }
+
+        //Hàm tự đếm mã
+        public string DemMa()
+        {
+            int sl = (from nt in db.NGOAITEs
+                      select nt).Count(); // Đếm số lượng nhân viên
+
+            int dem = sl + 1;
+            string ma = "NT" + dem.ToString("D2");
+            return ma;
+        }
     }
 }

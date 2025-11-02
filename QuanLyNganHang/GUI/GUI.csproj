@@ -268,6 +268,12 @@
     <Compile Include="LaiSuat.Designer.cs">
       <DependentUpon>LaiSuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="NgoaiTe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NgoaiTe.Designer.cs">
+      <DependentUpon>NgoaiTe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Report_ChuyenKhoan.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -328,26 +334,20 @@
       <DependentUpon>Report_ViPham.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TraNo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TraNo.Designer.cs">
-      <DependentUpon>TraNo.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainAddmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainAddmin.Designer.cs">
       <DependentUpon>MainAddmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="NgoaiTe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NgoaiTe.Designer.cs">
-      <DependentUpon>NgoaiTe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TraNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TraNo.Designer.cs">
+      <DependentUpon>TraNo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ApDungKhuyenMai.resx">
       <DependentUpon>ApDungKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,6 +447,9 @@
     <EmbeddedResource Include="LaiSuat.resx">
       <DependentUpon>LaiSuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NgoaiTe.resx">
+      <DependentUpon>NgoaiTe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report_ChuyenKhoan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_ChuyenKhoan.cs</LastGenOutput>
@@ -487,14 +490,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_ViPham.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TraNo.resx">
-      <DependentUpon>TraNo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainAddmin.resx">
       <DependentUpon>MainAddmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NgoaiTe.resx">
-      <DependentUpon>NgoaiTe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -505,6 +502,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TraNo.resx">
+      <DependentUpon>TraNo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
