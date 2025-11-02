@@ -49,5 +49,11 @@ namespace BUS
             return ls.TrangThaiAn(et);
         }
 
+        //Gọi hàm đếm mã
+        public string DemMa()
+        {
+            return ls.DemMa();  
+        }
+
     }
 }

@@ -99,7 +99,7 @@ namespace GUI
             try
             {
                 string TrangThai = "Hoạt Động";
-                ET_KhoanVay kv = new ET_KhoanVay(txtMaVay.Text,
+                ET_KhoanVay kv = new ET_KhoanVay(bUS_KhoanVay.DemMa(),
                                                  txtMaKH.Text,
                                                  txtMaTK.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
@@ -199,7 +199,7 @@ namespace GUI
                 txtMaVay.Text = dgvKhoanVay.Rows[dong].Cells[0].Value.ToString();
                 txtMaKH.Text = dgvKhoanVay.Rows[dong].Cells[1].Value.ToString();
                 txtMaTK.Text = dgvKhoanVay.Rows[dong].Cells[2].Value.ToString();
-                txtSoTienVay.Text = dgvKhoanVay.Rows[dong].Cells[3].Value.ToString();            
+                txtSoTienVay.Text = dgvKhoanVay.Rows[dong].Cells[3].Value.ToString();
                 dtpNgayVay.Text = dgvKhoanVay.Rows[dong].Cells[4].Value.ToString();
                 dtpThoiHan.Text = dgvKhoanVay.Rows[dong].Cells[5].Value.ToString();
                 cboTrangThai.Text = dgvKhoanVay.Rows[dong].Cells[6].Value.ToString();
@@ -255,24 +255,29 @@ namespace GUI
             try
             {
                 string TrangThai = "Ngừng Hoạt Động";
-                ET_KhoanVay ck = new ET_KhoanVay(txtMaVay.Text,
-                                                 txtMaKH.Text,
-                                                 txtMaTK.Text,
-                                                 decimal.Parse(txtSoTienVay.Text),
-                                                 dtpNgayVay.Value,
-                                                 dtpThoiHan.Value,
-                                                 cboTrangThai.Text,
-                                                 txtMaLS.Text,
-                                                 TrangThai);
-                if (bUS_KhoanVay.TrangThaiAn(ck) == true)
+                DialogResult = MessageBox.Show("Bạn có muốn xóa?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Ẩn khoản vay thành công!");
-                    Clear();
+                    ET_KhoanVay ck = new ET_KhoanVay(txtMaVay.Text,
+                                                                     txtMaKH.Text,
+                                                                     txtMaTK.Text,
+                                                                     decimal.Parse(txtSoTienVay.Text),
+                                                                     dtpNgayVay.Value,
+                                                                     dtpThoiHan.Value,
+                                                                     cboTrangThai.Text,
+                                                                     txtMaLS.Text,
+                                                                     TrangThai);
+                    if (bUS_KhoanVay.TrangThaiAn(ck) == true)
+                    {
+                        MessageBox.Show("Xóa khoản vay thành công!");
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa khoản vay thất bại!");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Ẩn khoản vay thất bại!");
-                }
+
             }
             catch (Exception ex)
             {

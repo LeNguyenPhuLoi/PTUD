@@ -73,5 +73,11 @@ namespace BUS
             return kv.KiemTraTaiKhoanThuocKhachHang(maTK, maKH);
         }
 
+        //Gọi hàm đếm mã
+        public string DemMa()
+        {
+            return kv.DemMa();
+        }
+
     }
 }

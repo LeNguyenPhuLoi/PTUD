@@ -42,5 +42,11 @@ namespace BUS
             return km.TrangThaiAn(et);
         }
 
+        //Gọi hàm đếm mã
+        public string DemMa()
+        {
+            return km.DemMa();
+        }
+
     }
 }

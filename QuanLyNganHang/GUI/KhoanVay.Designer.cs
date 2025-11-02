@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhoanVay));
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnHoanTac = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvKhoanVay = new System.Windows.Forms.DataGridView();
@@ -43,7 +42,6 @@
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtMaVay = new System.Windows.Forms.TextBox();
             this.txtSoTienVay = new System.Windows.Forms.TextBox();
@@ -94,25 +92,6 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.AllowDrop = true;
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnXoa.BackColor = System.Drawing.Color.Red;
-            this.btnXoa.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(357, 15);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(112, 49);
-            this.btnXoa.TabIndex = 11;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnHoanTac
             // 
@@ -182,12 +161,11 @@
             this.pnlMain.Controls.Add(this.txtMaKH);
             this.pnlMain.Controls.Add(this.label9);
             this.pnlMain.Controls.Add(this.label6);
-            this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.label7);
             this.pnlMain.Controls.Add(this.txtMaVay);
             this.pnlMain.Location = new System.Drawing.Point(3, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(601, 457);
+            this.pnlMain.Size = new System.Drawing.Size(601, 385);
             this.pnlMain.TabIndex = 30;
             // 
             // cboTrangThai
@@ -201,7 +179,7 @@
             "Đang hoạt động",
             "Đã tất toán",
             "Quá hạn"});
-            this.cboTrangThai.Location = new System.Drawing.Point(218, 381);
+            this.cboTrangThai.Location = new System.Drawing.Point(218, 338);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(328, 33);
             this.cboTrangThai.TabIndex = 42;
@@ -216,7 +194,7 @@
             this.dgvtaikhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvtaikhoan.BackgroundColor = System.Drawing.Color.White;
             this.dgvtaikhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtaikhoan.Location = new System.Drawing.Point(51, 265);
+            this.dgvtaikhoan.Location = new System.Drawing.Point(51, 222);
             this.dgvtaikhoan.MultiSelect = false;
             this.dgvtaikhoan.Name = "dgvtaikhoan";
             this.dgvtaikhoan.ReadOnly = true;
@@ -234,7 +212,7 @@
             this.txtMaTK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTK.Location = new System.Drawing.Point(218, 226);
+            this.txtMaTK.Location = new System.Drawing.Point(218, 183);
             this.txtMaTK.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaTK.Name = "txtMaTK";
             this.txtMaTK.Size = new System.Drawing.Size(328, 30);
@@ -251,7 +229,7 @@
             this.dgvmakh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvmakh.BackgroundColor = System.Drawing.Color.White;
             this.dgvmakh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvmakh.Location = new System.Drawing.Point(51, 107);
+            this.dgvmakh.Location = new System.Drawing.Point(51, 64);
             this.dgvmakh.MultiSelect = false;
             this.dgvmakh.Name = "dgvmakh";
             this.dgvmakh.ReadOnly = true;
@@ -269,7 +247,7 @@
             this.txtMaKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaKH.Location = new System.Drawing.Point(218, 68);
+            this.txtMaKH.Location = new System.Drawing.Point(218, 21);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(328, 30);
@@ -281,7 +259,7 @@
             this.label9.AllowDrop = true;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(14, 226);
+            this.label9.Location = new System.Drawing.Point(14, 183);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(182, 33);
@@ -293,31 +271,19 @@
             this.label6.AllowDrop = true;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 64);
+            this.label6.Location = new System.Drawing.Point(14, 21);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(203, 33);
             this.label6.TabIndex = 28;
             this.label6.Text = "Mã Khách Hàng:";
             // 
-            // label2
-            // 
-            this.label2.AllowDrop = true;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 15);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 33);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Mã Khoản Vay:";
-            // 
             // label7
             // 
             this.label7.AllowDrop = true;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 380);
+            this.label7.Location = new System.Drawing.Point(27, 337);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 33);
@@ -335,6 +301,7 @@
             this.txtMaVay.Name = "txtMaVay";
             this.txtMaVay.Size = new System.Drawing.Size(328, 30);
             this.txtMaVay.TabIndex = 20;
+            this.txtMaVay.Visible = false;
             this.txtMaVay.TextChanged += new System.EventHandler(this.txtMaVay_TextChanged);
             // 
             // txtSoTienVay
@@ -377,7 +344,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1214, 463);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1214, 391);
             this.tableLayoutPanel1.TabIndex = 34;
             // 
             // panel1
@@ -395,7 +362,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(610, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(601, 457);
+            this.panel1.Size = new System.Drawing.Size(601, 385);
             this.panel1.TabIndex = 31;
             // 
             // dgvlaisuat
@@ -518,7 +485,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
             this.panel3.Controls.Add(this.dgvKhoanVay);
-            this.panel3.Location = new System.Drawing.Point(9, 538);
+            this.panel3.Location = new System.Drawing.Point(9, 479);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1211, 211);
             this.panel3.TabIndex = 46;
@@ -529,7 +496,6 @@
             this.panel4.Controls.Add(this.btn_HuyAn);
             this.panel4.Controls.Add(this.btnHoanTac);
             this.panel4.Controls.Add(this.btn_An);
-            this.panel4.Controls.Add(this.btnXoa);
             this.panel4.Controls.Add(this.btnSua);
             this.panel4.Controls.Add(this.btnThem);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -549,9 +515,9 @@
             this.btnxoauser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnxoauser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnxoauser.ForeColor = System.Drawing.Color.White;
-            this.btnxoauser.Location = new System.Drawing.Point(357, 15);
+            this.btnxoauser.Location = new System.Drawing.Point(363, 14);
             this.btnxoauser.Name = "btnxoauser";
-            this.btnxoauser.Size = new System.Drawing.Size(112, 49);
+            this.btnxoauser.Size = new System.Drawing.Size(112, 52);
             this.btnxoauser.TabIndex = 50;
             this.btnxoauser.Text = "Xóa";
             this.btnxoauser.UseVisualStyleBackColor = false;
@@ -567,10 +533,10 @@
             this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
-            this.btn_HuyAn.Location = new System.Drawing.Point(846, 14);
+            this.btn_HuyAn.Location = new System.Drawing.Point(622, 12);
             this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_HuyAn.Name = "btn_HuyAn";
-            this.btn_HuyAn.Size = new System.Drawing.Size(112, 49);
+            this.btn_HuyAn.Size = new System.Drawing.Size(112, 54);
             this.btn_HuyAn.TabIndex = 49;
             this.btn_HuyAn.Text = "Hủy Ẩn";
             this.btn_HuyAn.UseVisualStyleBackColor = false;
@@ -587,12 +553,12 @@
             this.btn_An.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_An.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_An.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_An.Location = new System.Drawing.Point(632, 14);
+            this.btn_An.Location = new System.Drawing.Point(363, 12);
             this.btn_An.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_An.Name = "btn_An";
-            this.btn_An.Size = new System.Drawing.Size(193, 49);
+            this.btn_An.Size = new System.Drawing.Size(112, 54);
             this.btn_An.TabIndex = 48;
-            this.btn_An.Text = "Ẩn Khách Hàng";
+            this.btn_An.Text = "Xóa";
             this.btn_An.UseVisualStyleBackColor = false;
             this.btn_An.Visible = false;
             this.btn_An.Click += new System.EventHandler(this.btn_An_Click);
@@ -632,7 +598,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvKhoanVay;
@@ -641,7 +606,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSoTienVay;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;

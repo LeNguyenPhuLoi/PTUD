@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using ET;
 
 namespace GUI
 {
@@ -18,76 +20,12 @@ namespace GUI
         {
             InitializeComponent();
         }
-
+        
+        BUS_ApDungKhuyenMai bUS_ApDungKhuyenMai = new BUS_ApDungKhuyenMai();
 
         private void frmApDungKhuyenMai_Load(object sender, EventArgs e)
         {
-
-            
-
-
-            
-
+            dgvApDungKhuyenMai.DataSource = bUS_ApDungKhuyenMai.LoadDSADKM();
         }
-
-        public void AddToCombo(IQueryable list, ComboBox c)
-        {
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dgvApDungKhuyenMai_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void btnHoanTac_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtTim_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dgvKH_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dgvKhuyenMai_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private string maKHCu = "";
-        private void txtMaKH_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-
     }
 }
