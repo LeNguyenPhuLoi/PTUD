@@ -61,6 +61,7 @@
     <Compile Include="DAL_ChiNhanh.cs" />
     <Compile Include="DAL_ChuyenKhoan.cs" />
     <Compile Include="DAL_GiaoDich.cs" />
+    <Compile Include="DAL_HopDong.cs" />
     <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_KhoanVay.cs" />
     <Compile Include="DAL_KhuyenMai.cs" />

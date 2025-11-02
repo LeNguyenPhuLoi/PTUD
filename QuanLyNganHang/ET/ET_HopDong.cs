@@ -9,6 +9,8 @@ namespace ET
 {
     public class ET_HopDong
     {
+        public int MaHD {  get; set; }
+
         public string SoHopDong {  get; set; }
 
         public string MaLoaiHD { get; set; }
@@ -29,8 +31,9 @@ namespace ET
 
         public bool TinhTrangXoa { get; set; }
 
-        public ET_HopDong(string soHopDong, string maLoaiHD, DateTime ngayKy, DateTime ngayHetHan, decimal giaTri, string ghiChu, string trangThai, string maNV, string maKH, bool tinhTrangXoa)
+        public ET_HopDong(int maHD, string soHopDong, string maLoaiHD, DateTime ngayKy, DateTime ngayHetHan, decimal giaTri, string ghiChu, string trangThai, string maNV, string maKH, bool tinhTrangXoa)
         {
+            MaHD = maHD;
             SoHopDong = soHopDong;
             MaLoaiHD = maLoaiHD;
             NgayKy = ngayKy;
