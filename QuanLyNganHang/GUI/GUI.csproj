@@ -532,8 +532,14 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Img\" />
+    <Content Include="Img\add.png" />
+    <Content Include="Img\close.png" />
+    <Content Include="Img\edit.png" />
+    <Content Include="Img\refresh.png" />
+    <Content Include="Img\trash.png" />
+    <Content Include="Img\undo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
