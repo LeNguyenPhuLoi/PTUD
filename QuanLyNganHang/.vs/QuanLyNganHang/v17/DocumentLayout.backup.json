@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\apdungkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\apdungkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\ngoaite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\ngoaite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\apdungkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\apdungkhuyenmai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\chuyenkhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\chuyenkhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\chuyenkhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\chuyenkhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\ngoaite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\ngoaite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChuyenKhoan.cs",
-              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ChuyenKhoan.cs",
-              "RelativeDocumentMoniker": "GUI\\ChuyenKhoan.cs",
-              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ChuyenKhoan.cs",
-              "RelativeToolTip": "GUI\\ChuyenKhoan.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T01:30:33.5Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChuyenKhoan.cs [Design]",
-              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ChuyenKhoan.cs",
-              "RelativeDocumentMoniker": "GUI\\ChuyenKhoan.cs",
-              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ChuyenKhoan.cs [Design]",
-              "RelativeToolTip": "GUI\\ChuyenKhoan.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T01:30:31.871Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApDungKhuyenMai.cs",
-              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ApDungKhuyenMai.cs",
-              "RelativeDocumentMoniker": "GUI\\ApDungKhuyenMai.cs",
-              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ApDungKhuyenMai.cs",
-              "RelativeToolTip": "GUI\\ApDungKhuyenMai.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAArwBsAAABNAAAAAAAAAA==",
+              "Title": "NgoaiTe.cs",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\NgoaiTe.cs",
+              "RelativeDocumentMoniker": "GUI\\NgoaiTe.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\NgoaiTe.cs",
+              "RelativeToolTip": "GUI\\NgoaiTe.cs",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAwwBIBAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T01:29:49.002Z",
+              "WhenOpened": "2025-11-02T11:39:03.62Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApDungKhuyenMai.cs [Design]",
-              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ApDungKhuyenMai.cs",
-              "RelativeDocumentMoniker": "GUI\\ApDungKhuyenMai.cs",
-              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\ApDungKhuyenMai.cs [Design]",
-              "RelativeToolTip": "GUI\\ApDungKhuyenMai.cs [Design]",
+              "Title": "NgoaiTe.cs [Design]",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\NgoaiTe.cs",
+              "RelativeDocumentMoniker": "GUI\\NgoaiTe.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\NgoaiTe.cs [Design]",
+              "RelativeToolTip": "GUI\\NgoaiTe.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T01:29:42.363Z",
+              "WhenOpened": "2025-11-02T11:38:17.212Z",
               "EditorCaption": " [Design]"
             }
           ]
