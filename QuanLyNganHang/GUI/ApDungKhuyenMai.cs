@@ -25,7 +25,7 @@ namespace GUI
 
         private void frmApDungKhuyenMai_Load(object sender, EventArgs e)
         {
-            dgvApDungKhuyenMai.DataSource = bUS_ApDungKhuyenMai.LoadDSADKM();
+            dgv_ADKM.DataSource = bUS_ApDungKhuyenMai.LoadDSADKM();
         }
     }
 }

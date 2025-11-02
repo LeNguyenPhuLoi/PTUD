@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLichSuTraNo));
-            this.dgvLichSu = new System.Windows.Forms.DataGridView();
+            this.dgvTraNo = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTraNo)).BeginInit();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -63,25 +63,24 @@
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvLichSu
+            // dgvTraNo
             // 
-            this.dgvLichSu.AllowUserToResizeColumns = false;
-            this.dgvLichSu.AllowUserToResizeRows = false;
-            this.dgvLichSu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvTraNo.AllowUserToResizeColumns = false;
+            this.dgvTraNo.AllowUserToResizeRows = false;
+            this.dgvTraNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvLichSu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLichSu.BackgroundColor = System.Drawing.Color.White;
-            this.dgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLichSu.Location = new System.Drawing.Point(3, 3);
-            this.dgvLichSu.MultiSelect = false;
-            this.dgvLichSu.Name = "dgvLichSu";
-            this.dgvLichSu.ReadOnly = true;
-            this.dgvLichSu.RowHeadersVisible = false;
-            this.dgvLichSu.RowHeadersWidth = 62;
-            this.dgvLichSu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLichSu.Size = new System.Drawing.Size(2000, 179);
-            this.dgvLichSu.TabIndex = 39;
-            this.dgvLichSu.Click += new System.EventHandler(this.dgvLichSu_Click);
+            this.dgvTraNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTraNo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTraNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTraNo.Location = new System.Drawing.Point(3, 3);
+            this.dgvTraNo.MultiSelect = false;
+            this.dgvTraNo.Name = "dgvTraNo";
+            this.dgvTraNo.ReadOnly = true;
+            this.dgvTraNo.RowHeadersVisible = false;
+            this.dgvTraNo.RowHeadersWidth = 62;
+            this.dgvTraNo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTraNo.Size = new System.Drawing.Size(2000, 179);
+            this.dgvTraNo.TabIndex = 39;
             // 
             // label2
             // 
@@ -130,7 +129,6 @@
             this.btnThem.TabIndex = 12;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnHoanTac
             // 
@@ -147,7 +145,6 @@
             this.btnHoanTac.TabIndex = 12;
             this.btnHoanTac.Text = "Làm mới";
             this.btnHoanTac.UseVisualStyleBackColor = false;
-            this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
             // 
             // btnXoa
             // 
@@ -165,17 +162,16 @@
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtMaLichSu
             // 
             this.txtMaLichSu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaLichSu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLichSu.Location = new System.Drawing.Point(221, 19);
+            this.txtMaLichSu.Location = new System.Drawing.Point(230, 23);
             this.txtMaLichSu.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaLichSu.Name = "txtMaLichSu";
-            this.txtMaLichSu.Size = new System.Drawing.Size(325, 30);
+            this.txtMaLichSu.Size = new System.Drawing.Size(368, 30);
             this.txtMaLichSu.TabIndex = 20;
             // 
             // pnlMain
@@ -201,7 +197,7 @@
             this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
             this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlaisuat.Location = new System.Drawing.Point(23, 122);
+            this.dgvlaisuat.Location = new System.Drawing.Point(23, 131);
             this.dgvlaisuat.MultiSelect = false;
             this.dgvlaisuat.Name = "dgvlaisuat";
             this.dgvlaisuat.ReadOnly = true;
@@ -209,7 +205,7 @@
             this.dgvlaisuat.RowHeadersWidth = 51;
             this.dgvlaisuat.RowTemplate.Height = 24;
             this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlaisuat.Size = new System.Drawing.Size(968, 99);
+            this.dgvlaisuat.Size = new System.Drawing.Size(575, 65);
             this.dgvlaisuat.TabIndex = 35;
             // 
             // textBox2
@@ -217,10 +213,10 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(221, 85);
+            this.textBox2.Location = new System.Drawing.Point(230, 85);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 30);
+            this.textBox2.Size = new System.Drawing.Size(368, 30);
             this.textBox2.TabIndex = 21;
             // 
             // label1
@@ -258,7 +254,6 @@
             this.txtTienTra.Name = "txtTienTra";
             this.txtTienTra.Size = new System.Drawing.Size(325, 30);
             this.txtTienTra.TabIndex = 25;
-            this.txtTienTra.Leave += new System.EventHandler(this.txtTienTra_Leave);
             // 
             // label4
             // 
@@ -349,7 +344,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.dgvLichSu);
+            this.panel3.Controls.Add(this.dgvTraNo);
             this.panel3.Location = new System.Drawing.Point(15, 312);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1240, 206);
@@ -379,7 +374,7 @@
             this.Name = "frmLichSuTraNo";
             this.Text = "Quản Lý Lịch Sử Trả Nợ:";
             this.Load += new System.EventHandler(this.frmLichSuTraNo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLichSu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTraNo)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
@@ -394,7 +389,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvLichSu;
+        private System.Windows.Forms.DataGridView dgvTraNo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
