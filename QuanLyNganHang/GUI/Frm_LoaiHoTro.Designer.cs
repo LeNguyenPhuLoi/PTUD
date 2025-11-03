@@ -106,6 +106,7 @@
             this.dtp_NgayCapNhat.Location = new System.Drawing.Point(175, 143);
             this.dtp_NgayCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_NgayCapNhat.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
+            this.dtp_NgayCapNhat.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayCapNhat.Name = "dtp_NgayCapNhat";
             this.dtp_NgayCapNhat.Size = new System.Drawing.Size(347, 29);
             this.dtp_NgayCapNhat.TabIndex = 39;
@@ -325,6 +326,7 @@
             // 
             // Frm_LoaiHoTro
             // 
+            this.AcceptButton = this.btnThem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 700);
