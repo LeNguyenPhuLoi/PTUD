@@ -132,12 +132,14 @@
             // 
             // dgvKhoanVay
             // 
+            this.dgvKhoanVay.AllowUserToAddRows = false;
             this.dgvKhoanVay.AllowUserToResizeColumns = false;
             this.dgvKhoanVay.AllowUserToResizeRows = false;
             this.dgvKhoanVay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvKhoanVay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhoanVay.BackgroundColor = System.Drawing.Color.White;
+            this.dgvKhoanVay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvKhoanVay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhoanVay.Location = new System.Drawing.Point(3, 3);
             this.dgvKhoanVay.MultiSelect = false;
@@ -187,12 +189,14 @@
             // dgvtaikhoan
             // 
             this.dgvtaikhoan.AllowDrop = true;
+            this.dgvtaikhoan.AllowUserToAddRows = false;
             this.dgvtaikhoan.AllowUserToResizeColumns = false;
             this.dgvtaikhoan.AllowUserToResizeRows = false;
             this.dgvtaikhoan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvtaikhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvtaikhoan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvtaikhoan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvtaikhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvtaikhoan.Location = new System.Drawing.Point(51, 222);
             this.dgvtaikhoan.MultiSelect = false;
@@ -222,12 +226,14 @@
             // dgvmakh
             // 
             this.dgvmakh.AllowDrop = true;
+            this.dgvmakh.AllowUserToAddRows = false;
             this.dgvmakh.AllowUserToResizeColumns = false;
             this.dgvmakh.AllowUserToResizeRows = false;
             this.dgvmakh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvmakh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvmakh.BackgroundColor = System.Drawing.Color.White;
+            this.dgvmakh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvmakh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvmakh.Location = new System.Drawing.Point(51, 64);
             this.dgvmakh.MultiSelect = false;
@@ -368,12 +374,14 @@
             // dgvlaisuat
             // 
             this.dgvlaisuat.AllowDrop = true;
+            this.dgvlaisuat.AllowUserToAddRows = false;
             this.dgvlaisuat.AllowUserToResizeColumns = false;
             this.dgvlaisuat.AllowUserToResizeRows = false;
             this.dgvlaisuat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
+            this.dgvlaisuat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlaisuat.Location = new System.Drawing.Point(36, 212);
             this.dgvlaisuat.MultiSelect = false;

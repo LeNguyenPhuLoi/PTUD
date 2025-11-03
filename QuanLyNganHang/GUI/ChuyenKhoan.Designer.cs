@@ -460,6 +460,7 @@
             // 
             // dgvChuyenKhoan
             // 
+            this.dgvChuyenKhoan.AllowUserToAddRows = false;
             this.dgvChuyenKhoan.AllowUserToResizeColumns = false;
             this.dgvChuyenKhoan.AllowUserToResizeRows = false;
             this.dgvChuyenKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 

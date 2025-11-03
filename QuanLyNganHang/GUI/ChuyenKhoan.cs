@@ -92,7 +92,7 @@ namespace GUI
             txtMaTK.Clear();
             txtMaTKGui.Clear();
             txtMaTKNhan.Clear();
-            dtpNgayChuyen.Text = null;
+            dtpNgayChuyen.MaxDate = DateTime.Now;
         }
 
         private void btnHoanTac_Click(object sender, EventArgs e)
@@ -260,7 +260,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
-            dgvChuyenKhoan.DataSource = bUS_ChuyenKhoan.LoadDSChuyenKhoan();
+            HienThiDS();
         }
 
         private void btnxoauser_Click(object sender, EventArgs e)
@@ -295,7 +295,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
-            dgvChuyenKhoan.DataSource = bUS_ChuyenKhoan.LoadDSChuyenKhoanUser();
+            HienThiDS();
         }
 
         private void btn_HuyAn_Click(object sender, EventArgs e)

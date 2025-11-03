@@ -26,6 +26,40 @@ namespace DAL
             return ADKM;
         }
 
+        //Load danh sách áp dụng khuyến mãi user
+        public IQueryable LoadDSADKMUser()
+        {
+            IQueryable ADKM = from adkm in db.APDUNGKHUYENMAIs
+                              where adkm.TinhTrangXoa == "Hoạt Động"
+                              select adkm;
+            return ADKM;
+        }
+
+        //Load danh sách khuyến mãi
+        public IQueryable LoadDSKM()
+        {
+            IQueryable KM = from km in db.KHUYENMAIs
+                            select new { km.MAKM, km.TENKM};
+            return KM;
+        }
+
+        //Load danh sách tài khoản
+        public IQueryable LoadDSTKtheoMa(string ma)
+        {
+            IQueryable ds = from tk in db.TAIKHOANs
+                            where tk.MAKH == ma
+                            select tk.MATK;
+            return ds;
+        }
+
+        //Load danh sách khách hàng
+        public IQueryable LoadKH()
+        {
+            IQueryable KH = from kh in db.KHACHHANGs
+                            select new { kh.MAKH, kh.TENKH };
+            return KH;
+        }
+
         //Thêm áp dụng khuyến mãi
         public bool ThemADKM(ET_ApDungKhuyenMai et)
         {
@@ -33,7 +67,7 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
-                var amp = db.APDUNGKHUYENMAIs.Any(adkm => adkm.MAKM == et.MaKM);
+                var amp = db.APDUNGKHUYENMAIs.Any(adkm => adkm.MAKM == et.MaKM && adkm.MAKH == et.MaKH);
                 if (!amp)
                 {
                     APDUNGKHUYENMAI adkm = new APDUNGKHUYENMAI
@@ -68,7 +102,7 @@ namespace DAL
                 {
                     return false;
                 }
-                var change = db.APDUNGKHUYENMAIs.SingleOrDefault(adkm => adkm.MAKM == et.MaKM);
+                var change = db.APDUNGKHUYENMAIs.SingleOrDefault(adkm => adkm.MAKM == et.MaKM && adkm.MAKH == et.MaKH);
                 if (change != null)
                 {
                     change.MAKM = et.MaKM;
@@ -93,7 +127,7 @@ namespace DAL
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
-                var change = db.APDUNGKHUYENMAIs.Single(adkm => adkm.MAKM == et.MaKM);
+                var change = db.APDUNGKHUYENMAIs.Single(adkm => adkm.MAKM == et.MaKM && adkm.MAKH == et.MaKH);
                 if (change != null)
                 {
                     change.TinhTrangXoa = et.TinhTrangXoa;

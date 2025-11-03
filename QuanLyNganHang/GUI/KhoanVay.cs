@@ -84,8 +84,8 @@ namespace GUI
             txtMaTK.Clear();
             txtSoTienVay.Clear();
             cboTrangThai.SelectedIndex = 0;
-            dtpNgayVay.Text = null;
-            dtpThoiHan.Text = null;
+            dtpNgayVay.MaxDate = DateTime.Now;
+            dtpThoiHan.MaxDate = DateTime.Now;
             txtMaLS.Clear();
         }
 
@@ -318,7 +318,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
-            dgvKhoanVay.DataSource = bUS_KhoanVay.LoadDSKhoanVayUser();
+            HienThiDS();
         }
 
         private void btn_HuyAn_Click(object sender, EventArgs e)
@@ -349,7 +349,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
-            dgvKhoanVay.DataSource = bUS_KhoanVay.LoadDSKhoanVay();
+            HienThiDS();
         }
 
         //hàm kiểm tra định dạng mã khoản vay (10 ký tự, không ký tự đặc biệt, không khoảng trống)

@@ -1,14 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-2-2025\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-2-2025\\ptud\\quanlynganhang\\gui\\frm_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-2-2025\\ptud\\quanlynganhang\\gui\\frm_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\ngoaite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\ngoaite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +19,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Frm_HopDong.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-2-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HopDong.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_HopDong.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-2-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HopDong.cs",
-              "RelativeToolTip": "GUI\\Frm_HopDong.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAACEAAAA4AAAAAAAAAA==",
+              "Title": "NgoaiTe.cs [Design]",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\NgoaiTe.cs",
+              "RelativeDocumentMoniker": "GUI\\NgoaiTe.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\NgoaiTe.cs [Design]*",
+              "RelativeToolTip": "GUI\\NgoaiTe.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T16:57:05.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Frm_HopDong.cs [Design]",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-2-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HopDong.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_HopDong.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-2-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HopDong.cs [Design]",
-              "RelativeToolTip": "GUI\\Frm_HopDong.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-02T16:57:03.787Z",
+              "WhenOpened": "2025-11-03T02:38:05.708Z",
               "EditorCaption": " [Design]"
             }
           ]

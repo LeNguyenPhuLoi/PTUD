@@ -22,7 +22,9 @@ namespace DAL
         public IQueryable LoadDSBienLai()
         {
             IQueryable BL = from bl in db.BIENLAIs
-                            select bl;
+                            join gd in db.GIAODICHes on bl.MAGD equals gd.MAGD
+                            join lgd in db.LOAIGDs on gd.MALOAIGD equals lgd.MALOAIGD
+                            select new { };
             return BL;
         }
 
