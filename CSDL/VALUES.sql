@@ -145,6 +145,6 @@ VALUES(N'HD-KH001-20102024-153112','LHD001', '20/10/2024 15:31:12', '20/11/2024 
 GO
 INSERT INTO BIENLAI(MABL, MAGD, MAKH, MATK, MANV, SOTIEN, MANGOAITE, MOTA, TRANGTHAI, TinhTrangXoa)
 VALUES
-('BL001', 'GD001', 'KH001', 'TK001', 'NV0001', 5000000, 'USD', N'Khách hàng nộp tiền mặt', N'Hoạt động', N'Hoạt Động'),
-('BL002', 'GD002', 'KH002', 'TK002', 'NV0002', 12000000, 'EUR', N'Thanh toán hóa đơn', N'Hoàn tất', N'Hoạt Động'),
-('BL003', 'GD003', 'KH003', 'TK003', 'NV0003', 8000000, 'VND', N'Thanh toán dịch vụ', N'Chờ duyệt', N'Hoạt Động');
+('BL001', 'GD001', 'KH001', 'TK001', 'NV0001', 5000000, 'NT01', N'Khách hàng nộp tiền mặt', N'Đã in', N'Hoạt Động'),
+('BL002', 'GD002', 'KH002', 'TK002', 'NV0002', 12000000, 'NT02', N'Thanh toán hóa đơn', N'Đã in', N'Hoạt Động'),
+('BL003', 'GD003', 'KH003', 'TK003', 'NV0003', 8000000, 'NT03', N'Thanh toán dịch vụ', N'Chưa in', N'Hoạt Động');

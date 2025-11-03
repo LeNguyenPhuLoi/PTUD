@@ -18,6 +18,36 @@ namespace BUS
             return bl.LoadDSBienLai();
         }
 
+        //Gọi hàm load danh sách biên lai user
+        public IQueryable LoadDSBienLaiuser()
+        {
+            return bl.LoadDSBienLaiuser();
+        }
+
+        //Gọi hàm load danh sách khách hàng
+        public IQueryable LoadDSKH()
+        {
+            return bl.LoadDSKH();
+        }
+
+        //Gọi hàm load danh sách nhân viên
+        public IQueryable LoadDSNV()
+        {
+            return bl.LoadDSNV();
+        }
+
+        //Gọi hàm load tên giao dịch
+        public IQueryable LoadDSTenGD()
+        {
+            return bl.LoadDSTenGD();
+        }
+
+        //Gọi hàm load tên ngoại tệ
+        public IQueryable LoadDSTenNT()
+        {
+            return bl.LoadDSTenNT();
+        }
+
         //Gọi hàm thêm biên lai
         public bool ThemBienLai(ET_BienLai et)
         {
