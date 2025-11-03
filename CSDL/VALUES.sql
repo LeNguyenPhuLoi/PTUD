@@ -100,14 +100,6 @@ VALUES
 ('KM002', 'KH002', 'TK002', '05/07/2023', N'Hoạt Động'),
 ('KM003', 'KH003', 'TK003', '03/08/2023',  N'Hoạt Động');
 
----THEM THONG TIN BIEN LAI
---GO
--- INTO BIENLAI(MABL, MAGD, MAKH, MATK, MANV, SOTIEN, MANGOAITE, LOAIBL, MOTA, TRANGTHAI)
---VALUES
---('BL001', 'GD001', 'KH001', 'TK001', 'NV001', 5000000, 'USD', N'Phiếu thu', N'Khách hàng nộp tiền mặt', N'Hoạt động'),
---('BL002', 'GD002', 'KH002', 'TK002', 'NV002', 12000000, 'EUR', N'Phiếu chi', N'Thanh toán hóa đơn', N'Hoàn tất'),
---('BL003', 'GD003', 'KH003', 'TK003', 'NV003', 8000000, 'VND', N'Phiếu chuyển khoản', N'Thanh toán dịch vụ', N'Chờ duyệt');
-
 ---THEM THONG TIN LOAI GIAO DICH
 GO
 INSERT INTO LOAIGD(MALOAIGD, TENLOAIGD, NGAYLAP, NGAYCAPNHAT, TRANGTHAI, TinhTrangXoa)
@@ -148,3 +140,11 @@ GO
 INSERT INTO HOPDONG(SOHOPDONG, MALOAIHD, NGAYKY, NGAYHETHAN, GIATRI, GHICHU, TRANGTHAI, MANV, MAKH, TinhTrangXoa)
 VALUES(N'HD-KH001-20102024-153112','LHD001', '20/10/2024 15:31:12', '20/11/2024 00:00:00', 50000000, N'Chi tiêu sinh hoạt gia đình', N'Đã Ký Kết', 'NV0001', 'KH001', 0),
 		(N'HD-KH002-19122024-073541','LHD002', '19/12/2024 07:35:41', '19/12/2025 00:00:00', 240000000, N'Vay tiền khởi nghiệp', N'Đã Ký Kết', 'NV0004', 'KH002', 0)
+
+---THEM THONG TIN BIEN LAI
+GO
+INSERT INTO BIENLAI(MABL, MAGD, MAKH, MATK, MANV, SOTIEN, MANGOAITE, MOTA, TRANGTHAI, TinhTrangXoa)
+VALUES
+('BL001', 'GD001', 'KH001', 'TK001', 'NV0001', 5000000, 'USD', N'Khách hàng nộp tiền mặt', N'Hoạt động', N'Hoạt Động'),
+('BL002', 'GD002', 'KH002', 'TK002', 'NV0002', 12000000, 'EUR', N'Thanh toán hóa đơn', N'Hoàn tất', N'Hoạt Động'),
+('BL003', 'GD003', 'KH003', 'TK003', 'NV0003', 8000000, 'VND', N'Thanh toán dịch vụ', N'Chờ duyệt', N'Hoạt Động');

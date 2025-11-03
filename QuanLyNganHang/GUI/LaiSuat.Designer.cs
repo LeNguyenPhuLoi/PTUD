@@ -172,6 +172,7 @@
             // 
             // dgvlaisuat
             // 
+            this.dgvlaisuat.AllowUserToAddRows = false;
             this.dgvlaisuat.AllowUserToResizeColumns = false;
             this.dgvlaisuat.AllowUserToResizeRows = false;
             this.dgvlaisuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -179,6 +180,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
+            this.dgvlaisuat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvlaisuat.Location = new System.Drawing.Point(13, 290);
             this.dgvlaisuat.Name = "dgvlaisuat";

@@ -61,6 +61,7 @@
             // 
             // dgvKhuyenMai
             // 
+            this.dgvKhuyenMai.AllowUserToAddRows = false;
             this.dgvKhuyenMai.AllowUserToResizeColumns = false;
             this.dgvKhuyenMai.AllowUserToResizeRows = false;
             this.dgvKhuyenMai.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -68,6 +69,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKhuyenMai.BackgroundColor = System.Drawing.Color.White;
+            this.dgvKhuyenMai.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhuyenMai.Location = new System.Drawing.Point(23, 351);
             this.dgvKhuyenMai.Name = "dgvKhuyenMai";

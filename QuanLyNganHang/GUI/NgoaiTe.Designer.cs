@@ -232,6 +232,7 @@
             // 
             // dgvNgoaiTe
             // 
+            this.dgvNgoaiTe.AllowUserToAddRows = false;
             this.dgvNgoaiTe.AllowUserToResizeColumns = false;
             this.dgvNgoaiTe.AllowUserToResizeRows = false;
             this.dgvNgoaiTe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -245,6 +246,7 @@
             this.dgvNgoaiTe.MultiSelect = false;
             this.dgvNgoaiTe.Name = "dgvNgoaiTe";
             this.dgvNgoaiTe.ReadOnly = true;
+            this.dgvNgoaiTe.RowHeadersVisible = false;
             this.dgvNgoaiTe.RowHeadersWidth = 62;
             this.dgvNgoaiTe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNgoaiTe.Size = new System.Drawing.Size(1109, 257);
