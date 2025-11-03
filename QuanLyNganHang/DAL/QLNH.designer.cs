@@ -929,8 +929,6 @@ namespace DAL
 		
 		private string _MANGOAITE;
 		
-		private string _LOAIBL;
-		
 		private string _MOTA;
 		
 		private string _TRANGTHAI;
@@ -959,8 +957,6 @@ namespace DAL
     partial void OnSOTIENChanged();
     partial void OnMANGOAITEChanging(string value);
     partial void OnMANGOAITEChanged();
-    partial void OnLOAIBLChanging(string value);
-    partial void OnLOAIBLChanged();
     partial void OnMOTAChanging(string value);
     partial void OnMOTAChanged();
     partial void OnTRANGTHAIChanging(string value);
@@ -1120,26 +1116,6 @@ namespace DAL
 					this._MANGOAITE = value;
 					this.SendPropertyChanged("MANGOAITE");
 					this.OnMANGOAITEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIBL", DbType="NVarChar(30)")]
-		public string LOAIBL
-		{
-			get
-			{
-				return this._LOAIBL;
-			}
-			set
-			{
-				if ((this._LOAIBL != value))
-				{
-					this.OnLOAIBLChanging(value);
-					this.SendPropertyChanging();
-					this._LOAIBL = value;
-					this.SendPropertyChanged("LOAIBL");
-					this.OnLOAIBLChanged();
 				}
 			}
 		}

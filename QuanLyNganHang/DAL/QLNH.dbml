@@ -35,7 +35,6 @@
       <Column Name="MANV" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="SOTIEN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="MANGOAITE" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="LOAIBL" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="MOTA" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="TinhTrangXoa" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />

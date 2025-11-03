@@ -24,8 +24,72 @@ namespace DAL
             IQueryable BL = from bl in db.BIENLAIs
                             join gd in db.GIAODICHes on bl.MAGD equals gd.MAGD
                             join lgd in db.LOAIGDs on gd.MALOAIGD equals lgd.MALOAIGD
-                            select new { };
+                            join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
+                            select new { bl.MABL, 
+                                            lgd.TENLOAIGD, 
+                                            bl.MAKH, 
+                                            bl.MATK, 
+                                            bl.MANV, 
+                                            bl.SOTIEN, 
+                                            nt.TENNGOAITE, 
+                                            bl.MOTA, 
+                                            bl.TRANGTHAI, 
+                                            bl.TinhTrangXoa};
             return BL;
+        }
+
+        //Load danh sách biên lai user
+        public IQueryable LoadDSBienLaiuser()
+        {
+            IQueryable BL = from bl in db.BIENLAIs
+                            join gd in db.GIAODICHes on bl.MAGD equals gd.MAGD
+                            join lgd in db.LOAIGDs on gd.MALOAIGD equals lgd.MALOAIGD
+                            join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
+                            select new
+                            {
+                                bl.MABL,
+                                lgd.TENLOAIGD,
+                                bl.MAKH,
+                                bl.MATK,
+                                bl.MANV,
+                                bl.SOTIEN,
+                                nt.TENNGOAITE,
+                                bl.MOTA,
+                                bl.TRANGTHAI
+                            };
+            return BL;
+        }
+
+        //Load danh sách khách hàng
+        public IQueryable LoadDSKH()
+        {
+            IQueryable KH = from kh in db.KHACHHANGs
+                            select new { kh.MAKH, kh.TENKH };
+            return KH;
+        }
+
+        //Load danh sách nhân viên
+        public IQueryable LoadDSNV()
+        {
+            IQueryable NV = from nv in db.NHANVIENs
+                            select new { nv.MANV, nv.TENNV };
+            return NV;
+        }
+
+        //Load tên giao dịch
+        public IQueryable LoadDSTenGD()
+        {
+            IQueryable ds = from gd in db.LOAIGDs
+                            select gd.TENLOAIGD;
+            return ds;
+        }
+
+        //Load tên ngoại tệ
+        public IQueryable LoadDSTenNT()
+        {
+            IQueryable ds = from nt in db.NGOAITEs
+                            select nt.TENNGOAITE;
+            return ds;
         }
 
         //Thêm biên lai
@@ -47,7 +111,6 @@ namespace DAL
                         MANV = et.MaNV,
                         SOTIEN = et.SoTien,
                         MANGOAITE = et.MaNgoaiTe,
-                        LOAIBL = et.LoaiBL,
                         MOTA = et.MoTa,
                         TRANGTHAI = et.TrangThai,
                         TinhTrangXoa = et.TinhTrangXoa
@@ -86,7 +149,6 @@ namespace DAL
                     change.MANV = et.MaNV;
                     change.SOTIEN = et.SoTien;
                     change.MANGOAITE = et.MaNgoaiTe;
-                    change.LOAIBL = et.LoaiBL;
                     change.MOTA = et.MoTa;
                     change.TRANGTHAI = et.TrangThai;
                     db.SubmitChanges();
