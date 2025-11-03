@@ -48,7 +48,6 @@
             this.txt_CccdKH = new System.Windows.Forms.TextBox();
             this.txt_CccdNV = new System.Windows.Forms.TextBox();
             this.panel_ThongTin1 = new System.Windows.Forms.Panel();
-            this.btn_HuyAn = new System.Windows.Forms.Button();
             this.btn_Lammoi = new System.Windows.Forms.Button();
             this.panel_NhanVien = new System.Windows.Forms.Panel();
             this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
@@ -56,6 +55,7 @@
             this.dgv_KhachHang = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.btn_HuyAn = new System.Windows.Forms.Button();
             this.panel_HopDong = new System.Windows.Forms.Panel();
             this.dgv_HopDong = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
@@ -180,6 +180,7 @@
             this.dtp_NgayKy.Location = new System.Drawing.Point(147, 68);
             this.dtp_NgayKy.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_NgayKy.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
+            this.dtp_NgayKy.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayKy.Name = "dtp_NgayKy";
             this.dtp_NgayKy.Size = new System.Drawing.Size(372, 29);
             this.dtp_NgayKy.TabIndex = 14;
@@ -196,6 +197,7 @@
             this.dtp_NgayHetHan.Location = new System.Drawing.Point(147, 99);
             this.dtp_NgayHetHan.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_NgayHetHan.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
+            this.dtp_NgayHetHan.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayHetHan.Name = "dtp_NgayHetHan";
             this.dtp_NgayHetHan.Size = new System.Drawing.Size(372, 29);
             this.dtp_NgayHetHan.TabIndex = 15;
@@ -276,27 +278,6 @@
             this.panel_ThongTin1.Name = "panel_ThongTin1";
             this.panel_ThongTin1.Size = new System.Drawing.Size(527, 614);
             this.panel_ThongTin1.TabIndex = 23;
-            // 
-            // btn_HuyAn
-            // 
-            this.btn_HuyAn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
-            this.btn_HuyAn.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuyAn.Image")));
-            this.btn_HuyAn.Location = new System.Drawing.Point(202, 669);
-            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_HuyAn.Name = "btn_HuyAn";
-            this.btn_HuyAn.Size = new System.Drawing.Size(96, 40);
-            this.btn_HuyAn.TabIndex = 61;
-            this.btn_HuyAn.Text = "Hủy Xóa";
-            this.btn_HuyAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_HuyAn.UseVisualStyleBackColor = false;
-            this.btn_HuyAn.Visible = false;
-            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
             // 
             // btn_Lammoi
             // 
@@ -425,6 +406,27 @@
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // btn_HuyAn
+            // 
+            this.btn_HuyAn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
+            this.btn_HuyAn.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuyAn.Image")));
+            this.btn_HuyAn.Location = new System.Drawing.Point(202, 669);
+            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_HuyAn.Name = "btn_HuyAn";
+            this.btn_HuyAn.Size = new System.Drawing.Size(96, 40);
+            this.btn_HuyAn.TabIndex = 61;
+            this.btn_HuyAn.Text = "Hủy Xóa";
+            this.btn_HuyAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_HuyAn.UseVisualStyleBackColor = false;
+            this.btn_HuyAn.Visible = false;
+            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
+            // 
             // panel_HopDong
             // 
             this.panel_HopDong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -473,6 +475,7 @@
             // 
             // Frm_HopDong
             // 
+            this.AcceptButton = this.btnThem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 700);

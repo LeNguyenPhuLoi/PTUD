@@ -47,6 +47,7 @@
     <Compile Include="BUS_ChuyenKhoan.cs" />
     <Compile Include="BUS_GiaoDich.cs" />
     <Compile Include="BUS_HopDong.cs" />
+    <Compile Include="BUS_HoTro.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_KhoanVay.cs" />
     <Compile Include="BUS_KhuyenMai.cs" />
