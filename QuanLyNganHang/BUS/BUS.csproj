@@ -59,6 +59,7 @@
     <Compile Include="BUS_LoaiTaiKhoan.cs" />
     <Compile Include="BUS_NgoaiTe.cs" />
     <Compile Include="BUS_NhanVien.cs" />
+    <Compile Include="BUS_NoiQuy.cs" />
     <Compile Include="BUS_PhongBan.cs" />
     <Compile Include="BUS_TaiKhoan.cs" />
     <Compile Include="BUS_TKDangNhap.cs" />

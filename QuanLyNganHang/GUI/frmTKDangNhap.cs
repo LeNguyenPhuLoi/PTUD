@@ -22,6 +22,33 @@ namespace GUI
 
         private void frmTKDangNhap_Load(object sender, EventArgs e)
         {
+            //ko doi mau khi chon vao
+            dgvTaiKhoanDangNhap.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            //bỏ tiêu đề cột trống
+            dgvTaiKhoanDangNhap.RowHeadersVisible = false;
+            // Màu nền khi chọn ô (dòng)
+            dgvTaiKhoanDangNhap.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
+
+            // Cỡ chữ cho toàn bộ lưới
+            dgvTaiKhoanDangNhap.Font = new Font("Segoe UI", 12);
+
+            // Cỡ chữ cho tiêu đề cột
+            dgvTaiKhoanDangNhap.EnableHeadersVisualStyles = false; // Cho phép dùng style tùy chỉnh
+            dgvTaiKhoanDangNhap.ColumnHeadersDefaultCellStyle.BackColor = Color.DodgerBlue;
+            dgvTaiKhoanDangNhap.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvTaiKhoanDangNhap.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 13, FontStyle.Bold);
+
+            // Xem kẽ màu dòng
+            dgvTaiKhoanDangNhap.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvTaiKhoanDangNhap.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
+
+            // Cỡ chữ cho ô dữ liệu
+            dgvTaiKhoanDangNhap.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+
+            // Canh giữa dữ liệu nếu cần
+            dgvTaiKhoanDangNhap.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
             dgvTaiKhoanDangNhap.DataSource = bustkdn.LoadTKL();
             dgvMaNV.DataSource = bustkdn.LoadDSNV();
         }
