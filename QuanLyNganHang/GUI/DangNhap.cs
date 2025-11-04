@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using BUS;
-//using ET;
+
 
 namespace GUI
 {
@@ -18,7 +18,7 @@ namespace GUI
         {
             InitializeComponent();
         }
-        //BUS_DangNhap bs = new BUS_DangNhap();
+        BUS_DangNhap bs = new BUS_DangNhap();
         public Form NextForm { get; set; } // Lưu form tiếp theo
 
 
@@ -39,23 +39,41 @@ namespace GUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            if (txtMaDN.Text == "ADMIN" && txtPass.Text == "1")
+            string username = txtMaDN.Text;
+            string password = txtPass.Text;
+
+            // Kiểm tra thông tin đăng nhập
+            var account = bs.DangNhap(username, password);
+            if (account != null)
             {
-                NextForm = new frmMainAddmin();
-                this.DialogResult = DialogResult.OK; // báo cho Program biết đăng nhập thành công
-            }
-            else if (txtMaDN.Text == "USER" && txtPass.Text == "1")
-            {
-                NextForm = new Frm_MainUser();
+
+                if (bs.IsAdmin(account))
+                {
+                    NextForm = new frmMainAddmin();
+                }
+                else if (bs.IsNhanVien(account))
+                {
+                    NextForm = new Frm_MainUser();
+                }
+                else
+                {
+                    MessageBox.Show("Không xác định quyền người dùng.");
+                    return;
+                }
+
+
+                // Đăng nhập thành công
+                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!",
-                                "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-                return;
+                // Đăng nhập thất bại
+                MessageBox.Show("Vui lòng nhập đúng tài khoản và mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPass.Clear();
+                txtMaDN.Clear();
+                txtMaDN.Focus();
             }
         }
 

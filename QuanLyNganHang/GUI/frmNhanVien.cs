@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 using System.Windows.Forms;
-using System.IO;
 
 namespace GUI
 {
@@ -56,6 +57,7 @@ namespace GUI
             AddToCombo(bUS.LoadDSPB(), cboMaPB);
             AddToCombo(bUS.LoadDSCN(), cboMaCN);
             btnHoanTac.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
+            dtpNgaySinh.MinDate = DateTime.Now.AddYears(-40); // tối đa 40 tuổi
             dtpNgaySinh.MaxDate = DateTime.Now.AddYears(-18);
             btnHoanTac_Click(sender, e);
         }
@@ -200,6 +202,7 @@ namespace GUI
 
         private void dgvNhanVien_Click(object sender, EventArgs e)
         {
+            string message;
             try
             {
                 int dong = dgvNhanVien.CurrentCell.RowIndex;
@@ -377,25 +380,23 @@ namespace GUI
             txtTenNV.BackColor = Color.White;
         }
 
-        private bool KiemTraTuoiHopLe(DateTimePicker dtp, out string error)
+        private bool KiemTraTuoiHopLe(DateTime ngaySinh, out string error)
         {
             error = string.Empty;
-            DateTime ngaySinh = dtp.Value;
             int tuoi = DateTime.Now.Year - ngaySinh.Year;
 
-            // Nếu chưa đến sinh nhật năm nay thì trừ 1
             if (DateTime.Now.Date < ngaySinh.AddYears(tuoi))
                 tuoi--;
 
-            if (tuoi < 18)
+            if (tuoi < 18 || tuoi > 40)
             {
-                error = "Nhân viên phải đủ 18 tuổi trở lên!";
-                dtp.Focus();
+                error = "Tuổi của nhân viên phải từ 18 đến 40!";
                 return false;
             }
 
             return true;
         }
+
 
 
         private void txtLuong_Leave(object sender, EventArgs e)
@@ -427,7 +428,7 @@ namespace GUI
         private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
         {
             string error;
-            if (!KiemTraTuoiHopLe(dtpNgaySinh, out error))
+            if (!KiemTraTuoiHopLe(dtpNgaySinh.Value, out error))
             {
                 errorProvider1.SetError(dtpNgaySinh, error);
                 dtpNgaySinh.CalendarForeColor = Color.Red;
@@ -438,5 +439,7 @@ namespace GUI
                 dtpNgaySinh.CalendarForeColor = Color.Black;
             }
         }
+
+
     }
 }
