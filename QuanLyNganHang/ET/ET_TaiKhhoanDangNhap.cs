@@ -9,7 +9,7 @@ namespace ET
 {
     public class ET_TaiKhhoanDangNhap
     {
-        public ET_TaiKhhoanDangNhap(string maDN, string pass, string quyen, string maNV, bool trangThai)
+        public ET_TaiKhhoanDangNhap(string maDN, string pass, string quyen, string maNV, bool? trangThai)
         {
             MaDN = maDN;
             Pass = pass;
@@ -22,6 +22,6 @@ namespace ET
         public string Pass { get; set; }
         public string Quyen { get; set; }
         public string MaNV { get; set; }
-        public bool TrangThai { get; set; }
+        public bool? TrangThai { get; set; }
     }
 }

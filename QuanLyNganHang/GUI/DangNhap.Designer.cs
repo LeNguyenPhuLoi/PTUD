@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(847, 37);
+            this.panel1.Size = new System.Drawing.Size(614, 37);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -69,7 +69,7 @@
             this.btnZoom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZoom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZoom.ForeColor = System.Drawing.Color.White;
-            this.btnZoom.Location = new System.Drawing.Point(771, 1);
+            this.btnZoom.Location = new System.Drawing.Point(538, 1);
             this.btnZoom.Name = "btnZoom";
             this.btnZoom.Size = new System.Drawing.Size(35, 35);
             this.btnZoom.TabIndex = 6;
@@ -84,7 +84,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(809, 1);
+            this.btnClose.Location = new System.Drawing.Point(576, 1);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(35, 35);
             this.btnClose.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             // txtMaDN
             // 
-            this.txtMaDN.Location = new System.Drawing.Point(42, 101);
+            this.txtMaDN.Location = new System.Drawing.Point(30, 101);
             this.txtMaDN.Name = "txtMaDN";
             this.txtMaDN.Size = new System.Drawing.Size(260, 27);
             this.txtMaDN.TabIndex = 2;
@@ -122,9 +122,9 @@
             this.panel2.Controls.Add(this.txtMaDN);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(32, 129);
+            this.panel2.Location = new System.Drawing.Point(16, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(334, 316);
+            this.panel2.Size = new System.Drawing.Size(306, 316);
             this.panel2.TabIndex = 4;
             // 
             // showpass
@@ -133,7 +133,7 @@
             this.showpass.AutoSize = true;
             this.showpass.BackColor = System.Drawing.Color.Transparent;
             this.showpass.ForeColor = System.Drawing.Color.Silver;
-            this.showpass.Location = new System.Drawing.Point(106, 199);
+            this.showpass.Location = new System.Drawing.Point(92, 199);
             this.showpass.Name = "showpass";
             this.showpass.Size = new System.Drawing.Size(132, 24);
             this.showpass.TabIndex = 9;
@@ -147,7 +147,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.DisabledLinkColor = System.Drawing.Color.LightGray;
             this.linkLabel2.LinkColor = System.Drawing.Color.DarkGray;
-            this.linkLabel2.Location = new System.Drawing.Point(102, 281);
+            this.linkLabel2.Location = new System.Drawing.Point(88, 281);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(154, 20);
             this.linkLabel2.TabIndex = 8;
@@ -162,7 +162,7 @@
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(85, 230);
+            this.btnLogin.Location = new System.Drawing.Point(71, 230);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(155, 39);
             this.btnLogin.TabIndex = 1;
@@ -174,7 +174,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(27, 140);
+            this.label4.Location = new System.Drawing.Point(15, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 6;
@@ -182,7 +182,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(42, 163);
+            this.txtPass.Location = new System.Drawing.Point(30, 163);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(260, 27);
             this.txtPass.TabIndex = 5;
@@ -194,7 +194,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(132, 20);
+            this.label1.Location = new System.Drawing.Point(120, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 3;
@@ -204,7 +204,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(27, 78);
+            this.label3.Location = new System.Drawing.Point(15, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 4;
@@ -217,7 +217,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(847, 515);
+            this.pictureBox1.Size = new System.Drawing.Size(614, 358);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -228,7 +228,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(847, 552);
+            this.ClientSize = new System.Drawing.Size(614, 395);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
@@ -263,10 +263,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnZoom;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.CheckBox showpass;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
