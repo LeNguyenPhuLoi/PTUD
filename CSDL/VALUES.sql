@@ -148,3 +148,10 @@ VALUES
 ('BL001', 'GD001', 'KH001', 'TK001', 'NV0001', 5000000, 'NT01', N'Khách hàng nộp tiền mặt', N'Đã in', N'Hoạt Động'),
 ('BL002', 'GD002', 'KH002', 'TK002', 'NV0002', 12000000, 'NT02', N'Thanh toán hóa đơn', N'Đã in', N'Hoạt Động'),
 ('BL003', 'GD003', 'KH003', 'TK003', 'NV0003', 8000000, 'NT03', N'Thanh toán dịch vụ', N'Chưa in', N'Hoạt Động');
+
+--LOGIN
+GO
+INSERT INTO DANGNHAP(MADN,PASS,QUYEN,MANV,TRANGTHAI)
+VALUES
+('admin01', 'admin@123', 'ADMIN', 'NV0003',1),
+('anlt', 'an@123', 'NHANVIEN', 'NV0001',1);

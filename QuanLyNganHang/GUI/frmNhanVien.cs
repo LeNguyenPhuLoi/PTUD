@@ -202,7 +202,6 @@ namespace GUI
 
         private void dgvNhanVien_Click(object sender, EventArgs e)
         {
-            string message;
             try
             {
                 int dong = dgvNhanVien.CurrentCell.RowIndex;
