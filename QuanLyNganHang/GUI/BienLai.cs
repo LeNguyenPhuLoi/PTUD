@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -46,6 +47,9 @@ namespace GUI
             dgvmakh.DataSource = bUS_BienLai.LoadDSKH();
             dgvmanv.DataSource = bUS_BienLai.LoadDSNV();
             HienThiDS();
+            cbomagd.SelectedIndex = 0;
+            cbomant.SelectedIndex = 0;
+            cbomatk.SelectedIndex = -1;
         }
 
         public void AddToCombo(IQueryable list, ComboBox c)
@@ -77,22 +81,347 @@ namespace GUI
         {
             if (this.MdiParent.Name == "frmMainAddmin")
             {
-                btnXoa.Visible = true;
                 btn_HuyAn.Visible = true;
                 dgvbienlai.DataSource = bUS_BienLai.LoadDSBienLai();
             }
             else
             {
                 dgvbienlai.DataSource = bUS_BienLai.LoadDSBienLaiuser();
-                btnXoa.Visible = false;
             }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                string TrangThai = "Hoạt Động";
+                ET_BienLai ck = new ET_BienLai(bUS_BienLai.DemMa(),
+                                                       bUS_BienLai.LayTenGD(cbomagd.Text),
+                                                       txtmakh.Text,
+                                                       cbomatk.Text,
+                                                       txtmanv.Text,
+                                                       decimal.Parse(txtsotien.Text),
+                                                       bUS_BienLai.LayTenNT(cbomant.Text),
+                                                       rtxtmota.Text,
+                                                       cbotrangthai.Text,                            
+                                                       TrangThai);
+                
+                if (bUS_BienLai.ThemBienLai(ck) == true)
+                {
+                    MessageBox.Show("Thêm biên lai thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm biên lai thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            HienThiDS();
         }
 
-        
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string TrangThai = "Hoạt Động";
+                ET_BienLai ck = new ET_BienLai(txtmabl.Text,
+                                                       bUS_BienLai.LayTenGD(cbomagd.Text),
+                                                       txtmakh.Text,
+                                                       cbomatk.Text,
+                                                       txtmanv.Text,
+                                                       decimal.Parse(txtsotien.Text),
+                                                       bUS_BienLai.LayTenNT(cbomant.Text),
+                                                       rtxtmota.Text,
+                                                       cbotrangthai.Text,
+                                                       TrangThai);
+
+                if (bUS_BienLai.SuaBienLai(ck) == true)
+                {
+                    MessageBox.Show("Sửa biên lai thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa biên lai thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            HienThiDS();
+        }
+
+        private string maKHCu = "";
+        private void txtmakh_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtmakh.Text))
+            {
+                errorProvider1.SetError(txtmakh, "");
+                txtmakh.BackColor = Color.White;
+                return;
+            }
+            string maKH = txtmakh.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaKH(maKH))
+            {
+                txtmakh.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtmakh, "Mã khách hàng không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtmakh.Focus();
+                return;
+            }
+            else
+            {
+                txtmakh.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtmakh, "");
+
+            string maKHmoi = txtmakh.Text.Trim();
+
+            if (maKHmoi != maKHCu) // Nếu khác giá trị cũ
+            {
+                maKHCu = maKHmoi; // Cập nhật giá trị mới
+
+                // Xóa toàn bộ dữ liệu trong ComboBox
+                cbomatk.Items.Clear();
+
+                // Nếu muốn load mới khi khác thì bật dòng dưới:
+                AddToCombo(bUS_BienLai.LoadDSTKtheoMa(maKHmoi), cbomatk);
+            }
+        }
+
+        private void dgvmakh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int dong = dgvmakh.CurrentCell.RowIndex;
+                txtmakh.Text = dgvmakh.Rows[dong].Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+        }
+
+        private void dgvmanv_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int dong = dgvmanv.CurrentCell.RowIndex;
+                txtmanv.Text = dgvmanv.Rows[dong].Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+        }
+
+        private void dgvbienlai_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int dong = dgvbienlai.CurrentCell.RowIndex;
+                txtmabl.Text = dgvbienlai.Rows[dong].Cells[0].Value.ToString();
+                cbomagd.Text = dgvbienlai.Rows[dong].Cells[1].Value.ToString();
+                txtmakh.Text = dgvbienlai.Rows[dong].Cells[2].Value.ToString();
+                cbomatk.Text = dgvbienlai.Rows[dong].Cells[3].Value.ToString();
+                txtmanv.Text = dgvbienlai.Rows[dong].Cells[4].Value.ToString();
+                txtsotien.Text = dgvbienlai.Rows[dong].Cells[5].Value.ToString();
+                cbomant.Text = dgvbienlai.Rows[dong].Cells[6].Value.ToString();
+                rtxtmota.Text = dgvbienlai.Rows[dong].Cells[7].Value.ToString();
+                cbotrangthai.Text = dgvbienlai.Rows[dong].Cells[8].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string TrangThai = "Ngừng Hoạt Động";
+                DialogResult = MessageBox.Show("Bạn có muốn xóa?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    ET_BienLai ck = new ET_BienLai(txtmabl.Text,
+                                                       bUS_BienLai.LayTenGD(cbomagd.Text),
+                                                       txtmakh.Text,
+                                                       cbomatk.Text,
+                                                       txtmanv.Text,
+                                                       decimal.Parse(txtsotien.Text),
+                                                       bUS_BienLai.LayTenNT(cbomant.Text),
+                                                       rtxtmota.Text,
+                                                       cbotrangthai.Text,
+                                                       TrangThai);
+                    if (bUS_BienLai.TrangThaiAn(ck) == true)
+                    {
+                        MessageBox.Show("Xóa biên lai thành công!");
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa biên lai thất bại!");
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            HienThiDS();
+        }
+
+        private void btn_HuyAn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string TrangThai = "Hoạt Động";
+                ET_BienLai ck = new ET_BienLai(txtmabl.Text,
+                                                       bUS_BienLai.LayTenGD(cbomagd.Text),
+                                                       txtmakh.Text,
+                                                       cbomatk.Text,
+                                                       txtmanv.Text,
+                                                       decimal.Parse(txtsotien.Text),
+                                                       bUS_BienLai.LayTenNT(cbomant.Text),
+                                                       rtxtmota.Text,
+                                                       cbotrangthai.Text,
+                                                       TrangThai);
+                if (bUS_BienLai.TrangThaiAn(ck) == true)
+                {
+                    MessageBox.Show("Hủy ẩn biên lai thành công!");
+                    Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Hủy ẩn biên lai thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
+            HienThiDS();
+        }
+
+        //hàm kiểm tra định dạng mã khách hàng (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaKH(string maKH)
+        {
+            bool flag = false;
+            string pattern = @"^KH\d{3,8}$";
+            if (string.IsNullOrWhiteSpace(maKH))
+                return flag;
+            if (Regex.IsMatch(maKH, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mã nhân viên (10 ký tự, không ký tự đặc biệt, không khoảng trống)
+        private bool KiemTraDinhDangMaNV(string maNV)
+        {
+            bool flag = false;
+            string pattern = @"^NV\d{4,8}$";
+            if (string.IsNullOrWhiteSpace(maNV))
+                return flag;
+            if (Regex.IsMatch(maNV, pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng số tiền (không chữ, không ký tự đặc biệt)
+        private bool KiemTraDinhDangTien(string tien)
+        {
+            bool flag = false;
+            string pattern = @"^\d{1,9}$";
+            if (string.IsNullOrWhiteSpace(tien))
+                return flag;
+            if (Regex.IsMatch(tien.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        //hàm kiểm tra định dạng mô tả (chuỗi 100 ký tự, không ký tự đặc biệt)
+        private bool KiemTraDinhDangMT(string mota)
+        {
+            bool flag = false;
+            string pattern = @"^[a-zA-Z0-9À-ỹ\s,.-]{1,500}$";
+            if (string.IsNullOrWhiteSpace(mota))
+                return flag;
+            if (Regex.IsMatch(mota.Trim(), pattern))
+                flag = true;
+            return flag;
+        }
+
+        private void txtmanv_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtmanv.Text))
+            {
+                errorProvider1.SetError(txtmanv, "");
+                txtmanv.BackColor = Color.White;
+                return;
+            }
+            string maNV = txtmanv.Text.Trim().ToUpper();
+            if (!KiemTraDinhDangMaNV(maNV))
+            {
+                txtmanv.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtmanv, "Mã nhân viên không được bỏ trống hoặc ghi ký tự đặc biệt");
+                txtmanv.Focus();
+                return;
+            }
+            else
+            {
+                txtmanv.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtmanv, "");
+        }
+
+        private void txtsotien_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtsotien.Text))
+            {
+                errorProvider1.SetError(txtsotien, "");
+                txtsotien.BackColor = Color.White;
+                return;
+            }
+            if (!KiemTraDinhDangTien(txtsotien.Text))
+            {
+                txtsotien.BackColor = Color.LightCoral;
+                errorProvider1.SetError(txtsotien, "Số tiền không được bỏ trống, ghi ký tự đặc biệt hoặc ghi chữ");
+                txtsotien.Focus();
+                return;
+            }
+            else
+            {
+                txtsotien.BackColor = Color.White;
+            }
+            errorProvider1.SetError(txtsotien, "");
+        }
+
+        private void rtxtmota_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(rtxtmota.Text))
+            {
+                errorProvider1.SetError(rtxtmota, "");
+                rtxtmota.BackColor = Color.White;
+                return;
+            }
+            if (!KiemTraDinhDangMT(rtxtmota.Text))
+            {
+                rtxtmota.BackColor = Color.LightCoral;
+                errorProvider1.SetError(rtxtmota, "Mô tả không được ghi ký tự đặc biệt");
+                rtxtmota.Focus();
+                return;
+            }
+            else
+            {
+                rtxtmota.BackColor = Color.White;
+            }
+            errorProvider1.SetError(rtxtmota, "");
+        }
     }
 }

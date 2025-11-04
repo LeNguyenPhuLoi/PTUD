@@ -48,6 +48,24 @@ namespace BUS
             return bl.LoadDSTenNT();
         }
 
+        //Gọi hàm lấy tên giao dịch
+        public string LayTenGD(string ma)
+        {
+            return bl.LayTenGD(ma);
+        }
+
+        //Gọi hàm lấy tên ngoại tệ
+        public string LayTenNT(string ma)
+        {
+            return bl.LayTenNT(ma);
+        }
+
+        //Load danh sách tài khoản theo mã
+        public IQueryable LoadDSTKtheoMa(string ma)
+        {
+            return bl.LoadDSTKtheoMa(ma);
+        }
+
         //Gọi hàm thêm biên lai
         public bool ThemBienLai(ET_BienLai et)
         {

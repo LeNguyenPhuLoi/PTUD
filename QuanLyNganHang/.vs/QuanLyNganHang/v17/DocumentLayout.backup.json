@@ -1,26 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-3-2025\\ptud\\quanlynganhang\\gui\\frm_hotro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_hotro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\bienlai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\bienlai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-3-2025\\ptud\\quanlynganhang\\gui\\frm_hotro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_hotro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-3-2025\\ptud\\quanlynganhang\\gui\\frm_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B7F37A1-53AD-41EE-B9EE-5653860980EE}|BUS\\BUS.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-3-2025\\ptud\\quanlynganhang\\bus\\bus_hotro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B7F37A1-53AD-41EE-B9EE-5653860980EE}|BUS\\BUS.csproj|solutionrelative:bus\\bus_hotro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\11-3-2025\\ptud\\quanlynganhang\\dal\\dal_hotro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\dal_hotro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\k\u00EC 5\\ptud 1\\ptud\\quanlynganhang\\gui\\bienlai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\bienlai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,73 +18,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DAL_HoTro.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\DAL\\DAL_HoTro.cs",
-              "RelativeDocumentMoniker": "DAL\\DAL_HoTro.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\DAL\\DAL_HoTro.cs",
-              "RelativeToolTip": "DAL\\DAL_HoTro.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "BienLai.cs",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\BienLai.cs",
+              "RelativeDocumentMoniker": "GUI\\BienLai.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\BienLai.cs*",
+              "RelativeToolTip": "GUI\\BienLai.cs*",
+              "ViewState": "AgIAAFwBAAAAAAAAAAA+wHABAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T15:39:44.056Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BUS_HoTro.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\BUS\\BUS_HoTro.cs",
-              "RelativeDocumentMoniker": "BUS\\BUS_HoTro.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\BUS\\BUS_HoTro.cs",
-              "RelativeToolTip": "BUS\\BUS_HoTro.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T15:44:38.622Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Frm_HopDong.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HopDong.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_HopDong.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HopDong.cs",
-              "RelativeToolTip": "GUI\\Frm_HopDong.cs",
-              "ViewState": "AgIAALYBAAAAAAAAAAAIwNUBAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T16:09:09.615Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-11-04T02:18:46.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Frm_HoTro.cs",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HoTro.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_HoTro.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HoTro.cs",
-              "RelativeToolTip": "GUI\\Frm_HoTro.cs",
-              "ViewState": "AgIAAIwBAAAAAAAAAAAswKMBAAA9AAAAAAAAAA==",
+              "Title": "BienLai.cs [Design]",
+              "DocumentMoniker": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\BienLai.cs",
+              "RelativeDocumentMoniker": "GUI\\BienLai.cs",
+              "ToolTip": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\GUI\\BienLai.cs [Design]*",
+              "RelativeToolTip": "GUI\\BienLai.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T16:06:37.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Frm_HoTro.cs [Design]",
-              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HoTro.cs",
-              "RelativeDocumentMoniker": "GUI\\Frm_HoTro.cs",
-              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\11-3-2025\\PTUD\\QuanLyNganHang\\GUI\\Frm_HoTro.cs [Design]",
-              "RelativeToolTip": "GUI\\Frm_HoTro.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T15:45:13.381Z",
+              "WhenOpened": "2025-11-04T02:18:45.098Z",
               "EditorCaption": " [Design]"
             }
           ]

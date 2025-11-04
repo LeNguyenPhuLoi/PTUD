@@ -8,7 +8,7 @@ namespace ET
 {
     public class ET_BienLai
     {
-        public ET_BienLai(string maBL, string maGD, string maKH, string maTK, string maNV, decimal soTien, string maNgoaiTe, string loaiBL, string moTa, string trangThai, string tinhTrangXoa)
+        public ET_BienLai(string maBL, string maGD, string maKH, string maTK, string maNV, decimal soTien, string maNgoaiTe, string moTa, string trangThai, string tinhTrangXoa)
         {
             MaBL = maBL;
             MaGD = maGD;
@@ -17,7 +17,6 @@ namespace ET
             MaNV = maNV;
             SoTien = soTien;
             MaNgoaiTe = maNgoaiTe;
-            LoaiBL = loaiBL;
             MoTa = moTa;
             TrangThai = trangThai;
             TinhTrangXoa = tinhTrangXoa;
@@ -30,7 +29,6 @@ namespace ET
         public string MaNV { get; set; }
         public decimal SoTien { get; set; }
         public string MaNgoaiTe { get; set; }
-        public string LoaiBL { get; set; }
         public string MoTa {  get; set; }
         public string TrangThai {  get; set; }
         public string TinhTrangXoa { get; set; }

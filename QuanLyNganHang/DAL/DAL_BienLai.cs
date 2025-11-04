@@ -25,16 +25,19 @@ namespace DAL
                             join gd in db.GIAODICHes on bl.MAGD equals gd.MAGD
                             join lgd in db.LOAIGDs on gd.MALOAIGD equals lgd.MALOAIGD
                             join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
-                            select new { bl.MABL, 
-                                            lgd.TENLOAIGD, 
-                                            bl.MAKH, 
-                                            bl.MATK, 
-                                            bl.MANV, 
-                                            bl.SOTIEN, 
-                                            nt.TENNGOAITE, 
-                                            bl.MOTA, 
-                                            bl.TRANGTHAI, 
-                                            bl.TinhTrangXoa};
+                            select new 
+                            { 
+                                bl.MABL, 
+                                lgd.TENLOAIGD, 
+                                bl.MAKH, 
+                                bl.MATK, 
+                                bl.MANV, 
+                                bl.SOTIEN, 
+                                nt.TENNGOAITE, 
+                                bl.MOTA, 
+                                bl.TRANGTHAI, 
+                                bl.TinhTrangXoa
+                            };
             return BL;
         }
 
@@ -45,6 +48,7 @@ namespace DAL
                             join gd in db.GIAODICHes on bl.MAGD equals gd.MAGD
                             join lgd in db.LOAIGDs on gd.MALOAIGD equals lgd.MALOAIGD
                             join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
+                            where bl.TinhTrangXoa == "Hoạt Động"
                             select new
                             {
                                 bl.MABL,
@@ -55,7 +59,8 @@ namespace DAL
                                 bl.SOTIEN,
                                 nt.TENNGOAITE,
                                 bl.MOTA,
-                                bl.TRANGTHAI
+                                bl.TRANGTHAI,
+                                bl.TinhTrangXoa
                             };
             return BL;
         }
@@ -89,6 +94,34 @@ namespace DAL
         {
             IQueryable ds = from nt in db.NGOAITEs
                             select nt.TENNGOAITE;
+            return ds;
+        }
+
+        //Lấy tên giao dịch
+        public string LayTenGD(string ten)
+        {
+            var ma = (from gd in db.GIAODICHes
+                      join lgd in db.LOAIGDs on gd.MALOAIGD equals lgd.MALOAIGD
+                       where lgd.TENLOAIGD == ten
+                       select gd.MAGD).FirstOrDefault();
+            return ma;
+        }
+
+        //Lấy tên ngoại tệ
+        public string LayTenNT(string ten)
+        {
+            var ma = (from nt in db.NGOAITEs
+                       where nt.TENNGOAITE == ten
+                       select nt.MANGOAITE).FirstOrDefault();
+            return ma;
+        }
+
+        //Load danh sách tài khoản
+        public IQueryable LoadDSTKtheoMa(string ma)
+        {
+            IQueryable ds = from tk in db.TAIKHOANs
+                            where tk.MAKH == ma
+                            select tk.MATK;
             return ds;
         }
 
