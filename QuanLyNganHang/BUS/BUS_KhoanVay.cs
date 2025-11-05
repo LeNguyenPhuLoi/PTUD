@@ -43,6 +43,12 @@ namespace BUS
             return kv.LoadDSLaiSuat();
         }
 
+        //gọi hàm số tháng
+        public int SoThang(string ma)
+        {
+            return kv.SoThang(ma);
+        }
+
         //gọi hàm thêm khoản vay
         public bool ThemKV(ET_KhoanVay et)
         {

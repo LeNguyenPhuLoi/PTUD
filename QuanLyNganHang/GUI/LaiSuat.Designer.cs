@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLaiSuat));
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.txtsothang = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cboKL = new System.Windows.Forms.ComboBox();
             this.txtLaiSuat = new System.Windows.Forms.TextBox();
@@ -39,7 +41,6 @@
             this.txtTenLoai = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtMaLS = new System.Windows.Forms.TextBox();
-            this.dgvlaisuat = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_HuyAn = new System.Windows.Forms.Button();
             this.btnHoanTac = new System.Windows.Forms.Button();
@@ -47,10 +48,11 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvlaisuat = new System.Windows.Forms.DataGridView();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -58,6 +60,8 @@
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.txtsothang);
+            this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Controls.Add(this.label6);
             this.pnlMain.Controls.Add(this.cboKL);
             this.pnlMain.Controls.Add(this.txtLaiSuat);
@@ -69,8 +73,30 @@
             this.pnlMain.Location = new System.Drawing.Point(13, 13);
             this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1050, 255);
+            this.pnlMain.Size = new System.Drawing.Size(1050, 305);
             this.pnlMain.TabIndex = 23;
+            // 
+            // txtsothang
+            // 
+            this.txtsothang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsothang.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtsothang.Location = new System.Drawing.Point(180, 260);
+            this.txtsothang.Margin = new System.Windows.Forms.Padding(4);
+            this.txtsothang.Name = "txtsothang";
+            this.txtsothang.Size = new System.Drawing.Size(514, 31);
+            this.txtsothang.TabIndex = 49;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(27, 258);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 31);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Số tháng: ";
             // 
             // label6
             // 
@@ -170,27 +196,6 @@
             this.txtMaLS.Visible = false;
             this.txtMaLS.TextChanged += new System.EventHandler(this.txtMaLS_TextChanged);
             // 
-            // dgvlaisuat
-            // 
-            this.dgvlaisuat.AllowUserToAddRows = false;
-            this.dgvlaisuat.AllowUserToResizeColumns = false;
-            this.dgvlaisuat.AllowUserToResizeRows = false;
-            this.dgvlaisuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
-            this.dgvlaisuat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlaisuat.Location = new System.Drawing.Point(13, 290);
-            this.dgvlaisuat.Name = "dgvlaisuat";
-            this.dgvlaisuat.RowHeadersVisible = false;
-            this.dgvlaisuat.RowHeadersWidth = 62;
-            this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlaisuat.Size = new System.Drawing.Size(1051, 132);
-            this.dgvlaisuat.TabIndex = 24;
-            this.dgvlaisuat.Click += new System.EventHandler(this.dgvlaisuat_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btn_HuyAn);
@@ -199,7 +204,7 @@
             this.panel4.Controls.Add(this.btnSua);
             this.panel4.Controls.Add(this.btnThem);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 428);
+            this.panel4.Location = new System.Drawing.Point(0, 508);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1076, 104);
             this.panel4.TabIndex = 50;
@@ -302,13 +307,35 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // dgvlaisuat
+            // 
+            this.dgvlaisuat.AllowUserToAddRows = false;
+            this.dgvlaisuat.AllowUserToResizeColumns = false;
+            this.dgvlaisuat.AllowUserToResizeRows = false;
+            this.dgvlaisuat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
+            this.dgvlaisuat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvlaisuat.Location = new System.Drawing.Point(13, 325);
+            this.dgvlaisuat.MultiSelect = false;
+            this.dgvlaisuat.Name = "dgvlaisuat";
+            this.dgvlaisuat.ReadOnly = true;
+            this.dgvlaisuat.RowHeadersVisible = false;
+            this.dgvlaisuat.RowHeadersWidth = 62;
+            this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvlaisuat.Size = new System.Drawing.Size(1050, 177);
+            this.dgvlaisuat.TabIndex = 53;
+            // 
             // frmLaiSuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1076, 532);
-            this.Controls.Add(this.panel4);
+            this.ClientSize = new System.Drawing.Size(1076, 612);
             this.Controls.Add(this.dgvlaisuat);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLaiSuat";
@@ -316,9 +343,9 @@
             this.Load += new System.EventHandler(this.frmLaiSuat_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,7 +361,6 @@
         private System.Windows.Forms.TextBox txtTenLoai;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtMaLS;
-        private System.Windows.Forms.DataGridView dgvlaisuat;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.Button btnSua;
@@ -342,5 +368,8 @@
         private System.Windows.Forms.Button btn_HuyAn;
         private System.Windows.Forms.Button btn_An;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox txtsothang;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvlaisuat;
     }
 }

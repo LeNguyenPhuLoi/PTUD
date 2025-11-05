@@ -55,6 +55,7 @@ namespace DAL
                         TENLOAIVAY = et.TenLoaiVay,
                         LAISUAT1 = et.LaiSuat,
                         KIEULAI = et.KieuLai,
+                        SOTHANG = et.SoThang,
                         TinhTrangXoa = et.TinhTrangXoa
                     };
                     db.LAISUATs.InsertOnSubmit(l);
@@ -88,6 +89,7 @@ namespace DAL
                     change.TENLOAIVAY = et.TenLoaiVay;
                     change.LAISUAT1 = et.LaiSuat;
                     change.KIEULAI = et.KieuLai;
+                    change.SOTHANG = et.SoThang;
 
                     db.SubmitChanges();
                     ss = true;

@@ -55,9 +55,21 @@ namespace DAL
         public IQueryable LoadDSLaiSuat()
         {
             IQueryable LS = from ls in db.LAISUATs
-                            select new { ls.MALAISUAT, ls.TENLOAIVAY, ls.LAISUAT1, ls.KIEULAI };
+                            select new { ls.MALAISUAT, ls.TENLOAIVAY, ls.LAISUAT1, ls.KIEULAI , ls.SOTHANG};
             return LS;
         }
+
+        //Lấy số tháng theo mã lãi suất
+
+        public int SoThang(string ma)
+        {
+            var thang = (from ls in db.LAISUATs
+                        where ls.MALAISUAT == ma
+                        select ls.SOTHANG).FirstOrDefault();
+                      
+            return thang ?? 0;
+        }
+
         //Thêm khoản vay
         public bool ThemKV(ET_KhoanVay et)
         {
@@ -78,6 +90,7 @@ namespace DAL
                         MAKH = et.MaKH,
                         MATK = et.MaTK,
                         SOTIENVAY = et.SoTienVay,
+                        TONGTIEN = et.TongTien,
                         NGAYVAY = et.NgayVay,
                         THOIHAN = et.ThoiHan,
                         TRANGTHAI = et.TrangThai,
@@ -136,6 +149,7 @@ namespace DAL
                     change.MAKH = et.MaKH;
                     change.MATK = et.MaTK;
                     change.SOTIENVAY = et.SoTienVay;
+                    change.TONGTIEN = et.TongTien;
                     change.NGAYVAY = et.NgayVay;
                     change.THOIHAN = et.ThoiHan;
                     change.TRANGTHAI = et.TrangThai;
