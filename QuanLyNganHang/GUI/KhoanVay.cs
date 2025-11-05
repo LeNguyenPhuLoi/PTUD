@@ -52,7 +52,8 @@ namespace GUI
             dgvtaikhoan.DataSource = bUS_KhoanVay.LoadDSTaiKhoan();
             dgvlaisuat.DataSource = bUS_KhoanVay.LoadDSLaiSuat();
             dtpNgayVay.MaxDate = DateTime.Now;
-            dtpThoiHan.MaxDate = DateTime.Now;
+            dtpNgayVay.Value = dtpNgayVay.MaxDate;
+            dtpThoiHan.Value = dtpThoiHan.MaxDate;
             cboTrangThai.SelectedIndex = 0;
             HienThiDS();
         }
@@ -84,8 +85,9 @@ namespace GUI
             txtMaTK.Clear();
             txtSoTienVay.Clear();
             cboTrangThai.SelectedIndex = 0;
-            dtpNgayVay.MaxDate = DateTime.Now;
-            dtpThoiHan.MaxDate = DateTime.Now;
+            dtpNgayVay.Value = dtpNgayVay.MaxDate;
+            dtpThoiHan.Value = dtpThoiHan.MaxDate;
+            txttongtien.Clear();
             txtMaLS.Clear();
         }
 
@@ -103,6 +105,7 @@ namespace GUI
                                                  txtMaKH.Text,
                                                  txtMaTK.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
+                                                 decimal.Parse(txttongtien.Text),
                                                  Convert.ToDateTime(dtpNgayVay.Text),
                                                  Convert.ToDateTime(dtpThoiHan.Text),
                                                  cboTrangThai.Text,
@@ -134,6 +137,7 @@ namespace GUI
                                                  txtMaKH.Text,
                                                  txtMaTK.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
+                                                 decimal.Parse(txttongtien.Text),
                                                  dtpNgayVay.Value,
                                                  dtpThoiHan.Value,
                                                  cboTrangThai.Text,
@@ -168,6 +172,7 @@ namespace GUI
                                                      txtMaKH.Text,
                                                      txtMaTK.Text,
                                                      decimal.Parse(txtSoTienVay.Text),
+                                                     decimal.Parse(txttongtien.Text),
                                                      dtpNgayVay.Value,
                                                      dtpThoiHan.Value,
                                                      cboTrangThai.Text,
@@ -200,10 +205,11 @@ namespace GUI
                 txtMaKH.Text = dgvKhoanVay.Rows[dong].Cells[1].Value.ToString();
                 txtMaTK.Text = dgvKhoanVay.Rows[dong].Cells[2].Value.ToString();
                 txtSoTienVay.Text = dgvKhoanVay.Rows[dong].Cells[3].Value.ToString();
-                dtpNgayVay.Text = dgvKhoanVay.Rows[dong].Cells[4].Value.ToString();
-                dtpThoiHan.Text = dgvKhoanVay.Rows[dong].Cells[5].Value.ToString();
-                cboTrangThai.Text = dgvKhoanVay.Rows[dong].Cells[6].Value.ToString();
-                txtMaLS.Text = dgvKhoanVay.Rows[dong].Cells[7].Value.ToString();
+                txttongtien.Text = dgvKhoanVay.Rows[dong].Cells[4].Value.ToString();
+                dtpNgayVay.Text = dgvKhoanVay.Rows[dong].Cells[5].Value.ToString();
+                dtpThoiHan.Text = dgvKhoanVay.Rows[dong].Cells[6].Value.ToString();
+                cboTrangThai.Text = dgvKhoanVay.Rows[dong].Cells[7].Value.ToString();
+                txtMaLS.Text = dgvKhoanVay.Rows[dong].Cells[8].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -262,6 +268,7 @@ namespace GUI
                                                                      txtMaKH.Text,
                                                                      txtMaTK.Text,
                                                                      decimal.Parse(txtSoTienVay.Text),
+                                                                     decimal.Parse(txttongtien.Text),
                                                                      dtpNgayVay.Value,
                                                                      dtpThoiHan.Value,
                                                                      cboTrangThai.Text,
@@ -298,6 +305,7 @@ namespace GUI
                                                  txtMaKH.Text,
                                                  txtMaTK.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
+                                                 decimal.Parse(txttongtien.Text),
                                                  dtpNgayVay.Value,
                                                  dtpThoiHan.Value,
                                                  cboTrangThai.Text,
@@ -330,6 +338,7 @@ namespace GUI
                                                  txtMaKH.Text,
                                                  txtMaTK.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
+                                                 decimal.Parse(txttongtien.Text),
                                                  dtpNgayVay.Value,
                                                  dtpThoiHan.Value,
                                                  cboTrangThai.Text,
@@ -490,6 +499,10 @@ namespace GUI
 
         private void txtMaLS_TextChanged(object sender, EventArgs e)
         {
+            int soThang = bUS_KhoanVay.SoThang(txtMaLS.Text);
+            DateTime ngayVay = dtpNgayVay.Value;
+            dtpThoiHan.Value = ngayVay.AddMonths(soThang);
+            TinhTienKhoanVay();
             if (string.IsNullOrWhiteSpace(txtMaLS.Text))
             {
                 errorProvider1.SetError(txtMaLS, "");
@@ -513,6 +526,7 @@ namespace GUI
 
         private void txtSoTienVay_TextChanged(object sender, EventArgs e)
         {
+            TinhTienKhoanVay();
             if (string.IsNullOrWhiteSpace(txtSoTienVay.Text))
             {
                 errorProvider1.SetError(txtSoTienVay, "");
@@ -531,6 +545,62 @@ namespace GUI
                 txtSoTienVay.BackColor = Color.White;
             }
             errorProvider1.SetError(txtSoTienVay, "");
+        }   
+
+        public void TinhTienKhoanVay()
+        {
+            try
+            {
+                if (!decimal.TryParse(txtSoTienVay.Text, out decimal soTienVay)) return;
+                if (string.IsNullOrEmpty(txtMaLS.Text)) return;
+
+                //Tính số tháng
+                DateTime ngayVay = dtpNgayVay.Value;
+                DateTime thoiHan = dtpThoiHan.Value;
+
+                int soThang = (thoiHan.Year - ngayVay.Year) * 12 + (thoiHan.Month - ngayVay.Month);
+
+                if (thoiHan.Day < ngayVay.Day)
+                    soThang--;
+
+                //Lấy lãi suất từ Datagridview
+                var dong = dgvlaisuat.Rows
+                    .Cast<DataGridViewRow>()
+                    .FirstOrDefault(r => r.Cells[0].Value?.ToString() == txtMaLS.Text);
+
+                if (dong == null) return;
+                    decimal laiSuat = Convert.ToDecimal(dong.Cells[2].Value); // LAISUAT
+                    string loaiLai = dong.Cells[3].Value.ToString(); // LOAIVAY: "THÁNG" hoặc "NĂM"
+
+                //Tính tiền
+                decimal tienGocThang = soTienVay / soThang;
+                decimal tienLaiThang = (loaiLai.ToUpper() == "Năm")
+                                        ? soTienVay * (laiSuat / 100) / 12
+                                        : soTienVay * (laiSuat / 100);
+
+                decimal tienHangThang = tienGocThang + tienLaiThang;
+                decimal tongTien = tienHangThang * soThang;
+
+                //Gắn vào textbox
+                txttongtien.Text = tongTien.ToString("N0");
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dtpNgayVay_ValueChanged(object sender, EventArgs e)
+        {
+            int soThang = bUS_KhoanVay.SoThang(txtMaLS.Text);
+            DateTime ngayVay = dtpNgayVay.Value;
+            dtpThoiHan.Value = ngayVay.AddMonths(soThang);
+            TinhTienKhoanVay();
+        }
+
+        private void dtpThoiHan_ValueChanged(object sender, EventArgs e)
+        {
+            TinhTienKhoanVay();
         }
     }
 }

@@ -48,6 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txttongtien = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.dgvlaisuat = new System.Windows.Forms.DataGridView();
             this.txtMaLS = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -357,6 +359,8 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.txttongtien);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dgvlaisuat);
             this.panel1.Controls.Add(this.txtMaLS);
             this.panel1.Controls.Add(this.label11);
@@ -371,6 +375,30 @@
             this.panel1.Size = new System.Drawing.Size(601, 385);
             this.panel1.TabIndex = 31;
             // 
+            // txttongtien
+            // 
+            this.txttongtien.AllowDrop = true;
+            this.txttongtien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttongtien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttongtien.Location = new System.Drawing.Point(203, 173);
+            this.txttongtien.Margin = new System.Windows.Forms.Padding(4);
+            this.txttongtien.Name = "txttongtien";
+            this.txttongtien.Size = new System.Drawing.Size(328, 30);
+            this.txttongtien.TabIndex = 36;
+            // 
+            // label2
+            // 
+            this.label2.AllowDrop = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(30, 169);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 33);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Tổng tiền:";
+            // 
             // dgvlaisuat
             // 
             this.dgvlaisuat.AllowDrop = true;
@@ -383,7 +411,7 @@
             this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
             this.dgvlaisuat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlaisuat.Location = new System.Drawing.Point(36, 212);
+            this.dgvlaisuat.Location = new System.Drawing.Point(36, 259);
             this.dgvlaisuat.MultiSelect = false;
             this.dgvlaisuat.Name = "dgvlaisuat";
             this.dgvlaisuat.ReadOnly = true;
@@ -401,7 +429,7 @@
             this.txtMaLS.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaLS.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLS.Location = new System.Drawing.Point(203, 175);
+            this.txtMaLS.Location = new System.Drawing.Point(203, 222);
             this.txtMaLS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaLS.Name = "txtMaLS";
             this.txtMaLS.Size = new System.Drawing.Size(328, 30);
@@ -426,6 +454,7 @@
             this.dtpThoiHan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpThoiHan.CustomFormat = "dd/MM/yyyy";
+            this.dtpThoiHan.Enabled = false;
             this.dtpThoiHan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpThoiHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpThoiHan.Location = new System.Drawing.Point(203, 65);
@@ -434,13 +463,14 @@
             this.dtpThoiHan.Size = new System.Drawing.Size(328, 30);
             this.dtpThoiHan.TabIndex = 22;
             this.dtpThoiHan.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
+            this.dtpThoiHan.ValueChanged += new System.EventHandler(this.dtpThoiHan_ValueChanged);
             // 
             // label8
             // 
             this.label8.AllowDrop = true;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 171);
+            this.label8.Location = new System.Drawing.Point(30, 218);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(160, 33);
@@ -453,6 +483,7 @@
             this.dtpNgayVay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayVay.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayVay.Enabled = false;
             this.dtpNgayVay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayVay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayVay.Location = new System.Drawing.Point(203, 18);
@@ -461,6 +492,7 @@
             this.dtpNgayVay.Size = new System.Drawing.Size(328, 30);
             this.dtpNgayVay.TabIndex = 21;
             this.dtpNgayVay.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
+            this.dtpNgayVay.ValueChanged += new System.EventHandler(this.dtpNgayVay_ValueChanged);
             // 
             // label1
             // 
@@ -637,5 +669,7 @@
         private System.Windows.Forms.Button btn_HuyAn;
         private System.Windows.Forms.Button btn_An;
         private System.Windows.Forms.Button btnxoauser;
+        private System.Windows.Forms.TextBox txttongtien;
+        private System.Windows.Forms.Label label2;
     }
 }

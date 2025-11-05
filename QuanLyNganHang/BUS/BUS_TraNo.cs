@@ -18,6 +18,18 @@ namespace BUS
             return tn.LoadDSTraNo();
         }
 
+        //Gọi hàm load danh sách trả nợ user
+        public IQueryable LoadDSTraNouser()
+        {
+            return tn.LoadDSTraNouser();    
+        }
+
+        //Gọi hàm load danh sách khoản vay
+        public IQueryable LoadDSKhoanVay()
+        {
+            return tn.LoadDSKhoanVay();
+        }
+
         //Gọi hàm thêm trả nợ
         public bool ThemTraNo(ET_TraNo et)
         {
@@ -34,6 +46,12 @@ namespace BUS
         public bool TrangThaiAn(ET_TraNo et)
         {
             return tn.TrangThaiAn(et);
+        }
+
+        //Gọi hàm đếm mã
+        public string DemMa()
+        {
+            return tn.DemMa();
         }
     }
 }

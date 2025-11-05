@@ -55,6 +55,7 @@ namespace GUI
                                                txtTenLoai.Text,
                                                decimal.Parse(txtLaiSuat.Text),
                                                cboKL.Text,
+                                               int.Parse(txtsothang.Text),
                                                TrangThai);
                 if (bUS_LaiSuat.ThemLaiSuat(ls) == true)
                 {
@@ -82,6 +83,7 @@ namespace GUI
                                                txtTenLoai.Text,
                                                decimal.Parse(txtLaiSuat.Text),
                                                cboKL.Text,
+                                               int.Parse(txtsothang.Text),
                                                TrangThai);
                 if (bUS_LaiSuat.SuaLaiSuat(ls) == true)
                 {
@@ -112,6 +114,7 @@ namespace GUI
                                                txtTenLoai.Text,
                                                decimal.Parse(txtLaiSuat.Text),
                                                cboKL.Text,
+                                               int.Parse(txtsothang.Text),
                                                TrangThai);
                     if (bUS_LaiSuat.TrangThaiAn(ck) == true)
                     {
@@ -140,6 +143,7 @@ namespace GUI
                                                txtTenLoai.Text,
                                                decimal.Parse(txtLaiSuat.Text),
                                                cboKL.Text,
+                                               int.Parse(txtsothang.Text),
                                                TrangThai);
                 if (bUS_LaiSuat.TrangThaiAn(ck) == true)
                 {
@@ -167,6 +171,7 @@ namespace GUI
                 txtTenLoai.Text = dgvlaisuat.Rows[dong].Cells[1].Value.ToString();
                 txtLaiSuat.Text = dgvlaisuat.Rows[dong].Cells[2].Value.ToString();
                 cboKL.Text = dgvlaisuat.Rows[dong].Cells[3].Value.ToString();
+                txtsothang.Text = dgvlaisuat.Rows[dong].Cells[4].Value.ToString();
             }
             catch (Exception ex)
             {

@@ -26,6 +26,23 @@ namespace DAL
             return TN;
         }
 
+        //Load danh sách trả nợ
+        public IQueryable LoadDSTraNouser()
+        {
+            IQueryable TN = from tn in db.TRANOs
+                            where tn.TinhTrangXoa == "Hoạt Động"
+                            select tn;
+            return TN;
+        }
+
+        //Load danh sách khoản vay
+        public IQueryable LoadDSKhoanVay()
+        {
+            IQueryable KV = from kv in db.KHOANVAYs
+                            select new { kv.MAVAY, kv.TONGTIEN, kv.MAKH};
+            return KV;
+        }
+
         //Thêm trả nợ
         public bool ThemTraNo(ET_TraNo et)
         {
@@ -46,6 +63,14 @@ namespace DAL
                         TinhTrangXoa = et.TinhTrangXoa
                     };
                     db.TRANOs.InsertOnSubmit(tn);
+
+                    var khoanVayTra = db.KHOANVAYs.FirstOrDefault(tk => tk.MAVAY == et.MaVay);
+
+                    if (khoanVayTra != null)
+                    {
+                        khoanVayTra.TONGTIEN = (khoanVayTra.TONGTIEN ?? 0) - (decimal)et.SoTienTra;
+                    }
+
                     db.SubmitChanges();
                     ss = true;
                 }
@@ -110,6 +135,17 @@ namespace DAL
                 Console.WriteLine("Lỗi" + ex.ToString());
             }
             return ss;
+        }
+
+        //Hàm tự đếm mã
+        public string DemMa()
+        {
+            int sl = (from tn in db.TRANOs
+                      select tn).Count(); // Đếm số lượng nhân viên
+
+            int dem = sl + 1;
+            string ma = "TN" + dem.ToString("D2");
+            return ma;
         }
     }
 }

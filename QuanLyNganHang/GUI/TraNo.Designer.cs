@@ -31,31 +31,31 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLichSuTraNo));
             this.dgvTraNo = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnHoanTac = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.txtMaLichSu = new System.Windows.Forms.TextBox();
+            this.txtmatn = new System.Windows.Forms.TextBox();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.dgvlaisuat = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dgvmakv = new System.Windows.Forms.DataGridView();
+            this.txtmakv = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpNgayTra = new System.Windows.Forms.DateTimePicker();
-            this.txtTienTra = new System.Windows.Forms.TextBox();
+            this.txttientra = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txttienno = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_HuyAn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraNo)).BeginInit();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmakv)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -65,12 +65,14 @@
             // 
             // dgvTraNo
             // 
+            this.dgvTraNo.AllowUserToAddRows = false;
             this.dgvTraNo.AllowUserToResizeColumns = false;
             this.dgvTraNo.AllowUserToResizeRows = false;
             this.dgvTraNo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvTraNo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTraNo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTraNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTraNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTraNo.Location = new System.Drawing.Point(3, 3);
             this.dgvTraNo.MultiSelect = false;
@@ -79,25 +81,15 @@
             this.dgvTraNo.RowHeadersVisible = false;
             this.dgvTraNo.RowHeadersWidth = 62;
             this.dgvTraNo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTraNo.Size = new System.Drawing.Size(2000, 179);
+            this.dgvTraNo.Size = new System.Drawing.Size(2000, 134);
             this.dgvTraNo.TabIndex = 39;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 19);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 33);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mã Trả Nợ:";
+            this.dgvTraNo.Click += new System.EventHandler(this.dgvTraNo_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 82);
+            this.label3.Location = new System.Drawing.Point(17, 23);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 33);
@@ -129,6 +121,7 @@
             this.btnThem.TabIndex = 12;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnHoanTac
             // 
@@ -145,6 +138,7 @@
             this.btnHoanTac.TabIndex = 12;
             this.btnHoanTac.Text = "Làm mới";
             this.btnHoanTac.UseVisualStyleBackColor = false;
+            this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
             // 
             // btnXoa
             // 
@@ -162,62 +156,67 @@
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // txtMaLichSu
+            // txtmatn
             // 
-            this.txtMaLichSu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtmatn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaLichSu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLichSu.Location = new System.Drawing.Point(230, 23);
-            this.txtMaLichSu.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaLichSu.Name = "txtMaLichSu";
-            this.txtMaLichSu.Size = new System.Drawing.Size(368, 30);
-            this.txtMaLichSu.TabIndex = 20;
+            this.txtmatn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmatn.Location = new System.Drawing.Point(230, 23);
+            this.txtmatn.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmatn.Name = "txtmatn";
+            this.txtmatn.Size = new System.Drawing.Size(368, 30);
+            this.txtmatn.TabIndex = 20;
+            this.txtmatn.Visible = false;
             // 
             // pnlMain
             // 
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlMain.Controls.Add(this.dgvlaisuat);
-            this.pnlMain.Controls.Add(this.textBox2);
-            this.pnlMain.Controls.Add(this.txtMaLichSu);
+            this.pnlMain.Controls.Add(this.dgvmakv);
+            this.pnlMain.Controls.Add(this.txtmakv);
+            this.pnlMain.Controls.Add(this.txtmatn);
             this.pnlMain.Controls.Add(this.label5);
             this.pnlMain.Controls.Add(this.label3);
-            this.pnlMain.Controls.Add(this.label2);
             this.pnlMain.Location = new System.Drawing.Point(3, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(617, 224);
+            this.pnlMain.Size = new System.Drawing.Size(617, 245);
             this.pnlMain.TabIndex = 38;
             // 
-            // dgvlaisuat
+            // dgvmakv
             // 
-            this.dgvlaisuat.AllowDrop = true;
-            this.dgvlaisuat.AllowUserToResizeColumns = false;
-            this.dgvlaisuat.AllowUserToResizeRows = false;
-            this.dgvlaisuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvlaisuat.BackgroundColor = System.Drawing.Color.White;
-            this.dgvlaisuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvlaisuat.Location = new System.Drawing.Point(23, 131);
-            this.dgvlaisuat.MultiSelect = false;
-            this.dgvlaisuat.Name = "dgvlaisuat";
-            this.dgvlaisuat.ReadOnly = true;
-            this.dgvlaisuat.RowHeadersVisible = false;
-            this.dgvlaisuat.RowHeadersWidth = 51;
-            this.dgvlaisuat.RowTemplate.Height = 24;
-            this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvlaisuat.Size = new System.Drawing.Size(575, 65);
-            this.dgvlaisuat.TabIndex = 35;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvmakv.AllowDrop = true;
+            this.dgvmakv.AllowUserToResizeColumns = false;
+            this.dgvmakv.AllowUserToResizeRows = false;
+            this.dgvmakv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(230, 85);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(368, 30);
-            this.textBox2.TabIndex = 21;
+            this.dgvmakv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvmakv.BackgroundColor = System.Drawing.Color.White;
+            this.dgvmakv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvmakv.Location = new System.Drawing.Point(23, 83);
+            this.dgvmakv.MultiSelect = false;
+            this.dgvmakv.Name = "dgvmakv";
+            this.dgvmakv.ReadOnly = true;
+            this.dgvmakv.RowHeadersVisible = false;
+            this.dgvmakv.RowHeadersWidth = 51;
+            this.dgvmakv.RowTemplate.Height = 24;
+            this.dgvmakv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvmakv.Size = new System.Drawing.Size(575, 77);
+            this.dgvmakv.TabIndex = 35;
+            this.dgvmakv.Click += new System.EventHandler(this.dgvmakv_Click);
+            // 
+            // txtmakv
+            // 
+            this.txtmakv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtmakv.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtmakv.Location = new System.Drawing.Point(230, 23);
+            this.txtmakv.Margin = new System.Windows.Forms.Padding(4);
+            this.txtmakv.Name = "txtmakv";
+            this.txtmakv.Size = new System.Drawing.Size(368, 30);
+            this.txtmakv.TabIndex = 21;
+            this.txtmakv.TextChanged += new System.EventHandler(this.txtmakv_TextChanged);
             // 
             // label1
             // 
@@ -244,16 +243,17 @@
             this.dtpNgayTra.TabIndex = 21;
             this.dtpNgayTra.Value = new System.DateTime(2025, 6, 12, 0, 0, 0, 0);
             // 
-            // txtTienTra
+            // txttientra
             // 
-            this.txtTienTra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txttientra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTienTra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienTra.Location = new System.Drawing.Point(223, 33);
-            this.txtTienTra.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTienTra.Name = "txtTienTra";
-            this.txtTienTra.Size = new System.Drawing.Size(325, 30);
-            this.txtTienTra.TabIndex = 25;
+            this.txttientra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttientra.Location = new System.Drawing.Point(223, 33);
+            this.txttientra.Margin = new System.Windows.Forms.Padding(4);
+            this.txttientra.Name = "txttientra";
+            this.txttientra.Size = new System.Drawing.Size(325, 30);
+            this.txttientra.TabIndex = 25;
+            this.txttientra.TextChanged += new System.EventHandler(this.txttientra_TextChanged);
             // 
             // label4
             // 
@@ -281,34 +281,35 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1246, 230);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1246, 251);
             this.tableLayoutPanel1.TabIndex = 43;
             // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txttienno);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtTienTra);
+            this.panel1.Controls.Add(this.txttientra);
             this.panel1.Controls.Add(this.dtpNgayTra);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(626, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(617, 224);
+            this.panel1.Size = new System.Drawing.Size(617, 245);
             this.panel1.TabIndex = 39;
             // 
-            // textBox1
+            // txttienno
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txttienno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(223, 83);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 30);
-            this.textBox1.TabIndex = 30;
+            this.txttienno.Enabled = false;
+            this.txttienno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttienno.Location = new System.Drawing.Point(223, 83);
+            this.txttienno.Margin = new System.Windows.Forms.Padding(4);
+            this.txttienno.Name = "txttienno";
+            this.txttienno.Size = new System.Drawing.Size(325, 30);
+            this.txttienno.TabIndex = 30;
             // 
             // label7
             // 
@@ -345,27 +346,47 @@
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.dgvTraNo);
-            this.panel3.Location = new System.Drawing.Point(15, 312);
+            this.panel3.Location = new System.Drawing.Point(15, 338);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1240, 206);
+            this.panel3.Size = new System.Drawing.Size(1240, 161);
             this.panel3.TabIndex = 46;
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btn_HuyAn);
             this.panel4.Controls.Add(this.btnHoanTac);
             this.panel4.Controls.Add(this.btnXoa);
             this.panel4.Controls.Add(this.btnThem);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 606);
+            this.panel4.Location = new System.Drawing.Point(0, 513);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1270, 67);
             this.panel4.TabIndex = 47;
+            // 
+            // btn_HuyAn
+            // 
+            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_HuyAn.BackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
+            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
+            this.btn_HuyAn.Location = new System.Drawing.Point(457, 6);
+            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_HuyAn.Name = "btn_HuyAn";
+            this.btn_HuyAn.Size = new System.Drawing.Size(112, 54);
+            this.btn_HuyAn.TabIndex = 44;
+            this.btn_HuyAn.Text = "Hủy Ẩn";
+            this.btn_HuyAn.UseVisualStyleBackColor = false;
+            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
             // 
             // frmLichSuTraNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 673);
+            this.ClientSize = new System.Drawing.Size(1270, 580);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.label6);
@@ -377,7 +398,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTraNo)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvlaisuat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmakv)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -390,17 +411,16 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvTraNo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.TextBox txtMaLichSu;
+        private System.Windows.Forms.TextBox txtmatn;
         private System.Windows.Forms.DateTimePicker dtpNgayTra;
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.TextBox txtTienTra;
+        private System.Windows.Forms.TextBox txttientra;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
@@ -408,9 +428,10 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txttienno;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dgvlaisuat;
+        private System.Windows.Forms.TextBox txtmakv;
+        private System.Windows.Forms.DataGridView dgvmakv;
+        private System.Windows.Forms.Button btn_HuyAn;
     }
 }

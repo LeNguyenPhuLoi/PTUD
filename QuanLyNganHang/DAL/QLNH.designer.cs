@@ -3661,6 +3661,8 @@ namespace DAL
 		
 		private System.Nullable<decimal> _SOTIENVAY;
 		
+		private System.Nullable<decimal> _TONGTIEN;
+		
 		private System.Nullable<System.DateTime> _NGAYVAY;
 		
 		private System.Nullable<System.DateTime> _THOIHAN;
@@ -3691,6 +3693,8 @@ namespace DAL
     partial void OnMATKChanged();
     partial void OnSOTIENVAYChanging(System.Nullable<decimal> value);
     partial void OnSOTIENVAYChanged();
+    partial void OnTONGTIENChanging(System.Nullable<decimal> value);
+    partial void OnTONGTIENChanged();
     partial void OnNGAYVAYChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYVAYChanged();
     partial void OnTHOIHANChanging(System.Nullable<System.DateTime> value);
@@ -3796,6 +3800,26 @@ namespace DAL
 					this._SOTIENVAY = value;
 					this.SendPropertyChanged("SOTIENVAY");
 					this.OnSOTIENVAYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TONGTIEN", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> TONGTIEN
+		{
+			get
+			{
+				return this._TONGTIEN;
+			}
+			set
+			{
+				if ((this._TONGTIEN != value))
+				{
+					this.OnTONGTIENChanging(value);
+					this.SendPropertyChanging();
+					this._TONGTIEN = value;
+					this.SendPropertyChanged("TONGTIEN");
+					this.OnTONGTIENChanged();
 				}
 			}
 		}
@@ -4300,6 +4324,8 @@ namespace DAL
 		
 		private string _KIEULAI;
 		
+		private System.Nullable<int> _SOTHANG;
+		
 		private string _TinhTrangXoa;
 		
 		private EntitySet<KHOANVAY> _KHOANVAYs;
@@ -4316,6 +4342,8 @@ namespace DAL
     partial void OnLAISUAT1Changed();
     partial void OnKIEULAIChanging(string value);
     partial void OnKIEULAIChanged();
+    partial void OnSOTHANGChanging(System.Nullable<int> value);
+    partial void OnSOTHANGChanged();
     partial void OnTinhTrangXoaChanging(string value);
     partial void OnTinhTrangXoaChanged();
     #endregion
@@ -4402,6 +4430,26 @@ namespace DAL
 					this._KIEULAI = value;
 					this.SendPropertyChanged("KIEULAI");
 					this.OnKIEULAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOTHANG", DbType="Int")]
+		public System.Nullable<int> SOTHANG
+		{
+			get
+			{
+				return this._SOTHANG;
+			}
+			set
+			{
+				if ((this._SOTHANG != value))
+				{
+					this.OnSOTHANGChanging(value);
+					this.SendPropertyChanging();
+					this._SOTHANG = value;
+					this.SendPropertyChanged("SOTHANG");
+					this.OnSOTHANGChanged();
 				}
 			}
 		}
