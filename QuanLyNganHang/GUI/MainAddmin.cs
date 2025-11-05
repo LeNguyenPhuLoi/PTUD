@@ -273,8 +273,6 @@ namespace GUI
 
         private void báocáonhânviêntoolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frm_NhanVienRP frm = new frm_NhanVienRP();
-            OpenMain(frm);
         }
 
         private void loạiHợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)

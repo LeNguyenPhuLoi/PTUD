@@ -549,7 +549,6 @@ D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiGiaoDich.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiHopDong.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiHoTro.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_LoaiTaiKhoan.resources
-D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frm_NhanVienRP.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frm_PhieuLuongRP.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_PhieuVayReport.resources
 D:\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_Report_GiaoDich.resources
