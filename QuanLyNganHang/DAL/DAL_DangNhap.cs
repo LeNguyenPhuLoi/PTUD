@@ -22,7 +22,7 @@ namespace DAL
         public ET_TaiKhhoanDangNhap KiemTraDangNhap(string username, string password)
         {
             var user = db.DANGNHAPs
-                .Where(nd => nd.MADN == username && nd.PASS == password)
+                .Where(nd => nd.MADN == username && nd.PASS == password && nd.TrangThai == true)
                 .Select(nd => new ET_TaiKhhoanDangNhap(
                     nd.MADN,
                     nd.PASS,

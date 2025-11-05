@@ -22,6 +22,7 @@ namespace DAL
         public IQueryable LoadNhanVien()
         {
             IQueryable nhanvien = from nv in db.NHANVIENs
+                                  where nv.TRANGTHAI == "Hoạt Động"
                                   select new
                                   {
                                       nv.MANV,
@@ -37,6 +38,7 @@ namespace DAL
         public IQueryable LayDSTaiKhoanDangNhap()
         {
             IQueryable ds = from tk in db.DANGNHAPs
+                            where tk.TrangThai == true
                             select new
                             {
                                 tk.MADN,
@@ -61,7 +63,8 @@ namespace DAL
                         MADN = et.MaDN,
                         PASS = et.Pass,
                         QUYEN = et.Quyen,
-                        MANV = et.MaNV
+                        MANV = et.MaNV,
+                        TrangThai = et.TrangThai,
                     };
                     db.DANGNHAPs.InsertOnSubmit(tk);
                     db.SubmitChanges();

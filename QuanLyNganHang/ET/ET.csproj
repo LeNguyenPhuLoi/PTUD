@@ -64,6 +64,7 @@
     <Compile Include="ET_TaiKhhoanDangNhap.cs" />
     <Compile Include="ET_TaiKhoan.cs" />
     <Compile Include="ET_TraNo.cs" />
+    <Compile Include="ET_ViPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
