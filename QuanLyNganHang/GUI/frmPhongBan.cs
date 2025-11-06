@@ -46,6 +46,7 @@ namespace GUI
 
             // Cỡ chữ cho ô dữ liệu
             dgvPhongBan.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            dgvPhongBan.AllowUserToAddRows = false;//xóa dòng cuối
 
             // Canh giữa dữ liệu nếu cần
             dgvPhongBan.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -108,7 +109,7 @@ namespace GUI
                 DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    bool trangthai = true;
+                    bool trangthai = false;
                     ET_PhongBan et = new ET_PhongBan(int.Parse(txtMaPB.Text), txtTenPB.Text, trangthai);
                     string error = "";
                     if (bus.XoaPhongBan(et, out error) == true)

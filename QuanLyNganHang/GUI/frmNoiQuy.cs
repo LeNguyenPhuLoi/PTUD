@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GUI
 {
@@ -19,6 +20,7 @@ namespace GUI
             InitializeComponent();
         }
         BUS_NoiQuy bus = new BUS_NoiQuy();
+        BUS_NhanVien test = new BUS_NhanVien();
         private void txtNoiDung_TextChanged(object sender, EventArgs e)
         {
 
@@ -26,8 +28,37 @@ namespace GUI
 
         private void frmNoiQuy_Load(object sender, EventArgs e)
         {
+            //ko doi mau khi chon vao
+            dgvNoiQuy.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            //bỏ tiêu đề cột trống
+            dgvNoiQuy.RowHeadersVisible = false;
+            // Màu nền khi chọn ô (dòng)
+            dgvNoiQuy.DefaultCellStyle.SelectionBackColor = Color.Yellow; // hoặc Color.Yellow
+
+            // Cỡ chữ cho toàn bộ lưới
+            dgvNoiQuy.Font = new Font("Segoe UI", 10);
+
+            // Cỡ chữ cho tiêu đề cột
+            dgvNoiQuy.EnableHeadersVisualStyles = false; // Cho phép dùng style tùy chỉnh
+            dgvNoiQuy.ColumnHeadersDefaultCellStyle.BackColor = Color.DodgerBlue;
+            dgvNoiQuy.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvNoiQuy.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+
+            // Xem kẽ màu dòng
+            dgvNoiQuy.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvNoiQuy.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue; // xanh dương sáng
+
+            // Cỡ chữ cho ô dữ liệu
+            dgvNoiQuy.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+
+            // Canh giữa dữ liệu nếu cần
+            dgvNoiQuy.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvNoiQuy.AllowUserToAddRows = false;//xóa dòng cuối
+
             dgvNoiQuy.DataSource = bus.LoadNoiQuy();
             dtpNgayBH.MaxDate = DateTime.Now;
+            btnHoanTac_Click(sender, e);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -37,7 +68,7 @@ namespace GUI
                 bool TrangThai = true;
                 ET_NoiQuy et = new ET_NoiQuy(bus.MaNoiQuy(),txtTieuDe.Text,
                                                 txtNoiDung.Text,dtpNgayBH.Value,
-                                                cboLoai.Text,TrangThai);
+                                                txtLAP.Text,TrangThai);
                 string error = "";
                 if (bus.ThemNQ(et, out error) == true)
                 {
@@ -67,7 +98,7 @@ namespace GUI
             txtTieuDe.Clear();
             txtNoiDung.Clear();
             dtpNgayBH.Value = dtpNgayBH.MaxDate;
-            cboLoai.SelectedIndex = 0;
+            txtLAP.Clear();
             txtTieuDe.Focus();
         }
 
@@ -76,9 +107,9 @@ namespace GUI
             try
             {
                 bool TrangThai = true;
-                ET_NoiQuy et = new ET_NoiQuy(bus.MaNoiQuy(), txtTieuDe.Text,
+                ET_NoiQuy et = new ET_NoiQuy(txtMaNQ.Text, txtTieuDe.Text,
                                                 txtNoiDung.Text, dtpNgayBH.Value,
-                                                cboLoai.Text, TrangThai);
+                                                txtLAP.Text, TrangThai);
                 string error = "";
                 if (bus.CapNhatNQ(et, out error) == true)
                 {
@@ -104,9 +135,9 @@ namespace GUI
                 if (result == DialogResult.Yes)
                 {
                     bool TrangThai = false;
-                    ET_NoiQuy et = new ET_NoiQuy(bus.MaNoiQuy(), txtTieuDe.Text,
+                    ET_NoiQuy et = new ET_NoiQuy(txtMaNQ.Text, txtTieuDe.Text,
                                                     txtNoiDung.Text, dtpNgayBH.Value,
-                                                    cboLoai.Text, TrangThai);
+                                                    txtLAP.Text, TrangThai);
                     string error = "";
                     if (bus.XoaNQ(et, out error) == true)
                     {
@@ -135,13 +166,65 @@ namespace GUI
                 txtTieuDe.Text = dgvNoiQuy.Rows[dong].Cells[1].Value.ToString();
                 txtNoiDung.Text = dgvNoiQuy.Rows[dong].Cells[2].Value.ToString();
                 dtpNgayBH.Text = dgvNoiQuy.Rows[dong].Cells[3].Value.ToString();
-                cboLoai.Text = dgvNoiQuy.Rows[dong].Cells[4].Value.ToString();
+                txtLAP.Text = dgvNoiQuy.Rows[dong].Cells[4].Value.ToString();
                 txtMaNQ.Enabled = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
+        }
+
+        private void txtTieuDe_Leave(object sender, EventArgs e)
+        {
+            // Nếu để trống thì không làm gì cả
+            if (string.IsNullOrWhiteSpace(txtTieuDe.Text))
+            {
+                txtTieuDe.BackColor = Color.White;
+                return;
+            }
+
+            // Kiểm tra định dạng tiêu đề
+            if (!test.KiemTraDinhDangTen(txtTieuDe.Text))
+            {
+                txtTieuDe.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
+                MessageBox.Show("Tiêu đề không hợp lệ! Vui lòng nhập không quá 70 ký tự, không chứa ký tự đặc biệt.",
+                                "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTieuDe.Focus();
+                return;
+            }
+
+            // Nếu hợp lệ
+            txtTieuDe.BackColor = Color.White;
+        }
+
+        private void txtLAP_Leave(object sender, EventArgs e)
+        {
+            string text = txtLAP.Text.Trim().ToUpper();
+            // Nếu để trống thì không kiểm tra
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                txtLAP.BackColor = Color.White;
+                return;
+            }
+
+            // Kiểm tra định dạng loại áp dụng (ví dụ: "Phạt 50.000đ/lần")
+            if (!bus.KiemTraDinhDangLoaiApDung(text))
+            {
+                txtLAP.BackColor = Color.MistyRose;
+                MessageBox.Show("Loại áp dụng không hợp lệ!\nVD hợp lệ: Phạt 50.000đ/lần hoặc Phạt 100,000 VNĐ.",
+                                "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtLAP.Focus();
+                return;
+            }
+
+            // Nếu hợp lệ
+            txtLAP.BackColor = Color.White;
+        }
+
+        private void txtNoiDung_Leave(object sender, EventArgs e)
+        {
+
         }
     }
 }

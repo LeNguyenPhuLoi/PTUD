@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using ET;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
-using ET;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GUI
 {
@@ -19,7 +20,7 @@ namespace GUI
             InitializeComponent();
         }
         BUS_TKDangNhap bustkdn = new BUS_TKDangNhap();
-
+        BUS_NhanVien test = new BUS_NhanVien();
         private void frmTKDangNhap_Load(object sender, EventArgs e)
         {
             //ko doi mau khi chon vao
@@ -48,9 +49,11 @@ namespace GUI
 
             // Canh giữa dữ liệu nếu cần
             dgvTaiKhoanDangNhap.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvTaiKhoanDangNhap.AllowUserToAddRows = false;//xóa dòng cuối
 
             dgvTaiKhoanDangNhap.DataSource = bustkdn.LoadTKL();
             dgvMaNV.DataSource = bustkdn.LoadDSNV();
+            btn_Lammoi_Click(sender, e);
         }
 
         private void dgvMaNV_Click(object sender, EventArgs e)
@@ -75,6 +78,7 @@ namespace GUI
                 txtMatKhau.Text = dgvTaiKhoanDangNhap.Rows[dong].Cells[1].Value.ToString();
                 cboQuyen.Text = dgvTaiKhoanDangNhap.Rows[dong].Cells[2].Value.ToString();
                 txtMaNV.Text = dgvTaiKhoanDangNhap.Rows[dong].Cells[3].Value.ToString();
+                txtMaDangNhap.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -89,6 +93,7 @@ namespace GUI
             cboQuyen.SelectedIndex = 0;
             txtMaDangNhap.Clear();
             txtMaDangNhap.Focus();
+            txtMaDangNhap.Enabled = true;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -98,14 +103,15 @@ namespace GUI
                 bool trangthai = true;
                 ET_TaiKhhoanDangNhap et = new ET_TaiKhhoanDangNhap(txtMaDangNhap.Text, txtMatKhau.Text,
                                              cboQuyen.Text, txtMaNV.Text,trangthai);
-                if (bustkdn.ThemTKL(et) == true)
+                string error = "";
+                if (bustkdn.ThemTKL(et, out error) == true)
                 {
                     MessageBox.Show("Thêm thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btn_Lammoi.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
                 }
                 else
                 {
-                    MessageBox.Show("Thêm không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(error, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 dgvTaiKhoanDangNhap.DataSource = bustkdn.LoadTKL();
             }
@@ -122,34 +128,10 @@ namespace GUI
                 bool trangthai = true;
                 ET_TaiKhhoanDangNhap et = new ET_TaiKhhoanDangNhap(txtMaDangNhap.Text, txtMatKhau.Text,
                                              cboQuyen.Text, txtMaNV.Text, trangthai);
-                if (bustkdn.CapNhatTKL(et) == true)
+                string error = "";
+                if (bustkdn.CapNhatTKL(et, out error) == true)
                 {
                     MessageBox.Show("Cập nhật thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("CCập nhật không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                dgvTaiKhoanDangNhap.DataSource = bustkdn.LoadTKL();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi:" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bool trangthai = false;
-                ET_TaiKhhoanDangNhap et = new ET_TaiKhhoanDangNhap(txtMaDangNhap.Text, txtMatKhau.Text,
-                                             cboQuyen.Text, txtMaNV.Text, trangthai);
-                string error = "";
-                if (bustkdn.XoaTKL(et,out error) == true)
-                {
-                    MessageBox.Show("Xóa thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btn_Lammoi.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
                 }
                 else
                 {
@@ -163,9 +145,112 @@ namespace GUI
             }
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    bool trangthai = false;
+                    ET_TaiKhhoanDangNhap et = new ET_TaiKhhoanDangNhap(txtMaDangNhap.Text, txtMatKhau.Text,
+                                                 cboQuyen.Text, txtMaNV.Text, trangthai);
+                    string error = "";
+                    if (bustkdn.XoaTKL(et, out error) == true)
+                    {
+                        MessageBox.Show("Xóa thành công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btn_Lammoi.PerformClick(); // Gọi hàm hoàn tác để làm sạch các trường nhập
+                    }
+                    else
+                    {
+                        MessageBox.Show(error, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    dgvTaiKhoanDangNhap.DataSource = bustkdn.LoadTKL();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi:" + ex.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtMatKhau_Leave(object sender, EventArgs e)
+        {
+            // Nếu để trống thì không kiểm tra, trả về màu mặc định
+            if (string.IsNullOrWhiteSpace(txtMatKhau.Text))
+            {
+                txtMatKhau.BackColor = Color.White;
+                return;
+            }
+
+            // Gọi hàm kiểm tra định dạng mật khẩu
+            if (!bustkdn.KiemTraDinhDangMK(txtMatKhau.Text))
+            {
+                txtMatKhau.BackColor = Color.MistyRose; // tô nhẹ để báo lỗi
+                MessageBox.Show("Mật khẩu không hợp lệ!\nĐịnh dạng hợp lệ: chữ + @ + số (VD: an@123).",
+                                "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMatKhau.Focus();
+                return;
+            }
+
+            // Nếu hợp lệ thì trở về màu bình thường
+            txtMatKhau.BackColor = Color.White;
+        }
+
+        private void txtMaDangNhap_Leave(object sender, EventArgs e)
+        {
+            // Nếu để trống thì không kiểm tra, trả về màu mặc định
+            if (string.IsNullOrWhiteSpace(txtMaDangNhap.Text))
+            {
+                txtMaDangNhap.BackColor = Color.White;
+                return;
+            }
+
+            // Gọi hàm kiểm tra định dạng tên đăng nhập
+            if (!test.KiemTraDinhDangTen(txtMaDangNhap.Text))
+            {
+                txtMaDangNhap.BackColor = Color.MistyRose; // tô nhẹ để báo lỗi
+                MessageBox.Show("Tên Đăng Nhập không hợp lệ!\n VD: anlt",
+                                "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaDangNhap.Focus();
+                return;
+            }
+
+            // Nếu hợp lệ thì trở về màu bình thường
+            txtMaDangNhap.BackColor = Color.White;
+        }
+
+        private void txtMaNV_Leave(object sender, EventArgs e)
+        {
+            string maNV = txtMaNV.Text.Trim().ToUpper();
+
+            // Nếu để trống thì không làm gì cả
+            if (string.IsNullOrWhiteSpace(maNV))
+            {
+                errorProvider1.SetError(txtMaNV, "");
+                txtMaNV.BackColor = Color.White;
+                return;
+            }
+
+            // Kiểm tra định dạng mã nhân viên
+            if (!test.KiemTraDinhDangMaNV(maNV))
+            {
+                txtMaNV.BackColor = Color.MistyRose; // màu nhẹ hơn cho dịu mắt
+                errorProvider1.SetError(txtMaNV, "Mã nhân viên không hợp lệ! (VD: NV001, NV12345)");
+                MessageBox.Show("Mã nhân viên phải có dạng NV + 3-8 chữ số (VD: NV001, NV12345).",
+                                "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMaNV.Focus();
+                return;
+            }
+
+            // Nếu hợp lệ
+            errorProvider1.SetError(txtMaNV, "");
+            txtMaNV.BackColor = Color.White;
         }
     }
 }

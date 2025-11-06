@@ -34,5 +34,10 @@ namespace BUS
         {
             return nq.MaTuDong();
         }
+
+        public bool KiemTraDinhDangLoaiApDung(string text)
+        {
+            return nq.KiemTraDinhDangLoaiApDung(text);
+        }
     }
 }

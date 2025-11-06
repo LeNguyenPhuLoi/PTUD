@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DAL
@@ -50,12 +51,35 @@ namespace DAL
         }
 
         //Thêm Tai Khoản Đăng Nhập
-        public bool ThemTaiKhoanDN(ET_TaiKhhoanDangNhap et)
+        public bool ThemTaiKhoanDN(ET_TaiKhhoanDangNhap et, out string error)
         {
             bool flage = false;
+            error = string.Empty;
+            db = new QLNHDataContext(conn.GetConnection());
             try
             {
-                var amp = db.DANGNHAPs.Any(tk => tk.MADN == et.MaDN);
+                if (et.MaDN == "")
+                {
+                    error = "Mã Đăng Nhập không được để trống!";
+                    return false;
+                }
+                else if (et.MaNV == "")
+                {
+                    error = "Mã Nhân viên không được để trống!";
+                    return false;
+                }
+                else if (et.Pass == "")
+                {
+                    error = "Mật khẩu không được để trống!";
+                    return false;
+                }
+                var nv = db.DANGNHAPs.Any(tk => tk.MANV == et.MaNV);
+                if (nv)
+                {
+                    error = "Nhân Viên đã có tài khoản!";
+                    return false;
+                }
+                var amp = db.DANGNHAPs.Any(tk => tk.MADN == et.MaDN );
                 if (!amp)
                 {
                     DANGNHAP tk = new DANGNHAP
@@ -70,6 +94,11 @@ namespace DAL
                     db.SubmitChanges();
                     flage = true;
                 }
+                else
+                {
+                    error = "Mã Đăng Nhập Đã Tồn Tại!";
+                    return false;
+                }
             }
             catch (Exception ex)
             {
@@ -80,12 +109,35 @@ namespace DAL
         }
 
         //Sửa tài khoản đăng nhập
-        public bool CapNhapTKDN(ET_TaiKhhoanDangNhap et)
+        public bool CapNhapTKDN(ET_TaiKhhoanDangNhap et, out string error)
         {
             bool flag = false;
+            error = string.Empty;
             db = new QLNHDataContext(conn.GetConnection());
             try
             {
+                if (et.MaDN == "")
+                {
+                    error = "Mã Đăng Nhập không được để trống!";
+                    return false;
+                }
+                else if (et.MaNV == "")
+                {
+                    error = "Mã Nhân viên không được để trống!";
+                    return false;
+                }
+                else if (et.Pass == "")
+                {
+                    error = "Mật khẩu không được để trống!";
+                    return false;
+                }
+                var nv = db.DANGNHAPs.Any(tk => tk.MANV == et.MaNV);
+                if (nv)
+                {
+                    error = "Nhân Viên đã có tài khoản!";
+                    return false;
+                }
+
                 var capnhat = db.DANGNHAPs.Single(n => n.MADN == et.MaDN);
                 if (capnhat != null)
                 {
@@ -93,6 +145,11 @@ namespace DAL
                     capnhat.QUYEN = et.Quyen;
                     flag = true;
                     db.SubmitChanges();
+                }
+                else
+                {
+                    error = "Mã Đăng không Tồn Tại!";
+                    return false;
                 }
             }
             catch (Exception ex)
@@ -134,6 +191,17 @@ namespace DAL
                 error = "Lỗi: " + ex.ToString();
             }
             return flag;
+        }
+
+        public bool KiemTraDinhDangMatKhau(string matKhau)
+        {
+            if (string.IsNullOrWhiteSpace(matKhau))
+                return false;
+
+            // Mật khẩu phải có ít nhất: 1 chữ cái, 1 số, 1 ký tự đặc biệt, dài từ 6-20
+            string pattern = @"^(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&+=!]).{6,20}$";
+
+            return Regex.IsMatch(matKhau, pattern);
         }
     }
 }

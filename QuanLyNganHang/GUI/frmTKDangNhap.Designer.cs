@@ -232,6 +232,7 @@
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(367, 30);
             this.txtMaNV.TabIndex = 23;
+            this.txtMaNV.Leave += new System.EventHandler(this.txtMaNV_Leave);
             // 
             // label8
             // 
@@ -331,6 +332,7 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(324, 30);
             this.txtMatKhau.TabIndex = 28;
+            this.txtMatKhau.Leave += new System.EventHandler(this.txtMatKhau_Leave);
             // 
             // label4
             // 
@@ -353,6 +355,7 @@
             this.txtMaDangNhap.Name = "txtMaDangNhap";
             this.txtMaDangNhap.Size = new System.Drawing.Size(324, 30);
             this.txtMaDangNhap.TabIndex = 20;
+            this.txtMaDangNhap.Leave += new System.EventHandler(this.txtMaDangNhap_Leave);
             // 
             // label5
             // 

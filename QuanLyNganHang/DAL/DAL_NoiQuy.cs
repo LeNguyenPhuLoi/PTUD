@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DAL
@@ -22,7 +23,14 @@ namespace DAL
         {
             IQueryable list = from nq in db.NOIQUYs
                               where nq.TrangThai == true
-                              select nq;
+                              select new
+                              {
+                                  nq.MANQ,
+                                  nq.TIEUDE,
+                                  nq.MOTA,
+                                  nq.NGAYBH,
+                                  nq.LOAIAPDUNG
+                              };
             return list;
         }
 
@@ -36,7 +44,11 @@ namespace DAL
             {
                 if (et.TIEUDE == "")
                 {
-                    error = "Tiên đề không được để trống!";
+                    error = "Tiêu đề không được để trống!";
+                    return false;
+                }
+                else if(et.LOAIAPDUNG == ""){
+                    error = "Loaị áp dụng không được để trống!";
                     return false;
                 }
 
@@ -87,6 +99,11 @@ namespace DAL
                 if (et.TIEUDE == "")
                 {
                     error = "Tiêu đề không được để trống!";
+                    return false;
+                }
+                else if (et.LOAIAPDUNG == "")
+                {
+                    error = "Loaị áp dụng không được để trống!";
                     return false;
                 }
 
@@ -162,5 +179,22 @@ namespace DAL
             string ma = "NQ" + dem.ToString("D3");
             return ma;
         }
+
+        // Hàm kiểm tra định dạng loại áp dụng (VD: "Phạt 50.000đ/lần")
+        public bool KiemTraDinhDangLoaiApDung(string loaiApDung)
+        {
+            if (string.IsNullOrWhiteSpace(loaiApDung))
+                return false;
+
+            // Mẫu: "Phạt 50.000đ/lần" hoặc "Phạt 100000 VNĐ"
+            string pattern = @"^Phạt\s\d{1,3}(?:\.\d{3})*(?:\s?(?:đ|VNĐ))(?:/lần)?$";
+
+            loaiApDung = loaiApDung.Trim();
+
+            // Kiểm tra khớp với regex và độ dài không quá 100 ký tự
+            return Regex.IsMatch(loaiApDung, pattern, RegexOptions.IgnoreCase)
+                   && loaiApDung.Length <= 100;
+        }
+
     }
 }
