@@ -60,6 +60,24 @@ namespace GUI
                                                        txt_quocgia.Text,
                                                        cbo_trangthai.Text,
                                                        TrangThai);
+                if (string.IsNullOrWhiteSpace(txt_tennt.Text))
+                {
+                    MessageBox.Show("Tên ngoại tệ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_tennt.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txt_kyhieu.Text))
+                {
+                    MessageBox.Show("Ký hiệu ngoại tệ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_kyhieu.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txt_quocgia.Text))
+                {
+                    MessageBox.Show("Quốc gia không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_quocgia.Focus();
+                    return;
+                }
                 if (bUS_NgoaiTe.ThemNT(nt) == true)
                 {
                     MessageBox.Show("Thêm ngoại tệ thành công!");
@@ -88,6 +106,24 @@ namespace GUI
                                                        txt_quocgia.Text,
                                                        cbo_trangthai.Text,
                                                        TrangThai);
+                if (string.IsNullOrWhiteSpace(txt_tennt.Text))
+                {
+                    MessageBox.Show("Tên ngoại tệ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_tennt.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txt_kyhieu.Text))
+                {
+                    MessageBox.Show("Ký hiệu ngoại tệ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_kyhieu.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txt_quocgia.Text))
+                {
+                    MessageBox.Show("Quốc gia không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_quocgia.Focus();
+                    return;
+                }
                 if (bUS_NgoaiTe.SuaNT(nt) == true)
                 {
                     MessageBox.Show("Sửa ngoại tệ thành công!");

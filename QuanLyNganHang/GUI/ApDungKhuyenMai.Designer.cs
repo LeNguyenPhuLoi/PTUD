@@ -65,17 +65,20 @@
             // btnHoanTac
             // 
             this.btnHoanTac.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnHoanTac.BackColor = System.Drawing.Color.White;
+            this.btnHoanTac.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnHoanTac.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnHoanTac.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnHoanTac.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btnHoanTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHoanTac.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoanTac.ForeColor = System.Drawing.Color.White;
+            this.btnHoanTac.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.Image")));
             this.btnHoanTac.Location = new System.Drawing.Point(307, 13);
             this.btnHoanTac.Name = "btnHoanTac";
-            this.btnHoanTac.Size = new System.Drawing.Size(112, 49);
+            this.btnHoanTac.Size = new System.Drawing.Size(129, 49);
             this.btnHoanTac.TabIndex = 13;
             this.btnHoanTac.Text = "Làm mới";
+            this.btnHoanTac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHoanTac.UseVisualStyleBackColor = false;
             this.btnHoanTac.Click += new System.EventHandler(this.btnHoanTac_Click);
             // 
@@ -101,18 +104,21 @@
             // btnThem
             // 
             this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnThem.BackColor = System.Drawing.Color.Lime;
+            this.btnThem.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnThem.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
             this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(42, 13);
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.Location = new System.Drawing.Point(44, 13);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(112, 49);
             this.btnThem.TabIndex = 16;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -182,37 +188,41 @@
             // btn_xoauser
             // 
             this.btn_xoauser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_xoauser.BackColor = System.Drawing.Color.Red;
+            this.btn_xoauser.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_xoauser.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_xoauser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.btn_xoauser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.btn_xoauser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_xoauser.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoauser.ForeColor = System.Drawing.Color.White;
+            this.btn_xoauser.Image = ((System.Drawing.Image)(resources.GetObject("btn_xoauser.Image")));
             this.btn_xoauser.Location = new System.Drawing.Point(174, 13);
             this.btn_xoauser.Name = "btn_xoauser";
             this.btn_xoauser.Size = new System.Drawing.Size(112, 49);
             this.btn_xoauser.TabIndex = 44;
             this.btn_xoauser.Text = "Xóa";
+            this.btn_xoauser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xoauser.UseVisualStyleBackColor = false;
             this.btn_xoauser.Click += new System.EventHandler(this.btn_xoauser_Click);
             // 
             // btn_HuyAn
             // 
             this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_HuyAn.BackColor = System.Drawing.Color.Blue;
+            this.btn_HuyAn.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Navy;
             this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
-            this.btn_HuyAn.Location = new System.Drawing.Point(435, 13);
+            this.btn_HuyAn.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuyAn.Image")));
+            this.btn_HuyAn.Location = new System.Drawing.Point(451, 13);
             this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_HuyAn.Name = "btn_HuyAn";
-            this.btn_HuyAn.Size = new System.Drawing.Size(112, 54);
+            this.btn_HuyAn.Size = new System.Drawing.Size(112, 49);
             this.btn_HuyAn.TabIndex = 43;
             this.btn_HuyAn.Text = "Hủy Ẩn";
+            this.btn_HuyAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_HuyAn.UseVisualStyleBackColor = false;
             this.btn_HuyAn.Visible = false;
             this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
@@ -322,6 +332,7 @@
             this.dtpNgayApDung.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayApDung.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayApDung.Enabled = false;
             this.dtpNgayApDung.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayApDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayApDung.Location = new System.Drawing.Point(259, 335);

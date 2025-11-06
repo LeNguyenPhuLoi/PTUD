@@ -39,11 +39,11 @@ VALUES('LTK001', N'Tài Khoản Vip Cấp 1', '17/06/2018 08:30:57','17/06/2018 
 
 ---THEM THONG TIN LAI SUAT
 GO
-INSERT INTO LAISUAT(MALAISUAT, TENLOAIVAY, LAISUAT, KIEULAI, TinhTrangXoa)
+INSERT INTO LAISUAT(MALAISUAT, TENLOAIVAY, LAISUAT, KIEULAI, SOTHANG, TinhTrangXoa)
 VALUES
-('LS01', N'Vay tiêu dùng cá nhân', 6, N'Tháng', N'Hoạt Động'),
-('LS02', N'Vay thế chấp nhà ở', 8, N'Năm', N'Hoạt Động'),
-('LS03', N'Vay tín chấp doanh nghiệp', 8, N'Năm', N'Hoạt Động');
+('LS01', N'Vay tiêu dùng', 3, N'Tháng', 3,N'Hoạt Động'),
+('LS02', N'Vay tín dụng', 6, N'Tháng', 6,N'Hoạt Động'),
+('LS03', N'Vay mua nhà', 12, N'Năm', 12,N'Hoạt Động');
 
 ---THEM THONG TIN KHUYEN MAI
 GO
@@ -78,11 +78,11 @@ VALUES
 
 ---THEM THONG TIN KHOAN VAY
 GO
-INSERT INTO KHOANVAY(MAVAY, MAKH, MATK, SOTIENVAY, NGAYVAY, THOIHAN, TRANGTHAI, MALAISUAT,TinhTrangXoa)
+INSERT INTO KHOANVAY(MAVAY, MAKH, MATK, SOTIENVAY, TONGTIEN, NGAYVAY, THOIHAN, TRANGTHAI, MALAISUAT,TinhTrangXoa)
 VALUES
-('VAY001', 'KH001', 'TK001', 100000000, '01/01/2023', '01/01/2024', N'Đang hoạt động', 'LS01',N'Hoạt Động'),
-('VAY002', 'KH002', 'TK002', 50000000, '05/02/2023', '05/02/2024', N'Đã tất toán', 'LS02',N'Hoạt Động'),
-('VAY003', 'KH003', 'TK003', 75000000, '10/03/2023', '10/03/2024', N'Quá hạn', 'LS03',N'Hoạt Động');
+('VAY001', 'KH001', 'TK001', 100000000, 100000000, '01/01/2023', '01/01/2024', N'Đang hoạt động', 'LS01',N'Hoạt Động'),
+('VAY002', 'KH002', 'TK002', 50000000, 50000000, '05/02/2023', '05/02/2024', N'Đã tất toán', 'LS02',N'Hoạt Động'),
+('VAY003', 'KH003', 'TK003', 75000000, 75000000, '10/03/2023', '10/03/2024', N'Quá hạn', 'LS03',N'Hoạt Động');
 
 ---THEM THONG TIN TRA NO
 GO
