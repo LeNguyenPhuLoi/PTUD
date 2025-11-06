@@ -129,7 +129,6 @@ D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_Report_GiaoDich.resour
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_Report_HopDong.resources
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_BienLaiReport.resources
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_ChuyenKhoanReport.resources
-D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frm_NhanVienRP.resources
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.frm_PhieuLuongRP.resources
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_PhieuVayReport.resources
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\GUI\obj\Debug\GUI.Frm_TraNoReport.resources

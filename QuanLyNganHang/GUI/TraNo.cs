@@ -38,6 +38,7 @@ namespace GUI
 
             dgvmakv.DataSource = bUS_TraNo.LoadDSKhoanVay();
             dtpNgayTra.MaxDate = DateTime.Now;
+            dtpNgayTra.Value = dtpNgayTra.MaxDate;
             HienThiDS();
         }
 
@@ -96,7 +97,7 @@ namespace GUI
             txtmakv.Clear();
             txttienno.Clear();
             txttientra.Clear();
-            dtpNgayTra.MaxDate = DateTime.Now;
+            dtpNgayTra.Value = dtpNgayTra.MaxDate;
         }
 
         private void btnHoanTac_Click(object sender, EventArgs e)
@@ -115,6 +116,21 @@ namespace GUI
                                             decimal.Parse(txttienno.Text),
                                             dtpNgayTra.Value,
                                             TrangThai);
+
+                if (string.IsNullOrWhiteSpace(txtmakv.Text))
+                {
+                    MessageBox.Show("Mã khoản vay không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtmakv.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txttientra.Text))
+                {
+                    MessageBox.Show("Số tiền trả không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txttientra.Focus();
+                    return;
+                }    
+                
                 if (bUS_TraNo.ThemTraNo(tn) == true)
                 {
                     MessageBox.Show("Thêm trả nợ thành công!");

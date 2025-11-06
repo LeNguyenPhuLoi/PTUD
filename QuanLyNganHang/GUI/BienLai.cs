@@ -105,7 +105,31 @@ namespace GUI
                                                        rtxtmota.Text,
                                                        cbotrangthai.Text,                            
                                                        TrangThai);
-                
+                if (string.IsNullOrWhiteSpace(txtmakh.Text))
+                {
+                    MessageBox.Show("Mã khách hàng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtmakh.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtmanv.Text))
+                {
+                    MessageBox.Show("Mã nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtmanv.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtsotien.Text))
+                {
+                    MessageBox.Show("Mã ngoại tệ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtsotien.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(rtxtmota.Text))
+                {
+                    MessageBox.Show("Mô tả không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    rtxtmota.Focus();
+                    return;
+                }
+
                 if (bUS_BienLai.ThemBienLai(ck) == true)
                 {
                     MessageBox.Show("Thêm biên lai thành công!");
@@ -138,7 +162,30 @@ namespace GUI
                                                        rtxtmota.Text,
                                                        cbotrangthai.Text,
                                                        TrangThai);
-
+                if (string.IsNullOrWhiteSpace(txtmakh.Text))
+                {
+                    MessageBox.Show("Mã khách hàng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtmakh.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtmanv.Text))
+                {
+                    MessageBox.Show("Mã nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtmanv.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtsotien.Text))
+                {
+                    MessageBox.Show("Mã ngoại tệ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtsotien.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(rtxtmota.Text))
+                {
+                    MessageBox.Show("Mô tả không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    rtxtmota.Focus();
+                    return;
+                }
                 if (bUS_BienLai.SuaBienLai(ck) == true)
                 {
                     MessageBox.Show("Sửa biên lai thành công!");

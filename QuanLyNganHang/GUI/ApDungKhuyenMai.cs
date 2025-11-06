@@ -48,6 +48,7 @@ namespace GUI
             dgv_makm.DataSource = bUS_ApDungKhuyenMai.LoadDSKM();
             dgv_makh.DataSource = bUS_ApDungKhuyenMai.LoadKH();
             dtpNgayApDung.MaxDate = DateTime.Now;
+            dtpNgayApDung.Value = DateTime.Now;
             HienThiDS();
         }
 
@@ -75,7 +76,7 @@ namespace GUI
             txt_makm.Clear();
             txt_makh.Clear();
             cbo_matk.SelectedIndex = -1;
-            dtpNgayApDung.MaxDate = DateTime.Now;
+            dtpNgayApDung.Value = dtpNgayApDung.MaxDate;
         }
        
         private void btnHoanTac_Click(object sender, EventArgs e)
@@ -92,7 +93,27 @@ namespace GUI
                                                                     txt_makh.Text,
                                                                     cbo_matk.Text,
                                                                     dtpNgayApDung.Value,
-                                                                    TrangThai);               
+                                                                    TrangThai);
+                if (string.IsNullOrWhiteSpace(txt_makm.Text))
+                {
+                    MessageBox.Show("Mã khuyến mãi không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_makm.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txt_makh.Text))
+                {
+                    MessageBox.Show("Mã khách hàng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_makh.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(cbo_matk.Text))
+                {
+                    MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (bUS_ApDungKhuyenMai.ThemADKM(adkm) == true)
                 {
                     MessageBox.Show("Thêm áp dụng khuyến mãi thành công!");
