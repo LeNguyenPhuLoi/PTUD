@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\upbai\\PTUD\\QuanLyNganHang\\",
+  "WorkspaceRootPath": "D:\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\upbai\\ptud\\quanlynganhang\\gui\\trano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\trano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|d:\\ptud\\quanlynganhang\\dal\\dal_vipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\dal_vipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\upbai\\ptud\\quanlynganhang\\gui\\trano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\trano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\ptud\\quanlynganhang\\gui\\frmvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frmvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\ptud\\quanlynganhang\\gui\\frmvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frmvipham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|d:\\ptud\\quanlynganhang\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TraNo.cs",
-              "DocumentMoniker": "D:\\upbai\\PTUD\\QuanLyNganHang\\GUI\\TraNo.cs",
-              "RelativeDocumentMoniker": "GUI\\TraNo.cs",
-              "ToolTip": "D:\\upbai\\PTUD\\QuanLyNganHang\\GUI\\TraNo.cs",
-              "RelativeToolTip": "GUI\\TraNo.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAgwPkAAAANAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\Program.cs",
+              "RelativeToolTip": "GUI\\Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAuwBoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T08:20:03.871Z",
+              "WhenOpened": "2025-11-06T07:15:07.768Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TraNo.cs [Design]",
-              "DocumentMoniker": "D:\\upbai\\PTUD\\QuanLyNganHang\\GUI\\TraNo.cs",
-              "RelativeDocumentMoniker": "GUI\\TraNo.cs",
-              "ToolTip": "D:\\upbai\\PTUD\\QuanLyNganHang\\GUI\\TraNo.cs [Design]",
-              "RelativeToolTip": "GUI\\TraNo.cs [Design]",
+              "Title": "frmViPham.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmViPham.cs",
+              "RelativeDocumentMoniker": "GUI\\frmViPham.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmViPham.cs",
+              "RelativeToolTip": "GUI\\frmViPham.cs",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T08:20:02.421Z",
+              "WhenOpened": "2025-11-06T08:44:27.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmViPham.cs [Design]",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmViPham.cs",
+              "RelativeDocumentMoniker": "GUI\\frmViPham.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\GUI\\frmViPham.cs [Design]",
+              "RelativeToolTip": "GUI\\frmViPham.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T08:44:25.366Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DAL_ViPham.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_ViPham.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_ViPham.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_ViPham.cs",
+              "RelativeToolTip": "DAL\\DAL_ViPham.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAFIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T08:37:08.815Z",
+              "EditorCaption": ""
             }
           ]
         }

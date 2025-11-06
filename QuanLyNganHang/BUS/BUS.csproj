@@ -64,6 +64,7 @@
     <Compile Include="BUS_TaiKhoan.cs" />
     <Compile Include="BUS_TKDangNhap.cs" />
     <Compile Include="BUS_TraNo.cs" />
+    <Compile Include="BUS_ViPham.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

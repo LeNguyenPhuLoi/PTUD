@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNoiQuy));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.txtLAP = new System.Windows.Forms.TextBox();
             this.dtpNgayBH = new System.Windows.Forms.DateTimePicker();
-            this.cboLoai = new System.Windows.Forms.ComboBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHoanTac = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -75,8 +75,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.txtLAP);
             this.pnlMain.Controls.Add(this.dtpNgayBH);
-            this.pnlMain.Controls.Add(this.cboLoai);
             this.pnlMain.Controls.Add(this.btnThoat);
             this.pnlMain.Controls.Add(this.btnHoanTac);
             this.pnlMain.Controls.Add(this.btnXoa);
@@ -96,36 +96,33 @@
             this.pnlMain.Size = new System.Drawing.Size(525, 622);
             this.pnlMain.TabIndex = 22;
             // 
+            // txtLAP
+            // 
+            this.txtLAP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLAP.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLAP.Location = new System.Drawing.Point(207, 328);
+            this.txtLAP.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLAP.Name = "txtLAP";
+            this.txtLAP.Size = new System.Drawing.Size(291, 31);
+            this.txtLAP.TabIndex = 60;
+            this.txtLAP.Leave += new System.EventHandler(this.txtLAP_Leave);
+            // 
             // dtpNgayBH
             // 
             this.dtpNgayBH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayBH.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayBH.Enabled = false;
             this.dtpNgayBH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayBH.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayBH.Location = new System.Drawing.Point(211, 280);
+            this.dtpNgayBH.Location = new System.Drawing.Point(260, 280);
             this.dtpNgayBH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgayBH.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
             this.dtpNgayBH.Name = "dtpNgayBH";
-            this.dtpNgayBH.Size = new System.Drawing.Size(287, 30);
+            this.dtpNgayBH.Size = new System.Drawing.Size(238, 30);
             this.dtpNgayBH.TabIndex = 59;
             this.dtpNgayBH.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
-            // 
-            // cboLoai
-            // 
-            this.cboLoai.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboLoai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboLoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLoai.FormattingEnabled = true;
-            this.cboLoai.Items.AddRange(new object[] {
-            "Nhân Viên",
-            "Admin"});
-            this.cboLoai.Location = new System.Drawing.Point(181, 331);
-            this.cboLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cboLoai.Name = "cboLoai";
-            this.cboLoai.Size = new System.Drawing.Size(315, 30);
-            this.cboLoai.TabIndex = 58;
             // 
             // btnThoat
             // 
@@ -244,6 +241,7 @@
             this.txtNoiDung.TabIndex = 51;
             this.txtNoiDung.Text = "";
             this.txtNoiDung.TextChanged += new System.EventHandler(this.txtNoiDung_TextChanged);
+            this.txtNoiDung.Leave += new System.EventHandler(this.txtNoiDung_Leave);
             // 
             // label2
             // 
@@ -301,6 +299,7 @@
             this.txtTieuDe.Name = "txtTieuDe";
             this.txtTieuDe.Size = new System.Drawing.Size(315, 31);
             this.txtTieuDe.TabIndex = 6;
+            this.txtTieuDe.Leave += new System.EventHandler(this.txtTieuDe_Leave);
             // 
             // label11
             // 
@@ -380,7 +379,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.ComboBox cboLoai;
         private System.Windows.Forms.DateTimePicker dtpNgayBH;
+        private System.Windows.Forms.TextBox txtLAP;
     }
 }

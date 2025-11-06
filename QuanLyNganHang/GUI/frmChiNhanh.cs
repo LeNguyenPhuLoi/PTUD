@@ -46,6 +46,7 @@ namespace GUI
 
             // Cỡ chữ cho ô dữ liệu
             dgvChiNhanh.DefaultCellStyle.Font = new Font("Segoe UI", 12);
+            dgvChiNhanh.AllowUserToAddRows = false;//xóa dòng cuối
 
             //Load dữ liệu lên database
             dgvChiNhanh.DataSource = bus.LoadDSChiNhanh();
@@ -56,7 +57,7 @@ namespace GUI
             try
             {
                 bool trangthai = true;
-                ET_ChiNhanh et = new ET_ChiNhanh(txtMaCN.Text, txtTenCN.Text,
+                ET_ChiNhanh et = new ET_ChiNhanh(bus.MaCN(), txtTenCN.Text,
                                                     txtDiaChi.Text,txtSDTCN.Text,trangthai);
                 string error = "";
                 if (bus.ThemChiNhanh(et, out error) == true)
