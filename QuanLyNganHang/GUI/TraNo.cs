@@ -109,6 +109,7 @@ namespace GUI
         {
             try
             {
+               
                 string TrangThai = "Hoạt Động";
                 ET_TraNo tn = new ET_TraNo(bUS_TraNo.DemMa(),
                                             txtmakv.Text,
@@ -124,13 +125,13 @@ namespace GUI
                     return;
                 }
 
-                if (string.IsNullOrWhiteSpace(txttientra.Text))
+                if (txttientra.Text == null)
                 {
                     MessageBox.Show("Số tiền trả không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txttientra.Focus();
                     return;
-                }    
-                
+                }
+
                 if (bUS_TraNo.ThemTraNo(tn) == true)
                 {
                     MessageBox.Show("Thêm trả nợ thành công!");

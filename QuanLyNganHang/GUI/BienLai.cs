@@ -111,6 +111,11 @@ namespace GUI
                     txtmakh.Focus();
                     return;
                 }
+                if (string.IsNullOrWhiteSpace(cbomatk.Text))
+                {
+                    MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtmanv.Text))
                 {
                     MessageBox.Show("Mã nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
