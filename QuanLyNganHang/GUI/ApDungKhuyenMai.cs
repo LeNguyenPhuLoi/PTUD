@@ -207,12 +207,12 @@ namespace GUI
                                                                     TrangThai);
                     if (bUS_ApDungKhuyenMai.TrangThaiAn(ck) == true)
                     {
-                        MessageBox.Show("Xóa áp dụng khuyến mãi thành công!");
+                        MessageBox.Show("Hủy ẩn áp dụng khuyến mãi thành công!");
                         Clear();
                     }
                     else
                     {
-                        MessageBox.Show("Xóa áp dụng khuyến mãi thất bại!");
+                        MessageBox.Show("Hủy ẩn áp dụng khuyến mãi thất bại!");
                     }
             }
             catch (Exception ex)
