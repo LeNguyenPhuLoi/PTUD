@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,46 @@ using ET;
 
 namespace DAL
 {
+    public class DAL_TraNoRP
+    {
+        //Kết nối với Linq to SQL
+        AutoConnect conn = new AutoConnect();
+        QLNHDataContext db;
+
+        public DAL_TraNoRP()
+        {
+            db = new QLNHDataContext(conn.GetConnection());
+        }
+
+        public List<ET_TraNoRP> LoadDSTN()
+        {
+            var query = from tn in db.TRANOs
+                        select new ET_TraNoRP
+                        {
+                            MaTraNo = tn.MATRANO,
+                            MaVay = tn.MAVAY,
+                            SoTienNo = (decimal)tn.SOTIENO,
+                            SoTienTra = (decimal)tn.SOTIENTRA,
+                            NgayTra = Convert.ToDateTime(tn.NGAYTRA)
+                        };
+            return query.ToList();
+        }
+
+        public List<ET_TraNoRP> TimRPTN(string ma)
+        {
+            var search = from tn in db.TRANOs
+                         where tn.MATRANO.Contains(ma) || tn.MAVAY.Contains(ma)
+                         select new ET_TraNoRP
+                         {
+                             MaTraNo = tn.MATRANO,
+                             MaVay = tn.MAVAY,
+                             SoTienNo = (decimal)tn.SOTIENO,
+                             SoTienTra = (decimal)tn.SOTIENTRA,
+                             NgayTra = Convert.ToDateTime(tn.NGAYTRA)
+                         };
+            return search.ToList();
+        }
+    }
     public class DAL_TraNo
     {
         //Kết nối với Linq to SQL

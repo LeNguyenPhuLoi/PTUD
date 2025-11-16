@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,63 @@ using ET;
 
 namespace DAL
 {
+
+    public class DAL_ChuyenKhoanRP
+    {
+        //Kết nối với Linq to SQL
+        AutoConnect conn = new AutoConnect();
+        QLNHDataContext db;
+
+        public DAL_ChuyenKhoanRP()
+        {
+            db = new QLNHDataContext(conn.GetConnection());
+        }
+
+        public List<ET_ChuyenKhoanRP> LoadDSCK()
+        {
+            var query = from ck in db.CHUYENKHOANs
+                        join kh in db.KHACHHANGs on ck.MAKH equals kh.MAKH
+                        join tk in db.TAIKHOANs on ck.MATK equals tk.MATK
+                        select new ET_ChuyenKhoanRP
+                        {
+                            MaCK = ck.MACK,
+                            MaKH = ck.MAKH,
+                            TenKH = kh.TENKH,
+                            SoTaiKhoan = tk.SOTAIKHOAN,
+                            NgayCK = Convert.ToDateTime(ck.NGAYCK),
+                            SoTien = (decimal)ck.SOTIEN,
+                            MaTKGui = ck.MATKGUI,
+                            TenTKGui = kh.TENKH,
+                            MaTKNhan = ck.MATKNHAN,
+                            TenTkNhan = kh.TENKH,
+                            NoiDung = ck.NOIDUNG
+                        };
+            return query.ToList();
+        }
+
+        public List<ET_ChuyenKhoanRP> TimRPCK(string ma)
+        {
+            var search = from ck in db.CHUYENKHOANs
+                         join kh in db.KHACHHANGs on ck.MAKH equals kh.MAKH
+                         join tk in db.TAIKHOANs on ck.MATK equals tk.MATK
+                         where ck.MACK.Contains(ma) || kh.TENKH.Contains(ma)
+                         select new ET_ChuyenKhoanRP
+                         {
+                             MaCK = ck.MACK,
+                             MaKH = ck.MAKH,
+                             TenKH = kh.TENKH,
+                             SoTaiKhoan = tk.SOTAIKHOAN,
+                             NgayCK = Convert.ToDateTime(ck.NGAYCK),
+                             SoTien = (decimal)ck.SOTIEN,
+                             MaTKGui = ck.MATKGUI,
+                             TenTKGui = kh.TENKH,
+                             MaTKNhan = ck.MATKNHAN,
+                             TenTkNhan = kh.TENKH,
+                             NoiDung = ck.NOIDUNG
+                         };
+            return search.ToList();
+        }
+    }
     public class DAL_ChuyenKhoan
     {
         //Kết nối với Linq to SQL

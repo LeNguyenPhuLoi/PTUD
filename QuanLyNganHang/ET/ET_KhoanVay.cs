@@ -32,7 +32,19 @@ namespace ET
         public string TrangThai { get; set; }
         public string MaLaiSuat { get; set; }
         public string TinhTrangXoa { get; set; }
+       
+    }
 
-        
+    public class ET_KhoanVayRP
+    {
+        public string MaVay { get; set; }
+        public string TenKH { get; set; }
+        public string SoTaiKhoan { get; set; }
+        public decimal SoTienVay { get; set; }
+        public decimal TongTien { get; set; }
+        public DateTime NgayVay { get; set; }
+        public DateTime ThoiHan { get; set; }
+        public string TrangThai { get; set; }
+        public string MaLaiSuat { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,58 @@ using ET;
 
 namespace DAL
 {
+    public class DAL_KhoanVayRP
+    {
+        //Kết nối với Linq to SQL
+        AutoConnect conn = new AutoConnect();
+        QLNHDataContext db;
+
+        public DAL_KhoanVayRP()
+        {
+            db = new QLNHDataContext(conn.GetConnection());
+        }
+
+        public List<ET_KhoanVayRP> LoadDSKV()
+        {
+            var query = from kv in db.KHOANVAYs
+                        join kh in db.KHACHHANGs on kv.MAKH equals kh.MAKH
+                        join tk in db.TAIKHOANs on kv.MATK equals tk.MATK
+                        select new ET_KhoanVayRP
+                        {
+                            MaVay = kv.MAVAY,
+                            TenKH = kh.TENKH,
+                            SoTaiKhoan = tk.SOTAIKHOAN,
+                            SoTienVay = (decimal)kv.SOTIENVAY,
+                            TongTien = (decimal)kv.TONGTIEN,
+                            NgayVay = Convert.ToDateTime(kv.NGAYVAY),
+                            ThoiHan = Convert.ToDateTime(kv.THOIHAN),
+                            TrangThai = kv.TRANGTHAI,
+                            MaLaiSuat = kv.MALAISUAT,
+                        };
+            return query.ToList();
+        }
+
+        public List<ET_KhoanVayRP> TimRPKV(string ma)
+        {
+            var search = from kv in db.KHOANVAYs
+                         join kh in db.KHACHHANGs on kv.MAKH equals kh.MAKH
+                         join tk in db.TAIKHOANs on kv.MATK equals tk.MATK
+                         where kv.MAVAY.Contains(ma) || kh.TENKH.Contains(ma)
+                         select new ET_KhoanVayRP
+                         {
+                             MaVay = kv.MAVAY,
+                             TenKH = kh.TENKH,
+                             SoTaiKhoan = tk.SOTAIKHOAN,
+                             SoTienVay = (decimal)kv.SOTIENVAY,
+                             TongTien = (decimal)kv.TONGTIEN,
+                             NgayVay = Convert.ToDateTime(kv.NGAYVAY),
+                             ThoiHan = Convert.ToDateTime(kv.THOIHAN),
+                             TrangThai = kv.TRANGTHAI,
+                             MaLaiSuat = kv.MALAISUAT,
+                         };
+            return search.ToList();
+        }
+    }
     public class DAL_KhoanVay
     {
         //Kết nối với Linq to SQL

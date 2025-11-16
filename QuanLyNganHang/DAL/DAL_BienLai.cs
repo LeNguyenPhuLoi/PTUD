@@ -7,6 +7,62 @@ using ET;
 
 namespace DAL
 {
+    public class DAL_BienLaiRP
+    {
+        //Kết nối với Linq to SQL
+        AutoConnect conn = new AutoConnect();
+        QLNHDataContext db;
+
+        public DAL_BienLaiRP()
+        {
+            db = new QLNHDataContext(conn.GetConnection());
+        }
+
+        public List<ET_BienLaiRP> LoadDSBL()
+        {
+            var query = from bl in db.BIENLAIs
+                        join kh in db.KHACHHANGs on bl.MAKH equals kh.MAKH
+                        join tk in db.TAIKHOANs on bl.MATK equals tk.MATK
+                        join nv in db.NHANVIENs on bl.MANV equals nv.MANV
+                        join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
+                        select new ET_BienLaiRP
+                        {
+                            MaBL = bl.MABL,
+                            MaGD = bl.MAGD,
+                            TenKH = kh.TENKH,
+                            SoTaiKhoan = tk.SOTAIKHOAN,
+                            TenNV = nv.TENNV,
+                            SoTien = (decimal)bl.SOTIEN,
+                            TenNgoaiTe = nt.TENNGOAITE,
+                            MoTa = bl.MOTA,
+                            TrangThai = bl.TRANGTHAI
+                        };
+            return query.ToList();
+        }
+
+        public List<ET_BienLaiRP> TimRPBL(string ma)
+        {
+            var search = from bl in db.BIENLAIs
+                         join kh in db.KHACHHANGs on bl.MAKH equals kh.MAKH
+                         join tk in db.TAIKHOANs on bl.MATK equals tk.MATK
+                         join nv in db.NHANVIENs on bl.MANV equals nv.MANV
+                         join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
+                         where bl.MABL.Contains(ma) || kh.TENKH.Contains(ma) || nv.TENNV.Contains(ma)
+                         select new ET_BienLaiRP
+                         {
+                             MaBL = bl.MABL,
+                             MaGD = bl.MAGD,
+                             TenKH = kh.TENKH,
+                             SoTaiKhoan = tk.SOTAIKHOAN,
+                             TenNV = nv.TENNV,
+                             SoTien = (decimal)bl.SOTIEN,
+                             TenNgoaiTe = nt.TENNGOAITE,
+                             MoTa = bl.MOTA,
+                             TrangThai = bl.TRANGTHAI
+                         };
+            return search.ToList();
+        }
+    }
     public class DAL_BienLai
     {
         //Kết nối với Linq to SQL

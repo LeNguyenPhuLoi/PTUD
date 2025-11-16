@@ -31,4 +31,19 @@ namespace ET
             TinhTrangXoa = tinhTrangXoa;
         }
     }
+
+    public class ET_ChuyenKhoanRP
+    {
+        public string MaCK { get; set; }
+        public string MaKH { get; set; }
+        public string TenKH { get; set; }
+        public string SoTaiKhoan { get; set; }
+        public DateTime NgayCK { get; set; }
+        public decimal SoTien { get; set; }
+        public string MaTKGui { get; set; }
+        public string TenTKGui { get; set; }
+        public string MaTKNhan { get; set; }
+        public string TenTkNhan {  get; set; }
+        public string NoiDung { get; set; }
+    }
 }

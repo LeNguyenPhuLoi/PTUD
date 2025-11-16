@@ -86,4 +86,21 @@ namespace BUS
         }
 
     }
+
+    public class BUS_KhoanVayRP
+    {
+        DAL_KhoanVayRP kv = new DAL_KhoanVayRP();
+
+        //Lấy danh sách khoản vay report
+        public List<ET_KhoanVayRP> LoadDSKV()
+        {
+            return kv.LoadDSKV();
+        }
+
+        //Tìm report khoản vay
+        public List<ET_KhoanVayRP> TimRPKV(string ma)
+        {
+            return kv.TimRPKV(ma);
+        }
+    }
 }

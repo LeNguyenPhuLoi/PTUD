@@ -90,4 +90,21 @@ namespace BUS
             return bl.DemMa();
         }
     }
+
+    public class BUS_BienLaiRP
+    {
+        DAL_BienLaiRP bl = new DAL_BienLaiRP();
+
+        //Lấy danh sách biên lai report
+        public List<ET_BienLaiRP> LoadDSBL()
+        {
+            return bl.LoadDSBL();
+        }
+
+        //Tìm report biên lai
+        public List<ET_BienLaiRP> TimRPBL(string ma)
+        {
+            return bl.TimRPBL(ma);
+        }
+    }
 }

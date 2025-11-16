@@ -69,4 +69,21 @@ namespace BUS
             return ck.DemMa();
         }
     }
+
+    public class BUS_ChuyenKhoanRP
+    {
+        DAL_ChuyenKhoanRP ck = new DAL_ChuyenKhoanRP();
+
+        //Lấy danh sách chuyển khoản report
+        public List<ET_ChuyenKhoanRP> LoadDSCK()
+        {
+            return ck.LoadDSCK();
+        }
+
+        //Tìm report chuyển khoản
+        public List<ET_ChuyenKhoanRP> TimRPCK(string ma)
+        {
+            return ck.TimRPCK(ma);
+        }
+    }
 }
