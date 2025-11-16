@@ -33,4 +33,17 @@ namespace ET
         public string TrangThai {  get; set; }
         public string TinhTrangXoa { get; set; }
     }
+
+    public class ET_BienLaiRP
+    {
+        public string MaBL { get; set; }
+        public string MaGD { get; set; }
+        public string TenKH { get; set; }
+        public string SoTaiKhoan { get; set; }
+        public string TenNV { get; set; }
+        public decimal SoTien { get; set; }
+        public string TenNgoaiTe { get; set; }
+        public string MoTa { get; set; }
+        public string TrangThai { get; set; }
+    }
 }

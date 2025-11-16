@@ -54,4 +54,21 @@ namespace BUS
             return tn.DemMa();
         }
     }
+
+    public class BUS_TraNORP
+    {
+        DAL_TraNoRP tn = new DAL_TraNoRP();
+
+        //Lấy danh sách trả nợ report
+        public List<ET_TraNoRP> LoadDSTN()
+        {
+            return tn.LoadDSTN();
+        }
+
+        //Tìm report trả nợ
+        public List<ET_TraNoRP> TimRPTN(string ma)
+        {
+            return tn.TimRPTN(ma);
+        }
+    }
 }

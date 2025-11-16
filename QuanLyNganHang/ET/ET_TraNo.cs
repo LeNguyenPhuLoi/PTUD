@@ -25,4 +25,13 @@ namespace ET
         public DateTime NgayTra {  get; set; }
         public string TinhTrangXoa { get; set; }
     }
+
+    public class ET_TraNoRP
+    {
+        public string MaTraNo { get; set; }
+        public string MaVay { get; set; }
+        public decimal SoTienNo { get; set; }
+        public decimal SoTienTra { get; set; }
+        public DateTime NgayTra { get; set; }
+    }
 }

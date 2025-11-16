@@ -268,6 +268,21 @@
     <Compile Include="NgoaiTe.Designer.cs">
       <DependentUpon>NgoaiTe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\BienLaiDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BienLaiDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ChuyenKhoanDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ChuyenKhoanDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\KhoanVayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KhoanVayDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Report_ChuyenKhoan.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -336,6 +351,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\TraNoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TraNoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TraNo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -507,6 +527,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reports\BienLaiDataSet.xsc">
+      <DependentUpon>BienLaiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\BienLaiDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BienLaiDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\BienLaiDataSet.xss">
+      <DependentUpon>BienLaiDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ChuyenKhoanDataSet.xsc">
+      <DependentUpon>ChuyenKhoanDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ChuyenKhoanDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ChuyenKhoanDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\ChuyenKhoanDataSet.xss">
+      <DependentUpon>ChuyenKhoanDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\KhoanVayDataSet.xsc">
+      <DependentUpon>KhoanVayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\KhoanVayDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KhoanVayDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\KhoanVayDataSet.xss">
+      <DependentUpon>KhoanVayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\TraNoDataSet.xsc">
+      <DependentUpon>TraNoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\TraNoDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TraNoDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\TraNoDataSet.xss">
+      <DependentUpon>TraNoDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
