@@ -14,7 +14,7 @@ namespace DAL
     public class DAL_GiaoDich
     {
         //kết nối với cơ sở dữ liệu 
-        private readonly AutoConnect connect = new AutoConnect();     
+        private readonly AutoConnect connect = new AutoConnect();
 
         //hàm trừ tiền
         public bool TruTien(string stk, decimal tientru)
@@ -99,6 +99,28 @@ namespace DAL
         {
             string maloaigd = null;
             const string query = @"SELECT MALOAIGD FROM LOAIGD WHERE TENLOAIGD = @Tenloaigd";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    maloaigd = conn.QueryFirstOrDefault<string>(query, new { Tenloaigd = tenloaigd });
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+
+            return maloaigd;
+        }
+
+        //hàm lấy phương thức tên loại giao dịch
+        public string LayPhuongThucTheoTenLoaiGD(string tenloaigd)
+        {
+            string maloaigd = null;
+            const string query = @"SELECT PHUONGTHUC FROM LOAIGD WHERE TENLOAIGD = @Tenloaigd";
 
             try
             {
@@ -248,6 +270,65 @@ namespace DAL
             return list.AsQueryable();
         }
 
+        //hàm lấy danh sách tài khoản không thuộc số cccd
+        public IQueryable<string> LayDSTaiKhoanKhongCuaSoCCCD(string cccd)
+        {
+            List<string> list = new List<string>();
+            const string query =
+                @"SELECT SOTAIKHOAN
+                FROM TAIKHOAN tk, KHACHHANG kh
+                WHERE tk.MAKH = kh.MAKH AND kh.CCCD != @Cccd";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    list = conn.Query<string>(query, new { @Cccd = cccd }).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return list.AsQueryable();
+        }
+
+        //hàm lấy danh sách tài khoản không thuộc số cccd dạng nhập
+        public IQueryable<string> LayDSTaiKhoanKhongCuaSoCCCD_Nhap(string cccd, string stk)
+        {
+            List<string> list = new List<string>();
+            const string query =
+                @"SELECT tk.SOTAIKHOAN
+          FROM TAIKHOAN tk
+          JOIN KHACHHANG kh ON tk.MAKH = kh.MAKH
+          WHERE kh.CCCD <> @Cccd 
+            AND tk.SOTAIKHOAN LIKE @StkPattern";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+
+                    list = conn.Query<string>(
+                        query,
+                        new
+                        {
+                            Cccd = cccd,
+                            StkPattern = "%" + stk + "%"   // thêm wildcard ở đây
+                        }
+                    ).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+
+            return list.AsQueryable();
+        }
+
         //hàm lấy danh sách khách hàng theo số cccd
         public List<ET_KhachHang> LayDSKhachHangTheoCCCD(string cccd)
         {
@@ -379,8 +460,8 @@ namespace DAL
             return flag;
         }
 
-        //hàm thêm giao dịch và trừ tiền
-        public bool ThemGiaoDichVaTruTien(ET_GiaoDich gd, string stk)
+        //hàm trừ tiền tài khoản A, cộng tiền tài khoản B (nếu có) và thêm giao dịch
+        public bool ThemGiaoDichVaTruTien(ET_GiaoDich gd, string stkA, string SoTkB)
         {
             using (var conn = new SqlConnection(connect.GetConnection()))
             {
@@ -390,18 +471,21 @@ namespace DAL
                     try
                     {
                         //Lấy số dư hiện tại
-                        decimal sodu = conn.ExecuteScalar<decimal>("SELECT SODU FROM TAIKHOAN WHERE SOTAIKHOAN = @Stk", new { Stk = stk }, tran);
+                        decimal sodu = conn.ExecuteScalar<decimal>("SELECT SODU FROM TAIKHOAN WHERE SOTAIKHOAN = @Stk", new { Stk = stkA }, tran);
 
                         //Kiểm tra đủ tiền chưa
                         if (sodu < gd.SoTien)
                             return false;
 
-                        //Trừ tiền
-                        conn.Execute("UPDATE TAIKHOAN SET SODU = SODU - @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = stk }, tran);
+                        //Trừ tiền tài khoản A
+                        conn.Execute("UPDATE TAIKHOAN SET SODU = SODU - @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = stkA }, tran);
+
+                        //Cộng tiền tài khoản B
+                        conn.Execute("UPDATE TAIKHOAN SET SODU = SODU + @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = SoTkB }, tran);
 
                         //Thêm giao dịch
-                        conn.Execute(@" INSERT INTO GIAODICH(MAGD, MAKH, MATK, MALOAIGD, SOTIEN, THOIGIANGD, MOTA, TRANGTHAI, TinhTrangXoa)
-                                    VALUES (@MaGD, @MaKH, @MaTk, @MaLoaiGD, @SoTien, @ThoiGianGD, @MoTa, @TrangThai, @TinhTrangXoa);", gd, tran);
+                        conn.Execute(@" INSERT INTO GIAODICH(MAGD, MAKH, MATK, MATKNHAN, MALOAIGD, SOTIEN, THOIGIANGD, MOTA, TRANGTHAI, TinhTrangXoa)
+                                    VALUES (@MaGD, @MaKH, @MaTk, @MaTkNhan, @MaLoaiGD, @SoTien, @ThoiGianGD, @MoTa, @TrangThai, @TinhTrangXoa);", gd, tran);
 
                         //lưu
                         tran.Commit();
@@ -410,6 +494,71 @@ namespace DAL
                     catch (Exception ex)
                     {
                         //rollback
+                        tran.Rollback();
+                        File.AppendAllText(@"D:\log.txt", ex.ToString());
+                        return false;
+                    }
+                }
+            }
+        }
+
+        //hàm cộng tiền tài khoản A, trừ tiền tài khoản B (nếu có) và thêm giao dịch
+        public bool ThemGiaoDichVaCongTien(ET_GiaoDich gd, string stkA, string stkB)
+        {
+            using (var conn = new SqlConnection(connect.GetConnection()))
+            {
+                conn.Open();
+                using (var tran = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        // Không có tài khoản gửi → chỉ cộng tiền vào tài khoản nhận
+                        if (string.IsNullOrWhiteSpace(stkB))
+                        {
+                            // Cộng tiền cho tài khoản nhận
+                            conn.Execute(
+                                "UPDATE TAIKHOAN SET SODU = SODU + @Tien WHERE SOTAIKHOAN = @StkNhan",
+                                new { Tien = gd.SoTien, StkNhan = stkA },
+                                tran
+                            );
+                        }
+                        else
+                        {
+                            // Lấy số dư tài khoản gửi
+                            decimal soDuGui = conn.ExecuteScalar<decimal>(
+                                "SELECT SODU FROM TAIKHOAN WHERE SOTAIKHOAN = @StkGui",
+                                new { StkGui = stkB },
+                                tran
+                            );
+
+                            // Kiểm tra đủ tiền chưa
+                            if (soDuGui < gd.SoTien)
+                                return false;
+
+                            // Trừ tiền tài khoản gửi
+                            conn.Execute(
+                                "UPDATE TAIKHOAN SET SODU = SODU - @Tien WHERE SOTAIKHOAN = @StkGui",
+                                new { Tien = gd.SoTien, StkGui = stkB },
+                                tran
+                            );
+
+                            // Cộng tiền tài khoản nhận
+                            conn.Execute(
+                                "UPDATE TAIKHOAN SET SODU = SODU + @Tien WHERE SOTAIKHOAN = @StkNhan",
+                                new { Tien = gd.SoTien, StkNhan = stkA },
+                                tran
+                            );
+                        }
+
+                        //Thêm giao dịch
+                        conn.Execute(@" INSERT INTO GIAODICH(MAGD, MAKH, MATK, MATKNHAN, MALOAIGD, SOTIEN, THOIGIANGD, MOTA, TRANGTHAI, TinhTrangXoa)
+                                    VALUES (@MaGD, @MaKH, @MaTk, @MaTkNhan, @MaLoaiGD, @SoTien, @ThoiGianGD, @MoTa, @TrangThai, @TinhTrangXoa);", gd, tran);
+
+                        tran.Commit();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
                         tran.Rollback();
                         File.AppendAllText(@"D:\log.txt", ex.ToString());
                         return false;
@@ -449,8 +598,8 @@ namespace DAL
             return flag;
         }
 
-        //hàm ẩn giao dịch và cộng tiền
-        public bool AnGiaoDichVaCongTien(ET_GiaoDich gd, string stk)
+        //hàm cộng tiền tài khoản A, trừ tiền tài khoản B (nếu có) và ẩn giao dịch
+        public bool AnGiaoDichVaCongTien(ET_GiaoDich gd, string stkA, string stkB)
         {
             using (var conn = new SqlConnection(connect.GetConnection()))
             {
@@ -467,7 +616,149 @@ namespace DAL
                             return false;
 
                         //Cộng lại tiền vào tài khoản
-                        conn.Execute(@"UPDATE TAIKHOAN SET SODU = SODU + @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = stk }, transaction: tran
+                        conn.Execute(@"UPDATE TAIKHOAN SET SODU = SODU + @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = stkA }, transaction: tran);
+
+                        if (!string.IsNullOrEmpty(stkB))
+                        {
+                            // Lấy số dư tài khoản nhận
+                            decimal sotaikhoannhan = conn.ExecuteScalar<decimal>(
+                                "SELECT SODU FROM TAIKHOAN WHERE SOTAIKHOAN = @StkNhan",
+                                new { StkNhan = stkB },
+                                tran
+                            );
+
+                            // Kiểm tra đủ tiền chưa
+                            if (sotaikhoannhan < gd.SoTien)
+                                return false;
+
+                            // Trừ tiền tài khoản nhận
+                            conn.Execute(
+                                "UPDATE TAIKHOAN SET SODU = SODU - @Tien WHERE SOTAIKHOAN = @StkNhan",
+                                new { Tien = gd.SoTien, StkNhan = stkB },
+                                tran
+                            );
+                        }
+
+                        //Ẩn giao dịch
+                        conn.Execute(@"UPDATE GIAODICH SET TINHTRANGXOA = @TinhTrangXoa WHERE MAGD = @MaGD", new { gd.TinhTrangXoa, gd.MaGD },
+                            transaction: tran
+                        );
+
+                        //lưu
+                        tran.Commit();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        //rollback
+                        tran.Rollback();
+                        File.AppendAllText(@"D:\log.txt", ex.ToString());
+                        return false;
+                    }
+                }
+            }
+        }
+
+        //hàm trừ tiền tài khoản A, cộng tiền tài khoản B (nếu có) và ẩn giao dịch
+        public bool AnGiaoDichVaTruTien(ET_GiaoDich gd, string stkA, string stkB)
+        {
+            using (var conn = new SqlConnection(connect.GetConnection()))
+            {
+                conn.Open();
+                using (var tran = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        // Kiểm tra giao dịch đã bị ẩn chưa
+                        bool tinhTrangXoa = conn.ExecuteScalar<bool>(
+                            "SELECT TinhTrangXoa FROM GIAODICH WHERE MAGD = @MaGD",
+                            new { gd.MaGD }, tran
+                        );
+                        if (tinhTrangXoa) return false;
+
+                        // Cộng tiền lại cho tài khoản B (nếu có)
+                        if (!string.IsNullOrEmpty(stkB))
+                        {
+                            conn.Execute(
+                                "UPDATE TAIKHOAN SET SODU = SODU + @Tien WHERE SOTAIKHOAN = @Stk",
+                                new { Tien = gd.SoTien, Stk = stkB },
+                                tran
+                            );
+                        }
+
+                        // Lấy số dư tài khoản A
+                        decimal soDuA = conn.ExecuteScalar<decimal>(
+                            "SELECT SODU FROM TAIKHOAN WHERE SOTAIKHOAN = @StkA",
+                            new { StkA = stkA },
+                            tran
+                        );
+
+                        // Kiểm tra đủ tiền để trừ
+                        if (soDuA < gd.SoTien)
+                            return false;
+
+                        // Trừ tiền tài khoản A
+                        conn.Execute(
+                            "UPDATE TAIKHOAN SET SODU = SODU - @Tien WHERE SOTAIKHOAN = @Stk",
+                            new { Tien = gd.SoTien, Stk = stkA },
+                            tran
+                        );
+
+                        // Ẩn giao dịch
+                        conn.Execute(
+                            "UPDATE GIAODICH SET TinhTrangXoa = 1 WHERE MAGD = @MaGD",
+                            new { gd.MaGD },
+                            tran
+                        );
+
+                        tran.Commit();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        File.AppendAllText(@"D:\log.txt", ex.ToString());
+                        return false;
+                    }
+                }
+            }
+        }
+
+        //hàm trừ tiền tài khoản A, cộng tiền tài khoản B (nếu có) và hủy ẩn giao dịch
+        public bool HuyAnGiaoDichVaTruTien(ET_GiaoDich gd, string stkA, string stkB)
+        {
+            using (var conn = new SqlConnection(connect.GetConnection()))
+            {
+                conn.Open();
+                using (var tran = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        //lấy tình trạng xóa
+                        bool tinhtrangxoa = conn.ExecuteScalar<bool>("SELECT TinhTrangXoa FROM GIAODICH WHERE MAGD = @Magd", new { Magd = gd.MaGD }, tran);
+
+                        //kiểm tra tình trạng xóa
+                        if (tinhtrangxoa == false)
+                            return false;
+
+                        if (!string.IsNullOrEmpty(stkB))
+                        {
+                            conn.Execute(
+                                "UPDATE TAIKHOAN SET SODU = SODU + @Tien WHERE SOTAIKHOAN = @Stk",
+                                new { Tien = gd.SoTien, Stk = stkB },
+                                tran
+                            );
+                        }
+
+                        //Lấy số dư hiện tại
+                        decimal soduA = conn.ExecuteScalar<decimal>("SELECT SODU FROM TAIKHOAN WHERE SOTAIKHOAN = @Stk", new { Stk = stkA }, tran);
+
+                        //Kiểm tra đủ tiền chưa
+                        if (soduA < gd.SoTien)
+                            return false;
+
+                        //Trừ bớt tiền trong tài khoản
+                        conn.Execute(@"UPDATE TAIKHOAN SET SODU = SODU - @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = stkA }, transaction: tran
                         );
 
                         //Ẩn giao dịch
@@ -490,8 +781,8 @@ namespace DAL
             }
         }
 
-        //hàm hủy ẩn giao dịch và trừ tiền
-        public bool HuyAnGiaoDichVaTruTien(ET_GiaoDich gd, string stk)
+        //hàm cộng tiền tài khoản A, trừ tiền tài khoản B (nếu có) và hủy ẩn giao dịch
+        public bool HuyAnGiaoDichVaCongTien(ET_GiaoDich gd, string stkA, string stkB)
         {
             using (var conn = new SqlConnection(connect.GetConnection()))
             {
@@ -507,18 +798,23 @@ namespace DAL
                         if (tinhtrangxoa == false)
                             return false;
 
-                        //Lấy số dư hiện tại
-                        decimal sodu = conn.ExecuteScalar<decimal>("SELECT SODU FROM TAIKHOAN WHERE SOTAIKHOAN = @Stk", new { Stk = stk }, tran);
-
-                        //Kiểm tra đủ tiền chưa
-                        if (sodu < gd.SoTien)
-                            return false;
-
                         //Cộng lại tiền vào tài khoản
-                        conn.Execute(@"UPDATE TAIKHOAN SET SODU = SODU - @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = stk }, transaction: tran
-                        );
+                        conn.Execute(@"UPDATE TAIKHOAN SET SODU = SODU + @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = stkA }, transaction: tran);
 
-                        //Ẩn giao dịch
+                        if (!string.IsNullOrEmpty(stkB))
+                        {
+                            //Lấy số dư tài khoản B
+                            decimal soduB = conn.ExecuteScalar<decimal>("SELECT SODU FROM TAIKHOAN WHERE SOTAIKHOAN = @Stk", new { Stk = stkB }, tran);
+
+                            //Kiểm tra đủ tiền chưa
+                            if (soduB < gd.SoTien)
+                                return false;
+
+                            //Trừ tiền vào tài khoản B
+                            conn.Execute(@"UPDATE TAIKHOAN SET SODU = SODU - @Tien WHERE SOTAIKHOAN = @Stk", new { Tien = gd.SoTien, Stk = stkB }, transaction: tran);
+                        }
+
+                        //hủy ẩn giao dịch
                         conn.Execute(@"UPDATE GIAODICH SET TINHTRANGXOA = @TinhTrangXoa WHERE MAGD = @MaGD", new { gd.TinhTrangXoa, gd.MaGD },
                             transaction: tran
                         );

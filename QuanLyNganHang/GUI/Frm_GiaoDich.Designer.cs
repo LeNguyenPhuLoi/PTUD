@@ -59,6 +59,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_MaGD = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cbo_SoTkNhan = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.panel_GiaoDich.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_GiaoDich)).BeginInit();
@@ -366,6 +368,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.cbo_SoTkNhan);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbo_LoaiGD);
             this.panel1.Controls.Add(this.panel_KhachHang);
             this.panel1.Controls.Add(this.cbo_SoTK);
@@ -387,7 +391,7 @@
             this.cbo_LoaiGD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_LoaiGD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_LoaiGD.FormattingEnabled = true;
-            this.cbo_LoaiGD.Location = new System.Drawing.Point(186, 204);
+            this.cbo_LoaiGD.Location = new System.Drawing.Point(199, 213);
             this.cbo_LoaiGD.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_LoaiGD.Name = "cbo_LoaiGD";
             this.cbo_LoaiGD.Size = new System.Drawing.Size(263, 27);
@@ -399,7 +403,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_KhachHang.AutoScroll = true;
             this.panel_KhachHang.Controls.Add(this.dgv_KhachHang);
-            this.panel_KhachHang.Location = new System.Drawing.Point(22, 53);
+            this.panel_KhachHang.Location = new System.Drawing.Point(35, 44);
             this.panel_KhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.panel_KhachHang.Name = "panel_KhachHang";
             this.panel_KhachHang.Size = new System.Drawing.Size(427, 94);
@@ -432,7 +436,7 @@
             this.cbo_SoTK.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_SoTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_SoTK.FormattingEnabled = true;
-            this.cbo_SoTK.Location = new System.Drawing.Point(186, 162);
+            this.cbo_SoTK.Location = new System.Drawing.Point(199, 142);
             this.cbo_SoTK.Margin = new System.Windows.Forms.Padding(2);
             this.cbo_SoTK.Name = "cbo_SoTK";
             this.cbo_SoTK.Size = new System.Drawing.Size(263, 27);
@@ -443,7 +447,7 @@
             this.txt_CCCD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_CCCD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_CCCD.Location = new System.Drawing.Point(186, 13);
+            this.txt_CCCD.Location = new System.Drawing.Point(199, 13);
             this.txt_CCCD.Name = "txt_CCCD";
             this.txt_CCCD.Size = new System.Drawing.Size(263, 26);
             this.txt_CCCD.TabIndex = 33;
@@ -461,7 +465,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 11);
+            this.label3.Location = new System.Drawing.Point(3, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 25);
             this.label3.TabIndex = 0;
@@ -471,7 +475,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 202);
+            this.label6.Location = new System.Drawing.Point(3, 211);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 25);
             this.label6.TabIndex = 20;
@@ -481,7 +485,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 160);
+            this.label7.Location = new System.Drawing.Point(3, 140);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(139, 25);
             this.label7.TabIndex = 0;
@@ -510,6 +514,30 @@
             this.label8.TabIndex = 59;
             this.label8.Text = "Quản Lý Giao Dịch";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbo_SoTkNhan
+            // 
+            this.cbo_SoTkNhan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_SoTkNhan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_SoTkNhan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_SoTkNhan.FormattingEnabled = true;
+            this.cbo_SoTkNhan.Location = new System.Drawing.Point(199, 178);
+            this.cbo_SoTkNhan.Margin = new System.Windows.Forms.Padding(2);
+            this.cbo_SoTkNhan.Name = "cbo_SoTkNhan";
+            this.cbo_SoTkNhan.Size = new System.Drawing.Size(263, 27);
+            this.cbo_SoTkNhan.TabIndex = 62;
+            this.cbo_SoTkNhan.TextChanged += new System.EventHandler(this.cbo_SoTkNhan_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 176);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 25);
+            this.label2.TabIndex = 61;
+            this.label2.Text = "Số Tài Khoản Nhận:";
             // 
             // Frm_GiaoDich
             // 
@@ -572,5 +600,7 @@
         private System.Windows.Forms.Button btn_Lammoi;
         private System.Windows.Forms.DateTimePicker dtp_ThoiGianGD;
         private System.Windows.Forms.Button btn_HuyAn;
+        private System.Windows.Forms.ComboBox cbo_SoTkNhan;
+        private System.Windows.Forms.Label label2;
     }
 }

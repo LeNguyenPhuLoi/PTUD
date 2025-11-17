@@ -12,6 +12,8 @@ namespace ET
 
         public string TenLoaiGD { get; set; }
 
+        public string PhuongThuc {  get; set; }
+
         public DateTime  NgayLap { get; set; }
 
         public DateTime NgayCapNhat { get; set; }
@@ -20,10 +22,11 @@ namespace ET
 
         public bool TinhTrangXoa { get; set; }
 
-        public ET_LoaiGiaoDich(string maLoaiGD, string tenLoaiGD, DateTime ngayLap, DateTime ngayCapNhat, string trangThai, bool tinhTrangXoa)
+        public ET_LoaiGiaoDich(string maLoaiGD, string tenLoaiGD, string phuongThuc, DateTime ngayLap, DateTime ngayCapNhat, string trangThai, bool tinhTrangXoa)
         {
             MaLoaiGD = maLoaiGD;
             TenLoaiGD = tenLoaiGD;
+            PhuongThuc = phuongThuc;
             NgayLap = ngayLap;
             NgayCapNhat = ngayCapNhat;
             TrangThai = trangThai;

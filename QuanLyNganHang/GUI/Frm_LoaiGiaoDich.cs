@@ -38,6 +38,7 @@ namespace GUI
             dtp_NgayLap.MaxDate = DateTime.Now;
             dtp_NgayCapNhat.MaxDate = DateTime.Now;
             cbo_TrangThai.SelectedIndex = 0;
+            cbo_PhuongThuc.SelectedIndex = 0;
             Cutom_Resize();
             HienThiDS();
             if (this.MdiParent.Name == "frmMainAddmin")
@@ -99,6 +100,7 @@ namespace GUI
             dtp_NgayCapNhat.MinDate = dtp_NgayLap.MinDate;
             dtp_NgayCapNhat.Text = dtp_NgayCapNhat.MaxDate.ToString();
             cbo_TrangThai.SelectedIndex = 0;
+            cbo_PhuongThuc.SelectedIndex = 0;
 
             txt_MaLoaiGD.BackColor = SystemColors.Window;
             txt_TenLoaiGD.BackColor = SystemColors.Window;
@@ -139,6 +141,7 @@ namespace GUI
             {
                 ET_LoaiGiaoDich lgd = new ET_LoaiGiaoDich(maloaigd,
                                                             txt_TenLoaiGD.Text,
+                                                            cbo_PhuongThuc.Text,
                                                             dtp_NgayLap.Value,
                                                             dtp_NgayCapNhat.Value,
                                                             cbo_TrangThai.Text,
@@ -219,6 +222,7 @@ namespace GUI
             {
                 ET_LoaiGiaoDich lgd = new ET_LoaiGiaoDich(txt_MaLoaiGD.Text.Trim().ToUpper(),
                                                             txt_TenLoaiGD.Text,
+                                                            cbo_PhuongThuc.Text,
                                                             dtp_NgayLap.Value,
                                                             dtp_NgayCapNhat.Value,
                                                             cbo_TrangThai.Text,
@@ -249,6 +253,7 @@ namespace GUI
                 {
                     ET_LoaiGiaoDich lgd = new ET_LoaiGiaoDich(txt_MaLoaiGD.Text.Trim().ToUpper(),
                                                             txt_TenLoaiGD.Text,
+                                                            cbo_PhuongThuc.Text,
                                                             dtp_NgayLap.Value,
                                                             dtp_NgayCapNhat.Value,
                                                             cbo_TrangThai.Text,
@@ -277,6 +282,7 @@ namespace GUI
             {
                 ET_LoaiGiaoDich lgd = new ET_LoaiGiaoDich(txt_MaLoaiGD.Text.Trim().ToUpper(),
                                                             txt_TenLoaiGD.Text,
+                                                            cbo_PhuongThuc.Text,
                                                             dtp_NgayLap.Value,
                                                             dtp_NgayCapNhat.Value,
                                                             cbo_TrangThai.Text,
@@ -319,9 +325,10 @@ namespace GUI
                     int dong = dgv_LoaiGiaoDich.CurrentCell.RowIndex;
                     txt_MaLoaiGD.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[0].Value.ToString();
                     txt_TenLoaiGD.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[1].Value.ToString();
-                    dtp_NgayLap.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[2].Value.ToString();
-                    dtp_NgayCapNhat.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[3].Value.ToString();
-                    cbo_TrangThai.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[4].Value.ToString();
+                    cbo_PhuongThuc.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[2].Value.ToString();
+                    dtp_NgayLap.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[3].Value.ToString();
+                    dtp_NgayCapNhat.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[4].Value.ToString();
+                    cbo_TrangThai.Text = dgv_LoaiGiaoDich.Rows[dong].Cells[5].Value.ToString();
                 }
             }
             catch (Exception ex)
