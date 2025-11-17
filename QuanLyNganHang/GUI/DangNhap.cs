@@ -20,7 +20,7 @@ namespace GUI
         }
         BUS_DangNhap bs = new BUS_DangNhap();
         public Form NextForm { get; set; } // Lưu form tiếp theo
-
+        public string madn { get; set; }
 
         private void btnZoom_Click(object sender, EventArgs e)
         {
@@ -38,7 +38,7 @@ namespace GUI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            madn = "";
             string username = txtMaDN.Text;
             string password = txtPass.Text;
 
@@ -49,15 +49,18 @@ namespace GUI
 
                 if (bs.IsAdmin(account))
                 {
-                    NextForm = new frmMainAddmin();
+                    madn = username;
+                    NextForm = new frmMainAddmin(madn);
                 }
                 else if (bs.IsNhanVien(account))
                 {
-                    NextForm = new Frm_MainUser();
+                    madn = username;
+                    NextForm = new Frm_MainUser(madn);
                 }
                 else
                 {
                     MessageBox.Show("Không xác định quyền người dùng.");
+                    madn = "";
                     return;
                 }
 

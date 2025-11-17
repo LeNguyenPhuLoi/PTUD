@@ -26,5 +26,10 @@ namespace BUS
         {
             return user != null && user.Quyen == "NHANVIEN";
         }
+
+        public string LayNhanVienTuDangNhap(string ma)
+        {
+            return lg.layNhanVienTheoTKDN(ma);
+        }
     }
 }

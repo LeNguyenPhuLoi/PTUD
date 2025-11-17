@@ -12,9 +12,11 @@ namespace GUI
 {
     public partial class frmMainAddmin : Form
     {
-        public frmMainAddmin()
+        public string maDN { get; set; }
+        public frmMainAddmin(string madn)
         {
             InitializeComponent();
+            maDN = madn;
         }
 
         private void frmMainAddmin_Load(object sender, EventArgs e)
@@ -77,7 +79,7 @@ namespace GUI
 
         private void biênLaiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BienLai frm = new BienLai();
+            BienLai frm = new BienLai(maDN);
             OpenMain(frm);
         }
 
