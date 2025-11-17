@@ -28,47 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crv_trano = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.Report_TraNo1 = new GUI.Reports.Report_TraNo();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_lammoi = new System.Windows.Forms.Button();
+            this.btn_tim = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_timkiem = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // crv_trano
             // 
-            this.crystalReportViewer1.ActiveViewIndex = 0;
-            this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.crv_trano.ActiveViewIndex = 0;
+            this.crv_trano.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 54);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.Report_TraNo1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 396);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.crv_trano.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crv_trano.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crv_trano.Location = new System.Drawing.Point(0, 54);
+            this.crv_trano.Name = "crv_trano";
+            this.crv_trano.ReportSource = this.Report_TraNo1;
+            this.crv_trano.Size = new System.Drawing.Size(800, 396);
+            this.crv_trano.TabIndex = 0;
             // 
-            // button2
+            // btn_lammoi
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(664, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 36);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Làm Mới";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_lammoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lammoi.Location = new System.Drawing.Point(664, 12);
+            this.btn_lammoi.Name = "btn_lammoi";
+            this.btn_lammoi.Size = new System.Drawing.Size(124, 36);
+            this.btn_lammoi.TabIndex = 8;
+            this.btn_lammoi.Text = "Làm Mới";
+            this.btn_lammoi.UseVisualStyleBackColor = true;
+            this.btn_lammoi.Click += new System.EventHandler(this.btn_lammoi_Click);
             // 
-            // button1
+            // btn_tim
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(580, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 36);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_tim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tim.Location = new System.Drawing.Point(580, 12);
+            this.btn_tim.Name = "btn_tim";
+            this.btn_tim.Size = new System.Drawing.Size(78, 36);
+            this.btn_tim.TabIndex = 7;
+            this.btn_tim.Text = "Tìm";
+            this.btn_tim.UseVisualStyleBackColor = true;
+            this.btn_tim.Click += new System.EventHandler(this.btn_tim_Click);
             // 
             // label1
             // 
@@ -80,26 +82,27 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Tìm Kiếm:";
             // 
-            // textBox1
+            // txt_timkiem
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(151, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(422, 30);
-            this.textBox1.TabIndex = 9;
+            this.txt_timkiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_timkiem.Location = new System.Drawing.Point(151, 12);
+            this.txt_timkiem.Name = "txt_timkiem";
+            this.txt_timkiem.Size = new System.Drawing.Size(422, 30);
+            this.txt_timkiem.TabIndex = 9;
             // 
             // Frm_TraNoReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txt_timkiem);
+            this.Controls.Add(this.btn_lammoi);
+            this.Controls.Add(this.btn_tim);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.crv_trano);
             this.Name = "Frm_TraNoReport";
             this.Text = "Frm_TraNo";
+            this.Load += new System.EventHandler(this.Frm_TraNoReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,11 +110,11 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crv_trano;
         private Reports.Report_TraNo Report_TraNo1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_lammoi;
+        private System.Windows.Forms.Button btn_tim;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_timkiem;
     }
 }

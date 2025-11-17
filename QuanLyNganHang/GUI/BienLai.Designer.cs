@@ -321,6 +321,7 @@
             this.txtmanv.AllowDrop = true;
             this.txtmanv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtmanv.Enabled = false;
             this.txtmanv.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmanv.Location = new System.Drawing.Point(213, 19);
             this.txtmanv.Margin = new System.Windows.Forms.Padding(4);

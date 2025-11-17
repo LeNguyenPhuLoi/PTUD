@@ -47,7 +47,7 @@ namespace DAL
                          join tk in db.TAIKHOANs on bl.MATK equals tk.MATK
                          join nv in db.NHANVIENs on bl.MANV equals nv.MANV
                          join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
-                         where bl.MABL.Contains(ma) || kh.TENKH.Contains(ma) || nv.TENNV.Contains(ma)
+                         where bl.MABL.Contains(ma) && bl.TinhTrangXoa == "Hoạt Động"
                          select new ET_BienLaiRP
                          {
                              MaBL = bl.MABL,

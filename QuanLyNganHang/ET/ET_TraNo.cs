@@ -30,6 +30,7 @@ namespace ET
     {
         public string MaTraNo { get; set; }
         public string MaVay { get; set; }
+        public string NguoiTra { get; set; }
         public decimal SoTienNo { get; set; }
         public decimal SoTienTra { get; set; }
         public DateTime NgayTra { get; set; }

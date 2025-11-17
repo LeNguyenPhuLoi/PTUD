@@ -55,7 +55,7 @@ namespace BUS
         }
     }
 
-    public class BUS_TraNORP
+    public class BUS_TraNoRP
     {
         DAL_TraNoRP tn = new DAL_TraNoRP();
 
