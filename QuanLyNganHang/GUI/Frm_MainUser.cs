@@ -13,13 +13,15 @@ namespace GUI
 {
     public partial class Frm_MainUser : Form
     {
-        public Frm_MainUser()
+        public string maDN { get; set; }
+        public Frm_MainUser(string madn)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+            maDN = madn;
         }
-
+        
         protected override void WndProc(ref Message m)
         {
             const int WM_ENTERSIZEMOVE = 0x0231;
@@ -251,7 +253,7 @@ namespace GUI
         private void btnBL_Click(object sender, EventArgs e)
         {
             HighlightButton(btnBL);
-            BienLai frm = new BienLai();
+            BienLai frm = new BienLai(maDN);
             OpenMain(frm);
         }
 

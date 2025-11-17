@@ -15,12 +15,15 @@ namespace GUI
 {
     public partial class BienLai : Form
     {
-        public BienLai()
+        
+        public BienLai(string madn)
         {
             InitializeComponent();
+            txtmanv.Text = dn.LayNhanVienTuDangNhap(madn);
         }
     
         BUS_BienLai bUS_BienLai = new BUS_BienLai();
+        BUS_DangNhap dn = new BUS_DangNhap();
 
         private void BienLai_Load(object sender, EventArgs e)
         {

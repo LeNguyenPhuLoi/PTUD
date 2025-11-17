@@ -33,6 +33,15 @@ namespace DAL
 
             return user; // Trả về null nếu không đúng
         }
+
+        public string layNhanVienTheoTKDN(string ma)
+        {
+            string eeploye = (from dn in db.DANGNHAPs
+                          join nv in db.NHANVIENs on dn.MANV equals nv.MANV
+                          where dn.MADN == ma
+                          select nv.MANV).FirstOrDefault();
+            return eeploye;
+        }
     }
 }
 
