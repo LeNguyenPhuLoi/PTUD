@@ -37,6 +37,12 @@ namespace BUS
             return DAL_GiaoDich.LayMaGDTheoTenLoaiGD(tenloaigd);
         }
 
+        //hàm lấy phương thức tên loại giao dịch
+        public string LayPhuongThucTheoTenLoaiGD(string tenloaigd)
+        {
+            return DAL_GiaoDich.LayPhuongThucTheoTenLoaiGD(tenloaigd);
+        }
+
         // Hàm lấy số tài khoản theo mã tài khoản
         public string LaySTKTheoMaTK(string matk)
         {
@@ -71,6 +77,18 @@ namespace BUS
         public IQueryable<string> LayDSTaiKhoanTheoCCCD(string cccd)
         {
             return DAL_GiaoDich.LayDSTaiKhoanTheoCCCD(cccd);
+        }
+
+        //hàm lấy danh sách tài khoản không thuộc số cccd
+        public IQueryable<string> LayDSTaiKhoanKhongCuaSoCCCD(string cccd)
+        {
+            return DAL_GiaoDich.LayDSTaiKhoanKhongCuaSoCCCD(cccd);
+        }
+
+        //hàm lấy danh sách tài khoản không thuộc số cccd dạng nhập
+        public IQueryable<string> LayDSTaiKhoanKhongCuaSoCCCD_Nhap(string cccd, string stk) 
+        {
+            return DAL_GiaoDich.LayDSTaiKhoanKhongCuaSoCCCD_Nhap(cccd, stk);
         }
 
         //hàm lấy danh sách khách hàng theo số cccd
@@ -109,10 +127,16 @@ namespace BUS
             return DAL_GiaoDich.ThemGiaoDich(et);
         }
 
-        //hàm thêm giao dịch và trừ tiền
-        public bool ThemGiaoDichVaTruTien(ET_GiaoDich et, string stk)
+        //hàm trừ tiền tài khoản A, cộng tiền tài khoản B (nếu có) và thêm giao dịch
+        public bool ThemGiaoDichVaTruTien(ET_GiaoDich gd, string stkA, string SoTkB)
         {
-            return DAL_GiaoDich.ThemGiaoDichVaTruTien(et, stk);
+            return DAL_GiaoDich.ThemGiaoDichVaTruTien(gd, stkA, SoTkB);
+        }
+
+        //hàm cộng tiền tài khoản A, trừ tiền tài khoản B (nếu có) và thêm giao dịch
+        public bool ThemGiaoDichVaCongTien(ET_GiaoDich gd, string stkA, string stkB)
+        {
+            return DAL_GiaoDich.ThemGiaoDichVaCongTien(gd, stkA, stkB);
         }
 
         //hàm ẩn giao dịch
@@ -121,16 +145,28 @@ namespace BUS
             return DAL_GiaoDich.AnGiaoDich(et);
         }
 
-        //hàm ẩn giao dịch và cộng tiền
-        public bool AnGiaoDichVaCongTien(ET_GiaoDich gd, string stk)
+        //hàm cộng tiền tài khoản A, trừ tiền tài khoản B (nếu có) và ẩn giao dịch
+        public bool AnGiaoDichVaCongTien(ET_GiaoDich gd, string stkA, string stkB)
         {
-            return DAL_GiaoDich.AnGiaoDichVaCongTien(gd, stk);
+            return DAL_GiaoDich.AnGiaoDichVaCongTien(gd, stkA, stkB);
         }
 
-        //hàm hủy ẩn giao dịch và trừ tiền
-        public bool HuyAnGiaoDichVaTruTien(ET_GiaoDich gd, string stk)
+        //hàm trừ tiền tài khoản A, cộng tiền tài khoản B (nếu có) và ẩn giao dịch
+        public bool AnGiaoDichVaTruTien(ET_GiaoDich gd, string stkA, string stkB)
         {
-            return DAL_GiaoDich.HuyAnGiaoDichVaTruTien(gd,stk);
+            return DAL_GiaoDich.AnGiaoDichVaTruTien(gd, stkA, stkB);
+        }
+
+        //hàm trừ tiền tài khoản A, cộng tiền tài khoản B (nếu có) và hủy ẩn giao dịch
+        public bool HuyAnGiaoDichVaTruTien(ET_GiaoDich gd, string stkA, string stkB)
+        {
+            return DAL_GiaoDich.HuyAnGiaoDichVaTruTien(gd, stkA, stkB);
+        }
+
+        //hàm cộng tiền tài khoản A, trừ tiền tài khoản B (nếu có) và hủy ẩn giao dịch
+        public bool HuyAnGiaoDichVaCongTien(ET_GiaoDich gd, string stkA, string stkB)
+        {
+            return DAL_GiaoDich.HuyAnGiaoDichVaCongTien(gd, stkA, stkB);
         }
     }
 }

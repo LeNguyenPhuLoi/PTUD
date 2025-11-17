@@ -150,8 +150,8 @@ namespace DAL
             bool flag = false;
 
             const string query = @"
-                INSERT INTO LOAIGD (MALOAIGD, TENLOAIGD, NGAYLAP, NGAYCAPNHAT, TRANGTHAI, TINHTRANGXOA)
-                VALUES (@MaLoaiGD, @TenLoaiGD, @NgayLap, @NgayCapNhat, @TrangThai, @TinhTrangXoa);
+                INSERT INTO LOAIGD (MALOAIGD, TENLOAIGD, PHUONGTHUC, NGAYLAP, NGAYCAPNHAT, TRANGTHAI, TINHTRANGXOA)
+                VALUES (@MaLoaiGD, @TenLoaiGD, @PhuongThuc, @NgayLap, @NgayCapNhat, @TrangThai, @TinhTrangXoa);
             ";
 
             try
@@ -182,6 +182,7 @@ namespace DAL
             const string query = @"
                 UPDATE LOAIGD
                     SET TENLOAIGD = @TenLoaiGD,
+                    PHUONGTHUC = @PhuongThuc,
                     NGAYLAP = @NgayLap,
                     NGAYCAPNHAT = @NgayCapNhat,
                     TRANGTHAI = @TrangThai

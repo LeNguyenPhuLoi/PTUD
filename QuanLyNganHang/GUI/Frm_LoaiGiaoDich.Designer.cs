@@ -47,6 +47,8 @@
             this.panel_LoaiGiaoDich = new System.Windows.Forms.Panel();
             this.dgv_LoaiGiaoDich = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbo_PhuongThuc = new System.Windows.Forms.ComboBox();
             this.panel_ThongTin1.SuspendLayout();
             this.panel_LoaiGiaoDich.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LoaiGiaoDich)).BeginInit();
@@ -55,6 +57,8 @@
             // panel_ThongTin1
             // 
             this.panel_ThongTin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel_ThongTin1.Controls.Add(this.cbo_PhuongThuc);
+            this.panel_ThongTin1.Controls.Add(this.label1);
             this.panel_ThongTin1.Controls.Add(this.btn_HuyAn);
             this.panel_ThongTin1.Controls.Add(this.dtp_NgayCapNhat);
             this.panel_ThongTin1.Controls.Add(this.label5);
@@ -70,7 +74,7 @@
             this.panel_ThongTin1.Controls.Add(this.cbo_TrangThai);
             this.panel_ThongTin1.Location = new System.Drawing.Point(12, 50);
             this.panel_ThongTin1.Name = "panel_ThongTin1";
-            this.panel_ThongTin1.Size = new System.Drawing.Size(527, 267);
+            this.panel_ThongTin1.Size = new System.Drawing.Size(527, 295);
             this.panel_ThongTin1.TabIndex = 24;
             // 
             // btn_HuyAn
@@ -84,7 +88,7 @@
             this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
             this.btn_HuyAn.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuyAn.Image")));
-            this.btn_HuyAn.Location = new System.Drawing.Point(420, 219);
+            this.btn_HuyAn.Location = new System.Drawing.Point(420, 247);
             this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(2);
             this.btn_HuyAn.Name = "btn_HuyAn";
             this.btn_HuyAn.Size = new System.Drawing.Size(101, 40);
@@ -103,7 +107,7 @@
             this.dtp_NgayCapNhat.CustomFormat = "dd/MM/yyyy";
             this.dtp_NgayCapNhat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_NgayCapNhat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_NgayCapNhat.Location = new System.Drawing.Point(174, 145);
+            this.dtp_NgayCapNhat.Location = new System.Drawing.Point(174, 179);
             this.dtp_NgayCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_NgayCapNhat.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
             this.dtp_NgayCapNhat.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
@@ -115,7 +119,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 151);
+            this.label5.Location = new System.Drawing.Point(6, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 21);
             this.label5.TabIndex = 38;
@@ -124,7 +128,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 118);
+            this.label4.Location = new System.Drawing.Point(6, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 21);
             this.label4.TabIndex = 37;
@@ -141,7 +145,7 @@
             this.btn_Lammoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Lammoi.ForeColor = System.Drawing.Color.White;
             this.btn_Lammoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_Lammoi.Image")));
-            this.btn_Lammoi.Location = new System.Drawing.Point(303, 219);
+            this.btn_Lammoi.Location = new System.Drawing.Point(303, 247);
             this.btn_Lammoi.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Lammoi.Name = "btn_Lammoi";
             this.btn_Lammoi.Size = new System.Drawing.Size(105, 40);
@@ -171,7 +175,7 @@
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(9, 219);
+            this.btnThem.Location = new System.Drawing.Point(9, 247);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(84, 40);
@@ -192,7 +196,7 @@
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(108, 219);
+            this.btnSua.Location = new System.Drawing.Point(108, 247);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(84, 40);
@@ -222,7 +226,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(204, 219);
+            this.btnXoa.Location = new System.Drawing.Point(204, 247);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(84, 40);
@@ -235,7 +239,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 182);
+            this.label8.Location = new System.Drawing.Point(6, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 21);
             this.label8.TabIndex = 8;
@@ -249,7 +253,7 @@
             this.dtp_NgayLap.CustomFormat = "dd/MM/yyyy";
             this.dtp_NgayLap.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_NgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_NgayLap.Location = new System.Drawing.Point(174, 112);
+            this.dtp_NgayLap.Location = new System.Drawing.Point(174, 146);
             this.dtp_NgayLap.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_NgayLap.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
             this.dtp_NgayLap.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
@@ -266,14 +270,14 @@
             this.cbo_TrangThai.Items.AddRange(new object[] {
             "Hoạt Động",
             "Tạm Ngưng"});
-            this.cbo_TrangThai.Location = new System.Drawing.Point(174, 179);
+            this.cbo_TrangThai.Location = new System.Drawing.Point(174, 213);
             this.cbo_TrangThai.Name = "cbo_TrangThai";
             this.cbo_TrangThai.Size = new System.Drawing.Size(347, 29);
             this.cbo_TrangThai.TabIndex = 11;
             // 
             // txt_MaLoaiGD
             // 
-            this.txt_MaLoaiGD.Location = new System.Drawing.Point(103, 323);
+            this.txt_MaLoaiGD.Location = new System.Drawing.Point(99, 351);
             this.txt_MaLoaiGD.Name = "txt_MaLoaiGD";
             this.txt_MaLoaiGD.Size = new System.Drawing.Size(347, 29);
             this.txt_MaLoaiGD.TabIndex = 10;
@@ -322,6 +326,27 @@
             this.label6.Text = "Quản Lý Loại Giao Dịch";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.TabIndex = 62;
+            this.label1.Text = "Phương Thức:";
+            // 
+            // cbo_PhuongThuc
+            // 
+            this.cbo_PhuongThuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_PhuongThuc.FormattingEnabled = true;
+            this.cbo_PhuongThuc.Items.AddRange(new object[] {
+            "+",
+            "-"});
+            this.cbo_PhuongThuc.Location = new System.Drawing.Point(174, 112);
+            this.cbo_PhuongThuc.Name = "cbo_PhuongThuc";
+            this.cbo_PhuongThuc.Size = new System.Drawing.Size(347, 29);
+            this.cbo_PhuongThuc.TabIndex = 63;
+            // 
             // Frm_LoaiGiaoDich
             // 
             this.AcceptButton = this.btnThem;
@@ -366,5 +391,7 @@
         private System.Windows.Forms.DateTimePicker dtp_NgayLap;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_HuyAn;
+        private System.Windows.Forms.ComboBox cbo_PhuongThuc;
+        private System.Windows.Forms.Label label1;
     }
 }

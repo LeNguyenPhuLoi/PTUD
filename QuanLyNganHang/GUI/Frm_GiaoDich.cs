@@ -127,6 +127,7 @@ namespace GUI
             txt_CCCD.Clear();
             cbo_SoTK.Items.Clear();
             cbo_SoTK.Text = string.Empty;
+            cbo_SoTkNhan.Text = string.Empty;
             cbo_LoaiGD.SelectedIndex = 0;
             txt_SoTien.Clear();
             dtp_ThoiGianGD.Text = dtp_ThoiGianGD.MaxDate.ToString();
@@ -194,21 +195,40 @@ namespace GUI
                 ET_GiaoDich gd = new ET_GiaoDich(magd,
                                                     BUS_GiaoDich.LayMaKHTheoCccd(txt_CCCD.Text),
                                                     BUS_GiaoDich.LayMaTKTheoSTK(cbo_SoTK.Text),
+                                                    string.IsNullOrWhiteSpace(cbo_SoTkNhan.Text) ? null : BUS_GiaoDich.LayMaTKTheoSTK(cbo_SoTkNhan.Text),
                                                     BUS_GiaoDich.LayMaGDTheoTenLoaiGD(cbo_LoaiGD.Text),
                                                     Convert.ToDecimal(txt_SoTien.Text),
                                                     dtp_ThoiGianGD.Value,
                                                     txt_MoTa.Text,
                                                     cbo_TrangThai.Text,
                                                     false);
-                if (BUS_GiaoDich.ThemGiaoDichVaTruTien(gd, cbo_SoTK.Text) == true)
+
+                if(BUS_GiaoDich.LayPhuongThucTheoTenLoaiGD(cbo_LoaiGD.Text) == "-")
                 {
-                    MessageBox.Show("Thêm giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clear();
+                    if (BUS_GiaoDich.ThemGiaoDichVaTruTien(gd, cbo_SoTK.Text, cbo_SoTkNhan.Text) == true)
+                    {
+                        MessageBox.Show("Thêm giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể thêm giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Không thể thêm giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (BUS_GiaoDich.ThemGiaoDichVaCongTien(gd, cbo_SoTK.Text, cbo_SoTkNhan.Text) == true)
+                    {
+                        MessageBox.Show("Thêm giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể thêm giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+
+                
             }
             catch (Exception ex)
             {
@@ -234,6 +254,9 @@ namespace GUI
                 {
                     cbo_SoTK.SelectedIndex = 0;
                 }
+                cbo_SoTkNhan.Items.Clear();
+                cbo_SoTkNhan.Items.Add("");
+                AddToCBO(cbo_SoTkNhan, BUS_GiaoDich.LayDSTaiKhoanKhongCuaSoCCCD(txt_CCCD.Text.Trim()));
             }
         }
 
@@ -264,11 +287,13 @@ namespace GUI
                     txt_MaGD.Text = dgv_GiaoDich.Rows[dong].Cells[0].Value.ToString();
                     txt_CCCD.Text = BUS_GiaoDich.LayCccdTheoMaKH(dgv_GiaoDich.Rows[dong].Cells[1].Value.ToString());
                     cbo_SoTK.Text = BUS_GiaoDich.LaySTKTheoMaTK(dgv_GiaoDich.Rows[dong].Cells[2].Value.ToString());
-                    cbo_LoaiGD.Text = BUS_GiaoDich.LayTenLoaiGDTheoMaGD(dgv_GiaoDich.Rows[dong].Cells[3].Value.ToString());
-                    txt_SoTien.Text = dgv_GiaoDich.Rows[dong].Cells[4].Value.ToString();
-                    dtp_ThoiGianGD.Value = Convert.ToDateTime(dgv_GiaoDich.Rows[dong].Cells[5].Value.ToString());
-                    txt_MoTa.Text = dgv_GiaoDich.Rows[dong].Cells[6].Value.ToString();
-                    cbo_TrangThai.Text = dgv_GiaoDich.Rows[dong].Cells[7].Value.ToString();
+                    var maTKNhan = dgv_GiaoDich.Rows[dong].Cells[3].Value?.ToString();
+                    cbo_SoTkNhan.Text = maTKNhan == null ? "" : (BUS_GiaoDich.LaySTKTheoMaTK(maTKNhan) ?? string.Empty);
+                    cbo_LoaiGD.Text = BUS_GiaoDich.LayTenLoaiGDTheoMaGD(dgv_GiaoDich.Rows[dong].Cells[4].Value.ToString());
+                    txt_SoTien.Text = dgv_GiaoDich.Rows[dong].Cells[5].Value.ToString();
+                    dtp_ThoiGianGD.Value = Convert.ToDateTime(dgv_GiaoDich.Rows[dong].Cells[6].Value.ToString());
+                    txt_MoTa.Text = dgv_GiaoDich.Rows[dong].Cells[7].Value.ToString();
+                    cbo_TrangThai.Text = dgv_GiaoDich.Rows[dong].Cells[8].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -368,25 +393,45 @@ namespace GUI
         {
             try
             {
-                ET_GiaoDich gd = new ET_GiaoDich(txt_MaGD.Text.Trim(),
+                DialogResult = MessageBox.Show("Bạn có muốn xóa?", "Thông báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    ET_GiaoDich gd = new ET_GiaoDich(txt_MaGD.Text.Trim(),
                                                     BUS_GiaoDich.LayMaKHTheoCccd(txt_CCCD.Text),
                                                     BUS_GiaoDich.LayMaTKTheoSTK(cbo_SoTK.Text),
+                                                    null,
                                                     BUS_GiaoDich.LayMaGDTheoTenLoaiGD(cbo_LoaiGD.Text),
                                                     Convert.ToDecimal(txt_SoTien.Text),
                                                     dtp_ThoiGianGD.Value,
                                                     txt_MoTa.Text,
                                                     cbo_TrangThai.Text,
                                                     true);
-                if (BUS_GiaoDich.AnGiaoDichVaCongTien(gd, cbo_SoTK.Text) == true)
-                {
-                    MessageBox.Show("Xóa giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clear();
+                    if (BUS_GiaoDich.LayPhuongThucTheoTenLoaiGD(cbo_LoaiGD.Text) == "-")
+                    {
+                        if (BUS_GiaoDich.AnGiaoDichVaCongTien(gd, cbo_SoTK.Text, cbo_SoTkNhan.Text) == true)
+                        {
+                            MessageBox.Show("Xóa giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể xóa giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        if (BUS_GiaoDich.AnGiaoDichVaTruTien(gd, cbo_SoTK.Text, cbo_SoTkNhan.Text) == true)
+                        {
+                            MessageBox.Show("Xóa giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không thể xóa giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Không thể xóa giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            }    
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
@@ -401,20 +446,36 @@ namespace GUI
                 ET_GiaoDich gd = new ET_GiaoDich(txt_MaGD.Text.Trim(),
                                                     BUS_GiaoDich.LayMaKHTheoCccd(txt_CCCD.Text),
                                                     BUS_GiaoDich.LayMaTKTheoSTK(cbo_SoTK.Text),
+                                                    null,
                                                     BUS_GiaoDich.LayMaGDTheoTenLoaiGD(cbo_LoaiGD.Text),
                                                     Convert.ToDecimal(txt_SoTien.Text),
                                                     dtp_ThoiGianGD.Value,
                                                     txt_MoTa.Text,
                                                     cbo_TrangThai.Text,
                                                     false);
-                if (BUS_GiaoDich.HuyAnGiaoDichVaTruTien(gd, cbo_SoTK.Text) == true)
+                if (BUS_GiaoDich.LayPhuongThucTheoTenLoaiGD(cbo_LoaiGD.Text) == "-")
                 {
-                    MessageBox.Show("Hủy Xóa giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clear();
+                    if (BUS_GiaoDich.HuyAnGiaoDichVaTruTien(gd, cbo_SoTK.Text, cbo_SoTkNhan.Text) == true)
+                    {
+                        MessageBox.Show("Hủy Xóa giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể hủy xóa giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Không thể hủy xóa giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (BUS_GiaoDich.HuyAnGiaoDichVaCongTien(gd, cbo_SoTK.Text, cbo_SoTkNhan.Text) == true)
+                    {
+                        MessageBox.Show("Hủy Xóa giao dịch thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thể hủy xóa giao dịch!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
@@ -422,6 +483,10 @@ namespace GUI
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
             HienThiDS();
+        }
+
+        private void cbo_SoTkNhan_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

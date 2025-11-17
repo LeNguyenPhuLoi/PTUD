@@ -14,6 +14,8 @@ namespace ET
 
         public string MaTk { get; set; }
 
+        public string MaTkNhan { get; set; }
+
         public string MaLoaiGD { get; set; }
 
         public decimal SoTien { get; set; }
@@ -26,11 +28,12 @@ namespace ET
 
         public bool TinhTrangXoa { get; set; }
 
-        public ET_GiaoDich(string maGD, string maKH, string maTk, string maLoaiGD, decimal soTien, DateTime thoiGianGD, string moTa, string trangThai, bool tinhTrangXoa)
+        public ET_GiaoDich(string maGD, string maKH, string maTk, string maTkNhan, string maLoaiGD, decimal soTien, DateTime thoiGianGD, string moTa, string trangThai, bool tinhTrangXoa)
         {
             MaGD = maGD;
             MaKH = maKH;
             MaTk = maTk;
+            MaTkNhan = maTkNhan;
             MaLoaiGD = maLoaiGD;
             SoTien = soTien;
             ThoiGianGD = thoiGianGD;
