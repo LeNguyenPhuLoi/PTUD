@@ -38,17 +38,10 @@ namespace GUI
             // Xem kẽ màu dòng
             dgvmakh.RowsDefaultCellStyle.BackColor = Color.White;
             dgvmakh.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
-
-            // Màu nền khi chọn ô (dòng)
-            dgvmanv.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
-            // Xem kẽ màu dòng
-            dgvmanv.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvmanv.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
             
             AddToCombo(bUS_BienLai.LoadDSTenGD(), cbomagd);
             AddToCombo(bUS_BienLai.LoadDSTenNT(), cbomant);
             dgvmakh.DataSource = bUS_BienLai.LoadDSKH();
-            dgvmanv.DataSource = bUS_BienLai.LoadDSNV();
             HienThiDS();
             cbomagd.SelectedIndex = 0;
             cbomant.SelectedIndex = 0;
@@ -259,20 +252,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
-        }
-
-        private void dgvmanv_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int dong = dgvmanv.CurrentCell.RowIndex;
-                txtmanv.Text = dgvmanv.Rows[dong].Cells[0].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi " + ex.Message);
-            }
-        }
+        }     
 
         private void dgvbienlai_Click(object sender, EventArgs e)
         {

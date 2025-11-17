@@ -44,6 +44,7 @@ namespace GUI
 
         private void btn_tim_Click(object sender, EventArgs e)
         {
+
             try
             {
                 GUI.Reports.Report_BienLai rpt = new GUI.Reports.Report_BienLai();

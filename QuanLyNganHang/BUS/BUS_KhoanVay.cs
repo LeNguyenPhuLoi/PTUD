@@ -49,6 +49,12 @@ namespace BUS
             return kv.SoThang(ma);
         }
 
+        //gọi hàm LoadDSTKtheoMa
+        public IQueryable LoadDSTKtheoMa(string ma)
+        {
+            return kv.LoadDSTKtheoMa(ma);
+        }
+
         //gọi hàm thêm khoản vay
         public bool ThemKV(ET_KhoanVay et)
         {

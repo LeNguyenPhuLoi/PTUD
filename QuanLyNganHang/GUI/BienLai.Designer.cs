@@ -53,7 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.dgvmanv = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvbienlai = new System.Windows.Forms.DataGridView();
@@ -68,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvmakh)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvmanv)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbienlai)).BeginInit();
@@ -287,7 +285,7 @@
             this.cbotrangthai.Items.AddRange(new object[] {
             "Đã in",
             "Chưa in"});
-            this.cbotrangthai.Location = new System.Drawing.Point(207, 192);
+            this.cbotrangthai.Location = new System.Drawing.Point(213, 129);
             this.cbotrangthai.Name = "cbotrangthai";
             this.cbotrangthai.Size = new System.Drawing.Size(157, 33);
             this.cbotrangthai.TabIndex = 43;
@@ -299,7 +297,7 @@
             this.cbomant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbomant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbomant.FormattingEnabled = true;
-            this.cbomant.Location = new System.Drawing.Point(207, 148);
+            this.cbomant.Location = new System.Drawing.Point(213, 74);
             this.cbomant.Name = "cbomant";
             this.cbomant.Size = new System.Drawing.Size(157, 33);
             this.cbomant.TabIndex = 41;
@@ -309,7 +307,7 @@
             this.label8.AllowDrop = true;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(24, 191);
+            this.label8.Location = new System.Drawing.Point(30, 128);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(142, 33);
@@ -335,7 +333,7 @@
             this.label1.AllowDrop = true;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 148);
+            this.label1.Location = new System.Drawing.Point(22, 74);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 33);
@@ -358,7 +356,6 @@
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.dgvmanv);
             this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.txtmanv);
@@ -369,28 +366,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(374, 254);
             this.panel7.TabIndex = 55;
-            // 
-            // dgvmanv
-            // 
-            this.dgvmanv.AllowDrop = true;
-            this.dgvmanv.AllowUserToResizeColumns = false;
-            this.dgvmanv.AllowUserToResizeRows = false;
-            this.dgvmanv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvmanv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvmanv.BackgroundColor = System.Drawing.Color.White;
-            this.dgvmanv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvmanv.Location = new System.Drawing.Point(18, 54);
-            this.dgvmanv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvmanv.MultiSelect = false;
-            this.dgvmanv.Name = "dgvmanv";
-            this.dgvmanv.ReadOnly = true;
-            this.dgvmanv.RowHeadersVisible = false;
-            this.dgvmanv.RowHeadersWidth = 51;
-            this.dgvmanv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvmanv.Size = new System.Drawing.Size(346, 81);
-            this.dgvmanv.TabIndex = 52;
-            this.dgvmanv.Click += new System.EventHandler(this.dgvmanv_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -583,7 +558,6 @@
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvmanv)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbienlai)).EndInit();
@@ -622,7 +596,6 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnHoanTac;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.DataGridView dgvmanv;
         private System.Windows.Forms.DataGridView dgvmakh;
         private System.Windows.Forms.ComboBox cbomatk;
         private System.Windows.Forms.Button btn_HuyAn;

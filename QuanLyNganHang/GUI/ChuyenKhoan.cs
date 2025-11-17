@@ -39,30 +39,24 @@ namespace GUI
             dgvmakh.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
 
             // Màu nền khi chọn ô (dòng)
-            dgvmatk.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
-            // Xem kẽ màu dòng
-            dgvmatk.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvmatk.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
-
-            // Màu nền khi chọn ô (dòng)
-            dgvmatkgui.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
-            // Xem kẽ màu dòng
-            dgvmatkgui.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvmatkgui.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
-
-            // Màu nền khi chọn ô (dòng)
             dgvmatknhan.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
             // Xem kẽ màu dòng
             dgvmatknhan.RowsDefaultCellStyle.BackColor = Color.White;
             dgvmatknhan.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
 
             dgvmakh.DataSource = bUS_ChuyenKhoan.LoadDSKhachHang();
-            dgvmatk.DataSource = bUS_ChuyenKhoan.LoadDSTaiKhoan();
-            dgvmatkgui.DataSource = bUS_ChuyenKhoan.LoadDSTaiKhoan();
             dgvmatknhan.DataSource = bUS_ChuyenKhoan.LoadDSTaiKhoan();
 
             dtpNgayChuyen.MaxDate = DateTime.Now;
             HienThiDS();
+        }
+
+        public void AddToCombo(IQueryable list, ComboBox c)
+        {
+            foreach (var a in list)
+            {
+                c.Items.Add(a);
+            }
         }
 
         public void HienThiDS()
@@ -89,8 +83,8 @@ namespace GUI
             txtSoTien.Clear();
             rtxtND.Clear();
             txtMaKH.Clear();
-            txtMaTK.Clear();
-            txtMaTKGui.Clear();
+            cbo_taikhoan.SelectedIndex = -1;
+            cbo_taikhoangui.SelectedIndex = -1;
             txtMaTKNhan.Clear();
             dtpNgayChuyen.MaxDate = DateTime.Now;
         }
@@ -107,19 +101,13 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_ChuyenKhoan ck = new ET_ChuyenKhoan(bUS_ChuyenKhoan.DemMa(),
                                                        txtMaKH.Text,
-                                                       txtMaTK.Text,
+                                                       cbo_taikhoan.Text,
                                                        Convert.ToDateTime(dtpNgayChuyen.Text),
                                                        decimal.Parse(txtSoTien.Text),
-                                                       txtMaTKGui.Text,
+                                                       cbo_taikhoangui.Text,
                                                        txtMaTKNhan.Text,
                                                        rtxtND.Text,
                                                        TrangThai);
-                if (string.IsNullOrWhiteSpace(txtMaTKGui.Text))
-                {
-                    MessageBox.Show("Mã tài khoản gửi không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtMaTKGui.Focus();
-                    return;
-                }
                 if (string.IsNullOrWhiteSpace(txtMaTKNhan.Text))
                 {
                     MessageBox.Show("Mã tài khoản nhận không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -150,10 +138,10 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_ChuyenKhoan ck = new ET_ChuyenKhoan(txtMaCK.Text,
                                                        txtMaKH.Text,
-                                                       txtMaTK.Text,
+                                                       cbo_taikhoan.Text,
                                                        dtpNgayChuyen.Value,
                                                        decimal.Parse(txtSoTien.Text),
-                                                       txtMaTKGui.Text,
+                                                       cbo_taikhoangui.Text,
                                                        txtMaTKNhan.Text,
                                                        rtxtND.Text,
                                                        TrangThai);
@@ -188,38 +176,12 @@ namespace GUI
             }
         }
 
-        private void dgvmatk_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int dong = dgvmatk.CurrentCell.RowIndex;
-                txtMaTK.Text = dgvmatk.Rows[dong].Cells[0].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi " + ex.Message);
-            }
-        }
-
         private void dgvmatknhan_Click(object sender, EventArgs e)
         {
             try
             {
                 int dong = dgvmatknhan.CurrentCell.RowIndex;
                 txtMaTKNhan.Text = dgvmatknhan.Rows[dong].Cells[0].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi " + ex.Message);
-            }
-        }
-
-        private void dgvmatkgui_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int dong = dgvmatkgui.CurrentCell.RowIndex;
-                txtMaTKGui.Text = dgvmatkgui.Rows[dong].Cells[0].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -237,10 +199,10 @@ namespace GUI
                 {
                     ET_ChuyenKhoan ck = new ET_ChuyenKhoan(txtMaCK.Text,
                                                                            txtMaKH.Text,
-                                                                           txtMaTK.Text,
+                                                                           cbo_taikhoan.Text,
                                                                            dtpNgayChuyen.Value,
                                                                            decimal.Parse(txtSoTien.Text),
-                                                                           txtMaTKGui.Text,
+                                                                           cbo_taikhoangui.Text,
                                                                            txtMaTKNhan.Text,
                                                                            rtxtND.Text,
                                                                            TrangThai);
@@ -273,10 +235,10 @@ namespace GUI
                 {
                     ET_ChuyenKhoan ck = new ET_ChuyenKhoan(txtMaCK.Text,
                                                        txtMaKH.Text,
-                                                       txtMaTK.Text,
+                                                       cbo_taikhoan.Text,
                                                        dtpNgayChuyen.Value,
                                                        decimal.Parse(txtSoTien.Text),
-                                                       txtMaTKGui.Text,
+                                                       cbo_taikhoangui.Text,
                                                        txtMaTKNhan.Text,
                                                        rtxtND.Text,
                                                        TrangThai);
@@ -305,10 +267,10 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_ChuyenKhoan ck = new ET_ChuyenKhoan(txtMaCK.Text,
                                                        txtMaKH.Text,
-                                                       txtMaTK.Text,
+                                                       cbo_taikhoan.Text,
                                                        dtpNgayChuyen.Value,
                                                        decimal.Parse(txtSoTien.Text),
-                                                       txtMaTKGui.Text,
+                                                       cbo_taikhoangui.Text,
                                                        txtMaTKNhan.Text,
                                                        rtxtND.Text,
                                                        TrangThai);
@@ -349,30 +311,6 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(maKH))
                 return flag;
             if (Regex.IsMatch(maKH, pattern))
-                flag = true;
-            return flag;
-        }
-
-        //hàm kiểm tra định dạng mã tài khoản (10 ký tự, không ký tự đặc biệt, không khoảng trống)
-        private bool KiemTraDinhDangMaTK(string maTK)
-        {
-            bool flag = false;
-            string pattern = @"^TK\d{3,8}$";
-            if (string.IsNullOrWhiteSpace(maTK))
-                return flag;
-            if (Regex.IsMatch(maTK, pattern))
-                flag = true;
-            return flag;
-        }
-
-        //hàm kiểm tra định dạng mã tài khoản gửi (10 ký tự, không ký tự đặc biệt, không khoảng trống)
-        private bool KiemTraDinhDangMaTKGui(string maTKgui)
-        {
-            bool flag = false;
-            string pattern = @"^TK\d{3,8}$";
-            if (string.IsNullOrWhiteSpace(maTKgui))
-                return flag;
-            if (Regex.IsMatch(maTKgui, pattern))
                 flag = true;
             return flag;
         }
@@ -436,6 +374,7 @@ namespace GUI
             errorProvider1.SetError(txtMaCK, "");
         }
 
+        private string maKHCu = "";
         private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMaKH.Text))
@@ -457,67 +396,21 @@ namespace GUI
                 txtMaKH.BackColor = Color.White;
             }
             errorProvider1.SetError(txtMaKH, "");
-        }
 
-        private void txtMaTK_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtMaTK.Text))
-            {
-                errorProvider1.SetError(txtMaTK, "");
-                txtMaTK.BackColor = Color.White;
-                return;
-            }
-            string maTK = txtMaTK.Text.Trim().ToUpper();
-            if (!KiemTraDinhDangMaTK(maTK))
-            {
-                txtMaTK.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTK, "Mã tài khoản không được bỏ trống hoặc ghi ký tự đặc biệt");
-                txtMaTK.Focus();
-                return;
-            }
-            if (!bUS_ChuyenKhoan.KiemTraTaiKhoanThuocKhachHang(txtMaTK.Text, txtMaKH.Text))
-            {
-                txtMaTK.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTK, "Mã tài khoản phải đúng với mã khách hàng");
-                txtMaTK.Focus();
-                return;
-            }
-            else
-            {
-                txtMaTK.BackColor = Color.White;
-            }
-            errorProvider1.SetError(txtMaTK, "");
-        }
+            string maKHmoi = txtMaKH.Text.Trim();
 
-        private void txtMaTKGui_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtMaTKGui.Text))
+            if (maKHmoi != maKHCu) // Nếu khác giá trị cũ
             {
-                errorProvider1.SetError(txtMaTKGui, "");
-                txtMaTKGui.BackColor = Color.White;
-                return;
+                maKHCu = maKHmoi; // Cập nhật giá trị mới
+
+                // Xóa toàn bộ dữ liệu trong ComboBox
+                cbo_taikhoan.Items.Clear();
+
+                // Nếu muốn load mới khi khác thì bật dòng dưới:
+                AddToCombo(bUS_ChuyenKhoan.LoadDSTKtheoMa(maKHmoi), cbo_taikhoan);
+                AddToCombo(bUS_ChuyenKhoan.LoadDSTKtheoMa(maKHmoi), cbo_taikhoangui);
             }
-            string maTKGui = txtMaTKGui.Text.Trim().ToUpper();
-            if (!KiemTraDinhDangMaTKGui(maTKGui))
-            {
-                txtMaTKGui.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTKGui, "Mã tài khoản gửi không được bỏ trống hoặc ghi ký tự đặc biệt");
-                txtMaTKGui.Focus();
-                return;
-            }
-            if (!bUS_ChuyenKhoan.KiemTraTaiKhoanThuocKhachHang(txtMaTKGui.Text, txtMaKH.Text))
-            {
-                txtMaTKGui.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTKGui, "Mã tài khoản phải đúng với mã khách hàng");
-                txtMaTKGui.Focus();
-                return;
-            }
-            else
-            {
-                txtMaTKGui.BackColor = Color.White;
-            }
-            errorProvider1.SetError(txtMaTKGui, "");
-        }
+        }     
 
         private void txtMaTKNhan_TextChanged(object sender, EventArgs e)
         {
@@ -528,7 +421,7 @@ namespace GUI
                 return;
             }
 
-            if (txtMaTKGui.Text.Trim() == txtMaTKNhan.Text.Trim())
+            if (cbo_taikhoangui.Text.Trim() == txtMaTKNhan.Text.Trim())
             {
                 txtMaTKNhan.BackColor = Color.LightCoral;
                 errorProvider1.SetError(txtMaTKNhan, "Mã tài khoản nhận không được trùng với mã tài khoản gửi");
@@ -595,6 +488,29 @@ namespace GUI
             errorProvider1.SetError(rtxtND, "");
         }
 
+        private void cbo_taikhoangui_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbo_taikhoangui.Text))
+            {
+                errorProvider1.SetError(cbo_taikhoangui, "");
+                cbo_taikhoangui.BackColor = Color.White;
+                return;
+            }
+
+            if (cbo_taikhoan.Text.Trim() != cbo_taikhoangui.Text.Trim())
+            {
+                cbo_taikhoangui.BackColor = Color.LightCoral;
+                errorProvider1.SetError(cbo_taikhoangui, "Mã tài khoản gửi phải đúng với mã tài khoản");
+                cbo_taikhoangui.Focus();
+                return;
+            }
+            else
+            {
+                cbo_taikhoangui.BackColor = Color.White;
+            }
+            errorProvider1.SetError(cbo_taikhoangui, "");
+        }
+
         private void dgvChuyenKhoan_Click_1(object sender, EventArgs e)
         {
             try
@@ -602,10 +518,10 @@ namespace GUI
                 int dong = dgvChuyenKhoan.CurrentCell.RowIndex;
                 txtMaCK.Text = dgvChuyenKhoan.Rows[dong].Cells[0].Value.ToString();
                 txtMaKH.Text = dgvChuyenKhoan.Rows[dong].Cells[1].Value.ToString();
-                txtMaTK.Text = dgvChuyenKhoan.Rows[dong].Cells[2].Value.ToString();
+                cbo_taikhoan.Text = dgvChuyenKhoan.Rows[dong].Cells[2].Value.ToString();
                 dtpNgayChuyen.Text = dgvChuyenKhoan.Rows[dong].Cells[3].Value.ToString();
                 txtSoTien.Text = dgvChuyenKhoan.Rows[dong].Cells[4].Value.ToString();
-                txtMaTKGui.Text = dgvChuyenKhoan.Rows[dong].Cells[5].Value.ToString();
+                cbo_taikhoangui.Text = dgvChuyenKhoan.Rows[dong].Cells[5].Value.ToString();
                 txtMaTKNhan.Text = dgvChuyenKhoan.Rows[dong].Cells[6].Value.ToString();
                 rtxtND.Text = dgvChuyenKhoan.Rows[dong].Cells[7].Value.ToString();
             }
@@ -613,11 +529,6 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
     }
 }

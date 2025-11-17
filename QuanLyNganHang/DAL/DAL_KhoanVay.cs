@@ -92,7 +92,7 @@ namespace DAL
         public IQueryable LoadDSKhachHang()
         {
             IQueryable KH = from kh in db.KHACHHANGs
-                            select new { kh.MAKH, kh.TENKH, kh.CCCD, kh.SDT };
+                            select new { kh.MAKH, kh.TENKH};
             return KH;
         }
 
@@ -102,6 +102,15 @@ namespace DAL
             IQueryable TK = from tk in db.TAIKHOANs
                             select new { tk.MATK, tk.MAKH, tk.SOTAIKHOAN };
             return TK;
+        }
+
+        //Load danh sách tài khoản
+        public IQueryable LoadDSTKtheoMa(string ma)
+        {
+            IQueryable ds = from tk in db.TAIKHOANs
+                            where tk.MAKH == ma
+                            select tk.MATK;
+            return ds;
         }
 
         //Load danh sách lãi suất
