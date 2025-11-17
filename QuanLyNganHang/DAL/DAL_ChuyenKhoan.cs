@@ -25,6 +25,10 @@ namespace DAL
             var query = from ck in db.CHUYENKHOANs
                         join kh in db.KHACHHANGs on ck.MAKH equals kh.MAKH
                         join tk in db.TAIKHOANs on ck.MATK equals tk.MATK
+                        join tkGui in db.TAIKHOANs on ck.MATKGUI equals tkGui.MATK
+                        join khGui in db.KHACHHANGs on tkGui.MAKH equals khGui.MAKH
+                        join tkNhan in db.TAIKHOANs on ck.MATKNHAN equals tkNhan.MATK
+                        join khNhan in db.KHACHHANGs on tkNhan.MAKH equals khNhan.MAKH
                         select new ET_ChuyenKhoanRP
                         {
                             MaCK = ck.MACK,
@@ -34,9 +38,9 @@ namespace DAL
                             NgayCK = Convert.ToDateTime(ck.NGAYCK),
                             SoTien = (decimal)ck.SOTIEN,
                             MaTKGui = ck.MATKGUI,
-                            TenTKGui = kh.TENKH,
+                            TenTKGui = khGui.TENKH,
                             MaTKNhan = ck.MATKNHAN,
-                            TenTkNhan = kh.TENKH,
+                            TenTkNhan = khNhan.TENKH,
                             NoiDung = ck.NOIDUNG
                         };
             return query.ToList();
@@ -47,7 +51,11 @@ namespace DAL
             var search = from ck in db.CHUYENKHOANs
                          join kh in db.KHACHHANGs on ck.MAKH equals kh.MAKH
                          join tk in db.TAIKHOANs on ck.MATK equals tk.MATK
-                         where ck.MACK.Contains(ma) || kh.TENKH.Contains(ma)
+                         join tkGui in db.TAIKHOANs on ck.MATKGUI equals tkGui.MATK
+                         join khGui in db.KHACHHANGs on tkGui.MAKH equals khGui.MAKH
+                         join tkNhan in db.TAIKHOANs on ck.MATKNHAN equals tkNhan.MATK
+                         join khNhan in db.KHACHHANGs on tkNhan.MAKH equals khNhan.MAKH
+                         where ck.MACK.Contains(ma) && ck.TinhTrangXoa == "Hoạt Động"
                          select new ET_ChuyenKhoanRP
                          {
                              MaCK = ck.MACK,
@@ -57,9 +65,9 @@ namespace DAL
                              NgayCK = Convert.ToDateTime(ck.NGAYCK),
                              SoTien = (decimal)ck.SOTIEN,
                              MaTKGui = ck.MATKGUI,
-                             TenTKGui = kh.TENKH,
+                             TenTKGui = khGui.TENKH,
                              MaTKNhan = ck.MATKNHAN,
-                             TenTkNhan = kh.TENKH,
+                             TenTkNhan = khNhan.TENKH,
                              NoiDung = ck.NOIDUNG
                          };
             return search.ToList();

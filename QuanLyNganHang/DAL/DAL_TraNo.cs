@@ -22,10 +22,13 @@ namespace DAL
         public List<ET_TraNoRP> LoadDSTN()
         {
             var query = from tn in db.TRANOs
+                        join kv in db.KHOANVAYs on tn.MAVAY equals kv.MAVAY
+                        join kh in db.KHACHHANGs on kv.MAKH equals kh.MAKH
                         select new ET_TraNoRP
                         {
                             MaTraNo = tn.MATRANO,
                             MaVay = tn.MAVAY,
+                            NguoiTra = kh.MAKH,
                             SoTienNo = (decimal)tn.SOTIENO,
                             SoTienTra = (decimal)tn.SOTIENTRA,
                             NgayTra = Convert.ToDateTime(tn.NGAYTRA)
@@ -36,7 +39,7 @@ namespace DAL
         public List<ET_TraNoRP> TimRPTN(string ma)
         {
             var search = from tn in db.TRANOs
-                         where tn.MATRANO.Contains(ma) || tn.MAVAY.Contains(ma)
+                         where tn.MATRANO.Contains(ma) && tn.TinhTrangXoa == "Hoạt Động"
                          select new ET_TraNoRP
                          {
                              MaTraNo = tn.MATRANO,

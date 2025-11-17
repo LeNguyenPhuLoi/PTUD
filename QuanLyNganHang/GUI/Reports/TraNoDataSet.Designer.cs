@@ -283,11 +283,13 @@ namespace GUI.Reports {
             
             private global::System.Data.DataColumn columnMaVay;
             
+            private global::System.Data.DataColumn columnNguoiTra;
+            
             private global::System.Data.DataColumn columnSoTienNo;
             
             private global::System.Data.DataColumn columnSoTienTra;
             
-            private global::System.Data.DataColumn columnDataColumn5;
+            private global::System.Data.DataColumn columnNgayTra;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -340,6 +342,14 @@ namespace GUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NguoiTraColumn {
+                get {
+                    return this.columnNguoiTra;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn SoTienNoColumn {
                 get {
                     return this.columnSoTienNo;
@@ -356,9 +366,9 @@ namespace GUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DataColumn5Column {
+            public global::System.Data.DataColumn NgayTraColumn {
                 get {
-                    return this.columnDataColumn5;
+                    return this.columnNgayTra;
                 }
             }
             
@@ -399,14 +409,15 @@ namespace GUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TraNoRow AddTraNoRow(string MaTraNo, string MaVay, string SoTienNo, string SoTienTra, string DataColumn5) {
+            public TraNoRow AddTraNoRow(string MaTraNo, string MaVay, string NguoiTra, string SoTienNo, string SoTienTra, string NgayTra) {
                 TraNoRow rowTraNoRow = ((TraNoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaTraNo,
                         MaVay,
+                        NguoiTra,
                         SoTienNo,
                         SoTienTra,
-                        DataColumn5};
+                        NgayTra};
                 rowTraNoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTraNoRow);
                 return rowTraNoRow;
@@ -431,9 +442,10 @@ namespace GUI.Reports {
             internal void InitVars() {
                 this.columnMaTraNo = base.Columns["MaTraNo"];
                 this.columnMaVay = base.Columns["MaVay"];
+                this.columnNguoiTra = base.Columns["NguoiTra"];
                 this.columnSoTienNo = base.Columns["SoTienNo"];
                 this.columnSoTienTra = base.Columns["SoTienTra"];
-                this.columnDataColumn5 = base.Columns["DataColumn5"];
+                this.columnNgayTra = base.Columns["NgayTra"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -443,12 +455,14 @@ namespace GUI.Reports {
                 base.Columns.Add(this.columnMaTraNo);
                 this.columnMaVay = new global::System.Data.DataColumn("MaVay", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaVay);
+                this.columnNguoiTra = new global::System.Data.DataColumn("NguoiTra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNguoiTra);
                 this.columnSoTienNo = new global::System.Data.DataColumn("SoTienNo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoTienNo);
                 this.columnSoTienTra = new global::System.Data.DataColumn("SoTienTra", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoTienTra);
-                this.columnDataColumn5 = new global::System.Data.DataColumn("DataColumn5", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDataColumn5);
+                this.columnNgayTra = new global::System.Data.DataColumn("NgayTra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNgayTra);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -623,6 +637,22 @@ namespace GUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NguoiTra {
+                get {
+                    try {
+                        return ((string)(this[this.tableTraNo.NguoiTraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NguoiTra\' in table \'TraNo\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTraNo.NguoiTraColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string SoTienNo {
                 get {
                     try {
@@ -655,17 +685,17 @@ namespace GUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string DataColumn5 {
+            public string NgayTra {
                 get {
                     try {
-                        return ((string)(this[this.tableTraNo.DataColumn5Column]));
+                        return ((string)(this[this.tableTraNo.NgayTraColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DataColumn5\' in table \'TraNo\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NgayTra\' in table \'TraNo\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTraNo.DataColumn5Column] = value;
+                    this[this.tableTraNo.NgayTraColumn] = value;
                 }
             }
             
@@ -695,6 +725,18 @@ namespace GUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNguoiTraNull() {
+                return this.IsNull(this.tableTraNo.NguoiTraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNguoiTraNull() {
+                this[this.tableTraNo.NguoiTraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsSoTienNoNull() {
                 return this.IsNull(this.tableTraNo.SoTienNoColumn);
             }
@@ -719,14 +761,14 @@ namespace GUI.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDataColumn5Null() {
-                return this.IsNull(this.tableTraNo.DataColumn5Column);
+            public bool IsNgayTraNull() {
+                return this.IsNull(this.tableTraNo.NgayTraColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDataColumn5Null() {
-                this[this.tableTraNo.DataColumn5Column] = global::System.Convert.DBNull;
+            public void SetNgayTraNull() {
+                this[this.tableTraNo.NgayTraColumn] = global::System.Convert.DBNull;
             }
         }
         
