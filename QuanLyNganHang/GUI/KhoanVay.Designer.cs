@@ -35,9 +35,8 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvKhoanVay = new System.Windows.Forms.DataGridView();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.cbo_taikhoan = new System.Windows.Forms.ComboBox();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
-            this.dgvtaikhoan = new System.Windows.Forms.DataGridView();
-            this.txtMaTK = new System.Windows.Forms.TextBox();
             this.dgvmakh = new System.Windows.Forms.DataGridView();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoanVay)).BeginInit();
             this.pnlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvtaikhoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmakh)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -165,9 +163,8 @@
             // 
             this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMain.Controls.Add(this.cbo_taikhoan);
             this.pnlMain.Controls.Add(this.cboTrangThai);
-            this.pnlMain.Controls.Add(this.dgvtaikhoan);
-            this.pnlMain.Controls.Add(this.txtMaTK);
             this.pnlMain.Controls.Add(this.dgvmakh);
             this.pnlMain.Controls.Add(this.txtMaKH);
             this.pnlMain.Controls.Add(this.label9);
@@ -178,6 +175,18 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(601, 385);
             this.pnlMain.TabIndex = 30;
+            // 
+            // cbo_taikhoan
+            // 
+            this.cbo_taikhoan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbo_taikhoan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_taikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_taikhoan.FormattingEnabled = true;
+            this.cbo_taikhoan.Location = new System.Drawing.Point(218, 183);
+            this.cbo_taikhoan.Name = "cbo_taikhoan";
+            this.cbo_taikhoan.Size = new System.Drawing.Size(328, 33);
+            this.cbo_taikhoan.TabIndex = 46;
             // 
             // cboTrangThai
             // 
@@ -190,47 +199,10 @@
             "Đang hoạt động",
             "Đã tất toán",
             "Quá hạn"});
-            this.cboTrangThai.Location = new System.Drawing.Point(218, 338);
+            this.cboTrangThai.Location = new System.Drawing.Point(218, 241);
             this.cboTrangThai.Name = "cboTrangThai";
             this.cboTrangThai.Size = new System.Drawing.Size(328, 33);
             this.cboTrangThai.TabIndex = 42;
-            // 
-            // dgvtaikhoan
-            // 
-            this.dgvtaikhoan.AllowDrop = true;
-            this.dgvtaikhoan.AllowUserToAddRows = false;
-            this.dgvtaikhoan.AllowUserToResizeColumns = false;
-            this.dgvtaikhoan.AllowUserToResizeRows = false;
-            this.dgvtaikhoan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvtaikhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvtaikhoan.BackgroundColor = System.Drawing.Color.White;
-            this.dgvtaikhoan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvtaikhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtaikhoan.Location = new System.Drawing.Point(51, 222);
-            this.dgvtaikhoan.MultiSelect = false;
-            this.dgvtaikhoan.Name = "dgvtaikhoan";
-            this.dgvtaikhoan.ReadOnly = true;
-            this.dgvtaikhoan.RowHeadersVisible = false;
-            this.dgvtaikhoan.RowHeadersWidth = 51;
-            this.dgvtaikhoan.RowTemplate.Height = 24;
-            this.dgvtaikhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvtaikhoan.Size = new System.Drawing.Size(550, 105);
-            this.dgvtaikhoan.TabIndex = 47;
-            this.dgvtaikhoan.Click += new System.EventHandler(this.dgvtaikhoan_Click);
-            // 
-            // txtMaTK
-            // 
-            this.txtMaTK.AllowDrop = true;
-            this.txtMaTK.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaTK.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaTK.Location = new System.Drawing.Point(218, 183);
-            this.txtMaTK.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaTK.Name = "txtMaTK";
-            this.txtMaTK.Size = new System.Drawing.Size(328, 30);
-            this.txtMaTK.TabIndex = 46;
-            this.txtMaTK.TextChanged += new System.EventHandler(this.txtMaTK_TextChanged);
             // 
             // dgvmakh
             // 
@@ -298,7 +270,7 @@
             this.label7.AllowDrop = true;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(27, 337);
+            this.label7.Location = new System.Drawing.Point(27, 240);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 33);
@@ -387,6 +359,7 @@
             this.txttongtien.AllowDrop = true;
             this.txttongtien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttongtien.Enabled = false;
             this.txttongtien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttongtien.Location = new System.Drawing.Point(203, 173);
             this.txttongtien.Margin = new System.Windows.Forms.Padding(4);
@@ -636,7 +609,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoanVay)).EndInit();
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvtaikhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmakh)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -675,8 +647,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgayVay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dgvtaikhoan;
-        private System.Windows.Forms.TextBox txtMaTK;
         private System.Windows.Forms.DataGridView dgvmakh;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Button btn_HuyAn;
@@ -684,5 +654,6 @@
         private System.Windows.Forms.Button btnxoauser;
         private System.Windows.Forms.TextBox txttongtien;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbo_taikhoan;
     }
 }

@@ -37,25 +37,26 @@ namespace GUI
             dgvmakh.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
 
             // Màu nền khi chọn ô (dòng)
-            dgvtaikhoan.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
-            // Xem kẽ màu dòng
-            dgvtaikhoan.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvtaikhoan.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
-
-            // Màu nền khi chọn ô (dòng)
             dgvlaisuat.DefaultCellStyle.SelectionBackColor = Color.RosyBrown; // hoặc Color.Yellow
             // Xem kẽ màu dòng
             dgvlaisuat.RowsDefaultCellStyle.BackColor = Color.White;
             dgvlaisuat.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
 
             dgvmakh.DataSource = bUS_KhoanVay.LoadDSKhachHang();
-            dgvtaikhoan.DataSource = bUS_KhoanVay.LoadDSTaiKhoan();
             dgvlaisuat.DataSource = bUS_KhoanVay.LoadDSLaiSuat();
             dtpNgayVay.MaxDate = DateTime.Now;
             dtpNgayVay.Value = dtpNgayVay.MaxDate;
             dtpThoiHan.Value = dtpThoiHan.MaxDate;
             cboTrangThai.SelectedIndex = 0;
             HienThiDS();
+        }
+
+        public void AddToCombo(IQueryable list, ComboBox c)
+        {
+            foreach (var a in list)
+            {
+                c.Items.Add(a);
+            }
         }
 
         public void HienThiDS()
@@ -82,7 +83,7 @@ namespace GUI
         {
             txtMaVay.Clear();
             txtMaKH.Clear();
-            txtMaTK.Clear();
+            cbo_taikhoan.SelectedIndex = -1;
             txtSoTienVay.Clear();
             cboTrangThai.SelectedIndex = 0;
             dtpNgayVay.Value = dtpNgayVay.MaxDate;
@@ -103,7 +104,7 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_KhoanVay kv = new ET_KhoanVay(bUS_KhoanVay.DemMa(),
                                                  txtMaKH.Text,
-                                                 txtMaTK.Text,
+                                                 cbo_taikhoan.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
                                                  decimal.Parse(txttongtien.Text),
                                                  Convert.ToDateTime(dtpNgayVay.Text),
@@ -135,7 +136,7 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_KhoanVay kv = new ET_KhoanVay(txtMaVay.Text,
                                                  txtMaKH.Text,
-                                                 txtMaTK.Text,
+                                                 cbo_taikhoan.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
                                                  decimal.Parse(txttongtien.Text),
                                                  dtpNgayVay.Value,
@@ -170,7 +171,7 @@ namespace GUI
                 {
                     ET_KhoanVay kv = new ET_KhoanVay(txtMaVay.Text,
                                                      txtMaKH.Text,
-                                                     txtMaTK.Text,
+                                                     cbo_taikhoan.Text,
                                                      decimal.Parse(txtSoTienVay.Text),
                                                      decimal.Parse(txttongtien.Text),
                                                      dtpNgayVay.Value,
@@ -203,7 +204,7 @@ namespace GUI
                 int dong = dgvKhoanVay.CurrentCell.RowIndex;
                 txtMaVay.Text = dgvKhoanVay.Rows[dong].Cells[0].Value.ToString();
                 txtMaKH.Text = dgvKhoanVay.Rows[dong].Cells[1].Value.ToString();
-                txtMaTK.Text = dgvKhoanVay.Rows[dong].Cells[2].Value.ToString();
+                cbo_taikhoan.Text = dgvKhoanVay.Rows[dong].Cells[2].Value.ToString();
                 txtSoTienVay.Text = dgvKhoanVay.Rows[dong].Cells[3].Value.ToString();
                 txttongtien.Text = dgvKhoanVay.Rows[dong].Cells[4].Value.ToString();
                 dtpNgayVay.Text = dgvKhoanVay.Rows[dong].Cells[5].Value.ToString();
@@ -228,20 +229,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi " + ex.Message);
             }
-        }
-
-        private void dgvtaikhoan_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int dong = dgvtaikhoan.CurrentCell.RowIndex;
-                txtMaTK.Text = dgvtaikhoan.Rows[dong].Cells[0].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi " + ex.Message);
-            }
-        }
+        }     
 
         private void dgvlaisuat_Click(object sender, EventArgs e)
         {
@@ -266,7 +254,7 @@ namespace GUI
                 {
                     ET_KhoanVay ck = new ET_KhoanVay(txtMaVay.Text,
                                                                      txtMaKH.Text,
-                                                                     txtMaTK.Text,
+                                                                     cbo_taikhoan.Text,
                                                                      decimal.Parse(txtSoTienVay.Text),
                                                                      decimal.Parse(txttongtien.Text),
                                                                      dtpNgayVay.Value,
@@ -303,7 +291,7 @@ namespace GUI
                 {
                     ET_KhoanVay ck = new ET_KhoanVay(txtMaVay.Text,
                                                  txtMaKH.Text,
-                                                 txtMaTK.Text,
+                                                 cbo_taikhoan.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
                                                  decimal.Parse(txttongtien.Text),
                                                  dtpNgayVay.Value,
@@ -336,7 +324,7 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_KhoanVay ck = new ET_KhoanVay(txtMaVay.Text,
                                                  txtMaKH.Text,
-                                                 txtMaTK.Text,
+                                                 cbo_taikhoan.Text,
                                                  decimal.Parse(txtSoTienVay.Text),
                                                  decimal.Parse(txttongtien.Text),
                                                  dtpNgayVay.Value,
@@ -444,6 +432,7 @@ namespace GUI
             errorProvider1.SetError(txtMaVay, "");
         }
 
+        private string maKHCu = "";
         private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtMaKH.Text))
@@ -465,37 +454,20 @@ namespace GUI
                 txtMaKH.BackColor = Color.White;
             }
             errorProvider1.SetError(txtMaKH, "");
-        }
 
-        private void txtMaTK_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtMaTK.Text))
+            string maKHmoi = txtMaKH.Text.Trim();
+
+            if (maKHmoi != maKHCu) // Nếu khác giá trị cũ
             {
-                errorProvider1.SetError(txtMaTK, "");
-                txtMaTK.BackColor = Color.White;
-                return;
+                maKHCu = maKHmoi; // Cập nhật giá trị mới
+
+                // Xóa toàn bộ dữ liệu trong ComboBox
+                cbo_taikhoan.Items.Clear();
+
+                // Nếu muốn load mới khi khác thì bật dòng dưới:
+                AddToCombo(bUS_KhoanVay.LoadDSTKtheoMa(maKHmoi), cbo_taikhoan);
             }
-            string maTK = txtMaTK.Text.Trim().ToUpper();
-            if (!KiemTraDinhDangMaTK(maTK))
-            {
-                txtMaTK.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTK, "Mã tài khoản không được bỏ trống hoặc ghi ký tự đặc biệt");
-                txtMaTK.Focus();
-                return;
-            }
-            if (!bUS_KhoanVay.KiemTraTaiKhoanThuocKhachHang(txtMaTK.Text, txtMaKH.Text))
-            {
-                txtMaTK.BackColor = Color.LightCoral;
-                errorProvider1.SetError(txtMaTK, "Mã tài khoản phải đúng với mã khách hàng");
-                txtMaTK.Focus();
-                return;
-            }
-            else
-            {
-                txtMaTK.BackColor = Color.White;
-            }
-            errorProvider1.SetError(txtMaTK, "");
-        }
+        }    
 
         private void txtMaLS_TextChanged(object sender, EventArgs e)
         {

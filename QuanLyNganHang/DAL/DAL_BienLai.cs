@@ -129,13 +129,6 @@ namespace DAL
             return KH;
         }
 
-        //Load danh sách nhân viên
-        public IQueryable LoadDSNV()
-        {
-            IQueryable NV = from nv in db.NHANVIENs
-                            select new { nv.MANV, nv.TENNV };
-            return NV;
-        }
 
         //Load tên giao dịch
         public IQueryable LoadDSTenGD()

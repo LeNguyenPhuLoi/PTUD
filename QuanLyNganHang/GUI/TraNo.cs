@@ -113,8 +113,8 @@ namespace GUI
                 string TrangThai = "Hoạt Động";
                 ET_TraNo tn = new ET_TraNo(bUS_TraNo.DemMa(),
                                             txtmakv.Text,
-                                            decimal.Parse(txttientra.Text),
                                             decimal.Parse(txttienno.Text),
+                                            decimal.Parse(txttientra.Text),
                                             dtpNgayTra.Value,
                                             TrangThai);
 
@@ -159,8 +159,8 @@ namespace GUI
                 {
                     ET_TraNo tn = new ET_TraNo(txtmatn.Text,
                                             txtmakv.Text,
-                                            decimal.Parse(txttientra.Text),
                                             decimal.Parse(txttienno.Text),
+                                            decimal.Parse(txttientra.Text),
                                             dtpNgayTra.Value,
                                             TrangThai);
                     if (bUS_TraNo.TrangThaiAn(tn) == true)

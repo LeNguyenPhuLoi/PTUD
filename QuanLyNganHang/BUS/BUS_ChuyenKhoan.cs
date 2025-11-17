@@ -36,6 +36,12 @@ namespace BUS
             return ck.LoadDSTaiKhoan();
         }
 
+        //gọi hàm LoadDSTKtheoMa
+        public IQueryable LoadDSTKtheoMa(string ma)
+        {
+            return ck.LoadDSTKtheoMa(ma);
+        }
+
 
         //gọi hàm thêm chuyển khoản
         public bool ThemCK(ET_ChuyenKhoan et)

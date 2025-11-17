@@ -110,7 +110,16 @@ namespace DAL
             return KH;
         }
 
-        //load danh sách tài khoản, tài khoản gửi, tài khoản nhận
+        //Load danh sách tài khoản, tài khoản gửi
+        public IQueryable LoadDSTKtheoMa(string ma)
+        {
+            IQueryable ds = from tk in db.TAIKHOANs
+                            where tk.MAKH == ma
+                            select tk.MATK;
+            return ds;
+        }
+
+        //load danh sách tài khoản tài khoản nhận
         public IQueryable LoadDSTaiKhoan()
         {
             IQueryable TK = from tk in db.TAIKHOANs

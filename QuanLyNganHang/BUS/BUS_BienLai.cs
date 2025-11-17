@@ -30,12 +30,6 @@ namespace BUS
             return bl.LoadDSKH();
         }
 
-        //Gọi hàm load danh sách nhân viên
-        public IQueryable LoadDSNV()
-        {
-            return bl.LoadDSNV();
-        }
-
         //Gọi hàm load tên giao dịch
         public IQueryable LoadDSTenGD()
         {
