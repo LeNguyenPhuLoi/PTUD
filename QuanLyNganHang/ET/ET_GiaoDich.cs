@@ -42,4 +42,21 @@ namespace ET
             TinhTrangXoa = tinhTrangXoa;
         }
     }
+
+    public class ET_GiaoDich_Report_ThongTinKhachHang
+    {
+        public string MaKh { get; set; }
+        public string TenKh { get; set; }
+        public string SoTk { get; set; }
+        public string LoaiTK { get; set; }
+        public DateTime NgayGiaoDich { get; set; }
+    }
+
+    public class ET_GiaoDich_Report_ChiTietGiaoDich
+    {
+        public string MaGd { get; set; }
+        public string LoaiGd { get; set; }
+        public decimal Sotien { get; set; }
+        public string NoiDung { get; set; }
+    }
 }

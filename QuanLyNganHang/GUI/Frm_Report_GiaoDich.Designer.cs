@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Report_GiaoDich));
-            this.crv_GiaoDich = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Report_GiaoDich1 = new GUI.Reports.Report_GiaoDich();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flp_Control = new System.Windows.Forms.FlowLayoutPanel();
             this.PB_Minimize = new System.Windows.Forms.PictureBox();
@@ -38,12 +36,14 @@
             this.PB_Close = new System.Windows.Forms.PictureBox();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.panel_Tim = new System.Windows.Forms.Panel();
-            this.dtpNgayChuyen = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayGiaoDich = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_MaKH = new System.Windows.Forms.TextBox();
+            this.txt_SoTk = new System.Windows.Forms.TextBox();
             this.btn_Tim = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Lammoi = new System.Windows.Forms.Button();
+            this.crv_GiaoDich = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.Report_GiaoDich1 = new GUI.Reports.Report_GiaoDich();
             this.panel1.SuspendLayout();
             this.flp_Control.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Minimize)).BeginInit();
@@ -51,22 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PB_Close)).BeginInit();
             this.panel_Tim.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // crv_GiaoDich
-            // 
-            this.crv_GiaoDich.ActiveViewIndex = 0;
-            this.crv_GiaoDich.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.crv_GiaoDich.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crv_GiaoDich.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crv_GiaoDich.Location = new System.Drawing.Point(1, 126);
-            this.crv_GiaoDich.Margin = new System.Windows.Forms.Padding(2);
-            this.crv_GiaoDich.Name = "crv_GiaoDich";
-            this.crv_GiaoDich.ReportSource = this.Report_GiaoDich1;
-            this.crv_GiaoDich.Size = new System.Drawing.Size(1133, 535);
-            this.crv_GiaoDich.TabIndex = 15;
-            this.crv_GiaoDich.ToolPanelWidth = 150;
             // 
             // panel1
             // 
@@ -136,9 +120,9 @@
             // panel_Tim
             // 
             this.panel_Tim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel_Tim.Controls.Add(this.dtpNgayChuyen);
+            this.panel_Tim.Controls.Add(this.dtpNgayGiaoDich);
             this.panel_Tim.Controls.Add(this.label2);
-            this.panel_Tim.Controls.Add(this.txt_MaKH);
+            this.panel_Tim.Controls.Add(this.txt_SoTk);
             this.panel_Tim.Controls.Add(this.btn_Tim);
             this.panel_Tim.Controls.Add(this.label1);
             this.panel_Tim.Controls.Add(this.btn_Lammoi);
@@ -147,19 +131,20 @@
             this.panel_Tim.Size = new System.Drawing.Size(1085, 57);
             this.panel_Tim.TabIndex = 40;
             // 
-            // dtpNgayChuyen
+            // dtpNgayGiaoDich
             // 
-            this.dtpNgayChuyen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpNgayChuyen.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayChuyen.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayChuyen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayChuyen.Location = new System.Drawing.Point(587, 12);
-            this.dtpNgayChuyen.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpNgayChuyen.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
-            this.dtpNgayChuyen.Name = "dtpNgayChuyen";
-            this.dtpNgayChuyen.Size = new System.Drawing.Size(312, 29);
-            this.dtpNgayChuyen.TabIndex = 41;
-            this.dtpNgayChuyen.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
+            this.dtpNgayGiaoDich.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpNgayGiaoDich.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayGiaoDich.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayGiaoDich.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayGiaoDich.Location = new System.Drawing.Point(587, 12);
+            this.dtpNgayGiaoDich.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpNgayGiaoDich.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
+            this.dtpNgayGiaoDich.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayGiaoDich.Name = "dtpNgayGiaoDich";
+            this.dtpNgayGiaoDich.Size = new System.Drawing.Size(312, 29);
+            this.dtpNgayGiaoDich.TabIndex = 41;
+            this.dtpNgayGiaoDich.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -172,15 +157,16 @@
             this.label2.TabIndex = 39;
             this.label2.Text = "Ngày Giao Dịch:";
             // 
-            // txt_MaKH
+            // txt_SoTk
             // 
-            this.txt_MaKH.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_MaKH.Location = new System.Drawing.Point(133, 15);
-            this.txt_MaKH.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_MaKH.Name = "txt_MaKH";
-            this.txt_MaKH.Size = new System.Drawing.Size(312, 29);
-            this.txt_MaKH.TabIndex = 19;
-            this.txt_MaKH.Tag = "Nhập";
+            this.txt_SoTk.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SoTk.Location = new System.Drawing.Point(133, 15);
+            this.txt_SoTk.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_SoTk.Name = "txt_SoTk";
+            this.txt_SoTk.Size = new System.Drawing.Size(312, 29);
+            this.txt_SoTk.TabIndex = 19;
+            this.txt_SoTk.Tag = "Nhập";
+            this.txt_SoTk.TextChanged += new System.EventHandler(this.txt_SoTk_TextChanged);
             // 
             // btn_Tim
             // 
@@ -198,6 +184,7 @@
             this.btn_Tim.TabIndex = 38;
             this.btn_Tim.Text = "Tìm";
             this.btn_Tim.UseVisualStyleBackColor = false;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // label1
             // 
@@ -226,6 +213,23 @@
             this.btn_Lammoi.TabIndex = 37;
             this.btn_Lammoi.Text = "Làm Mới";
             this.btn_Lammoi.UseVisualStyleBackColor = false;
+            this.btn_Lammoi.Click += new System.EventHandler(this.btn_Lammoi_Click);
+            // 
+            // crv_GiaoDich
+            // 
+            this.crv_GiaoDich.ActiveViewIndex = 0;
+            this.crv_GiaoDich.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.crv_GiaoDich.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crv_GiaoDich.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crv_GiaoDich.Location = new System.Drawing.Point(1, 126);
+            this.crv_GiaoDich.Margin = new System.Windows.Forms.Padding(2);
+            this.crv_GiaoDich.Name = "crv_GiaoDich";
+            this.crv_GiaoDich.ReportSource = this.Report_GiaoDich1;
+            this.crv_GiaoDich.Size = new System.Drawing.Size(1133, 535);
+            this.crv_GiaoDich.TabIndex = 15;
+            this.crv_GiaoDich.ToolPanelWidth = 150;
             // 
             // Frm_Report_GiaoDich
             // 
@@ -263,10 +267,10 @@
         private System.Windows.Forms.Label lbl_Title;
         private System.Windows.Forms.Panel panel_Tim;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_MaKH;
+        private System.Windows.Forms.TextBox txt_SoTk;
         private System.Windows.Forms.Button btn_Tim;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Lammoi;
-        private System.Windows.Forms.DateTimePicker dtpNgayChuyen;
+        private System.Windows.Forms.DateTimePicker dtpNgayGiaoDich;
     }
 }
