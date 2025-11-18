@@ -86,7 +86,7 @@ namespace BUS
         }
 
         //hàm lấy danh sách tài khoản không thuộc số cccd dạng nhập
-        public IQueryable<string> LayDSTaiKhoanKhongCuaSoCCCD_Nhap(string cccd, string stk) 
+        public IQueryable<string> LayDSTaiKhoanKhongCuaSoCCCD_Nhap(string cccd, string stk)
         {
             return DAL_GiaoDich.LayDSTaiKhoanKhongCuaSoCCCD_Nhap(cccd, stk);
         }
@@ -167,6 +167,21 @@ namespace BUS
         public bool HuyAnGiaoDichVaCongTien(ET_GiaoDich gd, string stkA, string stkB)
         {
             return DAL_GiaoDich.HuyAnGiaoDichVaCongTien(gd, stkA, stkB);
+        }
+    }
+    public class BUS_GiaoDich_Report
+    {
+        DAL_GiaoDich_Report DAL_GiaoDich_Report = new DAL_GiaoDich_Report();
+        //hàm lấy thông tin khách hàng
+        public List<ET_GiaoDich_Report_ThongTinKhachHang> LayThongTinKhachHang(string sotk, DateTime ngayGiaoDich)
+        {
+            return DAL_GiaoDich_Report.LayThongTinKhachHang(sotk, ngayGiaoDich);
+        }
+
+        //hàm lấy lịch sử giao dịch
+        public List<ET_GiaoDich_Report_ChiTietGiaoDich> LayChiTietGiaoDich(string sotk, DateTime ngayGiaoDich)
+        {
+            return DAL_GiaoDich_Report.LayChiTietGiaoDich(sotk, ngayGiaoDich);
         }
     }
 }

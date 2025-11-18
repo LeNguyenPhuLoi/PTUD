@@ -38,4 +38,22 @@ namespace ET
             TinhTrangXoa = tinhTrangXoa;
         }
     }
+
+    public class ET_TaiKhoan_Report
+    {
+        //Khách hàng
+        public string MaKh { get; set; }
+        public string TenKh { get; set; }
+        public string CCCD { get; set; }
+        public string SDT { get; set; }
+        public string DiaChi { get; set; }
+        public string Email { get; set; }
+        public string QuocTich { get; set; }
+        //Tài Khoản
+        public string MaTk { get; set; }
+        public string SoTk { get; set; }
+        public string LoaiTk { get; set;}
+        public decimal SoDu { get; set; }
+        public string TrangThai { get; set; }
+    }
 }

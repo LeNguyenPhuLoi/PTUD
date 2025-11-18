@@ -31,7 +31,7 @@ namespace DAL
                 {
                     conn.Open();
                     int rows = conn.Execute(sql, new { Stk = stk, TienTru = tientru });
-                    if(rows > 0 )
+                    if (rows > 0)
                         flag = true;
                 }
             }
@@ -60,7 +60,7 @@ namespace DAL
                     if (!tienHienTai.HasValue)
                         return false;
 
-                    if(tienHienTai.Value >= tiencan)
+                    if (tienHienTai.Value >= tiencan)
                         return true;
                 }
             }
@@ -250,7 +250,7 @@ namespace DAL
         public IQueryable<string> LayDSTaiKhoanTheoCCCD(string cccd)
         {
             List<string> list = new List<string>();
-            const string query = 
+            const string query =
                 @"SELECT SOTAIKHOAN
                 FROM TAIKHOAN tk, KHACHHANG kh
                 WHERE tk.MAKH = kh.MAKH AND kh.CCCD = @Cccd";
@@ -260,7 +260,7 @@ namespace DAL
                 using (var conn = new SqlConnection(connect.GetConnection()))
                 {
                     conn.Open();
-                    list = conn.Query<string>(query, new {@Cccd = cccd}).ToList();
+                    list = conn.Query<string>(query, new { @Cccd = cccd }).ToList();
                 }
             }
             catch (Exception ex)
@@ -833,5 +833,90 @@ namespace DAL
                 }
             }
         }
+    }
+
+    public class DAL_GiaoDich_Report
+    {
+        //kết nối với cơ sở dữ liệu 
+        private readonly AutoConnect connect = new AutoConnect();
+
+        //hàm lấy mã khách hàng theo số tài khoản
+        public string LayMaKHTheoSoTK(string sotk)
+        {
+            string makh = null;
+            const string query = @"SELECT MAKH FROM TAIKHOAN WHERE SOTAIKHOAN = @Sotk";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    makh = conn.QueryFirstOrDefault<string>(query, new { Sotk = sotk });
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+
+            return makh;
+        }
+
+        //hàm lấy thông tin khách hàng
+        public List<ET_GiaoDich_Report_ThongTinKhachHang> LayThongTinKhachHang(string sotk, DateTime ngayGiaoDich)
+        {
+            const string query = @"SELECT kh.MAKH AS MaKh, kh.TENKH AS TenKh, tk.SOTAIKHOAN AS SoTk, ltk.CHITIET AS LoaiTK, gd.THOIGIANGD AS NgayGiaoDich
+                                    FROM TAIKHOAN tk JOIN KHACHHANG kh ON tk.MAKH = kh.MAKH JOIN LOAITK ltk ON tk.MALOAITK = ltk.MALOAITK JOIN GIAODICH gd ON gd.MATK = tk.MATK
+                                    WHERE tk.SOTAIKHOAN = @Sotk AND CAST(gd.THOIGIANGD AS DATE) = CAST(@NgayGiaoDich AS DATE)";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    var item = conn.QueryFirstOrDefault<ET_GiaoDich_Report_ThongTinKhachHang>(query, new { Sotk = sotk, NgayGiaoDich = ngayGiaoDich });
+
+                    if (item != null)
+                        return new List<ET_GiaoDich_Report_ThongTinKhachHang> { item };
+                    else
+                        return new List<ET_GiaoDich_Report_ThongTinKhachHang>();
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\\log.txt", ex.ToString());
+                return new List<ET_GiaoDich_Report_ThongTinKhachHang>();
+            }
+        }
+
+        //hàm lấy lịch sử giao dịch
+        public List<ET_GiaoDich_Report_ChiTietGiaoDich> LayChiTietGiaoDich(string sotk, DateTime ngayGiaoDich)
+        {
+            string maKh = LayMaKHTheoSoTK(sotk);
+
+            const string query = @"SELECT gd.MAGD AS MaGd, lgd.TENLOAIGD AS LoaiGd, gd.SOTIEN AS Sotien, gd.MOTA AS NoiDung
+                                    FROM GIAODICH gd JOIN LOAIGD lgd ON gd.MALOAIGD = lgd.MALOAIGD
+                                    WHERE gd.MAKH = @MaKh AND CAST(gd.THOIGIANGD AS DATE) = CAST(@NgayGD AS DATE)";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    var list = conn.Query<ET_GiaoDich_Report_ChiTietGiaoDich>(
+                        query,
+                        new { MaKh = maKh, NgayGD = ngayGiaoDich }
+                    ).ToList();
+
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\\log.txt", ex.ToString());
+                return new List<ET_GiaoDich_Report_ChiTietGiaoDich>();
+            }
+        }
+
     }
 }

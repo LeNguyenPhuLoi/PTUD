@@ -278,6 +278,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChuyenKhoanDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reports\GiaoDich_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiaoDich_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HopDong_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HopDong_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\KhoanVayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -351,6 +361,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\TaiKhoan_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaiKhoan_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\TraNoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -552,6 +567,28 @@
     <None Include="Reports\ChuyenKhoanDataSet.xss">
       <DependentUpon>ChuyenKhoanDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Reports\GiaoDich_DataSet.xsc">
+      <DependentUpon>GiaoDich_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\GiaoDich_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GiaoDich_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\GiaoDich_DataSet.xss">
+      <DependentUpon>GiaoDich_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\HopDong_DataSet.xsc">
+      <DependentUpon>HopDong_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\HopDong_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HopDong_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\HopDong_DataSet.xss">
+      <DependentUpon>HopDong_DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Reports\KhoanVayDataSet.xsc">
       <DependentUpon>KhoanVayDataSet.xsd</DependentUpon>
     </None>
@@ -562,6 +599,17 @@
     </None>
     <None Include="Reports\KhoanVayDataSet.xss">
       <DependentUpon>KhoanVayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\TaiKhoan_DataSet.xsc">
+      <DependentUpon>TaiKhoan_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\TaiKhoan_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TaiKhoan_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\TaiKhoan_DataSet.xss">
+      <DependentUpon>TaiKhoan_DataSet.xsd</DependentUpon>
     </None>
     <None Include="Reports\TraNoDataSet.xsc">
       <DependentUpon>TraNoDataSet.xsd</DependentUpon>
