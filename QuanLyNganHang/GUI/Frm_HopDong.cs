@@ -15,12 +15,15 @@ namespace GUI
 {
     public partial class Frm_HopDong : Form
     {
-        public Frm_HopDong()
+        public Frm_HopDong(string manv)
         {
             InitializeComponent();
+            txt_MaNV.Text = dn.LayNhanVienTuDangNhap(manv);
+            txt_TenNV.Text = BUS_HopDong.LayTenNVTheoMa(txt_MaNV.Text);
         }
 
         BUS_HopDong BUS_HopDong = new BUS_HopDong();
+        BUS_DangNhap dn = new BUS_DangNhap();
 
         private void Frm_HopDong_Load(object sender, EventArgs e)
         {
@@ -35,10 +38,6 @@ namespace GUI
 
             dgv_KhachHang.Columns["TinhTrangXoa"].Visible = false;
             dgv_KhachHang.Columns["MaKH"].Visible = false;
-
-            dgv_NhanVien.Columns["TrangThai"].Visible = false;
-            dgv_NhanVien.Columns["MaNV"].Visible = false;
-
 
             if (this.MdiParent.Name == "frmMainAddmin")
             {
@@ -69,18 +68,18 @@ namespace GUI
             txt_GhiChu.Clear();
             cbo_TrangThai.SelectedIndex = 0;
             txt_CccdKH.Clear();
-            txt_CccdNV.Clear();
+            txt_TenNV.Clear();
+            txt_TenNV.Text = BUS_HopDong.LayTenNVTheoMa(txt_MaNV.Text);
 
             txt_GiaTri.BackColor = SystemColors.Window;
             txt_GhiChu.BackColor = SystemColors.Window;
             txt_CccdKH.BackColor = SystemColors.Window;
-            txt_CccdNV.BackColor = SystemColors.Window;
+            txt_TenNV.BackColor = SystemColors.Window;
         }
 
         private void HienThiDS()
         {
             dgv_KhachHang.DataSource = BUS_HopDong.LayDSKhachHangConHoatDong();
-            dgv_NhanVien.DataSource = BUS_HopDong.LayDSNhanVienConHoatDong();
             if (this.MdiParent.Name == "frmMainAddmin")
             {
                 var ds = BUS_HopDong.LayDSToanBoHopDong();
@@ -117,31 +116,6 @@ namespace GUI
             //căn giữa tiêu đề và ẩn cột mũi tên bên trái
             dgv_KhachHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_KhachHang.RowHeadersVisible = false;
-
-
-            //màu cho dòng chẵn
-            dgv_NhanVien.RowsDefaultCellStyle.BackColor = Color.LightGray;
-            dgv_NhanVien.RowsDefaultCellStyle.ForeColor = Color.Black;
-            dgv_NhanVien.RowsDefaultCellStyle.SelectionBackColor = Color.ForestGreen;
-            dgv_NhanVien.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
-
-            //màu cho dòng lẻ
-            dgv_NhanVien.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
-            dgv_NhanVien.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
-            dgv_NhanVien.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.ForestGreen;
-            dgv_NhanVien.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
-
-            //màu header
-            dgv_NhanVien.EnableHeadersVisualStyles = false; // Quan trọng: tắt style mặc định của Windows
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood; // Màu nền tiêu đề
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;     // Màu chữ tiêu đề
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.BurlyWood;
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-
-            //căn giữa tiêu đề và ẩn cột mũi tên bên trái
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_NhanVien.RowHeadersVisible = false;
-
 
             //màu cho dòng chẵn
             dgv_HopDong.RowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -185,7 +159,6 @@ namespace GUI
                     txt_GiaTri.Text = dgv_HopDong.Rows[dong].Cells[5].Value.ToString();
                     txt_GhiChu.Text = dgv_HopDong.Rows[dong].Cells[6].Value.ToString();
                     cbo_TrangThai.Text = dgv_HopDong.Rows[dong].Cells[7].Value.ToString();
-                    txt_CccdNV.Text = BUS_HopDong.LayCccdTheoMaNV(dgv_HopDong.Rows[dong].Cells[8].Value.ToString());
                     txt_CccdKH.Text = BUS_HopDong.LayCccdTheoMaKH(dgv_HopDong.Rows[dong].Cells[9].Value.ToString());
                 }
             }
@@ -203,16 +176,6 @@ namespace GUI
 
         private void txt_CccdNV_TextChanged(object sender, EventArgs e)
         {
-            dgv_NhanVien.DataSource = BUS_HopDong.LayDSNhanVienTheoCCCD(txt_CccdNV.Text);
-            if (!KiemTraDinhDangCCCD(txt_CccdNV.Text.Trim()))
-            {
-                txt_CccdNV.BackColor = Color.LightCoral;
-            }
-            else
-            {
-                txt_CccdNV.BackColor = SystemColors.Window;
-            }
-
         }
 
         private void txt_CccdKH_TextChanged(object sender, EventArgs e)
@@ -293,7 +256,6 @@ namespace GUI
             var dsham = new Dictionary<string, Tuple<Func<bool>, Control>>();
             dsham.Add("Giá Trị", Tuple.Create((Func<bool>)(() => KiemTraDinhDangGiaTri(txt_GiaTri.Text.Trim())), (Control)txt_GiaTri));
             dsham.Add("Ghi Chú", Tuple.Create((Func<bool>)(() => KiemTraDinhDangGhiChu(txt_GhiChu.Text)), (Control)txt_GhiChu));
-            dsham.Add("CCCD Nhân Viên", Tuple.Create((Func<bool>)(() => KiemTraDinhDangCCCD(txt_CccdNV.Text.Trim())), (Control)txt_CccdNV));
             dsham.Add("CCCD Khách Hàng", Tuple.Create((Func<bool>)(() => KiemTraDinhDangCCCD(txt_CccdKH.Text.Trim())), (Control)txt_CccdKH));
 
             foreach (var saidinhdang in dsham)
@@ -318,18 +280,6 @@ namespace GUI
 
         private void dgv_NhanVien_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgv_NhanVien.RowCount > 0)
-                {
-                    int dong = dgv_NhanVien.CurrentCell.RowIndex;
-                    txt_CccdNV.Text = dgv_NhanVien.Rows[dong].Cells[4].Value.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
         }
 
         private void dgv_KhachHang_Click(object sender, EventArgs e)
@@ -353,13 +303,6 @@ namespace GUI
             if (!KiemTraTatCaTruongNhap())
                 return;
 
-            if (!BUS_HopDong.KiemTraTonTaiCcccNV(txt_CccdNV.Text.Trim()))
-            {
-                MessageBox.Show("CCCD Nhân Viên chưa tồn tại trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txt_CccdNV.Focus();
-                return;
-            }
-
             if (!BUS_HopDong.KiemTraTonTaiCcccKH(txt_CccdKH.Text.Trim()))
             {
                 MessageBox.Show("CCCD Khách Hàng chưa tồn tại trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -382,7 +325,7 @@ namespace GUI
                                                 Convert.ToDecimal(txt_GiaTri.Text),
                                                 txt_GhiChu.Text,
                                                 cbo_TrangThai.Text,
-                                                BUS_HopDong.LayManvTheoCccd(txt_CccdNV.Text),
+                                                txt_MaNV.Text,
                                                 BUS_HopDong.LayMaKHTheoCccd(txt_CccdKH.Text),
                                                 false);
                 if (BUS_HopDong.ThemHopDong(hd) == true)
@@ -417,7 +360,7 @@ namespace GUI
                                                 Convert.ToDecimal(txt_GiaTri.Text),
                                                 txt_GhiChu.Text,
                                                 cbo_TrangThai.Text,
-                                                BUS_HopDong.LayManvTheoCccd(txt_CccdNV.Text),
+                                                txt_MaNV.Text,
                                                 BUS_HopDong.LayMaKHTheoCccd(txt_CccdKH.Text),
                                                     true);
                     if (BUS_HopDong.AnHopDong(hd) == true)
@@ -450,7 +393,7 @@ namespace GUI
                                             Convert.ToDecimal(txt_GiaTri.Text),
                                             txt_GhiChu.Text,
                                             cbo_TrangThai.Text,
-                                            BUS_HopDong.LayManvTheoCccd(txt_CccdNV.Text),
+                                            txt_MaNV.Text,
                                             BUS_HopDong.LayMaKHTheoCccd(txt_CccdKH.Text),
                                                 false);
                 if (BUS_HopDong.AnHopDong(hd) == true)

@@ -30,12 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_HoTro));
             this.panel_ThongTin1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
+            this.btn_HuyAn = new System.Windows.Forms.Button();
             this.cbo_LoaiHT = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgv_KhachHang = new System.Windows.Forms.DataGridView();
-            this.txt_Cccdnv = new System.Windows.Forms.TextBox();
+            this.txt_TenNv = new System.Windows.Forms.TextBox();
             this.txt_NoiDung = new System.Windows.Forms.RichTextBox();
             this.txt_Cccdkh = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,15 +45,13 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_MaHoTro = new System.Windows.Forms.TextBox();
             this.dtp_NgayHoTro = new System.Windows.Forms.DateTimePicker();
+            this.txt_MaHoTro = new System.Windows.Forms.TextBox();
             this.panel_HoTro = new System.Windows.Forms.Panel();
             this.dgv_HoTro = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.btn_HuyAn = new System.Windows.Forms.Button();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.panel_ThongTin1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).BeginInit();
             this.panel_HoTro.SuspendLayout();
@@ -65,10 +62,9 @@
             // 
             this.panel_ThongTin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel_ThongTin1.Controls.Add(this.btn_HuyAn);
-            this.panel_ThongTin1.Controls.Add(this.panel3);
             this.panel_ThongTin1.Controls.Add(this.cbo_LoaiHT);
             this.panel_ThongTin1.Controls.Add(this.panel2);
-            this.panel_ThongTin1.Controls.Add(this.txt_Cccdnv);
+            this.panel_ThongTin1.Controls.Add(this.txt_TenNv);
             this.panel_ThongTin1.Controls.Add(this.txt_NoiDung);
             this.panel_ThongTin1.Controls.Add(this.txt_Cccdkh);
             this.panel_ThongTin1.Controls.Add(this.label5);
@@ -82,48 +78,39 @@
             this.panel_ThongTin1.Controls.Add(this.dtp_NgayHoTro);
             this.panel_ThongTin1.Location = new System.Drawing.Point(12, 50);
             this.panel_ThongTin1.Name = "panel_ThongTin1";
-            this.panel_ThongTin1.Size = new System.Drawing.Size(527, 511);
+            this.panel_ThongTin1.Size = new System.Drawing.Size(527, 421);
             this.panel_ThongTin1.TabIndex = 27;
+            this.panel_ThongTin1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_ThongTin1_Paint);
             // 
-            // panel3
+            // btn_HuyAn
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(this.dgv_NhanVien);
-            this.panel3.Location = new System.Drawing.Point(17, 181);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(504, 94);
-            this.panel3.TabIndex = 59;
-            // 
-            // dgv_NhanVien
-            // 
-            this.dgv_NhanVien.AllowDrop = true;
-            this.dgv_NhanVien.AllowUserToResizeColumns = false;
-            this.dgv_NhanVien.AllowUserToResizeRows = false;
-            this.dgv_NhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_NhanVien.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_NhanVien.Location = new System.Drawing.Point(2, 0);
-            this.dgv_NhanVien.Margin = new System.Windows.Forms.Padding(2);
-            this.dgv_NhanVien.MultiSelect = false;
-            this.dgv_NhanVien.Name = "dgv_NhanVien";
-            this.dgv_NhanVien.ReadOnly = true;
-            this.dgv_NhanVien.RowHeadersVisible = false;
-            this.dgv_NhanVien.RowHeadersWidth = 51;
-            this.dgv_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_NhanVien.Size = new System.Drawing.Size(1920, 1080);
-            this.dgv_NhanVien.TabIndex = 17;
-            this.dgv_NhanVien.Click += new System.EventHandler(this.dgv_NhanVien_Click);
+            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_HuyAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
+            this.btn_HuyAn.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuyAn.Image")));
+            this.btn_HuyAn.Location = new System.Drawing.Point(422, 370);
+            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_HuyAn.Name = "btn_HuyAn";
+            this.btn_HuyAn.Size = new System.Drawing.Size(103, 40);
+            this.btn_HuyAn.TabIndex = 61;
+            this.btn_HuyAn.Text = "Hủy Xóa";
+            this.btn_HuyAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_HuyAn.UseVisualStyleBackColor = false;
+            this.btn_HuyAn.Visible = false;
+            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
             // 
             // cbo_LoaiHT
             // 
             this.cbo_LoaiHT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_LoaiHT.FormattingEnabled = true;
-            this.cbo_LoaiHT.Location = new System.Drawing.Point(147, 286);
+            this.cbo_LoaiHT.Location = new System.Drawing.Point(147, 188);
             this.cbo_LoaiHT.Name = "cbo_LoaiHT";
-            this.cbo_LoaiHT.Size = new System.Drawing.Size(374, 29);
+            this.cbo_LoaiHT.Size = new System.Drawing.Size(374, 35);
             this.cbo_LoaiHT.TabIndex = 59;
             // 
             // panel2
@@ -158,17 +145,19 @@
             this.dgv_KhachHang.TabIndex = 17;
             this.dgv_KhachHang.Click += new System.EventHandler(this.dgv_KhachHang_Click);
             // 
-            // txt_Cccdnv
+            // txt_TenNv
             // 
-            this.txt_Cccdnv.Location = new System.Drawing.Point(175, 147);
-            this.txt_Cccdnv.Name = "txt_Cccdnv";
-            this.txt_Cccdnv.Size = new System.Drawing.Size(346, 29);
-            this.txt_Cccdnv.TabIndex = 57;
-            this.txt_Cccdnv.TextChanged += new System.EventHandler(this.txt_Cccdnv_TextChanged);
+            this.txt_TenNv.Enabled = false;
+            this.txt_TenNv.Location = new System.Drawing.Point(175, 147);
+            this.txt_TenNv.Name = "txt_TenNv";
+            this.txt_TenNv.ReadOnly = true;
+            this.txt_TenNv.Size = new System.Drawing.Size(346, 35);
+            this.txt_TenNv.TabIndex = 57;
+            this.txt_TenNv.TextChanged += new System.EventHandler(this.txt_Cccdnv_TextChanged);
             // 
             // txt_NoiDung
             // 
-            this.txt_NoiDung.Location = new System.Drawing.Point(147, 321);
+            this.txt_NoiDung.Location = new System.Drawing.Point(147, 223);
             this.txt_NoiDung.Name = "txt_NoiDung";
             this.txt_NoiDung.Size = new System.Drawing.Size(374, 91);
             this.txt_NoiDung.TabIndex = 53;
@@ -179,25 +168,25 @@
             // 
             this.txt_Cccdkh.Location = new System.Drawing.Point(175, 8);
             this.txt_Cccdkh.Name = "txt_Cccdkh";
-            this.txt_Cccdkh.Size = new System.Drawing.Size(346, 29);
+            this.txt_Cccdkh.Size = new System.Drawing.Size(346, 35);
             this.txt_Cccdkh.TabIndex = 40;
             this.txt_Cccdkh.TextChanged += new System.EventHandler(this.txt_Cccdkh_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 324);
+            this.label5.Location = new System.Drawing.Point(6, 226);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 21);
+            this.label5.Size = new System.Drawing.Size(111, 27);
             this.label5.TabIndex = 38;
             this.label5.Text = "Nội Dung:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 289);
+            this.label4.Location = new System.Drawing.Point(6, 191);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 21);
+            this.label4.Size = new System.Drawing.Size(137, 27);
             this.label4.TabIndex = 37;
             this.label4.Text = "Loại Hỗ Trợ:";
             // 
@@ -212,7 +201,7 @@
             this.btn_Lammoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Lammoi.ForeColor = System.Drawing.Color.White;
             this.btn_Lammoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_Lammoi.Image")));
-            this.btn_Lammoi.Location = new System.Drawing.Point(310, 460);
+            this.btn_Lammoi.Location = new System.Drawing.Point(310, 370);
             this.btn_Lammoi.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Lammoi.Name = "btn_Lammoi";
             this.btn_Lammoi.Size = new System.Drawing.Size(99, 40);
@@ -227,7 +216,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 21);
+            this.label2.Size = new System.Drawing.Size(209, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "CCCD Khách Hàng:";
             // 
@@ -236,9 +225,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 21);
+            this.label3.Size = new System.Drawing.Size(163, 27);
             this.label3.TabIndex = 3;
-            this.label3.Text = "CCCD Nhân Viên:";
+            this.label3.Text = "Tên Nhân Viên:";
             // 
             // btnThem
             // 
@@ -251,7 +240,7 @@
             this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(114, 460);
+            this.btnThem.Location = new System.Drawing.Point(114, 370);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(84, 40);
@@ -272,7 +261,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(213, 460);
+            this.btnXoa.Location = new System.Drawing.Point(213, 370);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(84, 40);
@@ -285,19 +274,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 421);
+            this.label8.Location = new System.Drawing.Point(6, 323);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 21);
+            this.label8.Size = new System.Drawing.Size(144, 27);
             this.label8.TabIndex = 8;
             this.label8.Text = "Ngày Hỗ Trợ:";
-            // 
-            // txt_MaHoTro
-            // 
-            this.txt_MaHoTro.Location = new System.Drawing.Point(87, 567);
-            this.txt_MaHoTro.Name = "txt_MaHoTro";
-            this.txt_MaHoTro.Size = new System.Drawing.Size(374, 29);
-            this.txt_MaHoTro.TabIndex = 10;
-            this.txt_MaHoTro.Visible = false;
             // 
             // dtp_NgayHoTro
             // 
@@ -307,14 +288,22 @@
             this.dtp_NgayHoTro.CustomFormat = "dd/MM/yyyy";
             this.dtp_NgayHoTro.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_NgayHoTro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_NgayHoTro.Location = new System.Drawing.Point(147, 417);
+            this.dtp_NgayHoTro.Location = new System.Drawing.Point(147, 319);
             this.dtp_NgayHoTro.Margin = new System.Windows.Forms.Padding(2);
             this.dtp_NgayHoTro.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
             this.dtp_NgayHoTro.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtp_NgayHoTro.Name = "dtp_NgayHoTro";
-            this.dtp_NgayHoTro.Size = new System.Drawing.Size(374, 29);
+            this.dtp_NgayHoTro.Size = new System.Drawing.Size(374, 35);
             this.dtp_NgayHoTro.TabIndex = 14;
             this.dtp_NgayHoTro.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
+            // 
+            // txt_MaHoTro
+            // 
+            this.txt_MaHoTro.Location = new System.Drawing.Point(96, 477);
+            this.txt_MaHoTro.Name = "txt_MaHoTro";
+            this.txt_MaHoTro.Size = new System.Drawing.Size(374, 35);
+            this.txt_MaHoTro.TabIndex = 10;
+            this.txt_MaHoTro.Visible = false;
             // 
             // panel_HoTro
             // 
@@ -363,34 +352,21 @@
             this.label6.Text = "Chăm Sóc Khách Hàng";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_HuyAn
+            // txtMaNV
             // 
-            this.btn_HuyAn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_HuyAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.btn_HuyAn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_HuyAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
-            this.btn_HuyAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.btn_HuyAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HuyAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
-            this.btn_HuyAn.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuyAn.Image")));
-            this.btn_HuyAn.Location = new System.Drawing.Point(422, 460);
-            this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_HuyAn.Name = "btn_HuyAn";
-            this.btn_HuyAn.Size = new System.Drawing.Size(103, 40);
-            this.btn_HuyAn.TabIndex = 61;
-            this.btn_HuyAn.Text = "Hủy Xóa";
-            this.btn_HuyAn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_HuyAn.UseVisualStyleBackColor = false;
-            this.btn_HuyAn.Visible = false;
-            this.btn_HuyAn.Click += new System.EventHandler(this.btn_HuyAn_Click);
+            this.txtMaNV.Location = new System.Drawing.Point(96, 518);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(374, 35);
+            this.txtMaNV.TabIndex = 61;
+            this.txtMaNV.Visible = false;
             // 
             // Frm_HoTro
             // 
             this.AcceptButton = this.btnThem;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel_HoTro);
             this.Controls.Add(this.panel_ThongTin1);
@@ -402,8 +378,6 @@
             this.Resize += new System.EventHandler(this.Frm_HoTro_Resize);
             this.panel_ThongTin1.ResumeLayout(false);
             this.panel_ThongTin1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_KhachHang)).EndInit();
             this.panel_HoTro.ResumeLayout(false);
@@ -418,7 +392,7 @@
         private System.Windows.Forms.ComboBox cbo_LoaiHT;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgv_KhachHang;
-        private System.Windows.Forms.TextBox txt_Cccdnv;
+        private System.Windows.Forms.TextBox txt_TenNv;
         private System.Windows.Forms.RichTextBox txt_NoiDung;
         private System.Windows.Forms.TextBox txt_Cccdkh;
         private System.Windows.Forms.Label label5;
@@ -433,9 +407,8 @@
         private System.Windows.Forms.DateTimePicker dtp_NgayHoTro;
         private System.Windows.Forms.Panel panel_HoTro;
         private System.Windows.Forms.DataGridView dgv_HoTro;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgv_NhanVien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_HuyAn;
+        private System.Windows.Forms.TextBox txtMaNV;
     }
 }

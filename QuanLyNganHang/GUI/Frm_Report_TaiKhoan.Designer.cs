@@ -111,7 +111,7 @@
             this.lbl_Title.ForeColor = System.Drawing.Color.Red;
             this.lbl_Title.Location = new System.Drawing.Point(336, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(332, 42);
+            this.lbl_Title.Size = new System.Drawing.Size(424, 53);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Text = "Báo Cáo Tài Khoản";
             // 
@@ -133,7 +133,7 @@
             this.txt_Tim.Location = new System.Drawing.Point(105, 12);
             this.txt_Tim.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Tim.Name = "txt_Tim";
-            this.txt_Tim.Size = new System.Drawing.Size(312, 29);
+            this.txt_Tim.Size = new System.Drawing.Size(312, 34);
             this.txt_Tim.TabIndex = 19;
             this.txt_Tim.Tag = "Nhập";
             // 
@@ -153,6 +153,7 @@
             this.btn_Tim.TabIndex = 38;
             this.btn_Tim.Text = "Tìm";
             this.btn_Tim.UseVisualStyleBackColor = false;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // label1
             // 
@@ -161,7 +162,7 @@
             this.label1.Location = new System.Drawing.Point(11, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
+            this.label1.Size = new System.Drawing.Size(114, 27);
             this.label1.TabIndex = 16;
             this.label1.Text = "Tìm Kiếm:";
             // 
@@ -181,6 +182,7 @@
             this.btn_Lammoi.TabIndex = 37;
             this.btn_Lammoi.Text = "Làm Mới";
             this.btn_Lammoi.UseVisualStyleBackColor = false;
+            this.btn_Lammoi.Click += new System.EventHandler(this.btn_Lammoi_Click);
             // 
             // crv_TaiKhoan
             // 

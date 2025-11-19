@@ -15,6 +15,26 @@ namespace DAL
         //kết nối với cơ sở dữ liệu 
         private readonly AutoConnect connect = new AutoConnect();
 
+        //hàm lấy tên nhan viên theo mã
+        public string LayTenNVTheoMa(string manv)
+        {
+            string tennv = "";
+            const string query = @"SELECT TENNV FROM NHANVIEN WHERE MANV = @Manv";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    tennv = conn.ExecuteScalar<string>(query, new { Manv = manv }) ?? "";
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return tennv;
+        }
+
         //hàm đếm số lượng hỗ trợ
         public int DemSoLuongHoTro()
         {

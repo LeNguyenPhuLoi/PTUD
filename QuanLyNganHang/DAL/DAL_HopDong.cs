@@ -16,6 +16,26 @@ namespace DAL
         //kết nối với cơ sở dữ liệu 
         private readonly AutoConnect connect = new AutoConnect();
 
+        //hàm lấy tên nhan viên theo mã
+        public string LayTenNVTheoMa(string manv)
+        {
+            string tennv = "";
+            const string query = @"SELECT TENNV FROM NHANVIEN WHERE MANV = @Manv";
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    tennv = conn.ExecuteScalar<string>(query, new { Manv = manv }) ?? "";
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+            }
+            return tennv;
+        }
+
         //hàm kiểm tra cccd nhân viên có tồn tại
         public bool KiemTraTonTaiCcccNV(string cccdnv)
         {
@@ -422,6 +442,39 @@ namespace DAL
                 File.AppendAllText(@"D:\log.txt", ex.ToString());
             }
             return flag;
+        }
+    }
+
+    public class DAL_HopDong_Report
+    {
+        //kết nối với cơ sở dữ liệu 
+        private readonly AutoConnect connect = new AutoConnect();
+
+        //hàm lấy hợp đồng theo số hợp đồng
+        public List<ET_HopDong_Report> LayHopDongTheoSoHD(string sohd)
+        {
+            const string query = @"SELECT hd.SOHOPDONG, lhd.TENLOAIHD, hd.NGAYKY, hd.NGAYHETHAN, hd.GIATRI, kh.TENKH, tk.SOTAIKHOAN, kh.CCCD, kh.SDT, kh.DIACHI, nv.MANV, nv.TENNV
+FROM HOPDONG hd JOIN KHACHHANG kh ON hd.MAKH = kh.MAKH JOIN NHANVIEN nv ON nv.MANV = hd.MANV JOIN LOAIHD lhd ON lhd.MALOAIHD = hd.MALOAIHD JOIN TAIKHOAN tk ON tk.MAKH = kh.MAKH
+WHERE hd.SOHOPDONG = @Sohd";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    var item = conn.QueryFirstOrDefault<ET_HopDong_Report>(query, new { Sohd = sohd });
+
+                    if (item != null)
+                        return new List<ET_HopDong_Report> { item };
+                    else
+                        return new List<ET_HopDong_Report>();
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\\log.txt", ex.ToString());
+                return new List<ET_HopDong_Report>();
+            }
         }
     }
 }

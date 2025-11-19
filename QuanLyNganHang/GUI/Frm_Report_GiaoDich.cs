@@ -27,6 +27,8 @@ namespace GUI
         private void Frm_Report_GiaoDich_Load(object sender, EventArgs e)
         {
             dtpNgayGiaoDich.MaxDate = DateTime.Now;
+            SetPlaceholder(txt_SoTk, "Nhập số tài khoản...");
+            txt_SoTk.BackColor = SystemColors.Window;
         }
 
         private void PB_Close_Click(object sender, EventArgs e)
@@ -108,6 +110,7 @@ namespace GUI
         private void btn_Lammoi_Click(object sender, EventArgs e)
         {
             txt_SoTk.Clear();
+            SetPlaceholder(txt_SoTk, "Nhập số tài khoản...");
             txt_SoTk.BackColor = SystemColors.Window;
             dtpNgayGiaoDich.Value = dtpNgayGiaoDich.MaxDate;
             GiaoDich_DataSet data = new GiaoDich_DataSet();
@@ -127,6 +130,30 @@ namespace GUI
             {
                 txt_SoTk.BackColor = SystemColors.Window;
             }
+        }
+
+        private void SetPlaceholder(TextBox txt, string placeholder)
+        {
+            txt.Text = placeholder;
+            txt.ForeColor = Color.Gray;
+
+            txt.GotFocus += (s, e) =>
+            {
+                if (txt.Text == placeholder)
+                {
+                    txt.Text = "";
+                    txt.ForeColor = Color.Black;
+                }
+            };
+
+            txt.LostFocus += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(txt.Text))
+                {
+                    txt.Text = placeholder;
+                    txt.ForeColor = Color.Gray;
+                }
+            };
         }
     }
 }

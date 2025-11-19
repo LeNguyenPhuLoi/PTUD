@@ -485,4 +485,65 @@ namespace DAL
             return flag;
         }
     }
+
+    public class DAL_TaiKhoan_Report
+    {
+        //kết nối với cơ sở dữ liệu 
+        private readonly AutoConnect connect = new AutoConnect();
+
+        //hàm lấy thông tin khách hàng
+        public List<ET_TaiKhoan_Report_ThongTinKhachHang> LayThongTinKhachHang(string cccd)
+        {
+            const string query = @"SELECT kh.MAKH, kh.TENKH, kh.CCCD, kh.SDT, kh.DIACHI, kh.EMAIL, kh.QUOCTICH
+                                    FROM TAIKHOAN tk JOIN KHACHHANG kh ON tk.MAKH = kh.MAKH
+                                    WHERE tk.SOTAIKHOAN = @Cccd";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    var item = conn.QueryFirstOrDefault<ET_TaiKhoan_Report_ThongTinKhachHang>(query, new { Cccd = cccd });
+
+                    if (item != null)
+                        return new List<ET_TaiKhoan_Report_ThongTinKhachHang> { item };
+                    else
+                        return new List<ET_TaiKhoan_Report_ThongTinKhachHang>();
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\\log.txt", ex.ToString());
+                return new List<ET_TaiKhoan_Report_ThongTinKhachHang>();
+            }
+        }
+
+        //hàm lấy danh sách tài khoản
+        public List<ET_TaiKhoan_Report_DanhSachTaiKhoan> LayDSTaiKhoan(string cccd)
+        {
+
+            const string query = @"SELECT tk.MATK, tk.SOTAIKHOAN, ltk.CHITIET, tk.SODU, tk.TRANGTHAI
+                                    FROM TAIKHOAN tk JOIN LOAITK ltk ON tk.MALOAITK = ltk.MALOAITK
+                                    WHERE tk.SOTAIKHOAN = @Cccd";
+
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
+                    var list = conn.Query<ET_TaiKhoan_Report_DanhSachTaiKhoan>(
+                        query,
+                        new { Cccd = cccd }
+                    ).ToList();
+
+                    return list;
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\\log.txt", ex.ToString());
+                return new List<ET_TaiKhoan_Report_DanhSachTaiKhoan>();
+            }
+        }
+    }
 }

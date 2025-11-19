@@ -305,14 +305,14 @@ namespace GUI
         private void btnHD_Click(object sender, EventArgs e)
         {
             HighlightButton(btnHD);
-            Frm_HopDong frm = new Frm_HopDong();
+            Frm_HopDong frm = new Frm_HopDong(maDN);
             OpenMain(frm);
         }
 
         private void btnCSKH_Click(object sender, EventArgs e)
         {
             HighlightButton(btnCSKH);
-            Frm_HoTro frm = new Frm_HoTro();
+            Frm_HoTro frm = new Frm_HoTro(maDN);
             OpenMain(frm);
         }
 

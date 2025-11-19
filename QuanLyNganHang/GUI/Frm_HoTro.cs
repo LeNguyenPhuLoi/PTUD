@@ -15,12 +15,15 @@ namespace GUI
 {
     public partial class Frm_HoTro : Form
     {
-        public Frm_HoTro()
+        public Frm_HoTro(string manv)
         {
             InitializeComponent();
+            txtMaNV.Text = dn.LayNhanVienTuDangNhap(manv);
+            txt_TenNv.Text = BUS_HoTro.LayTenNVTheoMa(txtMaNV.Text);
         }
 
         BUS_HoTro BUS_HoTro = new BUS_HoTro();
+        BUS_DangNhap dn = new BUS_DangNhap();
 
         private void Frm_HoTro_Load(object sender, EventArgs e)
         {
@@ -32,9 +35,6 @@ namespace GUI
 
             dgv_KhachHang.Columns["TinhTrangXoa"].Visible = false;
             dgv_KhachHang.Columns["MaKH"].Visible = false;
-
-            dgv_NhanVien.Columns["TrangThai"].Visible = false;
-            dgv_NhanVien.Columns["MaNV"].Visible = false;
 
 
             if (this.MdiParent.Name == "frmMainAddmin")
@@ -61,20 +61,20 @@ namespace GUI
         {
             txt_MaHoTro.Clear();
             txt_Cccdkh.Clear();
-            txt_Cccdnv.Clear();
+            txt_TenNv.Clear();
             cbo_LoaiHT.SelectedIndex = 0;
             txt_NoiDung.Clear();
             dtp_NgayHoTro.Value = dtp_NgayHoTro.MaxDate;
+            txt_TenNv.Text = BUS_HoTro.LayTenNVTheoMa(txtMaNV.Text);
 
             txt_Cccdkh.BackColor = SystemColors.Window;
-            txt_Cccdnv.BackColor = SystemColors.Window;
+            txt_TenNv.BackColor = SystemColors.Window;
             txt_NoiDung.BackColor = SystemColors.Window;
         }
 
         private void HienThiDS()
         {
             dgv_KhachHang.DataSource = BUS_HoTro.LayDSKhachHangConHoatDong();
-            dgv_NhanVien.DataSource = BUS_HoTro.LayDSNhanVienConHoatDong();
             if (this.MdiParent.Name == "frmMainAddmin")
             {
                 var ds = BUS_HoTro.LayDSToanBoHoTro();
@@ -111,31 +111,6 @@ namespace GUI
             //căn giữa tiêu đề và ẩn cột mũi tên bên trái
             dgv_KhachHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_KhachHang.RowHeadersVisible = false;
-
-
-            //màu cho dòng chẵn
-            dgv_NhanVien.RowsDefaultCellStyle.BackColor = Color.LightGray;
-            dgv_NhanVien.RowsDefaultCellStyle.ForeColor = Color.Black;
-            dgv_NhanVien.RowsDefaultCellStyle.SelectionBackColor = Color.ForestGreen;
-            dgv_NhanVien.RowsDefaultCellStyle.SelectionForeColor = Color.Black;
-
-            //màu cho dòng lẻ
-            dgv_NhanVien.AlternatingRowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
-            dgv_NhanVien.AlternatingRowsDefaultCellStyle.ForeColor = Color.Black;
-            dgv_NhanVien.AlternatingRowsDefaultCellStyle.SelectionBackColor = Color.ForestGreen;
-            dgv_NhanVien.AlternatingRowsDefaultCellStyle.SelectionForeColor = Color.Black;
-
-            //màu header
-            dgv_NhanVien.EnableHeadersVisualStyles = false; // Quan trọng: tắt style mặc định của Windows
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood; // Màu nền tiêu đề
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;     // Màu chữ tiêu đề
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.BurlyWood;
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-
-            //căn giữa tiêu đề và ẩn cột mũi tên bên trái
-            dgv_NhanVien.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_NhanVien.RowHeadersVisible = false;
-
 
             //màu cho dòng chẵn
             dgv_HoTro.RowsDefaultCellStyle.BackColor = Color.LightGray;
@@ -178,7 +153,6 @@ namespace GUI
                     int dong = dgv_HoTro.CurrentCell.RowIndex;
                     txt_MaHoTro.Text = dgv_HoTro.Rows[dong].Cells[0].Value.ToString();
                     txt_Cccdkh.Text = BUS_HoTro.LayCccdTheoMaKH(dgv_HoTro.Rows[dong].Cells[1].Value.ToString());
-                    txt_Cccdnv.Text = BUS_HoTro.LayCccdTheoMaNV(dgv_HoTro.Rows[dong].Cells[2].Value.ToString());
                     cbo_LoaiHT.Text = BUS_HoTro.LayTenLoaiHTTheoMa(dgv_HoTro.Rows[dong].Cells[3].Value.ToString());
                     txt_NoiDung.Text = dgv_HoTro.Rows[dong].Cells[4].Value.ToString();
                     dtp_NgayHoTro.Text = dgv_HoTro.Rows[dong].Cells[5].Value.ToString();
@@ -235,15 +209,6 @@ namespace GUI
 
         private void txt_Cccdnv_TextChanged(object sender, EventArgs e)
         {
-            dgv_NhanVien.DataSource = BUS_HoTro.LayDSNhanVienTheoCCCD(txt_Cccdnv.Text);
-            if (!KiemTraDinhDangCCCD(txt_Cccdnv.Text.Trim()))
-            {
-                txt_Cccdnv.BackColor = Color.LightCoral;
-            }
-            else
-            {
-                txt_Cccdnv.BackColor = SystemColors.Window;
-            }
         }
 
         private void txt_NoiDung_TextChanged(object sender, EventArgs e)
@@ -276,25 +241,12 @@ namespace GUI
 
         private void dgv_NhanVien_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgv_NhanVien.RowCount > 0)
-                {
-                    int dong = dgv_NhanVien.CurrentCell.RowIndex;
-                    txt_Cccdnv.Text = dgv_NhanVien.Rows[dong].Cells[4].Value.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message);
-            }
         }
 
         private bool KiemTraTatCaTruongNhap()
         {
             var dsham = new Dictionary<string, Tuple<Func<bool>, Control>>();
             dsham.Add("CCCD Khách Hàng", Tuple.Create((Func<bool>)(() => KiemTraDinhDangCCCD(txt_Cccdkh.Text.Trim())), (Control)txt_Cccdkh));
-            dsham.Add("CCCD Nhân Viên", Tuple.Create((Func<bool>)(() => KiemTraDinhDangCCCD(txt_Cccdnv.Text.Trim())), (Control)txt_Cccdnv));
             dsham.Add("Nội Dung", Tuple.Create((Func<bool>)(() => KiemTraDinhDangNoiDung(txt_NoiDung.Text)), (Control)txt_NoiDung));
 
 
@@ -330,13 +282,6 @@ namespace GUI
                 return;
             }
 
-            if (!BUS_HoTro.KiemTraTonTaiCcccNV(txt_Cccdnv.Text.Trim()))
-            {
-                MessageBox.Show("CCCD Nhân Viên chưa tồn tại trong hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txt_Cccdnv.Focus();
-                return;
-            }
-
             int soluong = BUS_HoTro.DemSoLuongHoTro();
             int soluongmoi = soluong + 1;
             string mahotro = "HT" + soluongmoi.ToString("D3");
@@ -345,7 +290,7 @@ namespace GUI
             {
                 ET_HoTro ht = new ET_HoTro(mahotro,
                                                 BUS_HoTro.LayMaKHTheoCccd(txt_Cccdkh.Text),
-                                                BUS_HoTro.LayManvTheoCccd(txt_Cccdnv.Text),
+                                                txtMaNV.Text,
                                                 BUS_HoTro.LayMaLoaiHTTheoTen(cbo_LoaiHT.Text),
                                                 txt_NoiDung.Text,
                                                 dtp_NgayHoTro.Value,
@@ -376,7 +321,7 @@ namespace GUI
                 {
                     ET_HoTro ht = new ET_HoTro(txt_MaHoTro.Text,
                                                 BUS_HoTro.LayMaKHTheoCccd(txt_Cccdkh.Text),
-                                                BUS_HoTro.LayManvTheoCccd(txt_Cccdnv.Text),
+                                                txtMaNV.Text,
                                                 BUS_HoTro.LayMaLoaiHTTheoTen(cbo_LoaiHT.Text),
                                                 txt_NoiDung.Text,
                                                 dtp_NgayHoTro.Value,
@@ -405,7 +350,7 @@ namespace GUI
             {
                 ET_HoTro ht = new ET_HoTro(txt_MaHoTro.Text,
                                                 BUS_HoTro.LayMaKHTheoCccd(txt_Cccdkh.Text),
-                                                BUS_HoTro.LayManvTheoCccd(txt_Cccdnv.Text),
+                                                txtMaNV.Text,
                                                 BUS_HoTro.LayMaLoaiHTTheoTen(cbo_LoaiHT.Text),
                                                 txt_NoiDung.Text,
                                                 dtp_NgayHoTro.Value,
@@ -425,6 +370,11 @@ namespace GUI
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
             HienThiDS();
+        }
+
+        private void panel_ThongTin1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -13,6 +13,12 @@ namespace BUS
     {
         DAL_HopDong DAL_HopDong = new DAL_HopDong();
 
+        //hàm lấy tên nhan viên theo mã
+        public string LayTenNVTheoMa(string manv)
+        {
+            return DAL_HopDong.LayTenNVTheoMa(manv);
+        }
+
         //hàm kiểm tra cccd nhân viên có tồn tại
         public bool KiemTraTonTaiCcccNV(string cccdnv)
         {
@@ -119,6 +125,17 @@ namespace BUS
         public bool AnHopDong(ET_HopDong et)
         {
             return DAL_HopDong.AnHopDong(et);
+        }
+    }
+
+    public class BUS_HopDong_Report
+    {
+        DAL_HopDong_Report DAL_HopDong_Report = new DAL_HopDong_Report();
+
+        //hàm lấy hợp đồng theo số hợp đồng
+        public List<ET_HopDong_Report> LayHopDongTheoSoHD(string sohd)
+        {
+            return DAL_HopDong_Report.LayHopDongTheoSoHD(sohd);
         }
     }
 }
