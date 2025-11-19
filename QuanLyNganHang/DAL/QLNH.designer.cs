@@ -613,7 +613,7 @@ namespace DAL
 		
 		private string _MOTAVP;
 		
-		private string _HINHTHUCXL;
+		private System.Nullable<decimal> _HINHTHUCXL;
 		
 		private string _TRANGTHAIXL;
 		
@@ -637,7 +637,7 @@ namespace DAL
     partial void OnNGAYVPChanged();
     partial void OnMOTAVPChanging(string value);
     partial void OnMOTAVPChanged();
-    partial void OnHINHTHUCXLChanging(string value);
+    partial void OnHINHTHUCXLChanging(System.Nullable<decimal> value);
     partial void OnHINHTHUCXLChanged();
     partial void OnTRANGTHAIXLChanging(string value);
     partial void OnTRANGTHAIXLChanged();
@@ -760,8 +760,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HINHTHUCXL", DbType="NVarChar(100)")]
-		public string HINHTHUCXL
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HINHTHUCXL", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> HINHTHUCXL
 		{
 			get
 			{
@@ -2002,6 +2002,8 @@ namespace DAL
 		
 		private string _MATK;
 		
+		private string _MATKNHAN;
+		
 		private string _MALOAIGD;
 		
 		private System.Nullable<decimal> _SOTIEN;
@@ -2020,6 +2022,8 @@ namespace DAL
 		
 		private EntityRef<TAIKHOAN> _TAIKHOAN;
 		
+		private EntityRef<TAIKHOAN> _TAIKHOAN1;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2030,6 +2034,8 @@ namespace DAL
     partial void OnMAKHChanged();
     partial void OnMATKChanging(string value);
     partial void OnMATKChanged();
+    partial void OnMATKNHANChanging(string value);
+    partial void OnMATKNHANChanged();
     partial void OnMALOAIGDChanging(string value);
     partial void OnMALOAIGDChanged();
     partial void OnSOTIENChanging(System.Nullable<decimal> value);
@@ -2049,6 +2055,7 @@ namespace DAL
 			this._KHACHHANG = default(EntityRef<KHACHHANG>);
 			this._LOAIGD = default(EntityRef<LOAIGD>);
 			this._TAIKHOAN = default(EntityRef<TAIKHOAN>);
+			this._TAIKHOAN1 = default(EntityRef<TAIKHOAN>);
 			OnCreated();
 		}
 		
@@ -2116,6 +2123,30 @@ namespace DAL
 					this._MATK = value;
 					this.SendPropertyChanged("MATK");
 					this.OnMATKChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATKNHAN", DbType="Char(10)")]
+		public string MATKNHAN
+		{
+			get
+			{
+				return this._MATKNHAN;
+			}
+			set
+			{
+				if ((this._MATKNHAN != value))
+				{
+					if (this._TAIKHOAN1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMATKNHANChanging(value);
+					this.SendPropertyChanging();
+					this._MATKNHAN = value;
+					this.SendPropertyChanged("MATKNHAN");
+					this.OnMATKNHANChanged();
 				}
 			}
 		}
@@ -2342,6 +2373,40 @@ namespace DAL
 						this._MATK = default(string);
 					}
 					this.SendPropertyChanged("TAIKHOAN");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TAIKHOAN_GIAODICH1", Storage="_TAIKHOAN1", ThisKey="MATKNHAN", OtherKey="MATK", IsForeignKey=true)]
+		public TAIKHOAN TAIKHOAN1
+		{
+			get
+			{
+				return this._TAIKHOAN1.Entity;
+			}
+			set
+			{
+				TAIKHOAN previousValue = this._TAIKHOAN1.Entity;
+				if (((previousValue != value) 
+							|| (this._TAIKHOAN1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TAIKHOAN1.Entity = null;
+						previousValue.GIAODICHes1.Remove(this);
+					}
+					this._TAIKHOAN1.Entity = value;
+					if ((value != null))
+					{
+						value.GIAODICHes1.Add(this);
+						this._MATKNHAN = value.MATK;
+					}
+					else
+					{
+						this._MATKNHAN = default(string);
+					}
+					this.SendPropertyChanged("TAIKHOAN1");
 				}
 			}
 		}
@@ -4530,6 +4595,8 @@ namespace DAL
 		
 		private string _TENLOAIGD;
 		
+		private System.Nullable<char> _PHUONGTHUC;
+		
 		private System.Nullable<System.DateTime> _NGAYLAP;
 		
 		private System.Nullable<System.DateTime> _NGAYCAPNHAT;
@@ -4548,6 +4615,8 @@ namespace DAL
     partial void OnMALOAIGDChanged();
     partial void OnTENLOAIGDChanging(string value);
     partial void OnTENLOAIGDChanged();
+    partial void OnPHUONGTHUCChanging(System.Nullable<char> value);
+    partial void OnPHUONGTHUCChanged();
     partial void OnNGAYLAPChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYLAPChanged();
     partial void OnNGAYCAPNHATChanging(System.Nullable<System.DateTime> value);
@@ -4600,6 +4669,26 @@ namespace DAL
 					this._TENLOAIGD = value;
 					this.SendPropertyChanged("TENLOAIGD");
 					this.OnTENLOAIGDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHUONGTHUC", DbType="Char(1)")]
+		public System.Nullable<char> PHUONGTHUC
+		{
+			get
+			{
+				return this._PHUONGTHUC;
+			}
+			set
+			{
+				if ((this._PHUONGTHUC != value))
+				{
+					this.OnPHUONGTHUCChanging(value);
+					this.SendPropertyChanging();
+					this._PHUONGTHUC = value;
+					this.SendPropertyChanged("PHUONGTHUC");
+					this.OnPHUONGTHUCChanged();
 				}
 			}
 		}
@@ -5374,7 +5463,7 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _NGAYBH;
 		
-		private string _LOAIAPDUNG;
+		private System.Nullable<decimal> _LOAIAPDUNG;
 		
 		private System.Nullable<bool> _TrangThai;
 		
@@ -5392,7 +5481,7 @@ namespace DAL
     partial void OnMOTAChanged();
     partial void OnNGAYBHChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYBHChanged();
-    partial void OnLOAIAPDUNGChanging(string value);
+    partial void OnLOAIAPDUNGChanging(System.Nullable<decimal> value);
     partial void OnLOAIAPDUNGChanged();
     partial void OnTrangThaiChanging(System.Nullable<bool> value);
     partial void OnTrangThaiChanged();
@@ -5484,8 +5573,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIAPDUNG", DbType="NVarChar(225)")]
-		public string LOAIAPDUNG
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LOAIAPDUNG", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> LOAIAPDUNG
 		{
 			get
 			{
@@ -6496,6 +6585,8 @@ namespace DAL
 		
 		private EntitySet<GIAODICH> _GIAODICHes;
 		
+		private EntitySet<GIAODICH> _GIAODICHes1;
+		
 		private EntitySet<KHOANVAY> _KHOANVAYs;
 		
 		private EntityRef<KHACHHANG> _KHACHHANG;
@@ -6533,6 +6624,7 @@ namespace DAL
 			this._APDUNGKHUYENMAIs = new EntitySet<APDUNGKHUYENMAI>(new Action<APDUNGKHUYENMAI>(this.attach_APDUNGKHUYENMAIs), new Action<APDUNGKHUYENMAI>(this.detach_APDUNGKHUYENMAIs));
 			this._CHUYENKHOANs = new EntitySet<CHUYENKHOAN>(new Action<CHUYENKHOAN>(this.attach_CHUYENKHOANs), new Action<CHUYENKHOAN>(this.detach_CHUYENKHOANs));
 			this._GIAODICHes = new EntitySet<GIAODICH>(new Action<GIAODICH>(this.attach_GIAODICHes), new Action<GIAODICH>(this.detach_GIAODICHes));
+			this._GIAODICHes1 = new EntitySet<GIAODICH>(new Action<GIAODICH>(this.attach_GIAODICHes1), new Action<GIAODICH>(this.detach_GIAODICHes1));
 			this._KHOANVAYs = new EntitySet<KHOANVAY>(new Action<KHOANVAY>(this.attach_KHOANVAYs), new Action<KHOANVAY>(this.detach_KHOANVAYs));
 			this._KHACHHANG = default(EntityRef<KHACHHANG>);
 			this._LOAITK = default(EntityRef<LOAITK>);
@@ -6771,6 +6863,19 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TAIKHOAN_GIAODICH1", Storage="_GIAODICHes1", ThisKey="MATK", OtherKey="MATKNHAN")]
+		public EntitySet<GIAODICH> GIAODICHes1
+		{
+			get
+			{
+				return this._GIAODICHes1;
+			}
+			set
+			{
+				this._GIAODICHes1.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TAIKHOAN_KHOANVAY", Storage="_KHOANVAYs", ThisKey="MATK", OtherKey="MATK")]
 		public EntitySet<KHOANVAY> KHOANVAYs
 		{
@@ -6940,6 +7045,18 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.TAIKHOAN = null;
+		}
+		
+		private void attach_GIAODICHes1(GIAODICH entity)
+		{
+			this.SendPropertyChanging();
+			entity.TAIKHOAN1 = this;
+		}
+		
+		private void detach_GIAODICHes1(GIAODICH entity)
+		{
+			this.SendPropertyChanging();
+			entity.TAIKHOAN1 = null;
 		}
 		
 		private void attach_KHOANVAYs(KHOANVAY entity)

@@ -57,6 +57,7 @@ namespace GUI
             SetupComboBox(cboMaNQ);
             SetupComboBox(cboMaNV);
             dtpNgayVP.MaxDate = DateTime.Now;
+            btnHoanTac_Click(sender, e);
         }
 
         private void SetupComboBox(ComboBox cbo)
@@ -117,12 +118,12 @@ namespace GUI
 
         private void cboMaNQ_TextChanged(object sender, EventArgs e)
         {
-            lbHTXL.Text = bus.LoadHTXL(bus.LayMa(cboMaNQ.Text));
+            lbHTXL.Text = (bus.LoadHTXL(bus.LayMa(cboMaNQ.Text))).ToString();
         }
 
         private void cboMaNQ_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbHTXL.Text = bus.LoadHTXL(bus.LayMa(cboMaNQ.Text));
+            lbHTXL.Text = (bus.LoadHTXL(bus.LayMa(cboMaNQ.Text))).ToString();
         }
 
         private void btnHoanTac_Click(object sender, EventArgs e)
@@ -145,7 +146,7 @@ namespace GUI
                 bool trangthai = true;
                 ET_ViPham et = new ET_ViPham(bus.MaVP(), bus.LayMa(cboMaNQ.Text),
                                                 bus.LayMa(cboMaNV.Text),dtpNgayVP.Value,
-                                                txtNoiDung.Text,lbHTXL.Text,
+                                                txtNoiDung.Text,decimal.Parse(lbHTXL.Text),
                                                 cboTrangThaiXL.Text,trangthai);
                 string error = "";
                 if (bus.ThemVP(et,out error) == true)
@@ -170,9 +171,9 @@ namespace GUI
             try
             {
                 bool trangthai = true;
-                ET_ViPham et = new ET_ViPham(txtMAVP.Text, bus.LayMa(cboMaNQ.Text),
+                ET_ViPham et = new ET_ViPham(bus.MaVP(), bus.LayMa(cboMaNQ.Text),
                                                 bus.LayMa(cboMaNV.Text), dtpNgayVP.Value,
-                                                txtNoiDung.Text, lbHTXL.Text,
+                                                txtNoiDung.Text, decimal.Parse(lbHTXL.Text),
                                                 cboTrangThaiXL.Text, trangthai);
                 string error = "";
                 if (bus.CapNhatVP(et, out error) == true)
@@ -199,10 +200,10 @@ namespace GUI
                 if (result == DialogResult.Yes)
                 {
                     bool trangthai = false;
-                    ET_ViPham et = new ET_ViPham(txtMAVP.Text, bus.LayMa(cboMaNQ.Text),
-                                                bus.LayMa(cboMaNV.Text), dtpNgayVP.Value,
-                                                txtNoiDung.Text, lbHTXL.Text,
-                                                cboTrangThaiXL.Text, trangthai);
+                    ET_ViPham et = new ET_ViPham(bus.MaVP(), bus.LayMa(cboMaNQ.Text),
+                                                 bus.LayMa(cboMaNV.Text), dtpNgayVP.Value,
+                                                 txtNoiDung.Text, decimal.Parse(lbHTXL.Text),
+                                                 cboTrangThaiXL.Text, trangthai);
                     string error = "";
                     if (bus.XoaVP(et, out error) == true)
                     {
