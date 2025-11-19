@@ -68,7 +68,7 @@ namespace GUI
                 bool TrangThai = true;
                 ET_NoiQuy et = new ET_NoiQuy(bus.MaNoiQuy(),txtTieuDe.Text,
                                                 txtNoiDung.Text,dtpNgayBH.Value,
-                                                txtLAP.Text,TrangThai);
+                                                decimal.Parse(txtLAP.Text),TrangThai);
                 string error = "";
                 if (bus.ThemNQ(et, out error) == true)
                 {
@@ -107,9 +107,9 @@ namespace GUI
             try
             {
                 bool TrangThai = true;
-                ET_NoiQuy et = new ET_NoiQuy(txtMaNQ.Text, txtTieuDe.Text,
+                ET_NoiQuy et = new ET_NoiQuy(bus.MaNoiQuy(), txtTieuDe.Text,
                                                 txtNoiDung.Text, dtpNgayBH.Value,
-                                                txtLAP.Text, TrangThai);
+                                                decimal.Parse(txtLAP.Text), TrangThai);
                 string error = "";
                 if (bus.CapNhatNQ(et, out error) == true)
                 {
@@ -135,9 +135,9 @@ namespace GUI
                 if (result == DialogResult.Yes)
                 {
                     bool TrangThai = false;
-                    ET_NoiQuy et = new ET_NoiQuy(txtMaNQ.Text, txtTieuDe.Text,
-                                                    txtNoiDung.Text, dtpNgayBH.Value,
-                                                    txtLAP.Text, TrangThai);
+                    ET_NoiQuy et = new ET_NoiQuy(bus.MaNoiQuy(), txtTieuDe.Text,
+                                                txtNoiDung.Text, dtpNgayBH.Value,
+                                                decimal.Parse(txtLAP.Text), TrangThai);
                     string error = "";
                     if (bus.XoaNQ(et, out error) == true)
                     {
@@ -212,7 +212,7 @@ namespace GUI
             if (!bus.KiemTraDinhDangLoaiApDung(text))
             {
                 txtLAP.BackColor = Color.MistyRose;
-                MessageBox.Show("Loại áp dụng không hợp lệ!\nVD hợp lệ: Phạt 50.000đ/lần hoặc Phạt 100,000 VNĐ.",
+                MessageBox.Show("Loại áp dụng không hợp lệ!\nVD hợp lệ: 50.000 hoặc 100000.",
                                 "Sai định dạng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLAP.Focus();
                 return;

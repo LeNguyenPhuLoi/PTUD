@@ -268,6 +268,11 @@
     <Compile Include="NgoaiTe.Designer.cs">
       <DependentUpon>NgoaiTe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\BangLuongDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BangLuongDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\BienLaiDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -292,6 +297,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>KhoanVayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PhieuLuongDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuLuongDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Report_BangLuongTong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_BangLuongTong.rpt</DependentUpon>
     </Compile>
     <Compile Include="Reports\Report_ChuyenKhoan.cs">
       <AutoGen>True</AutoGen>
@@ -347,12 +362,6 @@
       <DependentUpon>Report_PhieuVay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\Report_ViPham.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Report_ViPham.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="MainAddmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +370,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Report_ViPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_ViPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\TaiKhoan_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -370,6 +385,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TraNoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ViPhamDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViPhamDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="TraNo.cs">
       <SubType>Form</SubType>
@@ -479,6 +499,10 @@
     <EmbeddedResource Include="NgoaiTe.resx">
       <DependentUpon>NgoaiTe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_BangLuongTong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_BangLuongTong.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report_ChuyenKhoan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_ChuyenKhoan.cs</LastGenOutput>
@@ -515,10 +539,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Report_PhieuVay.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Report_ViPham.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Report_ViPham.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainAddmin.resx">
       <DependentUpon>MainAddmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -532,6 +552,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\Report_ViPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_ViPham.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="TraNo.resx">
       <DependentUpon>TraNo.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +569,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reports\BangLuongDataSet.xsc">
+      <DependentUpon>BangLuongDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\BangLuongDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BangLuongDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\BangLuongDataSet.xss">
+      <DependentUpon>BangLuongDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Reports\BienLaiDataSet.xsc">
       <DependentUpon>BienLaiDataSet.xsd</DependentUpon>
     </None>
@@ -600,6 +635,17 @@
     <None Include="Reports\KhoanVayDataSet.xss">
       <DependentUpon>KhoanVayDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Reports\PhieuLuongDataSet.xsc">
+      <DependentUpon>PhieuLuongDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\PhieuLuongDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhieuLuongDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\PhieuLuongDataSet.xss">
+      <DependentUpon>PhieuLuongDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Reports\TaiKhoan_DataSet.xsc">
       <DependentUpon>TaiKhoan_DataSet.xsd</DependentUpon>
     </None>
@@ -621,6 +667,17 @@
     </None>
     <None Include="Reports\TraNoDataSet.xss">
       <DependentUpon>TraNoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ViPhamDataSet.xsc">
+      <DependentUpon>ViPhamDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ViPhamDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ViPhamDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\ViPhamDataSet.xss">
+      <DependentUpon>ViPhamDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

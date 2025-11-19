@@ -47,10 +47,7 @@ namespace DAL
                     error = "Tiêu đề không được để trống!";
                     return false;
                 }
-                else if(et.LOAIAPDUNG == ""){
-                    error = "Loaị áp dụng không được để trống!";
-                    return false;
-                }
+                
 
                 // Kiểm tra trùng tiêu đề (không phân biệt hoa/thường)
                 if (db.NOIQUYs.Any(nq => nq.TIEUDE.ToLower().Trim() == et.TIEUDE.ToLower().Trim()))
@@ -101,11 +98,7 @@ namespace DAL
                     error = "Tiêu đề không được để trống!";
                     return false;
                 }
-                else if (et.LOAIAPDUNG == "")
-                {
-                    error = "Loaị áp dụng không được để trống!";
-                    return false;
-                }
+                
 
                 // Kiểm tra trùng tiêu đề (không phân biệt hoa/thường)
                 if (db.NOIQUYs.Any(x => x.TIEUDE.ToLower().Trim() == et.TIEUDE.ToLower().Trim()
@@ -181,19 +174,18 @@ namespace DAL
         }
 
         // Hàm kiểm tra định dạng loại áp dụng (VD: "Phạt 50.000đ/lần")
-        public bool KiemTraDinhDangLoaiApDung(string loaiApDung)
+        public bool KiemTraTien(string tien)
         {
-            if (string.IsNullOrWhiteSpace(loaiApDung))
+            if (string.IsNullOrWhiteSpace(tien))
                 return false;
 
-            // Mẫu: "Phạt 50.000đ/lần" hoặc "Phạt 100000 VNĐ"
-            string pattern = @"^Phạt\s\d{1,3}(?:\.\d{3})*(?:\s?(?:đ|VNĐ))(?:/lần)?$";
+            // Cho phép số nguyên có hoặc không có dấu . hoặc ,
+            string pattern = @"^\d{1,3}([.,]?\d{3})*$";
 
-            loaiApDung = loaiApDung.Trim();
+            tien = tien.Trim();
 
-            // Kiểm tra khớp với regex và độ dài không quá 100 ký tự
-            return Regex.IsMatch(loaiApDung, pattern, RegexOptions.IgnoreCase)
-                   && loaiApDung.Length <= 100;
+            return Regex.IsMatch(tien, pattern)
+                   && tien.Length <= 20;
         }
 
     }

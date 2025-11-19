@@ -160,22 +160,21 @@ VALUES
 GO
 INSERT INTO NOIQUY (MANQ, TIEUDE, MOTA, NGAYBH, LOAIAPDUNG, TrangThai)
 VALUES
-('NQ001', N'Đi làm trễ', N'Nhân viên đi trễ quá 15 phút mà không báo trước.', '05/01/2023', N'Phạt 50.000đ/lần', 1),
-('NQ002', N'Không mang đồng phục', N'Nhân viên không mặc đồng phục theo quy định của công ty.', '12/02/2023', N'Phạt 30.000đ/lần', 1),
-('NQ003', N'Vắng mặt không phép', N'Nghỉ làm mà không có đơn xin phép hợp lệ.', '20/03/2023', N'Phạt 100.000đ/lần', 1),
-('NQ004', N'Sử dụng điện thoại trong giờ làm', N'Dùng điện thoại cá nhân để lướt mạng, chơi game trong giờ làm.', '18/04/2023', N'Phạt 20.000đ/lần', 1),
-('NQ005', N'Không tuân thủ an toàn lao động', N'Không mang đồ bảo hộ khi làm việc tại khu vực quy định.', '25/05/2023', N'Phạt 150.000đ/lần', 1),
-('NQ006', N'Xô xát hoặc gây mâu thuẫn', N'Cãi nhau hoặc đánh nhau trong công ty.', '30/06/2023', N'Phạt 300.000đ + cảnh cáo', 1),
-('NQ007', N'Sử dụng tài sản công ty cho việc cá nhân', N'Dùng máy in, thiết bị công ty cho việc riêng.', '05/08/2023', N'Phạt 80.000đ/lần', 1),
-('NQ008', N'Không giữ gìn vệ sinh nơi làm việc', N'Bỏ rác bừa bãi hoặc làm bẩn khu vực chung.', '12/09/2023', N'Phạt 10.000đ/lần', 1),
-('NQ009', N'Tiết lộ thông tin công ty', N'Chia sẻ thông tin nội bộ ra ngoài.', '22/10/2023', N'Phạt 500.000đ và kỷ luật', 1),
-('NQ010', N'Tái phạm nội quy nhiều lần', N'Vi phạm 3 lần trở lên trong tháng.', '01/11/2023', N'Phạt 1 ngày lương', 1);
+('NQ001', N'Đi làm trễ', N'Nhân viên đi trễ quá 15 phút mà không báo trước.', '05/01/2023',50000, 1),
+('NQ002', N'Không mang đồng phục', N'Nhân viên không mặc đồng phục theo quy định của công ty.', '12/02/2023', 30000, 1),
+('NQ003', N'Vắng mặt không phép', N'Nghỉ làm mà không có đơn xin phép hợp lệ.', '20/03/2023', 10000, 1),
+('NQ004', N'Sử dụng điện thoại trong giờ làm', N'Dùng điện thoại cá nhân để lướt mạng, chơi game trong giờ làm.', '18/04/2023', 20000, 1),
+('NQ005', N'Không tuân thủ an toàn lao động', N'Không mang đồ bảo hộ khi làm việc tại khu vực quy định.', '25/05/2023', 150000, 1),
+('NQ006', N'Xô xát hoặc gây mâu thuẫn', N'Cãi nhau hoặc đánh nhau trong công ty.', '30/06/2023', 300000, 1),
+('NQ007', N'Sử dụng tài sản công ty cho việc cá nhân', N'Dùng máy in, thiết bị công ty cho việc riêng.', '05/08/2023', 80000, 1),
+('NQ008', N'Không giữ gìn vệ sinh nơi làm việc', N'Bỏ rác bừa bãi hoặc làm bẩn khu vực chung.', '12/09/2023', 10000, 1),
+('NQ009', N'Tiết lộ thông tin công ty', N'Chia sẻ thông tin nội bộ ra ngoài.', '22/10/2023', 500000, 1);
 
 GO
 INSERT INTO VIPHAM (MAVP, MANQ, MANV, NGAYVP, MOTAVP, HINHTHUCXL, TRANGTHAIXL, TrangThai)
 VALUES
-('VP001', 'NQ001', 'NV0001', '05/10/2024', N'Đi làm trễ 30 phút', N'Cảnh cáo miệng', N'ĐÃ XỬ LÝ', 1),
-('VP002', 'NQ002', 'NV0002', '12/09/2024', N'Không mặc đồng phục khi đi làm', N'Phạt 30.000đ', N'CHƯA XỬ LÝ', 1),
-('VP003', 'NQ003', 'NV0003', '18/08/2024', N'Nghỉ làm không phép 1 ngày', N'Phạt 100.000đ', N'ĐÃ XỬ LÝ', 1),
-('VP004', 'NQ004', 'NV0004', '22/07/2024', N'Dùng điện thoại chơi game trong giờ làm', N'Phạt 20.000đ', N'ĐÃ XỬ LÝ', 1),
-('VP005', 'NQ005', 'NV0005', '10/06/2024', N'Không mang đồ bảo hộ khi vào khu vực máy móc', N'Phạt 150.000đ', N'CHƯA XỬ LÝ', 1);
+('VP001', 'NQ001', 'NV0001', '05/10/2024', N'Đi làm trễ 30 phút', 50000, N'ĐÃ XỬ LÝ', 1),
+('VP002', 'NQ002', 'NV0002', '12/09/2024', N'Không mặc đồng phục khi đi làm', 30000, N'CHƯA XỬ LÝ', 1),
+('VP003', 'NQ003', 'NV0003', '18/08/2024', N'Nghỉ làm không phép 1 ngày', 10000, N'ĐÃ XỬ LÝ', 1),
+('VP004', 'NQ004', 'NV0004', '22/07/2024', N'Dùng điện thoại chơi game trong giờ làm',20000, N'ĐÃ XỬ LÝ', 1),
+('VP005', 'NQ005', 'NV0005', '10/06/2024', N'Không mang đồ bảo hộ khi vào khu vực máy móc', 500000, N'CHƯA XỬ LÝ', 1);

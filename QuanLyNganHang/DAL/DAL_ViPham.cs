@@ -8,7 +8,40 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class DAL_ViPham
+    public class DAL_ViPhamRP
+    {
+        //kết nối tới database = linq to sql
+        AutoConnect conn = new AutoConnect();
+        QLNHDataContext db;
+
+        public DAL_ViPhamRP()
+        {
+            db = new QLNHDataContext(conn.GetConnection());
+        }
+
+        public List<ET_ViPhamRP> LayDSViPhamTheoNV(string manv, int thang,int nam)
+        {
+            var query = from pl in db.VIPHAMs
+                        join nv in db.NHANVIENs on pl.MANV equals nv.MANV
+                        join nq in db.NOIQUYs on pl.MANQ equals nq.MANQ
+                        where pl.MANV == manv
+                           && pl.NGAYVP.Value.Month == thang
+                           && pl.NGAYVP.Value.Year == nam
+                        select new ET_ViPhamRP
+                        {
+                            MAVP = pl.MAVP,
+                            MANV = pl.MANV,
+                            TENNV = nv.TENNV,
+                            LOIVIPHAM = nq.TIEUDE,
+                            NGAYVP = Convert.ToDateTime(pl.NGAYVP),
+                            HINHTHUCXL = (decimal)(pl.HINHTHUCXL ?? 0),
+                            TRANGTHAIXL = pl.TRANGTHAIXL
+                        };
+
+            return query.ToList();
+        }
+    }
+        public class DAL_ViPham
     {
         //kết nối tới database = linq to sql
         AutoConnect conn = new AutoConnect();
@@ -40,9 +73,9 @@ namespace DAL
         }
 
         //Lấy Vi Pham Theo Ma
-        public string LoadHTXL(string ma)
+        public decimal? LoadHTXL(string ma)
         {
-            string list = (from nq in db.NOIQUYs
+            var list = (from nq in db.NOIQUYs
                            where nq.TrangThai == true && nq.MANQ == ma
                            select nq.LOAIAPDUNG).FirstOrDefault();
             return list;

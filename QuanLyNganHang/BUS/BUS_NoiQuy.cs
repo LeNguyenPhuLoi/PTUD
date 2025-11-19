@@ -37,7 +37,7 @@ namespace BUS
 
         public bool KiemTraDinhDangLoaiApDung(string text)
         {
-            return nq.KiemTraDinhDangLoaiApDung(text);
+            return nq.KiemTraTien(text);
         }
     }
 }
