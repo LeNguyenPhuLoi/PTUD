@@ -39,7 +39,7 @@ namespace ET
         }
     }
 
-    public class ET_TaiKhoan_Report
+    public class ET_TaiKhoan_Report_ThongTinKhachHang
     {
         //Khách hàng
         public string MaKh { get; set; }
@@ -49,10 +49,13 @@ namespace ET
         public string DiaChi { get; set; }
         public string Email { get; set; }
         public string QuocTich { get; set; }
+    }
+    public class ET_TaiKhoan_Report_DanhSachTaiKhoan
+    {
         //Tài Khoản
         public string MaTk { get; set; }
-        public string SoTk { get; set; }
-        public string LoaiTk { get; set;}
+        public string SoTaiKhoan { get; set; }
+        public string ChiTiet { get; set; }
         public decimal SoDu { get; set; }
         public string TrangThai { get; set; }
     }

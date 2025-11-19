@@ -132,4 +132,21 @@ namespace BUS
             return DAL_TaiKhoan.XoaTaiKhoan(et);
         }
     }
+
+    public class BUS_TaiKhoan_Report
+    {
+        DAL_TaiKhoan_Report DAL_TaiKhoan_Report = new DAL_TaiKhoan_Report();
+
+        //hàm lấy thông tin khách hàng
+        public List<ET_TaiKhoan_Report_ThongTinKhachHang> LayThongTinKhachHang(string cccd)
+        {
+            return DAL_TaiKhoan_Report.LayThongTinKhachHang(cccd);
+        }
+
+        //hàm lấy danh sách tài khoản
+        public List<ET_TaiKhoan_Report_DanhSachTaiKhoan> LayDSTaiKhoan(string cccd)
+        {
+            return DAL_TaiKhoan_Report.LayDSTaiKhoan(cccd);
+        }
+    }
 }

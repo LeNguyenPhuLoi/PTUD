@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ET;
+using BUS;
+using GUI.Reports;
+
 namespace GUI
 {
     public partial class Frm_Report_TaiKhoan : Form
@@ -16,6 +20,8 @@ namespace GUI
         {
             InitializeComponent();
         }
+
+        BUS_TaiKhoan_Report BUS_TaiKhoan_Report = new BUS_TaiKhoan_Report();
 
         private void PB_Close_Click(object sender, EventArgs e)
         {
@@ -84,6 +90,54 @@ namespace GUI
         {
             Cutom_Resize();
             SetPlaceholder(txt_Tim,"CCCD/CMND...");
+        }
+
+        private void btn_Tim_Click(object sender, EventArgs e)
+        {
+            List<ET_TaiKhoan_Report_ThongTinKhachHang> lsttk = BUS_TaiKhoan_Report.LayThongTinKhachHang(txt_Tim.Text);
+            List<ET_TaiKhoan_Report_DanhSachTaiKhoan> dstk = BUS_TaiKhoan_Report.LayDSTaiKhoan(txt_Tim.Text);
+
+            TaiKhoan_DataSet data = new TaiKhoan_DataSet();
+            var ttkh = data.KhachHang;
+            foreach(var item  in lsttk)
+            {
+                ttkh.AddKhachHangRow(
+                    item.MaKh,
+                    item.TenKh,
+                    item.CCCD,
+                    item.SDT,
+                    item.DiaChi,
+                    item.Email,
+                    item.QuocTich
+                    );
+            }
+
+            var tttk = data.TaiKhoan;
+            foreach( var item in dstk)
+            {
+                tttk.AddTaiKhoanRow(
+                    item.MaTk,
+                    item.SoTaiKhoan,
+                    item.ChiTiet,
+                    Convert.ToString(item.SoDu),
+                    item.TrangThai
+                    );
+            }
+
+            GUI.Reports.Report_TaiKhoan rpt = new GUI.Reports.Report_TaiKhoan();
+            rpt.SetDataSource(data);
+            crv_TaiKhoan.ReportSource = rpt;
+            crv_TaiKhoan.Refresh();
+        }
+
+        private void btn_Lammoi_Click(object sender, EventArgs e)
+        {
+            txt_Tim.Clear();
+            TaiKhoan_DataSet data = new TaiKhoan_DataSet();
+            GUI.Reports.Report_TaiKhoan rpt = new GUI.Reports.Report_TaiKhoan();
+            rpt.SetDataSource(data);
+            crv_TaiKhoan.ReportSource = rpt;
+            crv_TaiKhoan.Refresh();
         }
     }
 }

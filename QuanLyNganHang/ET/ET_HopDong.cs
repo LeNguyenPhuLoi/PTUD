@@ -50,14 +50,14 @@ namespace ET
     public class ET_HopDong_Report
     {
         //Hợp đồng
-        public string SoHD { get; set; }
-        public string LoaiHD { get; set; }
+        public string SoHopDong { get; set; }
+        public string TenLoaiHD { get; set; }
         public DateTime NgayKy { get; set; }
         public DateTime NgayHetHan { get; set; }
-        public decimal SoTien { get; set; }
+        public decimal GiaTri { get; set; }
         //Khách hàng
         public string TenKh { get; set; }
-        public string SoTk { get ; set; }
+        public string SoTaiKhoan { get ; set; }
         public string CCCD { get; set; }
         public string SDT { get; set; }
         public string DiaChi { get; set; }

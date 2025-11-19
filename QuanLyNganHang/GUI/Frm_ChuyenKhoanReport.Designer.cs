@@ -49,6 +49,7 @@
             this.crp_chuyenkhoan.ReportSource = this.Report_ChuyenKhoan1;
             this.crp_chuyenkhoan.Size = new System.Drawing.Size(1186, 694);
             this.crp_chuyenkhoan.TabIndex = 0;
+            this.crp_chuyenkhoan.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // btn_lammoi
             // 

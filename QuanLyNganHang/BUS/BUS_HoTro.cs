@@ -13,6 +13,12 @@ namespace BUS
     {
         DAL_HoTro DAL_HoTro = new DAL_HoTro();
 
+        //hàm lấy tên nhan viên theo mã
+        public string LayTenNVTheoMa(string manv)
+        {
+            return DAL_HoTro.LayTenNVTheoMa(manv);
+        }
+
         //hàm đếm số lượng hỗ trợ
         public int DemSoLuongHoTro()
         {

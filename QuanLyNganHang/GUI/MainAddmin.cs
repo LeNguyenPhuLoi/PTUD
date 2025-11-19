@@ -226,13 +226,13 @@ namespace GUI
 
         private void hoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_HoTro frm = new Frm_HoTro();
+            Frm_HoTro frm = new Frm_HoTro(maDN);
             OpenMain(frm);
         }
 
         private void hợpĐồngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_HopDong frm = new Frm_HopDong();
+            Frm_HopDong frm = new Frm_HopDong(maDN);
             OpenMain(frm);
         }
 

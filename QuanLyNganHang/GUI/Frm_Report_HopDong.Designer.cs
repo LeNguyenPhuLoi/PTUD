@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Report_HopDong));
             this.txt_Tim = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.crv_HopDong = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Report_HopDong1 = new GUI.Reports.Report_HopDong();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flp_Control = new System.Windows.Forms.FlowLayoutPanel();
             this.PB_Minimize = new System.Windows.Forms.PictureBox();
@@ -42,6 +40,8 @@
             this.btn_Lammoi = new System.Windows.Forms.Button();
             this.btn_Tim = new System.Windows.Forms.Button();
             this.panel_Tim = new System.Windows.Forms.Panel();
+            this.crv_HopDong = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.Report_HopDong1 = new GUI.Reports.Report_HopDong();
             this.panel1.SuspendLayout();
             this.flp_Control.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Minimize)).BeginInit();
@@ -56,7 +56,7 @@
             this.txt_Tim.Location = new System.Drawing.Point(105, 15);
             this.txt_Tim.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Tim.Name = "txt_Tim";
-            this.txt_Tim.Size = new System.Drawing.Size(312, 29);
+            this.txt_Tim.Size = new System.Drawing.Size(312, 34);
             this.txt_Tim.TabIndex = 19;
             this.txt_Tim.Tag = "Nhập";
             // 
@@ -67,23 +67,9 @@
             this.label1.Location = new System.Drawing.Point(11, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 21);
+            this.label1.Size = new System.Drawing.Size(114, 27);
             this.label1.TabIndex = 16;
             this.label1.Text = "Tìm Kiếm:";
-            // 
-            // crv_HopDong
-            // 
-            this.crv_HopDong.ActiveViewIndex = 0;
-            this.crv_HopDong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crv_HopDong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crv_HopDong.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.crv_HopDong.Location = new System.Drawing.Point(0, 124);
-            this.crv_HopDong.Margin = new System.Windows.Forms.Padding(2);
-            this.crv_HopDong.Name = "crv_HopDong";
-            this.crv_HopDong.ReportSource = this.Report_HopDong1;
-            this.crv_HopDong.Size = new System.Drawing.Size(1084, 537);
-            this.crv_HopDong.TabIndex = 15;
-            this.crv_HopDong.ToolPanelWidth = 150;
             // 
             // panel1
             // 
@@ -146,7 +132,7 @@
             this.lbl_Title.ForeColor = System.Drawing.Color.Red;
             this.lbl_Title.Location = new System.Drawing.Point(336, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(326, 42);
+            this.lbl_Title.Size = new System.Drawing.Size(417, 53);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Text = "Báo Cáo Hợp Đồng";
             // 
@@ -166,6 +152,7 @@
             this.btn_Lammoi.TabIndex = 37;
             this.btn_Lammoi.Text = "Làm Mới";
             this.btn_Lammoi.UseVisualStyleBackColor = false;
+            this.btn_Lammoi.Click += new System.EventHandler(this.btn_Lammoi_Click);
             // 
             // btn_Tim
             // 
@@ -183,6 +170,7 @@
             this.btn_Tim.TabIndex = 38;
             this.btn_Tim.Text = "Tìm";
             this.btn_Tim.UseVisualStyleBackColor = false;
+            this.btn_Tim.Click += new System.EventHandler(this.btn_Tim_Click);
             // 
             // panel_Tim
             // 
@@ -195,6 +183,21 @@
             this.panel_Tim.Name = "panel_Tim";
             this.panel_Tim.Size = new System.Drawing.Size(607, 57);
             this.panel_Tim.TabIndex = 39;
+            // 
+            // crv_HopDong
+            // 
+            this.crv_HopDong.ActiveViewIndex = 0;
+            this.crv_HopDong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crv_HopDong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crv_HopDong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.crv_HopDong.Location = new System.Drawing.Point(0, 124);
+            this.crv_HopDong.Margin = new System.Windows.Forms.Padding(2);
+            this.crv_HopDong.Name = "crv_HopDong";
+            this.crv_HopDong.ReportSource = this.Report_HopDong1;
+            this.crv_HopDong.Size = new System.Drawing.Size(1084, 537);
+            this.crv_HopDong.TabIndex = 15;
+            this.crv_HopDong.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crv_HopDong.ToolPanelWidth = 150;
             // 
             // Frm_Report_HopDong
             // 
