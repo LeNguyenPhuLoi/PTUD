@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crvLishSuTraNo = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crvViPham = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.Report_ViPham1 = new GUI.Reports.Report_ViPham();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMaVay = new System.Windows.Forms.TextBox();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboNam = new System.Windows.Forms.ComboBox();
+            this.cboThang = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // crvLishSuTraNo
+            // crvViPham
             // 
-            this.crvLishSuTraNo.ActiveViewIndex = 0;
-            this.crvLishSuTraNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.crvViPham.ActiveViewIndex = 0;
+            this.crvViPham.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.crvLishSuTraNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crvLishSuTraNo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvLishSuTraNo.Location = new System.Drawing.Point(21, 92);
-            this.crvLishSuTraNo.Name = "crvLishSuTraNo";
-            this.crvLishSuTraNo.ReportSource = this.Report_ViPham1;
-            this.crvLishSuTraNo.Size = new System.Drawing.Size(1176, 448);
-            this.crvLishSuTraNo.TabIndex = 43;
-            this.crvLishSuTraNo.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crvViPham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvViPham.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvViPham.Location = new System.Drawing.Point(21, 92);
+            this.crvViPham.Name = "crvViPham";
+            this.crvViPham.ReportSource = this.Report_ViPham1;
+            this.crvViPham.Size = new System.Drawing.Size(1176, 448);
+            this.crvViPham.TabIndex = 43;
+            this.crvViPham.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // btnNew
             // 
@@ -88,31 +88,32 @@
             this.btnTim.TabIndex = 41;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // label2
             // 
             this.label2.AllowDrop = true;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 25);
+            this.label2.Location = new System.Drawing.Point(13, 25);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 33);
+            this.label2.Size = new System.Drawing.Size(185, 33);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Mã Phòng:";
+            this.label2.Text = "Mã Nhân Viên:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // txtMaVay
+            // txtMaNV
             // 
-            this.txtMaVay.AllowDrop = true;
-            this.txtMaVay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtMaNV.AllowDrop = true;
+            this.txtMaNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaVay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaVay.Location = new System.Drawing.Point(166, 28);
-            this.txtMaVay.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaVay.Name = "txtMaVay";
-            this.txtMaVay.Size = new System.Drawing.Size(470, 30);
-            this.txtMaVay.TabIndex = 39;
+            this.txtMaNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNV.Location = new System.Drawing.Point(200, 28);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(470, 30);
+            this.txtMaNV.TabIndex = 39;
             // 
             // label3
             // 
@@ -140,23 +141,23 @@
             this.label1.TabIndex = 50;
             this.label1.Text = "Tháng";
             // 
-            // comboBox2
+            // cboNam
             // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1078, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 49;
+            this.cboNam.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboNam.FormattingEnabled = true;
+            this.cboNam.Location = new System.Drawing.Point(1078, 51);
+            this.cboNam.Name = "cboNam";
+            this.cboNam.Size = new System.Drawing.Size(121, 24);
+            this.cboNam.TabIndex = 49;
             // 
-            // comboBox1
+            // cboThang
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(951, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 48;
+            this.cboThang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboThang.FormattingEnabled = true;
+            this.cboThang.Location = new System.Drawing.Point(951, 50);
+            this.cboThang.Name = "cboThang";
+            this.cboThang.Size = new System.Drawing.Size(121, 24);
+            this.cboThang.TabIndex = 48;
             // 
             // frm_ViPhamRP
             // 
@@ -165,15 +166,16 @@
             this.ClientSize = new System.Drawing.Size(1219, 563);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.crvLishSuTraNo);
+            this.Controls.Add(this.cboNam);
+            this.Controls.Add(this.cboThang);
+            this.Controls.Add(this.crvViPham);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtMaVay);
+            this.Controls.Add(this.txtMaNV);
             this.Name = "frm_ViPhamRP";
             this.Text = "frm_ViPhamRP";
+            this.Load += new System.EventHandler(this.frm_ViPhamRP_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,15 +183,15 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvLishSuTraNo;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvViPham;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMaVay;
+        private System.Windows.Forms.TextBox txtMaNV;
         private Reports.Report_ViPham Report_ViPham1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboNam;
+        private System.Windows.Forms.ComboBox cboThang;
     }
 }

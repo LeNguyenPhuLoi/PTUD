@@ -8,6 +8,15 @@ using System.Threading.Tasks;
 
 namespace BUS
 {
+    public class BUS_ViPhamRP 
+    { 
+        DAL_ViPhamRP vp = new DAL_ViPhamRP();
+        public List<ET_ViPhamRP> LayDSVP(string ma, int thang, int nam)
+        {
+            return vp.LayDSViPhamTheoNV(ma, thang, nam);
+        }
+    }
+
     public class BUS_ViPham
     {
         DAL_ViPham vp = new DAL_ViPham();
@@ -40,7 +49,7 @@ namespace BUS
             return vp.LoadNhanVien();
         }
 
-        public string LoadHTXL(string ma)
+        public decimal? LoadHTXL(string ma)
         {
             return vp.LoadHTXL(ma);
         }

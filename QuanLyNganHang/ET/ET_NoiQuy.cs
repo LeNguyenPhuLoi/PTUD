@@ -8,7 +8,7 @@ namespace ET
 {
     public class ET_NoiQuy
     {
-        public ET_NoiQuy(string mANQ, string tIEUDE, string mOTA, DateTime nGAYBH, string lOAIAPDUNG, bool? tRANGTHAI)
+        public ET_NoiQuy(string mANQ, string tIEUDE, string mOTA, DateTime nGAYBH, decimal lOAIAPDUNG, bool? tRANGTHAI)
         {
             MANQ = mANQ;
             TIEUDE = tIEUDE;
@@ -22,7 +22,7 @@ namespace ET
         public string TIEUDE { get; set; }
         public string MOTA { get; set; }
         public DateTime NGAYBH { get; set; }
-        public string LOAIAPDUNG { get; set; }
+        public decimal LOAIAPDUNG { get; set; }
         public bool? TRANGTHAI { get; set; }
     }
 }

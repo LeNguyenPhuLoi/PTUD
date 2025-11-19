@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ViPhamDataSet" targetNamespace="http://tempuri.org/ViPhamDataSet.xsd" xmlns:mstns="http://tempuri.org/ViPhamDataSet.xsd" xmlns="http://tempuri.org/ViPhamDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ViPhamDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ViPhamDataSet" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ViPhamDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ViPhamRP" msprop:Generator_RowEvHandlerName="ViPhamRPRowChangeEventHandler" msprop:Generator_RowDeletedName="ViPhamRPRowDeleted" msprop:Generator_RowDeletingName="ViPhamRPRowDeleting" msprop:Generator_RowEvArgName="ViPhamRPRowChangeEvent" msprop:Generator_TablePropName="ViPhamRP" msprop:Generator_RowChangedName="ViPhamRPRowChanged" msprop:Generator_UserTableName="ViPhamRP" msprop:Generator_RowChangingName="ViPhamRPRowChanging" msprop:Generator_RowClassName="ViPhamRPRow" msprop:Generator_TableClassName="ViPhamRPDataTable" msprop:Generator_TableVarName="tableViPhamRP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAVP" msprop:Generator_ColumnPropNameInTable="MAVPColumn" msprop:Generator_ColumnPropNameInRow="MAVP" msprop:Generator_UserColumnName="MAVP" msprop:Generator_ColumnVarNameInTable="columnMAVP" type="xs:string" minOccurs="0" />
+              <xs:element name="MANV" msprop:Generator_ColumnPropNameInTable="MANVColumn" msprop:Generator_ColumnPropNameInRow="MANV" msprop:Generator_UserColumnName="MANV" msprop:Generator_ColumnVarNameInTable="columnMANV" type="xs:string" minOccurs="0" />
+              <xs:element name="TENNV" msprop:Generator_ColumnPropNameInTable="TENNVColumn" msprop:Generator_ColumnPropNameInRow="TENNV" msprop:Generator_UserColumnName="TENNV" msprop:Generator_ColumnVarNameInTable="columnTENNV" type="xs:string" minOccurs="0" />
+              <xs:element name="LOIVIPHAM" msprop:Generator_ColumnPropNameInTable="LOIVIPHAMColumn" msprop:Generator_ColumnPropNameInRow="LOIVIPHAM" msprop:Generator_UserColumnName="LOIVIPHAM" msprop:Generator_ColumnVarNameInTable="columnLOIVIPHAM" type="xs:string" minOccurs="0" />
+              <xs:element name="NGAYVP" msprop:Generator_ColumnPropNameInTable="NGAYVPColumn" msprop:Generator_ColumnPropNameInRow="NGAYVP" msprop:Generator_UserColumnName="NGAYVP" msprop:Generator_ColumnVarNameInTable="columnNGAYVP" type="xs:string" minOccurs="0" />
+              <xs:element name="HINHTHUCXL" msprop:Generator_ColumnPropNameInTable="HINHTHUCXLColumn" msprop:Generator_ColumnPropNameInRow="HINHTHUCXL" msprop:Generator_UserColumnName="HINHTHUCXL" msprop:Generator_ColumnVarNameInTable="columnHINHTHUCXL" type="xs:string" minOccurs="0" />
+              <xs:element name="TRANGTHAIXL" msprop:Generator_UserColumnName="TRANGTHAIXL" msprop:Generator_ColumnPropNameInTable="TRANGTHAIXLColumn" msprop:Generator_ColumnPropNameInRow="TRANGTHAIXL" msprop:Generator_ColumnVarNameInTable="columnTRANGTHAIXL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
