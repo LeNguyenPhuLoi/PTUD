@@ -22,13 +22,15 @@ namespace DAL
         {
             var query = from bl in db.BIENLAIs
                         join kh in db.KHACHHANGs on bl.MAKH equals kh.MAKH
+                        join gd in db.GIAODICHes on bl.MAGD equals gd.MAGD
+                        join lgd in db.LOAIGDs on gd.MALOAIGD equals lgd.MALOAIGD
                         join tk in db.TAIKHOANs on bl.MATK equals tk.MATK
                         join nv in db.NHANVIENs on bl.MANV equals nv.MANV
                         join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
                         select new ET_BienLaiRP
                         {
                             MaBL = bl.MABL,
-                            MaGD = bl.MAGD,
+                            MaGD = lgd.TENLOAIGD,
                             TenKH = kh.TENKH,
                             SoTaiKhoan = tk.SOTAIKHOAN,
                             TenNV = nv.TENNV,
@@ -44,6 +46,8 @@ namespace DAL
         {
             var search = from bl in db.BIENLAIs
                          join kh in db.KHACHHANGs on bl.MAKH equals kh.MAKH
+                         join gd in db.GIAODICHes on bl.MAGD equals gd.MAGD
+                         join lgd in db.LOAIGDs on gd.MALOAIGD equals lgd.MALOAIGD
                          join tk in db.TAIKHOANs on bl.MATK equals tk.MATK
                          join nv in db.NHANVIENs on bl.MANV equals nv.MANV
                          join nt in db.NGOAITEs on bl.MANGOAITE equals nt.MANGOAITE
@@ -51,7 +55,7 @@ namespace DAL
                          select new ET_BienLaiRP
                          {
                              MaBL = bl.MABL,
-                             MaGD = bl.MAGD,
+                             MaGD = lgd.TENLOAIGD,
                              TenKH = kh.TENKH,
                              SoTaiKhoan = tk.SOTAIKHOAN,
                              TenNV = nv.TENNV,

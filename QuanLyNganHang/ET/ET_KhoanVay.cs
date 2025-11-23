@@ -45,6 +45,7 @@ namespace ET
         public DateTime NgayVay { get; set; }
         public DateTime ThoiHan { get; set; }
         public string TrangThai { get; set; }
-        public string MaLaiSuat { get; set; }
+        public decimal LaiSuat { get; set; }
+        public int SoThang {  get; set; }
     }
 }

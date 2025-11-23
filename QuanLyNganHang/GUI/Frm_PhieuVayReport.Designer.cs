@@ -87,14 +87,15 @@
             this.crp_khoanvay.Location = new System.Drawing.Point(0, 51);
             this.crp_khoanvay.Name = "crp_khoanvay";
             this.crp_khoanvay.ReportSource = this.Report_PhieuVay1;
-            this.crp_khoanvay.Size = new System.Drawing.Size(800, 399);
+            this.crp_khoanvay.Size = new System.Drawing.Size(867, 399);
             this.crp_khoanvay.TabIndex = 0;
+            this.crp_khoanvay.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // Frm_PhieuVayReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(867, 450);
             this.Controls.Add(this.txt_timkiem);
             this.Controls.Add(this.btn_lammoi);
             this.Controls.Add(this.btn_tim);
