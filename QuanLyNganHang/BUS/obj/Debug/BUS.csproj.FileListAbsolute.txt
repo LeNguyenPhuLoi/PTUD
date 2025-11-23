@@ -38,3 +38,23 @@ D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.c
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
 D:\Kì 5\PTUD 1\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.dll
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\BUS.pdb
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.dll
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\ET.dll
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\Dapper.dll
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.pdb
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\DAL.dll.config
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\ET.pdb
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\Dapper.xml
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\PTUD\QuanLyNganHang\BUS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.csproj.Up2Date
+D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.dll
+D:\PTUD\QuanLyNganHang\BUS\obj\Debug\BUS.pdb
