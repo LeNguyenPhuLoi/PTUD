@@ -20,7 +20,8 @@
               <xs:element name="NguoiTra" msprop:Generator_ColumnPropNameInTable="NguoiTraColumn" msprop:Generator_ColumnPropNameInRow="NguoiTra" msprop:Generator_UserColumnName="NguoiTra" msprop:Generator_ColumnVarNameInTable="columnNguoiTra" type="xs:string" minOccurs="0" />
               <xs:element name="SoTienNo" msprop:Generator_ColumnPropNameInTable="SoTienNoColumn" msprop:Generator_ColumnPropNameInRow="SoTienNo" msprop:Generator_UserColumnName="SoTienNo" msprop:Generator_ColumnVarNameInTable="columnSoTienNo" type="xs:string" minOccurs="0" />
               <xs:element name="SoTienTra" msprop:Generator_ColumnPropNameInTable="SoTienTraColumn" msprop:Generator_ColumnPropNameInRow="SoTienTra" msprop:Generator_UserColumnName="SoTienTra" msprop:Generator_ColumnVarNameInTable="columnSoTienTra" type="xs:string" minOccurs="0" />
-              <xs:element name="NgayTra" msprop:Generator_ColumnPropNameInRow="NgayTra" msprop:Generator_ColumnPropNameInTable="NgayTraColumn" msprop:Generator_ColumnVarNameInTable="columnNgayTra" msprop:Generator_UserColumnName="NgayTra" type="xs:string" minOccurs="0" />
+              <xs:element name="NgayTra" msprop:Generator_UserColumnName="NgayTra" msprop:Generator_ColumnPropNameInTable="NgayTraColumn" msprop:Generator_ColumnPropNameInRow="NgayTra" msprop:Generator_ColumnVarNameInTable="columnNgayTra" type="xs:string" minOccurs="0" />
+              <xs:element name="TongTien" msprop:Generator_ColumnPropNameInRow="TongTien" msprop:Generator_ColumnPropNameInTable="TongTienColumn" msprop:Generator_ColumnVarNameInTable="columnTongTien" msprop:Generator_UserColumnName="TongTien" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

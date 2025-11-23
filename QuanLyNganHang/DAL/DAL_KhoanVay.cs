@@ -24,6 +24,7 @@ namespace DAL
             var query = from kv in db.KHOANVAYs
                         join kh in db.KHACHHANGs on kv.MAKH equals kh.MAKH
                         join tk in db.TAIKHOANs on kv.MATK equals tk.MATK
+                        join ls in db.LAISUATs on kv.MALAISUAT equals ls.MALAISUAT
                         select new ET_KhoanVayRP
                         {
                             MaVay = kv.MAVAY,
@@ -34,7 +35,8 @@ namespace DAL
                             NgayVay = Convert.ToDateTime(kv.NGAYVAY),
                             ThoiHan = Convert.ToDateTime(kv.THOIHAN),
                             TrangThai = kv.TRANGTHAI,
-                            MaLaiSuat = kv.MALAISUAT
+                            LaiSuat = (decimal)ls.LAISUAT1,
+                            SoThang = (int)ls.SOTHANG
                         };
             return query.ToList();
         }
@@ -44,6 +46,7 @@ namespace DAL
             var search = from kv in db.KHOANVAYs
                          join kh in db.KHACHHANGs on kv.MAKH equals kh.MAKH
                          join tk in db.TAIKHOANs on kv.MATK equals tk.MATK
+                         join ls in db.LAISUATs on kv.MALAISUAT equals ls.MALAISUAT
                          where kv.MAVAY.Contains(ma) && kv.TinhTrangXoa == "Hoạt Động"
                          select new ET_KhoanVayRP
                          {
@@ -55,7 +58,8 @@ namespace DAL
                              NgayVay = Convert.ToDateTime(kv.NGAYVAY),
                              ThoiHan = Convert.ToDateTime(kv.THOIHAN),
                              TrangThai = kv.TRANGTHAI,
-                             MaLaiSuat = kv.MALAISUAT
+                             LaiSuat = (decimal)ls.LAISUAT1,
+                             SoThang = (int)ls.SOTHANG
                          };
             return search.ToList();
         }

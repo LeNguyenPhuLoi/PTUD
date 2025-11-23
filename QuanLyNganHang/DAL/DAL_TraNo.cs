@@ -28,10 +28,11 @@ namespace DAL
                         {
                             MaTraNo = tn.MATRANO,
                             MaVay = tn.MAVAY,
-                            NguoiTra = kh.MAKH,
+                            NguoiTra = kh.TENKH,
                             SoTienNo = (decimal)tn.SOTIENO,
                             SoTienTra = (decimal)tn.SOTIENTRA,
-                            NgayTra = Convert.ToDateTime(tn.NGAYTRA)
+                            NgayTra = Convert.ToDateTime(tn.NGAYTRA),
+                            TongTien = (decimal)kv.TONGTIEN
                         };
             return query.ToList();
         }
@@ -39,14 +40,18 @@ namespace DAL
         public List<ET_TraNoRP> TimRPTN(string ma)
         {
             var search = from tn in db.TRANOs
+                         join kv in db.KHOANVAYs on tn.MAVAY equals kv.MAVAY
+                         join kh in db.KHACHHANGs on kv.MAKH equals kh.MAKH
                          where tn.MATRANO.Contains(ma) && tn.TinhTrangXoa == "Hoạt Động"
                          select new ET_TraNoRP
                          {
                              MaTraNo = tn.MATRANO,
                              MaVay = tn.MAVAY,
+                             NguoiTra = kh.TENKH,
                              SoTienNo = (decimal)tn.SOTIENO,
                              SoTienTra = (decimal)tn.SOTIENTRA,
-                             NgayTra = Convert.ToDateTime(tn.NGAYTRA)
+                             NgayTra = Convert.ToDateTime(tn.NGAYTRA),
+                             TongTien = (decimal)kv.TONGTIEN
                          };
             return search.ToList();
         }

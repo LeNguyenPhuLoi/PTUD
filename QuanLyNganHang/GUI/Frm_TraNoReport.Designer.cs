@@ -49,6 +49,7 @@
             this.crv_trano.ReportSource = this.Report_TraNo1;
             this.crv_trano.Size = new System.Drawing.Size(800, 396);
             this.crv_trano.TabIndex = 0;
+            this.crv_trano.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // btn_lammoi
             // 

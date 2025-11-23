@@ -34,5 +34,6 @@ namespace ET
         public decimal SoTienNo { get; set; }
         public decimal SoTienTra { get; set; }
         public DateTime NgayTra { get; set; }
+        public decimal TongTien {  get; set; }
     }
 }
