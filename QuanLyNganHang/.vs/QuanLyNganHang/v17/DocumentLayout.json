@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\PTUD\\QuanLyNganHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|d:\\ptud\\quanlynganhang\\dal\\dal_phieuluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\dal_phieuluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|D:\\PTUD\\QuanLyNganHang\\dal\\dal_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\dal_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|d:\\ptud\\quanlynganhang\\dal\\qlnh.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
-      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\qlnh.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+      "AbsoluteMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|d:\\ptud\\quanlynganhang\\dal\\dal_phieuluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8AF0F1A-FE84-474A-832F-809C4F9DF48B}|DAL\\DAL.csproj|solutionrelative:dal\\dal_phieuluong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,26 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DAL_PhieuLuong.cs",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_PhieuLuong.cs",
-              "RelativeDocumentMoniker": "DAL\\DAL_PhieuLuong.cs",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_PhieuLuong.cs",
-              "RelativeToolTip": "DAL\\DAL_PhieuLuong.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAwE0AAAAtAAAAAAAAAA==",
+              "Title": "DAL_HopDong.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_HopDong.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_HopDong.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_HopDong.cs",
+              "RelativeToolTip": "DAL\\DAL_HopDong.cs",
+              "ViewState": "AgIAALkBAAAAAAAAAAAqwMMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T03:00:57.75Z",
+              "WhenOpened": "2025-11-24T04:04:44.471Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "QLNH.dbml",
-              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\QLNH.dbml",
-              "RelativeDocumentMoniker": "DAL\\QLNH.dbml",
-              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\QLNH.dbml",
-              "RelativeToolTip": "DAL\\QLNH.dbml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
-              "WhenOpened": "2025-11-24T02:59:27.821Z",
+              "Title": "DAL_PhieuLuong.cs",
+              "DocumentMoniker": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_PhieuLuong.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_PhieuLuong.cs",
+              "ToolTip": "D:\\PTUD\\QuanLyNganHang\\DAL\\DAL_PhieuLuong.cs",
+              "RelativeToolTip": "DAL\\DAL_PhieuLuong.cs",
+              "ViewState": "AgIAALIAAAAAAAAAAAAAwM0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T03:00:57.75Z",
               "EditorCaption": ""
             }
           ]

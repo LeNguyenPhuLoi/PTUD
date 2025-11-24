@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
+using Dapper;
+using System.IO;
 using ET;
 
 namespace DAL
@@ -54,103 +58,150 @@ namespace DAL
         }
 
     }
+
+
     public class DAL_PhieuLuong
     {
-        // Kết nối tới database bằng LINQ to SQL
-        AutoConnect conn = new AutoConnect();
-        QLNHDataContext db;
+        //kết nối DB 
+        private readonly AutoConnect connect = new AutoConnect();
 
         public DAL_PhieuLuong()
         {
-            db = new QLNHDataContext(conn.GetConnection());
         }
 
+        //===============================
+        // LẤY PHIẾU LƯƠNG NHÂN VIÊN
+        //===============================
         public List<ET_PhieuLuong> LayPhieuLuongNhanVien(string manv, int thang, int nam)
         {
-            // 1. Xử lý ngày tháng (nếu cần lọc chính xác theo ngày lập phiếu)
-            // Ở đây mình lọc theo tháng và năm của phiếu lương
-            var khautru = LayTongKhauTru(manv, thang, nam);
-            string noidung = Noidung(LayTieuDeViPham(manv, thang, nam));
+            // Query lấy thông tin nhân viên
+            const string query = @"
+            SELECT 
+                nv.MANV,
+                nv.TENNV,
+                nv.NGAYSINH,
+                nv.CCCD,
+                nv.LUONG
+            FROM NHANVIEN nv
+            WHERE nv.MANV = @Manv;
+        ";
 
+            try
+            {
+                using (var conn = new SqlConnection(connect.GetConnection()))
+                {
+                    conn.Open();
 
-            var query = from pl in db.VIPHAMs
-                        join nv in db.NHANVIENs on pl.MANV equals nv.MANV
-                        where nv.MANV == manv
-                        select new ET_PhieuLuong
-                        {
-                            // Map dữ liệu từ 2 bảng vào class ET_PhieuLuong
-                            MANV = pl.MANV,
-                            TENNV = nv.TENNV,
+                    var data = conn.Query(query, new { Manv = manv }).ToList();
 
-                            // Xử lý ngày sinh (Convert để tránh lỗi null)
-                            NGAYSINH = Convert.ToDateTime(nv.NGAYSINH),
-                            CCCD = nv.CCCD,
+                    // Lấy phụ trợ
+                    var khautru = LayTongKhauTru(manv, thang, nam);
+                    var tieuDeLoi = LayTieuDeViPham(manv, thang, nam);
+                    string noidung = Noidung(tieuDeLoi);
 
-                            // Ép kiểu decimal và xử lý null (?? 0)
-                            LUONG = (decimal)(nv.LUONG ?? 0),
-                            KHAUTRU = (decimal)(khautru ?? 0),
+                    // Dựng output
+                    var result = data.Select(item => new ET_PhieuLuong
+                    {
+                        MANV = item.MANV,
+                        TENNV = item.TENNV,
+                        NGAYSINH = Convert.ToDateTime(item.NGAYSINH),
+                        CCCD = item.CCCD,
 
-                            // Tự tạo nội dung hiển thị
-                            NOIDUNG = noidung,
+                        LUONG = (decimal)(item.LUONG ?? 0),
+                        KHAUTRU = (decimal)(khautru ?? 0),
+                        NOIDUNG = noidung,
 
-                            // Tổng thực lĩnh
-                            TONG = (decimal)(nv.LUONG ?? 0) - (decimal)(khautru ?? 0)
-                        };
+                        TONG = (decimal)(item.LUONG ?? 0) - (decimal)(khautru ?? 0)
 
-            return query.ToList();
+                    }).ToList();
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                File.AppendAllText(@"D:\log.txt", ex.ToString());
+                return new List<ET_PhieuLuong>();
+            }
         }
 
-       
 
+        //===============================
+        // TÍNH TỔNG KHẤU TRỪ
+        //===============================
         public decimal? LayTongKhauTru(string manv, int thang, int nam)
         {
             DateTime dauThang = new DateTime(nam, thang, 1);
             DateTime dauThangSau = dauThang.AddMonths(1);
 
-            // Lọc theo NV, theo Tháng/Năm và tính tổng Khấu Trừ
-            decimal? tong = (from vp in db.VIPHAMs
-                            where vp.MANV == manv
-                                     && vp.NGAYVP >= dauThang
-                                     && vp.NGAYVP < dauThangSau
-                            select vp.HINHTHUCXL).Sum();
+            const string query = @"
+            SELECT SUM(vp.HINHTHUCXL)
+            FROM VIPHAM vp
+            WHERE vp.MANV = @Manv
+              AND vp.NGAYVP >= @TuNgay
+              AND vp.NGAYVP < @DenNgay;
+        ";
 
-            return tong;
-        }
-        public List<string> LayTieuDeViPham(string manv, int thang, int nam)
-        {
-            using (var db = new QLNHDataContext()) // Thay bằng Context của bạn
+            using (var conn = new SqlConnection(connect.GetConnection()))
             {
-                // 1. Xác định khoảng thời gian (Từ đầu tháng đến đầu tháng sau)
-                DateTime dauThang = new DateTime(nam, thang, 1);
-                DateTime dauThangSau = dauThang.AddMonths(1);
-
-                // 2. Truy vấn kết hợp (Join)
-                var danhSachLoi = (from vp in db.VIPHAMs
-                                   join nq in db.NOIQUYs on vp.MANQ equals nq.MANQ
-                                   where vp.MANV == manv
-                                      && vp.NGAYVP >= dauThang
-                                      && vp.NGAYVP < dauThangSau
-                                   select nq.TIEUDE).ToList();
-
-                return danhSachLoi;
+                conn.Open();
+                return conn.ExecuteScalar<decimal?>(query, new
+                {
+                    Manv = manv,
+                    TuNgay = dauThang,
+                    DenNgay = dauThangSau
+                });
             }
         }
 
-        public string Noidung (List<string> danhsachloi)
+        //===============================
+        // LẤY TIÊU ĐỀ VI PHẠM
+        //===============================
+        public List<string> LayTieuDeViPham(string manv, int thang, int nam)
         {
-            string noiDung = "";
-            HashSet<string> tontai = new HashSet<string>(); // dùng để tránh trùng
+            DateTime dauThang = new DateTime(nam, thang, 1);
+            DateTime dauThangSau = dauThang.AddMonths(1);
+
+            const string query = @"
+            SELECT nq.TIEUDE
+            FROM VIPHAM vp
+            JOIN NOIQUY nq ON vp.MANQ = nq.MANQ
+            WHERE vp.MANV = @Manv
+              AND vp.NGAYVP >= @TuNgay
+              AND vp.NGAYVP < @DenNgay;
+        ";
+
+            using (var conn = new SqlConnection(connect.GetConnection()))
+            {
+                conn.Open();
+
+                return conn.Query<string>(query, new
+                {
+                    Manv = manv,
+                    TuNgay = dauThang,
+                    DenNgay = dauThangSau
+                }).ToList();
+            }
+        }
+
+        //===============================
+        // GHÉP NỘI DUNG VI PHẠM (không trùng)
+        //===============================
+        public string Noidung(List<string> danhsachloi)
+        {
+            HashSet<string> tonTai = new HashSet<string>();
+            string nd = "";
 
             foreach (var item in danhsachloi)
             {
-                if (!tontai.Contains(item)) // nếu chưa có thì thêm
+                if (tonTai.Add(item)) // Add -> true nếu chưa tồn tại
                 {
-                    tontai.Add(item);
-                    noiDung += item + ", ";
+                    nd += item + ", ";
                 }
             }
-            return noiDung;
-        }
 
+            return nd.Trim().TrimEnd(',');
+        }
     }
+
 }
