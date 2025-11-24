@@ -13,6 +13,6 @@ D:\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\PTUD\QuanLyNganHang\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 D:\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-D:\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.dll
 D:\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.pdb
+D:\PTUD\QuanLyNganHang\DAL\obj\Debug\DAL.csproj.Up2Date
