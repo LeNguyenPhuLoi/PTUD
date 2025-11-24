@@ -75,9 +75,7 @@ namespace DAL
 
             var query = from pl in db.VIPHAMs
                         join nv in db.NHANVIENs on pl.MANV equals nv.MANV
-                        where pl.MANV == manv
-                           && pl.NGAYVP.Value.Month == thang
-                           && pl.NGAYVP.Value.Year == nam
+                        where nv.MANV == manv
                         select new ET_PhieuLuong
                         {
                             // Map dữ liệu từ 2 bảng vào class ET_PhieuLuong
