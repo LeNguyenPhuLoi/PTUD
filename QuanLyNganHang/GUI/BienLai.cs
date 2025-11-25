@@ -176,22 +176,39 @@ namespace GUI
                                                        rtxtmota.Text,
                                                        cbotrangthai.Text,
                                                        TrangThai);
+                if (string.IsNullOrWhiteSpace(cbomagd.Text))
+                {
+                    MessageBox.Show("Mã giao dịch không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cbomagd.Focus();
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(txtmakh.Text))
                 {
                     MessageBox.Show("Mã khách hàng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtmakh.Focus();
                     return;
                 }
-                if (string.IsNullOrWhiteSpace(txtmanv.Text))
+                if (string.IsNullOrWhiteSpace(cbomatk.Text))
                 {
-                    MessageBox.Show("Mã nhân viên không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtmanv.Focus();
+                    MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cbomant.Text))
+                {
+                    MessageBox.Show("Mã ngoại tệ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cbomant.Focus();
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(txtsotien.Text))
                 {
-                    MessageBox.Show("Mã ngoại tệ không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Số tiền không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtsotien.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cbotrangthai.Text))
+                {
+                    MessageBox.Show("Trạng thái không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cbotrangthai.Focus();
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(rtxtmota.Text))

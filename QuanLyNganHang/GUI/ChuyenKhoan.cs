@@ -175,6 +175,42 @@ namespace GUI
                                                        txtMaTKNhan.Text,
                                                        rtxtND.Text,
                                                        TrangThai);
+                if (string.IsNullOrWhiteSpace(txtMaKH.Text))
+                {
+                    MessageBox.Show("Mã khách hàng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaKH.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cbo_taikhoan.Text))
+                {
+                    MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cbo_taikhoan.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cbo_taikhoangui.Text))
+                {
+                    MessageBox.Show("Tài khoản gửi không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cbo_taikhoangui.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtMaTKNhan.Text))
+                {
+                    MessageBox.Show("Mã tài khoản nhận không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaTKNhan.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtSoTien.Text))
+                {
+                    MessageBox.Show("Số tiền không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtSoTien.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(rtxtND.Text))
+                {
+                    MessageBox.Show("Nội dung không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    rtxtND.Focus();
+                    return;
+                }
                 if (bUS_ChuyenKhoan.SuaCK(ck) == true)
                 {
                     MessageBox.Show("Sửa chuyển khoản thành công!");

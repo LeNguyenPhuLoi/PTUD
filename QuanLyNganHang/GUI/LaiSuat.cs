@@ -109,6 +109,30 @@ namespace GUI
                                                cboKL.Text,
                                                int.Parse(txtsothang.Text),
                                                TrangThai);
+                if (string.IsNullOrWhiteSpace(txtLaiSuat.Text))
+                {
+                    MessageBox.Show("Lãi suất không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtLaiSuat.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtTenLoai.Text))
+                {
+                    MessageBox.Show("Tên loại không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTenLoai.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtsothang.Text))
+                {
+                    MessageBox.Show("Số tháng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtsothang.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cboKL.Text))
+                {
+                    MessageBox.Show("Kiểu lãi không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboKL.Focus();
+                    return;
+                }
                 if (bUS_LaiSuat.SuaLaiSuat(ls) == true)
                 {
                     MessageBox.Show("Sửa lãi suất thành công!");
@@ -184,23 +208,6 @@ namespace GUI
                 MessageBox.Show("Lỗi " + ex.Message);
             }
             dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
-        }
-
-        private void dgvlaisuat_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int dong = dgvlaisuat.CurrentCell.RowIndex;
-                txtMaLS.Text = dgvlaisuat.Rows[dong].Cells[0].Value.ToString();
-                txtTenLoai.Text = dgvlaisuat.Rows[dong].Cells[1].Value.ToString();
-                txtLaiSuat.Text = dgvlaisuat.Rows[dong].Cells[2].Value.ToString();
-                cboKL.Text = dgvlaisuat.Rows[dong].Cells[3].Value.ToString();
-                txtsothang.Text = dgvlaisuat.Rows[dong].Cells[4].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi " + ex.Message);
-            }
         }
 
         //hàm kiểm tra định dạng mã khoản vay (10 ký tự, không ký tự đặc biệt, không khoảng trống)
@@ -304,6 +311,23 @@ namespace GUI
                 txtLaiSuat.BackColor = Color.White;
             }
             errorProvider1.SetError(txtLaiSuat, "");
+        }
+
+        private void dgvlaisuat_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int dong = dgvlaisuat.CurrentCell.RowIndex;
+                txtMaLS.Text = dgvlaisuat.Rows[dong].Cells[0].Value.ToString();
+                txtTenLoai.Text = dgvlaisuat.Rows[dong].Cells[1].Value.ToString();
+                txtLaiSuat.Text = dgvlaisuat.Rows[dong].Cells[2].Value.ToString();
+                cboKL.Text = dgvlaisuat.Rows[dong].Cells[3].Value.ToString();
+                txtsothang.Text = dgvlaisuat.Rows[dong].Cells[4].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi " + ex.Message);
+            }
         }
     }
 }
