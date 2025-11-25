@@ -31,15 +31,15 @@ namespace GUI
             dgvlaisuat.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
 
             dgvlaisuat.DataSource = bUS_LaiSuat.LoadDSLaiSuat();
-            cboKL.SelectedIndex = 0;
+            cboKL.SelectedIndex = -1;
         } 
 
         public void Clear()
         {
-            txtMaLS.Clear();
+            txtsothang.Clear();
             txtTenLoai.Clear();
             txtLaiSuat.Clear();
-            cboKL.SelectedIndex = 0;
+            cboKL.SelectedIndex = -1;
         }
         private void btnHoanTac_Click(object sender, EventArgs e)
         {
@@ -57,6 +57,30 @@ namespace GUI
                                                cboKL.Text,
                                                int.Parse(txtsothang.Text),
                                                TrangThai);
+                if (string.IsNullOrWhiteSpace(txtLaiSuat.Text))
+                {
+                    MessageBox.Show("Lãi suất không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtLaiSuat.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtTenLoai.Text))
+                {
+                    MessageBox.Show("Tên loại không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTenLoai.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtsothang.Text))
+                {
+                    MessageBox.Show("Số tháng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtsothang.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cboKL.Text))
+                {
+                    MessageBox.Show("Kiểu lãi không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboKL.Focus();
+                    return;
+                }
                 if (bUS_LaiSuat.ThemLaiSuat(ls) == true)
                 {
                     MessageBox.Show("Thêm lãi suất thành công!");
