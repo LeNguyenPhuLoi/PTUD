@@ -496,7 +496,7 @@ namespace DAL
         {
             const string query = @"SELECT kh.MAKH, kh.TENKH, kh.CCCD, kh.SDT, kh.DIACHI, kh.EMAIL, kh.QUOCTICH
                                     FROM TAIKHOAN tk JOIN KHACHHANG kh ON tk.MAKH = kh.MAKH
-                                    WHERE tk.SOTAIKHOAN = @Cccd";
+                                    WHERE kh.CCCD = @Cccd";
 
             try
             {
@@ -523,8 +523,8 @@ namespace DAL
         {
 
             const string query = @"SELECT tk.MATK, tk.SOTAIKHOAN, ltk.CHITIET, tk.SODU, tk.TRANGTHAI
-                                    FROM TAIKHOAN tk JOIN LOAITK ltk ON tk.MALOAITK = ltk.MALOAITK
-                                    WHERE tk.SOTAIKHOAN = @Cccd";
+                                    FROM TAIKHOAN tk JOIN LOAITK ltk ON tk.MALOAITK = ltk.MALOAITK JOIN KHACHHANG kh ON tk.MAKH = kh.MAKH
+                                    WHERE kh.CCCD = @Cccd";
 
             try
             {

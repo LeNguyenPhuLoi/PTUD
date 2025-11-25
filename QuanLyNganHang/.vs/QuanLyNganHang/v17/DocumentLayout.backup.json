@@ -1,12 +1,52 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\K\u00EC 5\\PTUD 1\\PTUD\\QuanLyNganHang\\",
-  "Documents": [],
+  "WorkspaceRootPath": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\PTUD\\QuanLyNganHang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\PTUD\\QuanLyNganHang\\gui\\frm_report_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_report_giaodich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|e:\\hoc k\u00EC 5\\pt\u1EE9d-2\\ptud\\quanlynganhang\\gui\\frm_report_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B3FD259C-35E2-49A7-B489-E6F944726761}|GUI\\GUI.csproj|solutionrelative:gui\\frm_report_hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Frm_Report_HopDong.cs [Design]",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\PTUD\\QuanLyNganHang\\GUI\\Frm_Report_HopDong.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_Report_HopDong.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\PTUD\\QuanLyNganHang\\GUI\\Frm_Report_HopDong.cs [Design]",
+              "RelativeToolTip": "GUI\\Frm_Report_HopDong.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T03:31:26.286Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Frm_Report_GiaoDich.cs [Design]",
+              "DocumentMoniker": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\PTUD\\QuanLyNganHang\\GUI\\Frm_Report_GiaoDich.cs",
+              "RelativeDocumentMoniker": "GUI\\Frm_Report_GiaoDich.cs",
+              "ToolTip": "E:\\Hoc k\u00EC 5\\PT\u1EE8D-2\\PTUD\\QuanLyNganHang\\GUI\\Frm_Report_GiaoDich.cs [Design]*",
+              "RelativeToolTip": "GUI\\Frm_Report_GiaoDich.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T03:30:10.816Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
