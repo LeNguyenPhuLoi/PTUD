@@ -78,6 +78,12 @@ namespace GUI
                     txt_quocgia.Focus();
                     return;
                 }
+                if (string.IsNullOrWhiteSpace(cbo_trangthai.Text))
+                {
+                    MessageBox.Show("Trạng thái không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cbo_trangthai.Focus();
+                    return;
+                }
                 if (bUS_NgoaiTe.ThemNT(nt) == true)
                 {
                     MessageBox.Show("Thêm ngoại tệ thành công!");
@@ -122,6 +128,12 @@ namespace GUI
                 {
                     MessageBox.Show("Quốc gia không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_quocgia.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cbo_trangthai.Text))
+                {
+                    MessageBox.Show("Trạng thái không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cbo_trangthai.Focus();
                     return;
                 }
                 if (bUS_NgoaiTe.SuaNT(nt) == true)

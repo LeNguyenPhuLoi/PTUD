@@ -103,6 +103,7 @@
             this.dtpNgayChuyen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpNgayChuyen.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayChuyen.Enabled = false;
             this.dtpNgayChuyen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayChuyen.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayChuyen.Location = new System.Drawing.Point(286, 26);

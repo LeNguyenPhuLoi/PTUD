@@ -324,7 +324,7 @@
             this.btnHoanTac.Image = ((System.Drawing.Image)(resources.GetObject("btnHoanTac.Image")));
             this.btnHoanTac.Location = new System.Drawing.Point(453, 584);
             this.btnHoanTac.Name = "btnHoanTac";
-            this.btnHoanTac.Size = new System.Drawing.Size(112, 49);
+            this.btnHoanTac.Size = new System.Drawing.Size(129, 53);
             this.btnHoanTac.TabIndex = 50;
             this.btnHoanTac.Text = "Làm mới";
             this.btnHoanTac.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -342,7 +342,7 @@
             this.btn_HuyAn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HuyAn.ForeColor = System.Drawing.Color.White;
             this.btn_HuyAn.Image = ((System.Drawing.Image)(resources.GetObject("btn_HuyAn.Image")));
-            this.btn_HuyAn.Location = new System.Drawing.Point(588, 583);
+            this.btn_HuyAn.Location = new System.Drawing.Point(597, 583);
             this.btn_HuyAn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_HuyAn.Name = "btn_HuyAn";
             this.btn_HuyAn.Size = new System.Drawing.Size(112, 54);
