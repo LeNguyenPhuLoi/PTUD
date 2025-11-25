@@ -30,7 +30,7 @@ namespace GUI
             dgvNgoaiTe.RowsDefaultCellStyle.BackColor = Color.White;
             dgvNgoaiTe.AlternatingRowsDefaultCellStyle.BackColor = Color.Bisque; // xanh dương sáng
 
-            cbo_trangthai.SelectedIndex = 0;
+            cbo_trangthai.SelectedIndex = -1;
 
             dgvNgoaiTe.DataSource = bUS_NgoaiTe.LoadDSNT();
         }
@@ -41,7 +41,7 @@ namespace GUI
             txt_mant.Clear();
             txt_kyhieu.Clear();
             txt_quocgia.Clear();
-            cbo_trangthai.SelectedIndex = 0;
+            cbo_trangthai.SelectedIndex = -1;
         }
 
         private void btnHoanTac_Click(object sender, EventArgs e)

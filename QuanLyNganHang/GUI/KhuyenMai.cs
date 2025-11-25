@@ -62,6 +62,24 @@ namespace GUI
                                                    dtNgayKetThuc.Value,
                                                    rtxtDKAD.Text,
                                                    TrangThai);
+                if (string.IsNullOrWhiteSpace(txtTenKM.Text))
+                {
+                    MessageBox.Show("Tên khuyến mãi không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTenKM.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(rtxtMota.Text))
+                {
+                    MessageBox.Show("Mô tả không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    rtxtMota.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(rtxtDKAD.Text))
+                {
+                    MessageBox.Show("Điều kiện áp dụng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    rtxtDKAD.Focus();
+                    return;
+                }
                 if (bUS_KhuyenMai.ThemKM(km) == true)
                 {
                     MessageBox.Show("Thêm khuyến mãi thành công!");
