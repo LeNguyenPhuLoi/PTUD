@@ -174,6 +174,36 @@ namespace GUI
                                                  cboTrangThai.Text,
                                                  txtMaLS.Text,
                                                  TrangThai);
+                if (string.IsNullOrWhiteSpace(txtMaKH.Text))
+                {
+                    MessageBox.Show("Mã khách hàng không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaKH.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cbo_taikhoan.Text))
+                {
+                    MessageBox.Show("Mã tài khoản không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cbo_taikhoan.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(cboTrangThai.Text))
+                {
+                    MessageBox.Show("Trạng thái không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboTrangThai.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtSoTienVay.Text))
+                {
+                    MessageBox.Show("Số tiền không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtSoTienVay.Focus();
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtMaLS.Text))
+                {
+                    MessageBox.Show("Mã lãi suất không được để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtMaLS.Focus();
+                    return;
+                }
                 if (bUS_KhoanVay.SuaKV(kv) == true)
                 {
                     MessageBox.Show("Sửa khoản vay thành công!");

@@ -339,6 +339,7 @@
             this.dgvlaisuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvlaisuat.Size = new System.Drawing.Size(1050, 177);
             this.dgvlaisuat.TabIndex = 53;
+            this.dgvlaisuat.Click += new System.EventHandler(this.dgvlaisuat_Click_1);
             // 
             // frmLaiSuat
             // 
