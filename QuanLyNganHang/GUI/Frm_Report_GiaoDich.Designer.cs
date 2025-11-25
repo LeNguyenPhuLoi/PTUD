@@ -106,14 +106,12 @@
             // 
             // lbl_Title
             // 
-            this.lbl_Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.Font = new System.Drawing.Font("Times New Roman", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Title.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Title.Location = new System.Drawing.Point(336, 0);
+            this.lbl_Title.Location = new System.Drawing.Point(420, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(412, 53);
+            this.lbl_Title.Size = new System.Drawing.Size(321, 42);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Text = "Báo Cáo Giao Dịch";
             // 
@@ -142,7 +140,7 @@
             this.dtpNgayGiaoDich.MaxDate = new System.DateTime(9998, 6, 11, 0, 0, 0, 0);
             this.dtpNgayGiaoDich.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtpNgayGiaoDich.Name = "dtpNgayGiaoDich";
-            this.dtpNgayGiaoDich.Size = new System.Drawing.Size(312, 35);
+            this.dtpNgayGiaoDich.Size = new System.Drawing.Size(312, 29);
             this.dtpNgayGiaoDich.TabIndex = 41;
             this.dtpNgayGiaoDich.Value = new System.DateTime(2025, 6, 11, 0, 0, 0, 0);
             // 
@@ -153,7 +151,7 @@
             this.label2.Location = new System.Drawing.Point(449, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 27);
+            this.label2.Size = new System.Drawing.Size(134, 21);
             this.label2.TabIndex = 39;
             this.label2.Text = "Ngày Giao Dịch:";
             // 
@@ -163,7 +161,7 @@
             this.txt_SoTk.Location = new System.Drawing.Point(133, 15);
             this.txt_SoTk.Margin = new System.Windows.Forms.Padding(2);
             this.txt_SoTk.Name = "txt_SoTk";
-            this.txt_SoTk.Size = new System.Drawing.Size(312, 34);
+            this.txt_SoTk.Size = new System.Drawing.Size(312, 29);
             this.txt_SoTk.TabIndex = 19;
             this.txt_SoTk.Tag = "Nhập";
             this.txt_SoTk.TextChanged += new System.EventHandler(this.txt_SoTk_TextChanged);
@@ -193,7 +191,7 @@
             this.label1.Location = new System.Drawing.Point(11, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 27);
+            this.label1.Size = new System.Drawing.Size(118, 21);
             this.label1.TabIndex = 16;
             this.label1.Text = "Số Tài Khoản:";
             // 
